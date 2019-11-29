@@ -22,13 +22,50 @@ class ViewController: UIViewController {
 
     }
     
-    var try1 = "123"
-    var try2 = "555"
+    
+    func rad(_ number: Double) -> Double {
+        return number * 180 / .pi
+    }
+    
+    func degree(_ number: Double) -> Double {
+        return number * .pi / 180
+    }
 
     @IBAction func didPressConvert(_ sender: UIButton) {
-        resultLabel.text = try1 + try2
-        print(beforeExpTextField.text ?? "nothing")
-        print(angleExpTextField.text ?? "nothing")
+        let textIm = complexImTextField.text ?? ""
+        let textRe = complexReTextField.text ?? ""
+
+        let Im = textIm.replacingOccurrences(of: ",", with: ".")
+        let Re = textRe.replacingOccurrences(of: ",", with: ".")
+        
+        let Im2 = pow(Double(Im) ?? 0, Double(2))
+        let Re2 = pow(Double(Re) ?? 0, Double(2))
+
+        let moduleZ = sqrt(Im2 + Re2)
+        
+        let arcFi = rad(atan((Double(Im) ?? Double(1)) / (Double(Re) ?? Double(1))))
+        let stringResultModuleZ = String(format: "%.4f", moduleZ)
+       
+        let font:UIFont? = UIFont(name: "Helvetica", size:40)
+        let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
+        
+        let stringResult = stringResultModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: stringResult, attributes: [.font:font!])
+        attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:stringResult.count - stringResultModuleZ.count - 1))
+        resultLabel.attributedText = attString
+    }
+    
+    @IBAction func didPressConvertToComplex(_ sender: Any) {
+         let beforeExp = beforeExpTextField.text ?? ""
+         let angleExp = angleExpTextField.text ?? ""
+
+         let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
+         let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
+         
+        let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
+        let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
+        
+         resultLabel.text = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
     }
     
     @IBAction func didChangeSign(_ sender: UIButton) {
@@ -40,5 +77,11 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
+        beforeExpTextField.resignFirstResponder()
+        angleExpTextField.resignFirstResponder()
+        complexImTextField.resignFirstResponder()
+        complexReTextField.resignFirstResponder()
+    }
 
 }
