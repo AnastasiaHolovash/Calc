@@ -15,13 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var complexReTextField: UITextField!
     @IBOutlet weak var complexImTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var modulZSignButton: UIButton!
+    @IBOutlet weak var angleSignButton: UIButton!
+    @IBOutlet weak var signReButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
     
     func rad(_ number: Double) -> Double {
         return number * 180 / .pi
@@ -32,8 +33,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didPressConvert(_ sender: UIButton) {
-        let textIm = complexImTextField.text ?? ""
-        let textRe = complexReTextField.text ?? ""
+        let textIm = (signButton.title(for: .normal) ?? "") + (complexImTextField.text ?? "")
+        let textRe = (signReButton.title(for: .normal) ?? "") + (complexReTextField.text ?? "")
 
         let Im = textIm.replacingOccurrences(of: ",", with: ".")
         let Re = textRe.replacingOccurrences(of: ",", with: ".")
@@ -56,8 +57,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didPressConvertToComplex(_ sender: Any) {
-         let beforeExp = beforeExpTextField.text ?? ""
-         let angleExp = angleExpTextField.text ?? ""
+         let beforeExp = (modulZSignButton.title(for: .normal) ?? "") + (beforeExpTextField.text ?? "")
+         let angleExp = (angleSignButton.title(for: .normal) ?? "") + (angleExpTextField.text ?? "")
 
          let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
          let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
@@ -68,13 +69,33 @@ class ViewController: UIViewController {
          resultLabel.text = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
     }
     
+    @IBAction func didChangeModulZSign(_ sender: UIButton) {
+        if modulZSignButton.title(for: .normal) == "+"{
+            modulZSignButton.setTitle("-", for: .normal)
+        }else{
+            modulZSignButton.setTitle("+", for: .normal)
+        }
+    }
+    @IBAction func didChangeAngleSign(_ sender: UIButton) {
+        if angleSignButton.title(for: .normal) == "+"{
+            angleSignButton.setTitle("-", for: .normal)
+        }else{
+            angleSignButton.setTitle("+", for: .normal)
+        }
+    }
+    @IBAction func didChangeReSign(_ sender: UIButton) {
+        if signReButton.title(for: .normal) == "+"{
+            signReButton.setTitle("-", for: .normal)
+        }else{
+            signReButton.setTitle("+", for: .normal)
+        }
+    }
     @IBAction func didChangeSign(_ sender: UIButton) {
         if signButton.title(for: .normal) == "+"{
             signButton.setTitle("-", for: .normal)
         }else{
             signButton.setTitle("+", for: .normal)
         }
-        
     }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {

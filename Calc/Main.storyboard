@@ -33,6 +33,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="67"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="didChangeModulZSign:" destination="7BB-oD-TJP" eventType="touchUpInside" id="2nJ-1M-ndC"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sek-x8-UGZ">
                                                 <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="67"/>
@@ -62,6 +65,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="18.333333333333332" height="37.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="+"/>
+                                                        <connections>
+                                                            <action selector="didChangeAngleSign:" destination="7BB-oD-TJP" eventType="touchUpInside" id="gYQ-kJ-C0H"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nll-Kw-7ZS">
                                                         <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="39"/>
@@ -117,6 +123,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="66.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="didChangeReSign:" destination="7BB-oD-TJP" eventType="touchUpInside" id="p36-P3-rBk"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlp-5Z-yGq">
                                                 <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="66.666666666666671"/>
@@ -194,11 +203,14 @@
                     </view>
                     <connections>
                         <outlet property="angleExpTextField" destination="Nll-Kw-7ZS" id="deq-j1-9dX"/>
+                        <outlet property="angleSignButton" destination="d2J-c1-mcd" id="h6j-ig-APo"/>
                         <outlet property="beforeExpTextField" destination="sek-x8-UGZ" id="Vrz-n6-CVJ"/>
                         <outlet property="complexImTextField" destination="Mlh-Ii-KRl" id="JeU-iB-rMx"/>
                         <outlet property="complexReTextField" destination="zlp-5Z-yGq" id="Th3-g5-S03"/>
+                        <outlet property="modulZSignButton" destination="ABx-Mx-ljy" id="9RR-oF-u9a"/>
                         <outlet property="resultLabel" destination="HQt-ld-2OW" id="k0a-1g-Eew"/>
                         <outlet property="signButton" destination="1Xt-xm-e0N" id="DXk-w1-gOd"/>
+                        <outlet property="signReButton" destination="IYY-c7-lOm" id="tbf-Xf-2jJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cID-uH-b0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
