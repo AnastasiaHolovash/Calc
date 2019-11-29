@@ -19,9 +19,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var angleSignButton: UIButton!
     @IBOutlet weak var signReButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
+    @IBOutlet weak var convertToComplexButton: UIButton!
+    @IBOutlet weak var convertToExpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        convertToComplexButton.layer.cornerRadius = (Double(convertToComplexButton.layer.height) ?? 1.0) / 2.0
+        
+    }
+    
+    func hideKeyboard() {
+        beforeExpTextField.resignFirstResponder()
+        angleExpTextField.resignFirstResponder()
+        complexImTextField.resignFirstResponder()
+        complexReTextField.resignFirstResponder()
     }
     
     func rad(_ number: Double) -> Double {
@@ -30,6 +41,16 @@ class ViewController: UIViewController {
     
     func degree(_ number: Double) -> Double {
         return number * .pi / 180
+    }
+    
+    func stringResult(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
+        let stringResult:String
+        if arcFi < 0{
+            stringResult = stringResultModuleZ + "e-i" + String(format: "%.4f", -arcFi) + "˚"
+        }else {
+            stringResult = stringResultModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
+        }
+        return stringResult
     }
 
     @IBAction func didPressConvert(_ sender: UIButton) {
@@ -50,23 +71,25 @@ class ViewController: UIViewController {
         let font:UIFont? = UIFont(name: "Helvetica", size:40)
         let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
         
-        let stringResult = stringResultModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
-        let attString:NSMutableAttributedString = NSMutableAttributedString(string: stringResult, attributes: [.font:font!])
-        attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:stringResult.count - stringResultModuleZ.count - 1))
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: stringResult(arcFi, stringResultModuleZ), attributes: [.font:font!])
+        attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:stringResult(arcFi, stringResultModuleZ).count - stringResultModuleZ.count - 1))
         resultLabel.attributedText = attString
+        
+        hideKeyboard()
     }
     
     @IBAction func didPressConvertToComplex(_ sender: Any) {
-         let beforeExp = (modulZSignButton.title(for: .normal) ?? "") + (beforeExpTextField.text ?? "")
-         let angleExp = (angleSignButton.title(for: .normal) ?? "") + (angleExpTextField.text ?? "")
+        let beforeExp = (modulZSignButton.title(for: .normal) ?? "") + (beforeExpTextField.text ?? "")
+        let angleExp = (angleSignButton.title(for: .normal) ?? "") + (angleExpTextField.text ?? "")
 
-         let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
-         let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
+        let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
+        let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
          
         let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
         let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
         
-         resultLabel.text = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
+        resultLabel.text = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
+        hideKeyboard()
     }
     
     @IBAction func didChangeModulZSign(_ sender: UIButton) {
@@ -99,10 +122,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
-        beforeExpTextField.resignFirstResponder()
-        angleExpTextField.resignFirstResponder()
-        complexImTextField.resignFirstResponder()
-        complexReTextField.resignFirstResponder()
+        hideKeyboard()
     }
 
 }

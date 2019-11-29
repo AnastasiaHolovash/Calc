@@ -207,6 +207,8 @@
                         <outlet property="beforeExpTextField" destination="sek-x8-UGZ" id="Vrz-n6-CVJ"/>
                         <outlet property="complexImTextField" destination="Mlh-Ii-KRl" id="JeU-iB-rMx"/>
                         <outlet property="complexReTextField" destination="zlp-5Z-yGq" id="Th3-g5-S03"/>
+                        <outlet property="convertToComplexButton" destination="xI1-eH-ey8" id="XVx-Ah-nD4"/>
+                        <outlet property="convertToExpButton" destination="0pm-2C-0N2" id="chg-0w-BZv"/>
                         <outlet property="modulZSignButton" destination="ABx-Mx-ljy" id="9RR-oF-u9a"/>
                         <outlet property="resultLabel" destination="HQt-ld-2OW" id="k0a-1g-Eew"/>
                         <outlet property="signButton" destination="1Xt-xm-e0N" id="DXk-w1-gOd"/>
