@@ -24,7 +24,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        convertToComplexButton.layer.cornerRadius = (Double(convertToComplexButton.layer.height) ?? 1.0) / 2.0
+        convertToComplexButton.layer.cornerRadius = CGFloat((Double(convertToComplexButton.frame.height) ) / 2.0)
+        convertToExpButton.layer.cornerRadius = CGFloat((Double(convertToExpButton.frame.height) ) / 2.0)
+
         
     }
     
