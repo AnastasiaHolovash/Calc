@@ -36,7 +36,13 @@ class ViewController: UIViewController {
         complexImTextField.resignFirstResponder()
         complexReTextField.resignFirstResponder()
     }
-    
+    func alert() {
+        let alert = UIAlertController(title: "Notice", message: "The values ​​you entered are too large", preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okBtn)
+        present(alert, animated: true, completion: nil)
+        
+    }
     func rad(_ number: Double) -> Double {
         return number * 180 / .pi
     }
@@ -54,6 +60,24 @@ class ViewController: UIViewController {
         }
         return stringResult
     }
+    
+    func attributedStringResult(_ moduleZ: Double, _ arcFi: Double) -> NSAttributedString {
+        let stringResultModuleZ = String(format: "%.4f", moduleZ)
+        let fullstringResult = stringResult(arcFi, stringResultModuleZ)
+        
+        let font:UIFont? = UIFont(name: "Helvetica", size:40)
+        let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
+         
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
+         attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:fullstringResult.count - stringResultModuleZ.count - 1))
+        if  fullstringResult.count > 25 {
+            alert()
+            return NSMutableAttributedString(string: "No result", attributes: [.font:font!])
+        }else{
+            return attString
+        }
+        
+    }
 
     @IBAction func didPressConvert(_ sender: UIButton) {
         let textIm = (signButton.title(for: .normal) ?? "") + (complexImTextField.text ?? "")
@@ -66,21 +90,15 @@ class ViewController: UIViewController {
         let Re2 = pow(Double(Re) ?? 0, Double(2))
 
         let moduleZ = sqrt(Im2 + Re2)
-        
-        let arcFi = rad(atan((Double(Im) ?? Double(1)) / (Double(Re) ?? Double(1))))
-        let stringResultModuleZ = String(format: "%.4f", moduleZ)
-       
-        let font:UIFont? = UIFont(name: "Helvetica", size:40)
-        let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
-        
-        let attString:NSMutableAttributedString = NSMutableAttributedString(string: stringResult(arcFi, stringResultModuleZ), attributes: [.font:font!])
-        attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:stringResult(arcFi, stringResultModuleZ).count - stringResultModuleZ.count - 1))
-        resultLabel.attributedText = attString
+        let arcFi = rad(atan((Double(Im) ?? Double(0)) / (Double(Re) ?? Double(0))))
+ 
+        resultLabel.attributedText = attributedStringResult(moduleZ, arcFi)
         
         hideKeyboard()
     }
     
     @IBAction func didPressConvertToComplex(_ sender: Any) {
+        
         let beforeExp = (modulZSignButton.title(for: .normal) ?? "") + (beforeExpTextField.text ?? "")
         let angleExp = (angleSignButton.title(for: .normal) ?? "") + (angleExpTextField.text ?? "")
 
@@ -90,7 +108,19 @@ class ViewController: UIViewController {
         let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
         let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
         
-        resultLabel.text = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
+        let result: String
+        if Im < 0 {
+            result = String(format: "%.4f", Re) + " - i" + String(format: "%.4f", -Im)
+        }else{
+            result = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
+        }
+        if result.count > 21 {
+            resultLabel.text = "No result"
+            alert()
+        }else{
+            resultLabel.text = result
+        }
+        
         hideKeyboard()
     }
     
@@ -122,6 +152,11 @@ class ViewController: UIViewController {
             signButton.setTitle("+", for: .normal)
         }
     }
+    
+//    @IBAction func chooseModulZTF(_ sender: UITextField) {
+//       beforeExpTextField.text = ""
+//    }
+    
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         hideKeyboard()
