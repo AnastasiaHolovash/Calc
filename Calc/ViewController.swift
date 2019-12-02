@@ -114,7 +114,7 @@ class ViewController: UIViewController {
         }else{
             result = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
         }
-        if result.count > 21 {
+        if result.count > 20 {
             resultLabel.text = "No result"
             alert()
         }else{
@@ -124,39 +124,26 @@ class ViewController: UIViewController {
         hideKeyboard()
     }
     
-    @IBAction func didChangeModulZSign(_ sender: UIButton) {
-        if modulZSignButton.title(for: .normal) == "+"{
-            modulZSignButton.setTitle("-", for: .normal)
+    func changeSign(_ buttton: UIButton) {
+        if buttton.title(for: .normal) == "+"{
+            buttton.setTitle("-", for: .normal)
         }else{
-            modulZSignButton.setTitle("+", for: .normal)
+            buttton.setTitle("+", for: .normal)
         }
+    }
+    
+    @IBAction func didChangeModulZSign(_ sender: UIButton) {
+        changeSign(modulZSignButton)
     }
     @IBAction func didChangeAngleSign(_ sender: UIButton) {
-        if angleSignButton.title(for: .normal) == "+"{
-            angleSignButton.setTitle("-", for: .normal)
-        }else{
-            angleSignButton.setTitle("+", for: .normal)
-        }
+        changeSign(angleSignButton)
     }
     @IBAction func didChangeReSign(_ sender: UIButton) {
-        if signReButton.title(for: .normal) == "+"{
-            signReButton.setTitle("-", for: .normal)
-        }else{
-            signReButton.setTitle("+", for: .normal)
-        }
+        changeSign(signReButton)
     }
     @IBAction func didChangeSign(_ sender: UIButton) {
-        if signButton.title(for: .normal) == "+"{
-            signButton.setTitle("-", for: .normal)
-        }else{
-            signButton.setTitle("+", for: .normal)
-        }
+        changeSign(signButton)
     }
-    
-//    @IBAction func chooseModulZTF(_ sender: UITextField) {
-//       beforeExpTextField.text = ""
-//    }
-    
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         hideKeyboard()
