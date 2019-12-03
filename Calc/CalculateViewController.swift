@@ -48,24 +48,35 @@ class CalculateViewController: UIViewController {
 
     }
     
+    
     func changeForm(button: UIButton, expViev: UIView, complexView: UIView) {
-        if button.title(for: .normal) == "Complex form"{
+        if button.title(for: .normal) == "Complex form" {
             button.setTitle("Exp form", for: .normal)
             expViev.isHidden = true
             complexView.isHidden = false
-        }else{
+        } else {
             button.setTitle("Complex form", for: .normal)
             complexView.isHidden = true
             expViev.isHidden = false
         }
     }
-    func changeSign(_ buttton: UIButton) {
-        if buttton.title(for: .normal) == "+"{
-            buttton.setTitle("-", for: .normal)
-        }else{
-            buttton.setTitle("+", for: .normal)
-        }
+    
+    
+    func selectedOperation(button: UIButton, imageName: String) {
+        plusButton.setImage(UIImage.init(systemName: "plus.square"), for: .normal)
+        minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
+        multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
+        divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
+        button.setImage(UIImage.init(systemName: imageName), for: .normal)
     }
+    
+//    func changeSign(_ buttton: UIButton) {
+//        if buttton.title(for: .normal) == "+" {
+//            buttton.setTitle("-", for: .normal)
+//        } else {
+//            buttton.setTitle("+", for: .normal)
+//        }
+//    }
 
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
@@ -101,13 +112,19 @@ class CalculateViewController: UIViewController {
         changeSign(signImButton2)
     }
     
+
     @IBAction func selectedPlusOperation(_ sender: UIButton) {
+        selectedOperation(button: plusButton, imageName: "plus.square.fill")
     }
     @IBAction func selectedMinusOperation(_ sender: UIButton) {
+        selectedOperation(button: minusButton, imageName: "minus.square.fill")
     }
     @IBAction func selectedMultiplyOperation(_ sender: UIButton) {
+        selectedOperation(button: multiplyButton, imageName: "multiply.square.fill")
     }
     @IBAction func selectedDivideOperation(_ sender: UIButton) {
+        selectedOperation(button: divideButton, imageName: "divide.square.fill")
+
     }
     
     
