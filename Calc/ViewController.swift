@@ -52,22 +52,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didPressConvertToComplex(_ sender: Any) {
-        
-        let beforeExp = (modulZSignButton.title(for: .normal) ?? "") + (beforeExpTextField.text ?? "")
-        let angleExp = (angleSignButton.title(for: .normal) ?? "") + (angleExpTextField.text ?? "")
 
-        let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
-        let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
-         
-        let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
-        let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
+        let complex = expToComlex(signModulZ: modulZSignButton.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ: beforeExpTextField.text, arc: angleExpTextField.text)
         
-        let result: String
-        if Im < 0 {
-            result = String(format: "%.4f", Re) + " - i" + String(format: "%.4f", -Im)
-        } else {
-            result = String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
-        }
+        let result = stringResultforComplexForm(complex.Im, complex.Re)
+        
         if result.count > 20 {
             resultLabel.text = "No result"
             present(alert(), animated: true, completion: nil)

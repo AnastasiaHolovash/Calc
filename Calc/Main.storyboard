@@ -667,6 +667,9 @@
                                                 <rect key="frame" x="140.66666666666666" y="40.333333333333343" width="93.666666666666657" height="48.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" backgroundImage="equal.square.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="didPressEqual:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="EnX-aK-GoR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -743,8 +746,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Xc5-J0-IcI" kind="relationship" relationship="viewControllers" id="Oud-bZ-AtK"/>
                         <segue destination="7BB-oD-TJP" kind="relationship" relationship="viewControllers" id="MqZ-wl-4GS"/>
+                        <segue destination="Xc5-J0-IcI" kind="relationship" relationship="viewControllers" id="Oud-bZ-AtK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTW-Q8-1ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

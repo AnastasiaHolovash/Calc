@@ -27,7 +27,7 @@ func degree(_ number: Double) -> Double {
 }
 
 
-func stringResult(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
+func stringResultforExpForm(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
     let stringResult:String
     if arcFi < 0{
         stringResult = stringResultModuleZ + "e-i" + String(format: "%.4f", -arcFi) + "˚"
@@ -40,7 +40,7 @@ func stringResult(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
 
 func attributedStringResult(_ moduleZ: Double, _ arcFi: Double) -> (NSAttributedString, Bool) {
     let stringResultModuleZ = String(format: "%.4f", moduleZ)
-    let fullstringResult = stringResult(arcFi, stringResultModuleZ)
+    let fullstringResult = stringResultforExpForm(arcFi, stringResultModuleZ)
     
     let font:UIFont? = UIFont(name: "Helvetica", size:40)
     let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
@@ -81,6 +81,33 @@ func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexR
     return (moduleZ, arcFi)
 }
 
-//func plus(<#parameters#>) -> <#return type#> {
-//    
-//}
+func expToComlex(signModulZ: String?, signArc: String?, modulZ: String?, arc:String?) -> (Re:Double, Im: Double) {
+    
+    guard let signModulZ = signModulZ,
+          let signArc = signArc,
+          let modulZ = modulZ,
+          let arc = arc else { return (0, 0) }
+    
+    let beforeExp = signModulZ + modulZ
+    let angleExp = signArc + arc
+
+    let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
+    let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
+     
+    let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
+    let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
+    
+    return (Re: Re, Im: Im)
+}
+
+func stringResultforComplexForm(_ Im: Double, _ Re: Double) -> String {
+    if Im < 0 {
+        return String(format: "%.4f", Re) + " - i" + String(format: "%.4f", -Im)
+    } else {
+        return String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
+    }
+}
+
+func plus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
+    return (Re: (Re1*Re2 - Im1*Im2), Im: (Re1*Im2 + Re2*Im1))
+}

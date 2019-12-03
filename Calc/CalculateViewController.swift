@@ -126,6 +126,10 @@ class CalculateViewController: UIViewController {
         selectedOperation(button: divideButton, imageName: "divide.square.fill")
 
     }
+    @IBAction func didPressEqual(_ sender: UIButton) {
+        print(plusButton.isSelected)
+    }
+    
     
     
     
