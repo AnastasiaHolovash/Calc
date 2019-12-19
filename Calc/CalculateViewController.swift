@@ -39,6 +39,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var divideButton: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -69,14 +70,6 @@ class CalculateViewController: UIViewController {
         divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
         button.setImage(UIImage.init(systemName: imageName), for: .normal)
     }
-    
-//    func changeSign(_ buttton: UIButton) {
-//        if buttton.title(for: .normal) == "+" {
-//            buttton.setTitle("-", for: .normal)
-//        } else {
-//            buttton.setTitle("+", for: .normal)
-//        }
-//    }
 
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
@@ -86,7 +79,6 @@ class CalculateViewController: UIViewController {
         changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
     }
 
-    
     @IBAction func didChangeModulZSign1(_ sender: UIButton) {
         changeSign(modulZSignButton1)
     }
@@ -115,6 +107,38 @@ class CalculateViewController: UIViewController {
 
     @IBAction func selectedPlusOperation(_ sender: UIButton) {
         selectedOperation(button: plusButton, imageName: "plus.square.fill")
+        var re1: Double?
+        var im1: Double?
+        if expView1.isHidden == false {
+            let result = expToComlex(signModulZ: modulZSignButton1.title(for: .normal), signArc: angleSignButton1.title(for: .normal), modulZ:  beforeExpTextField1.text, arc: angleExpTextField1.text)
+            re1 = result.Re
+            im1 = result.Im
+        } else {
+            re1 = Double((signReButton1.title(for: .normal) ?? "") + (complexReTextField1.text ?? ""))
+            im1 = Double((signImButton1.title(for: .normal)  ?? "") + (complexImTextField2.text ?? ""))
+        }
+        
+        
+        var re2: Double?
+        var im2: Double?
+        if expView2.isHidden == false {
+            let result = expToComlex(signModulZ: modulZSignButton2.title(for: .normal), signArc: angleSignButton2.title(for: .normal), modulZ:  beforeExpTextField2.text, arc: angleExpTextField2.text)
+            re2 = result.Re
+            im2 = result.Im
+        } else {
+            re2 = Double((signReButton2.title(for: .normal) ?? "") + (complexReTextField2.text ?? ""))
+            im2 = Double((signImButton2.title(for: .normal) ?? "") + (complexImTextField2.text ?? ""))
+        }
+        
+        guard let re11 = re1,
+              let re22 = re2,
+              let im11 = im1,
+              let im22 = im2 else { return }
+        
+        plus(Re1: re11, Re2: re22, Im1: im11, Im2: im22)
+
+        
+        
     }
     @IBAction func selectedMinusOperation(_ sender: UIButton) {
         selectedOperation(button: minusButton, imageName: "minus.square.fill")

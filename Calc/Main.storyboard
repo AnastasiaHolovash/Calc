@@ -726,6 +726,7 @@
                         <outlet property="modulZSignButton2" destination="ZrE-cm-iE9" id="PpI-mQ-tBH"/>
                         <outlet property="multiplyButton" destination="Fav-Y4-fuO" id="kLY-8f-Wl4"/>
                         <outlet property="plusButton" destination="AAE-j8-9fI" id="23H-51-KzK"/>
+                        <outlet property="resultLabel" destination="Ge4-TY-KZo" id="nQr-ae-hI4"/>
                         <outlet property="signImButton1" destination="z9q-jz-Edw" id="UbP-VJ-MIn"/>
                         <outlet property="signImButton2" destination="s7Y-4s-uPl" id="nUA-oo-6sr"/>
                         <outlet property="signReButton1" destination="BU2-hf-t11" id="Xrh-Cq-xwc"/>
