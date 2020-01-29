@@ -41,6 +41,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var divideButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var cleanButton1: UIButton!
+    @IBOutlet weak var cleanButton2: UIButton!
     
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class CalculateViewController: UIViewController {
         changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
         changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
         cleanButton1.layer.cornerRadius = CGFloat((Double(cleanButton1.frame.height) ) / 2.0)
+        cleanButton2.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
 
     }
     
@@ -191,7 +193,18 @@ class CalculateViewController: UIViewController {
             complexImTextField1.placeholder = "0"
         }
     }
-    
-    
+    @IBAction func didPressClean2(_ sender: UIButton) {
+        if expView2.isHidden == false{
+            beforeExpTextField2.text = ""
+            beforeExpTextField2.placeholder = "0"
+            angleExpTextField2.text = ""
+            angleExpTextField2.placeholder = "0"
+        }else{
+            complexReTextField2.text = ""
+            complexReTextField2.placeholder = "0"
+            complexImTextField2.text = ""
+            complexImTextField2.placeholder = "0"
+        }
+    }
     
 }
