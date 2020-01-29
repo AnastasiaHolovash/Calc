@@ -27,15 +27,7 @@ func degree(_ number: Double) -> Double {
 }
 
 
-func stringResultforExpForm(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
-    let stringResult:String
-    if arcFi < 0{
-        stringResult = stringResultModuleZ + "e-i" + String(format: "%.4f", -arcFi) + "˚"
-    }else {
-        stringResult = stringResultModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
-    }
-    return stringResult
-}
+
 
 
 func attributedStringResult(_ moduleZ: Double, _ arcFi: Double) -> (NSAttributedString, Bool) {
@@ -81,6 +73,7 @@ func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexR
     return (moduleZ, arcFi)
 }
 
+
 func expToComlex(signModulZ: String?, signArc: String?, modulZ: String?, arc:String?) -> (Re:Double, Im: Double) {
     
     guard let signModulZ = signModulZ,
@@ -100,6 +93,7 @@ func expToComlex(signModulZ: String?, signArc: String?, modulZ: String?, arc:Str
     return (Re: Re, Im: Im)
 }
 
+
 func stringResultforComplexForm(_ Im: Double, _ Re: Double) -> String {
     if Im < 0 {
         return String(format: "%.4f", Re) + " - i" + String(format: "%.4f", -Im)
@@ -108,6 +102,49 @@ func stringResultforComplexForm(_ Im: Double, _ Re: Double) -> String {
     }
 }
 
+
+func stringResultforExpForm(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
+    let stringResult:String
+    if arcFi < 0{
+        stringResult = stringResultModuleZ + "e-i" + String(format: "%.4f", -arcFi) + "˚"
+    }else {
+        stringResult = stringResultModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
+    }
+    return stringResult
+}
+
+
+func allDataToComlexForm(_ modulZSignButton: UIButton, _ angleSignButton: UIButton, _ beforeExpTextField: UITextField, _ angleExpTextField: UITextField, _ signReButton: UIButton, _ signImButton: UIButton, _ complexReTextField: UITextField, _ complexImTextField: UITextField, _ expView: UIView!) ->  (Re: Double, Im: Double){
+            var re: Double?
+            var im: Double?
+            if expView.isHidden == false {
+    //            print("-------EXP--------")
+                let result = expToComlex(signModulZ: modulZSignButton.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ:  beforeExpTextField.text, arc: angleExpTextField.text)
+                re = result.Re
+                im = result.Im
+            } else {
+                re = Double((signReButton.title(for: .normal) ?? "") + (complexReTextField.text ?? ""))
+                im = Double((signImButton.title(for: .normal) ?? "") + (complexImTextField.text ?? ""))
+            }
+            guard let re1 = re,
+                  let im1 = im else { return (Re: 0, Im: 0)}
+    
+    return (Re: re1, Im: im1)
+
+}
+
+
 func plus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
+    return (Re: (Re1 + Re2), Im: (Im1 + Im2))
+}
+func minus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
+    return (Re: (Re1 - Re2), Im: (Im1 - Im2))
+}
+func multiply(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
     return (Re: (Re1*Re2 - Im1*Im2), Im: (Re1*Im2 + Re2*Im1))
+}
+func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
+    let re = (Re1*Re2 + Im1*Im2) / (pow(Re2, 2) + pow(Im2, 2))
+    let im = (Re1*Im2 - Re2*Im1) / (pow(Re2, 2) + pow(Im2, 2))
+    return (Re: re, Im: im)
 }

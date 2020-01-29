@@ -70,6 +70,16 @@ class CalculateViewController: UIViewController {
         divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
         button.setImage(UIImage.init(systemName: imageName), for: .normal)
     }
+    
+    func showPlusRecult() {
+        let firstNumberInComplexForm = allDataToComlexForm(modulZSignButton1, angleSignButton1, beforeExpTextField1, angleExpTextField1, signReButton1, signImButton1, complexReTextField1, complexImTextField1, expView1)
+        
+         let secondNumberInComplexForm = allDataToComlexForm(modulZSignButton2, angleSignButton2, beforeExpTextField2, angleExpTextField2, signReButton2, signImButton2, complexReTextField2, complexImTextField2, expView2)
+        
+        let result = plus(Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
+        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        
+    }
 
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
@@ -107,39 +117,50 @@ class CalculateViewController: UIViewController {
 
     @IBAction func selectedPlusOperation(_ sender: UIButton) {
         selectedOperation(button: plusButton, imageName: "plus.square.fill")
-        var re1: Double?
-        var im1: Double?
-        if expView1.isHidden == false {
-            let result = expToComlex(signModulZ: modulZSignButton1.title(for: .normal), signArc: angleSignButton1.title(for: .normal), modulZ:  beforeExpTextField1.text, arc: angleExpTextField1.text)
-            re1 = result.Re
-            im1 = result.Im
-        } else {
-            re1 = Double((signReButton1.title(for: .normal) ?? "") + (complexReTextField1.text ?? ""))
-            im1 = Double((signImButton1.title(for: .normal)  ?? "") + (complexImTextField2.text ?? ""))
-        }
+//        var re1: Double
+//        var im1: Double
         
+//        let firstNumberInComplexForm = allDataToComlexForm(modulZSignButton1, angleSignButton1, beforeExpTextField1, angleExpTextField1, signReButton1, signImButton1, complexReTextField1, complexImTextField1, expView1)
+//
+//        let secondNumberInComplexForm = allDataToComlexForm(modulZSignButton2, angleSignButton2, beforeExpTextField2, angleExpTextField2, signReButton2, signImButton2, complexReTextField2, complexImTextField2, expView2)
         
-        var re2: Double?
-        var im2: Double?
-        if expView2.isHidden == false {
-            let result = expToComlex(signModulZ: modulZSignButton2.title(for: .normal), signArc: angleSignButton2.title(for: .normal), modulZ:  beforeExpTextField2.text, arc: angleExpTextField2.text)
-            re2 = result.Re
-            im2 = result.Im
-        } else {
-            re2 = Double((signReButton2.title(for: .normal) ?? "") + (complexReTextField2.text ?? ""))
-            im2 = Double((signImButton2.title(for: .normal) ?? "") + (complexImTextField2.text ?? ""))
-        }
+//        if expView1.isHidden == false {
+////            print("-------EXP--------")
+//            let result = expToComlex(signModulZ: modulZSignButton1.title(for: .normal), signArc: angleSignButton1.title(for: .normal), modulZ:  beforeExpTextField1.text, arc: angleExpTextField1.text)
+//            re1 = result.Re
+//            im1 = result.Im
+//        } else {
+//            re1 = Double((signReButton1.title(for: .normal) ?? "") + (complexReTextField1.text ?? ""))
+//            im1 = Double((signImButton1.title(for: .normal)  ?? "") + (complexImTextField2.text ?? ""))
+//        }
+//
+//
+//        var re2: Double?
+//        var im2: Double?
+//        if expView2.isHidden == false {
+//            let result = expToComlex(signModulZ: modulZSignButton2.title(for: .normal), signArc: angleSignButton2.title(for: .normal), modulZ:  beforeExpTextField2.text, arc: angleExpTextField2.text)
+//            re2 = result.Re
+//            im2 = result.Im
+//        } else {
+//            re2 = Double((signReButton2.title(for: .normal) ?? "") + (complexReTextField2.text ?? ""))
+//            im2 = Double((signImButton2.title(for: .normal) ?? "") + (complexImTextField2.text ?? ""))
+//        }
+//
+//        guard let re11 = re1,
+//              let re22 = re2,
+//              let im11 = im1,
+//              let im22 = im2 else { return }
+//        resultLabel.text = stringResultforComplexForm(plus(Re1: re11, Re2: re22, Im1: im11, Im2: im22).Im, plus(Re1: re11, Re2: re22, Im1: im11, Im2: im22).Re)
+//        let result = plus(Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
+//        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
         
-        guard let re11 = re1,
-              let re22 = re2,
-              let im11 = im1,
-              let im22 = im2 else { return }
-        
-        plus(Re1: re11, Re2: re22, Im1: im11, Im2: im22)
+        showPlusRecult()
 
         
         
     }
+    
+    
     @IBAction func selectedMinusOperation(_ sender: UIButton) {
         selectedOperation(button: minusButton, imageName: "minus.square.fill")
     }
@@ -152,6 +173,10 @@ class CalculateViewController: UIViewController {
     }
     @IBAction func didPressEqual(_ sender: UIButton) {
         print(plusButton.isSelected)
+        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+            print("selected + ")
+            showPlusRecult()
+        }
     }
     
     
