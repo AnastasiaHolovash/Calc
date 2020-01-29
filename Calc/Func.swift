@@ -145,6 +145,6 @@ func multiply(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double
 }
 func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
     let re = (Re1*Re2 + Im1*Im2) / (pow(Re2, 2) + pow(Im2, 2))
-    let im = (Re1*Im2 - Re2*Im1) / (pow(Re2, 2) + pow(Im2, 2))
+    let im = -(Re1*Im2 - Re2*Im1) / (pow(Re2, 2) + pow(Im2, 2))
     return (Re: re, Im: im)
 }

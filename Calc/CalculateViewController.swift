@@ -71,14 +71,36 @@ class CalculateViewController: UIViewController {
         button.setImage(UIImage.init(systemName: imageName), for: .normal)
     }
     
-    func showPlusRecult() {
+    func prepareDataForCalc() -> (Re1: Double, Re2: Double, Im1: Double, Im2: Double) {
         let firstNumberInComplexForm = allDataToComlexForm(modulZSignButton1, angleSignButton1, beforeExpTextField1, angleExpTextField1, signReButton1, signImButton1, complexReTextField1, complexImTextField1, expView1)
         
          let secondNumberInComplexForm = allDataToComlexForm(modulZSignButton2, angleSignButton2, beforeExpTextField2, angleExpTextField2, signReButton2, signImButton2, complexReTextField2, complexImTextField2, expView2)
         
-        let result = plus(Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
+        return (Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
+    }
+    
+    func showPlusRecult() {
+        let data = prepareDataForCalc()
+        let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
-        
+    }
+    
+    func showMinusRecult() {
+        let data = prepareDataForCalc()
+        let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+    }
+    
+    func showMultiplyRecult() {
+        let data = prepareDataForCalc()
+        let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+    }
+    
+    func showDivideRecult() {
+        let data = prepareDataForCalc()
+        let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
     }
 
     
@@ -163,19 +185,35 @@ class CalculateViewController: UIViewController {
     
     @IBAction func selectedMinusOperation(_ sender: UIButton) {
         selectedOperation(button: minusButton, imageName: "minus.square.fill")
+        showMinusRecult()
     }
     @IBAction func selectedMultiplyOperation(_ sender: UIButton) {
         selectedOperation(button: multiplyButton, imageName: "multiply.square.fill")
+        showMultiplyRecult()
     }
     @IBAction func selectedDivideOperation(_ sender: UIButton) {
         selectedOperation(button: divideButton, imageName: "divide.square.fill")
-
+        showDivideRecult()
     }
+    
+    
     @IBAction func didPressEqual(_ sender: UIButton) {
         print(plusButton.isSelected)
         if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
             print("selected + ")
             showPlusRecult()
+        }
+        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+            print("selected - ")
+            showMinusRecult()
+        }
+        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+            print("selected * ")
+            showMultiplyRecult()
+        }
+        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+            print("selected / ")
+            showDivideRecult()
         }
     }
     
