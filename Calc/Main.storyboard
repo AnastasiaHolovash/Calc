@@ -285,6 +285,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" title="Clean"/>
+                                                <connections>
+                                                    <action selector="didPressClean1:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="H74-0U-7Dk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -728,6 +731,7 @@
                         <outlet property="beforeExpTextField2" destination="MYt-4C-KMx" id="PC9-ON-FMu"/>
                         <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="MdT-kH-M71"/>
                         <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="QrD-Ls-Bfg"/>
+                        <outlet property="cleanButton1" destination="xaz-P7-93K" id="4VN-nG-TBn"/>
                         <outlet property="complexImTextField1" destination="cJw-MA-bXR" id="lQ6-Ct-cGe"/>
                         <outlet property="complexImTextField2" destination="IXP-Au-qL3" id="yRb-6c-qE5"/>
                         <outlet property="complexReTextField1" destination="VAI-HZ-h3N" id="e7B-A2-bGJ"/>
