@@ -40,6 +40,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var divideButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultLabel2: UILabel!
     @IBOutlet weak var cleanButton1: UIButton!
     @IBOutlet weak var cleanButton2: UIButton!
     
@@ -53,6 +54,16 @@ class CalculateViewController: UIViewController {
 
     }
     
+    func hideKeyboard() {
+        beforeExpTextField1.resignFirstResponder()
+        beforeExpTextField2.resignFirstResponder()
+        angleExpTextField1.resignFirstResponder()
+        angleExpTextField2.resignFirstResponder()
+        complexReTextField1.resignFirstResponder()
+        complexReTextField2.resignFirstResponder()
+        complexImTextField1.resignFirstResponder()
+        complexImTextField2.resignFirstResponder()
+    }
     
     func changeForm(button: UIButton, expViev: UIView, complexView: UIView) {
         if button.title(for: .normal) == "Complex form" {
@@ -83,29 +94,51 @@ class CalculateViewController: UIViewController {
         return (Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
     }
     
+    func showResulsWithExp(result: (Im: Double, Re: Double)) {
+        let resulsWithExp = doubleComplexToExp(Im: result.Im, Re: result.Re)
+        let attributedStringResultText = attributedStringResult(resulsWithExp.moduleZ, resulsWithExp.arcFi)
+        resultLabel2.attributedText = attributedStringResultText.0
+        if attributedStringResultText.1 == true {
+            present(alert(), animated: true, completion: nil)
+        }
+    }
+    
     func showPlusRecult() {
         let data = prepareDataForCalc()
         let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        showResulsWithExp(result: result)
+        
+//        let resulsWithExp = doubleComplexToExp(Im: result.Im, Re: result.Re)
+//        let attributedStringResultText = attributedStringResult(resulsWithExp.moduleZ, resulsWithExp.arcFi)
+//        resultLabel2.attributedText = attributedStringResultText.0
+//        if attributedStringResultText.1 == true {
+//            present(alert(), animated: true, completion: nil)
+//        }
     }
     
     func showMinusRecult() {
         let data = prepareDataForCalc()
         let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        showResulsWithExp(result: result)
     }
     
     func showMultiplyRecult() {
         let data = prepareDataForCalc()
         let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        showResulsWithExp(result: result)
     }
     
     func showDivideRecult() {
         let data = prepareDataForCalc()
         let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        showResulsWithExp(result: result)
     }
+    
+
 
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
@@ -178,6 +211,7 @@ class CalculateViewController: UIViewController {
             print("selected / ")
             showDivideRecult()
         }
+        hideKeyboard()
     }
     
     @IBAction func didPressClean1(_ sender: UIButton) {
@@ -205,6 +239,9 @@ class CalculateViewController: UIViewController {
             complexImTextField2.text = ""
             complexImTextField2.placeholder = "0"
         }
+    }
+    @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
+        hideKeyboard()
     }
     
 }

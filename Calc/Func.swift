@@ -34,7 +34,7 @@ func attributedStringResult(_ moduleZ: Double, _ arcFi: Double) -> (NSAttributed
     let stringResultModuleZ = String(format: "%.4f", moduleZ)
     let fullstringResult = stringResultforExpForm(arcFi, stringResultModuleZ)
     
-    let font:UIFont? = UIFont(name: "Helvetica", size:40)
+    let font:UIFont? = UIFont(name: "Helvetica", size:30)
     let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
      
     let attString:NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
@@ -54,6 +54,12 @@ func changeSign(_ buttton: UIButton) {
     }
 }
 
+func doubleComplexToExp(Im: Double, Re: Double) -> (moduleZ: Double, arcFi: Double) {
+    let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
+    let arcFi = rad(atan(Im / Re))
+    return (moduleZ, arcFi)
+}
+
 func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexRe:String?) -> (Double, Double) {
     
     guard let signIm = signIm,
@@ -65,12 +71,13 @@ func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexR
     let textIm = (signIm + complexIm).replacingOccurrences(of: ",", with: ".")
     let textRe = (signRe + complexRe).replacingOccurrences(of: ",", with: ".")
 
-    let Im = Double(textIm) ?? 0
-    let Re = Double(textRe) ?? 0
+//    let Im = Double(textIm) ?? 0
+//    let Re = Double(textRe) ?? 0
 
-    let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
-    let arcFi = rad(atan(Im / Re))
-    return (moduleZ, arcFi)
+//    let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
+//    let arcFi = rad(atan(Im / Re))
+//    return (moduleZ, arcFi)
+    return doubleComplexToExp(Im: Double(textIm) ?? 0, Re: Double(textRe) ?? 0)
 }
 
 
