@@ -691,21 +691,22 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhj-eP-ZX1">
                                         <rect key="frame" x="0.0" y="428" width="375" height="85.666666666666629"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-xR-qjF">
-                                                <rect key="frame" x="140.66666666666666" y="18.999999999999975" width="93.666666666666657" height="48.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                <state key="normal" backgroundImage="equal.square.fill" catalog="system"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGn-WC-ENc">
+                                                <rect key="frame" x="84.333333333333329" y="2" width="206.33333333333337" height="39"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Show result"/>
                                                 <connections>
-                                                    <action selector="didPressEqual:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="EnX-aK-GoR"/>
+                                                    <action selector="didPressShowResult:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="g8G-zp-xJu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="Gji-xR-qjF" firstAttribute="centerY" secondItem="Lhj-eP-ZX1" secondAttribute="centerY" id="KK9-CC-EN9"/>
-                                            <constraint firstItem="Gji-xR-qjF" firstAttribute="width" secondItem="Lhj-eP-ZX1" secondAttribute="width" multiplier="0.25" id="Xc0-P7-hyN"/>
-                                            <constraint firstItem="Gji-xR-qjF" firstAttribute="height" secondItem="Lhj-eP-ZX1" secondAttribute="height" multiplier="0.6" id="Zkv-VV-ppb"/>
-                                            <constraint firstItem="Gji-xR-qjF" firstAttribute="centerX" secondItem="Lhj-eP-ZX1" secondAttribute="centerX" id="dR5-DM-suA"/>
+                                            <constraint firstItem="GGn-WC-ENc" firstAttribute="centerY" secondItem="Lhj-eP-ZX1" secondAttribute="centerY" multiplier="0.5" id="0bk-GC-2Ci"/>
+                                            <constraint firstItem="GGn-WC-ENc" firstAttribute="width" secondItem="Lhj-eP-ZX1" secondAttribute="width" multiplier="0.55" id="Gex-6s-wDE"/>
+                                            <constraint firstItem="GGn-WC-ENc" firstAttribute="centerX" secondItem="Lhj-eP-ZX1" secondAttribute="centerX" id="Xbh-q3-rDS"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReSult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge4-TY-KZo">
@@ -764,6 +765,7 @@
                         <outlet property="plusButton" destination="AAE-j8-9fI" id="23H-51-KzK"/>
                         <outlet property="resultLabel" destination="Ge4-TY-KZo" id="nQr-ae-hI4"/>
                         <outlet property="resultLabel2" destination="2gC-q3-N6l" id="flI-21-RkE"/>
+                        <outlet property="showResultButton" destination="GGn-WC-ENc" id="KVj-1e-qGC"/>
                         <outlet property="signImButton1" destination="z9q-jz-Edw" id="UbP-VJ-MIn"/>
                         <outlet property="signImButton2" destination="s7Y-4s-uPl" id="nUA-oo-6sr"/>
                         <outlet property="signReButton1" destination="BU2-hf-t11" id="Xrh-Cq-xwc"/>
@@ -800,7 +802,6 @@
     </scenes>
     <resources>
         <image name="divide.square" catalog="system" width="64" height="56"/>
-        <image name="equal.square.fill" catalog="system" width="64" height="56"/>
         <image name="minus.square" catalog="system" width="64" height="56"/>
         <image name="multiply.square" catalog="system" width="64" height="56"/>
         <image name="plus.slash.minus" catalog="system" width="64" height="56"/>

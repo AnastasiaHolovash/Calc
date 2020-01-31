@@ -16,6 +16,13 @@ func alert() -> UIAlertController {
     return alert
 }
 
+func alert2() -> UIAlertController {
+    let alert = UIAlertController(title: "", message: "Select the operation, please.", preferredStyle: .alert)
+    let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    alert.addAction(okBtn)
+    return alert
+}
+
 
 func rad(_ number: Double) -> Double {
     return number * 180 / .pi

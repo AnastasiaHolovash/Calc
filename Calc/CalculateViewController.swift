@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalculateViewController: UIViewController {
+class CalculateViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var changeFormButton1: UIButton!
     @IBOutlet weak var changeFormButton2: UIButton!
 
@@ -43,6 +43,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var resultLabel2: UILabel!
     @IBOutlet weak var cleanButton1: UIButton!
     @IBOutlet weak var cleanButton2: UIButton!
+    @IBOutlet weak var showResultButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -51,7 +52,19 @@ class CalculateViewController: UIViewController {
         changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
         cleanButton1.layer.cornerRadius = CGFloat((Double(cleanButton1.frame.height) ) / 2.0)
         cleanButton2.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
-
+        showResultButton.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
+        
+        showResultButton.isHidden = true
+//        beforeExpTextField1.delegate = self
+        // Listen for keyboard events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        //Stop listening for keyboard show/hide events
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func hideKeyboard() {
@@ -143,19 +156,29 @@ class CalculateViewController: UIViewController {
         if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
             print("selected + ")
             showPlusRecult()
-        }
-        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+        }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
             print("selected - ")
             showMinusRecult()
-        }
-        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+        }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
             print("selected * ")
             showMultiplyRecult()
-        }
-        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+        }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
             print("selected / ")
             showDivideRecult()
+        }else {
+            present(alert2(), animated: true, completion: nil)
         }
+    }
+    
+    @objc func keyboardWillChange(notification: Notification){
+        print("Keyboard will show : \(notification.name.rawValue)")
+        if showResultButton.isHidden == true{
+            showResultButton.isHidden = false
+        }else{
+            showResultButton.isHidden = true
+        }
+//        showResultButton.isHidden = false
+        
     }
     
 
@@ -213,26 +236,26 @@ class CalculateViewController: UIViewController {
     }
     
     
-    @IBAction func didPressEqual(_ sender: UIButton) {
-        print(plusButton.isSelected)
-//        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-//            print("selected + ")
-//            showPlusRecult()
-//        }
-//        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-//            print("selected - ")
-//            showMinusRecult()
-//        }
-//        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-//            print("selected * ")
-//            showMultiplyRecult()
-//        }
-//        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-//            print("selected / ")
-//            showDivideRecult()
-//        }
-        hideKeyboard()
-    }
+//    @IBAction func didPressEqual(_ sender: UIButton) {
+//        print(plusButton.isSelected)
+////        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+////            print("selected + ")
+////            showPlusRecult()
+////        }
+////        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+////            print("selected - ")
+////            showMinusRecult()
+////        }
+////        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+////            print("selected * ")
+////            showMultiplyRecult()
+////        }
+////        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+////            print("selected / ")
+////            showDivideRecult()
+////        }
+//        hideKeyboard()
+//    }
     
     @IBAction func didPressClean1(_ sender: UIButton) {
         if expView1.isHidden == false{
@@ -260,8 +283,14 @@ class CalculateViewController: UIViewController {
             complexImTextField2.placeholder = "0"
         }
     }
+    
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         hideKeyboard()
+    }
+    
+    @IBAction func didPressShowResult(_ sender: UIButton) {
+        hideKeyboard()
+        showResultButton.isHidden = true
     }
     
 }
