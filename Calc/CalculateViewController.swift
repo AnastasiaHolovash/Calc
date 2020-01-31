@@ -63,6 +63,7 @@ class CalculateViewController: UIViewController {
         complexReTextField2.resignFirstResponder()
         complexImTextField1.resignFirstResponder()
         complexImTextField2.resignFirstResponder()
+        showRecult()
     }
     
     func changeForm(button: UIButton, expViev: UIView, complexView: UIView) {
@@ -138,6 +139,25 @@ class CalculateViewController: UIViewController {
         showResulsWithExp(result: result)
     }
     
+    func showRecult() {
+        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+            print("selected + ")
+            showPlusRecult()
+        }
+        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+            print("selected - ")
+            showMinusRecult()
+        }
+        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+            print("selected * ")
+            showMultiplyRecult()
+        }
+        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+            print("selected / ")
+            showDivideRecult()
+        }
+    }
+    
 
 
     
@@ -195,22 +215,22 @@ class CalculateViewController: UIViewController {
     
     @IBAction func didPressEqual(_ sender: UIButton) {
         print(plusButton.isSelected)
-        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-            print("selected + ")
-            showPlusRecult()
-        }
-        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-            print("selected - ")
-            showMinusRecult()
-        }
-        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-            print("selected * ")
-            showMultiplyRecult()
-        }
-        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-            print("selected / ")
-            showDivideRecult()
-        }
+//        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+//            print("selected + ")
+//            showPlusRecult()
+//        }
+//        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+//            print("selected - ")
+//            showMinusRecult()
+//        }
+//        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+//            print("selected * ")
+//            showMultiplyRecult()
+//        }
+//        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+//            print("selected / ")
+//            showDivideRecult()
+//        }
         hideKeyboard()
     }
     

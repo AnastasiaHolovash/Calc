@@ -319,7 +319,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDy-7o-IW7">
                                                         <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLO-hm-uV1">
                                                         <rect key="frame" x="168.66666666666666" y="0.0" width="64" height="60"/>
@@ -351,7 +351,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-wy-U8A">
                                                                 <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="42"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="˚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9li-tj-kMn">
                                                                 <rect key="frame" x="120.00000000000004" y="0.0" width="20.666666666666671" height="56.333333333333336"/>
@@ -407,7 +407,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAI-HZ-h3N">
                                                         <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9q-jz-Edw">
                                                         <rect key="frame" x="168.66666666666666" y="0.0" width="49" height="0.0"/>
@@ -426,7 +426,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJw-MA-bXR">
                                                         <rect key="frame" x="243.66666666666663" y="0.0" width="131.33333333333337" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -562,7 +562,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYt-4C-KMx">
                                                         <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1V8-qs-juE">
                                                         <rect key="frame" x="168.66666666666666" y="0.0" width="64" height="60"/>
@@ -594,7 +594,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qft-0N-LcT">
                                                                 <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="42"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="˚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-pY-w0X">
                                                                 <rect key="frame" x="120.00000000000004" y="0.0" width="20.666666666666671" height="56.333333333333336"/>
@@ -650,7 +650,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-MM-4mO">
                                                         <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7Y-4s-uPl">
                                                         <rect key="frame" x="168.66666666666666" y="0.0" width="49" height="0.0"/>
@@ -669,7 +669,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXP-Au-qL3">
                                                         <rect key="frame" x="243.66666666666663" y="0.0" width="131.33333333333337" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -692,7 +692,7 @@
                                         <rect key="frame" x="0.0" y="428" width="375" height="85.666666666666629"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-xR-qjF">
-                                                <rect key="frame" x="140.66666666666666" y="40.333333333333343" width="93.666666666666657" height="48.333333333333336"/>
+                                                <rect key="frame" x="140.66666666666666" y="18.999999999999975" width="93.666666666666657" height="48.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" backgroundImage="equal.square.fill" catalog="system"/>
                                                 <connections>
@@ -702,7 +702,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="Gji-xR-qjF" firstAttribute="centerY" secondItem="Lhj-eP-ZX1" secondAttribute="centerY" multiplier="1.5" id="KK9-CC-EN9"/>
+                                            <constraint firstItem="Gji-xR-qjF" firstAttribute="centerY" secondItem="Lhj-eP-ZX1" secondAttribute="centerY" id="KK9-CC-EN9"/>
                                             <constraint firstItem="Gji-xR-qjF" firstAttribute="width" secondItem="Lhj-eP-ZX1" secondAttribute="width" multiplier="0.25" id="Xc0-P7-hyN"/>
                                             <constraint firstItem="Gji-xR-qjF" firstAttribute="height" secondItem="Lhj-eP-ZX1" secondAttribute="height" multiplier="0.6" id="Zkv-VV-ppb"/>
                                             <constraint firstItem="Gji-xR-qjF" firstAttribute="centerX" secondItem="Lhj-eP-ZX1" secondAttribute="centerX" id="dR5-DM-suA"/>
