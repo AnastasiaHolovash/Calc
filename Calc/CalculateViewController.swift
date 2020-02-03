@@ -172,7 +172,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillChange(notification: Notification){
         print("Keyboard will show : \(notification.name.rawValue)")
-        if showResultButton.isHidden == true{
+        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
             showResultButton.isHidden = false
         }else{
             showResultButton.isHidden = true
