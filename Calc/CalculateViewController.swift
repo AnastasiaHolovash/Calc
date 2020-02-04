@@ -122,13 +122,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
         showResulsWithExp(result: result)
-        
-//        let resulsWithExp = doubleComplexToExp(Im: result.Im, Re: result.Re)
-//        let attributedStringResultText = attributedStringResult(resulsWithExp.moduleZ, resulsWithExp.arcFi)
-//        resultLabel2.attributedText = attributedStringResultText.0
-//        if attributedStringResultText.1 == true {
-//            present(alert(), animated: true, completion: nil)
-//        }
+
     }
     
     func showMinusRecult() {
@@ -152,30 +146,61 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         showResulsWithExp(result: result)
     }
     
-    func showRecult() {
+    func recalculate() -> Bool{
         if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-            print("selected + ")
+//            print("selected + ")
             showPlusRecult()
+            return false
         }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-            print("selected - ")
+//            print("selected - ")
             showMinusRecult()
+            return false
         }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-            print("selected * ")
+//            print("selected * ")
             showMultiplyRecult()
+            return false
         }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-            print("selected / ")
+//            print("selected / ")
             showDivideRecult()
+            return false
         }else {
-            present(alert2(), animated: true, completion: nil)
+            return true
         }
     }
     
+    func showRecult() {
+//        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+//            print("selected + ")
+//            showPlusRecult()
+//        }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+//            print("selected - ")
+//            showMinusRecult()
+//        }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+//            print("selected * ")
+//            showMultiplyRecult()
+//        }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+//            print("selected / ")
+//            showDivideRecult()
+//        }else {
+//            present(alert2(), animated: true, completion: nil)
+//        }
+        if recalculate(){
+            present(alert2(), animated: true, completion: nil)
+        }
+        
+    }
+    
     @objc func keyboardWillChange(notification: Notification){
-        print("Keyboard will show : \(notification.name.rawValue)")
+//        print("Keyboard will show : \(notification.name.rawValue)")
         if notification.name.rawValue == "UIKeyboardWillShowNotification"{
             showResultButton.isHidden = false
+            UIView.animate(withDuration: 1) {
+                self.showResultButton.center.y += self.view.bounds.height
+            }
+//            DispatchQueue.main.asyncAfter(deadline: 0.5, execute: self.showResultButton.isHidden = false)
         }else{
             showResultButton.isHidden = true
+            
         }
 //        showResultButton.isHidden = false
         
@@ -186,34 +211,44 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
         changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+        recalculate()
     }
     @IBAction func changeFormAction2(_ sender: UIButton) {
         changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
+        recalculate()
     }
 
     @IBAction func didChangeModulZSign1(_ sender: UIButton) {
         changeSign(modulZSignButton1)
+        recalculate()
     }
     @IBAction func didChangeModulZSign2(_ sender: UIButton) {
         changeSign(modulZSignButton2)
+        recalculate()
     }
     @IBAction func didChangeAngleSign1(_ sender: UIButton) {
         changeSign(angleSignButton1)
+        recalculate()
     }
     @IBAction func didChangeAngleSign2(_ sender: UIButton) {
         changeSign(angleSignButton2)
+        recalculate()
     }
     @IBAction func didChangeReSign1(_ sender: UIButton) {
         changeSign(signReButton1)
+        recalculate()
     }
     @IBAction func didChangeReSign2(_ sender: UIButton) {
         changeSign(signReButton2)
+        recalculate()
     }
     @IBAction func didChangeImSign1(_ sender: UIButton) {
         changeSign(signImButton1)
+        recalculate()
     }
     @IBAction func didChangeImSign2(_ sender: UIButton) {
         changeSign(signImButton2)
+        recalculate()
     }
     
 
@@ -236,26 +271,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-//    @IBAction func didPressEqual(_ sender: UIButton) {
-//        print(plusButton.isSelected)
-////        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-////            print("selected + ")
-////            showPlusRecult()
-////        }
-////        if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-////            print("selected - ")
-////            showMinusRecult()
-////        }
-////        if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-////            print("selected * ")
-////            showMultiplyRecult()
-////        }
-////        if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-////            print("selected / ")
-////            showDivideRecult()
-////        }
-//        hideKeyboard()
-//    }
     
     @IBAction func didPressClean1(_ sender: UIButton) {
         if expView1.isHidden == false{
@@ -269,6 +284,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
             complexImTextField1.text = ""
             complexImTextField1.placeholder = "0"
         }
+        recalculate()
     }
     @IBAction func didPressClean2(_ sender: UIButton) {
         if expView2.isHidden == false{
@@ -282,6 +298,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
             complexImTextField2.text = ""
             complexImTextField2.placeholder = "0"
         }
+        recalculate()
     }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
@@ -290,7 +307,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func didPressShowResult(_ sender: UIButton) {
         hideKeyboard()
-        showResultButton.isHidden = true
+//        showResultButton.isHidden = true
     }
     
 }
