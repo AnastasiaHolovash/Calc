@@ -14,10 +14,58 @@
             filePath = "Calc/CalculateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "CalculateViewController"
-            landmarkType = "3">
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "changeForm(button:expViev:complexView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C4D5CE5-7ADC-4142-80C3-CE85EE8A8579"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calc/CalculateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "changeFormAction1(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0C4D5CE5-7ADC-4142-80C3-CE85EE8A8579 - febf4d359cfe62d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calc.CalculateViewController.keyboardWillChange(notification: Foundation.Notification) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CalculateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "830">
+               </Location>
+               <Location
+                  uuid = "0C4D5CE5-7ADC-4142-80C3-CE85EE8A8579 - 7f7f379c1bd98efe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Calc.CalculateViewController.keyboardWillChange(notification: Foundation.Notification) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CalculateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

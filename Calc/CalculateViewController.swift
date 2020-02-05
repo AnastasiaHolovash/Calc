@@ -48,25 +48,32 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Rounds the corners of the buttons
         changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
         changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
         cleanButton1.layer.cornerRadius = CGFloat((Double(cleanButton1.frame.height) ) / 2.0)
         cleanButton2.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
         showResultButton.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
         
-        showResultButton.isHidden = true
-//        beforeExpTextField1.delegate = self
+        // Hides the showResultButton moving it down
+        UIView.animate(withDuration: 0) {
+            self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        }
+
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+
     
     deinit {
-        //Stop listening for keyboard show/hide events
+        // Stop listening for keyboard show/hide events
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
+    ///Hide all keyboards and show the result of calculation
     func hideKeyboard() {
         beforeExpTextField1.resignFirstResponder()
         beforeExpTextField2.resignFirstResponder()
@@ -79,6 +86,13 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         showRecult()
     }
     
+    /**
+     Change view with exponential form representation to complex and conversely.
+     - Parameters:
+        - button: Button which will be pressed to change view.
+        - expViev: View with exponential form representation.
+        - complexView: View with complex form representation.
+     */
     func changeForm(button: UIButton, expViev: UIView, complexView: UIView) {
         if button.title(for: .normal) == "Complex form" {
             button.setTitle("Exp form", for: .normal)
@@ -91,7 +105,12 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    /**
+    Changes the picture of the selected sign which indicated the operation to the filled picture.
+     - Parameters:
+        - button: Selected Button with sign which indicated mathematical operation.
+        - imageName: Name of  filled picture with sign which indicated mathematical operation.
+     */
     func selectedOperation(button: UIButton, imageName: String) {
         plusButton.setImage(UIImage.init(systemName: "plus.square"), for: .normal)
         minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
@@ -100,6 +119,10 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         button.setImage(UIImage.init(systemName: imageName), for: .normal)
     }
     
+    /**
+     Reduces both numbers to a complex form.
+     - Returns: A real part of the first number, a real part of the second number, an imaginary part of the first number, an imaginary part of the second number.
+     */
     func prepareDataForCalc() -> (Re1: Double, Re2: Double, Im1: Double, Im2: Double) {
         let firstNumberInComplexForm = allDataToComlexForm(modulZSignButton1, angleSignButton1, beforeExpTextField1, angleExpTextField1, signReButton1, signImButton1, complexReTextField1, complexImTextField1, expView1)
         
@@ -108,8 +131,16 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         return (Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
     }
     
+    /**
+     Presents recult of calculation in exponential form.
+     - Parameter result:Recult of calculation in complex form.
+        - Im: The imaginary part of the complex number.
+        - Re:The real part of the complex number.
+     */
     func showResulsWithExp(result: (Im: Double, Re: Double)) {
+        /// 'result' in exponential form of type "Double".
         let resulsWithExp = doubleComplexToExp(Im: result.Im, Re: result.Re)
+        /// An appearance of complex number in exponential form.
         let attributedStringResultText = attributedStringResult(resulsWithExp.moduleZ, resulsWithExp.arcFi)
         resultLabel2.attributedText = attributedStringResultText.0
         if attributedStringResultText.1 == true {
@@ -117,28 +148,28 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// Prepare data for calculetion, calculete and show recult of adding two complex numbers. Recult presents in complex and exponential forms.
     func showPlusRecult() {
         let data = prepareDataForCalc()
         let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
         showResulsWithExp(result: result)
-
     }
-    
+    /// Prepare data for calculetion, calculete and show recult of subtraction two complex numbers. Recult presents in complex and exponential forms.
     func showMinusRecult() {
         let data = prepareDataForCalc()
         let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
         showResulsWithExp(result: result)
     }
-    
+    /// Prepare data for calculetion, calculete and show recult of multiplication two complex numbers. Recult presents in complex and exponential forms.
     func showMultiplyRecult() {
         let data = prepareDataForCalc()
         let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
         showResulsWithExp(result: result)
     }
-    
+    /// Prepare data for calculetion, calculete and show recult of division two complex numbers. Recult presents in complex and exponential forms.
     func showDivideRecult() {
         let data = prepareDataForCalc()
         let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
@@ -146,21 +177,24 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         showResulsWithExp(result: result)
     }
     
+    /**
+     Recalculate.
+     - Description:
+        1. Checks which button with the mathematical operation is selected.
+        2. Recalculate.
+        3. Returns 'true' if nothing was selected fnd 'false' in other case.
+     */
     func recalculate() -> Bool{
         if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-//            print("selected + ")
             showPlusRecult()
             return false
         }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-//            print("selected - ")
             showMinusRecult()
             return false
         }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-//            print("selected * ")
             showMultiplyRecult()
             return false
         }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-//            print("selected / ")
             showDivideRecult()
             return false
         }else {
@@ -168,87 +202,72 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+     Shows Recult
+     */
     func showRecult() {
-//        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-//            print("selected + ")
-//            showPlusRecult()
-//        }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-//            print("selected - ")
-//            showMinusRecult()
-//        }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-//            print("selected * ")
-//            showMultiplyRecult()
-//        }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-//            print("selected / ")
-//            showDivideRecult()
-//        }else {
-//            present(alert2(), animated: true, completion: nil)
-//        }
+        
         if recalculate(){
             present(alert2(), animated: true, completion: nil)
         }
-        
     }
+    
     
     @objc func keyboardWillChange(notification: Notification){
-//        print("Keyboard will show : \(notification.name.rawValue)")
-        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
-            showResultButton.isHidden = false
-            UIView.animate(withDuration: 1) {
-                self.showResultButton.center.y += self.view.bounds.height
-            }
-//            DispatchQueue.main.asyncAfter(deadline: 0.5, execute: self.showResultButton.isHidden = false)
-        }else{
-            showResultButton.isHidden = true
-            
-        }
-//        showResultButton.isHidden = false
         
+        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
+            UIView.animate(withDuration: 2) {
+                self.showResultButton.transform = CGAffineTransform(translationX: 0, y: 0)
+            }
+        }else{
+            UIView.animate(withDuration: 2) {
+                self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+            }
+        }
     }
-    
 
-
+// MARK: construction "if recalculate(){}" just hides warnings
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
         changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func changeFormAction2(_ sender: UIButton) {
         changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
-        recalculate()
+        if recalculate(){}
     }
 
     @IBAction func didChangeModulZSign1(_ sender: UIButton) {
         changeSign(modulZSignButton1)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeModulZSign2(_ sender: UIButton) {
         changeSign(modulZSignButton2)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeAngleSign1(_ sender: UIButton) {
         changeSign(angleSignButton1)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeAngleSign2(_ sender: UIButton) {
         changeSign(angleSignButton2)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeReSign1(_ sender: UIButton) {
         changeSign(signReButton1)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeReSign2(_ sender: UIButton) {
         changeSign(signReButton2)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeImSign1(_ sender: UIButton) {
         changeSign(signImButton1)
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didChangeImSign2(_ sender: UIButton) {
         changeSign(signImButton2)
-        recalculate()
+        if recalculate(){}
     }
     
 
@@ -284,7 +303,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
             complexImTextField1.text = ""
             complexImTextField1.placeholder = "0"
         }
-        recalculate()
+        if recalculate(){}
     }
     @IBAction func didPressClean2(_ sender: UIButton) {
         if expView2.isHidden == false{
@@ -298,7 +317,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
             complexImTextField2.text = ""
             complexImTextField2.placeholder = "0"
         }
-        recalculate()
+        if recalculate(){}
     }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
