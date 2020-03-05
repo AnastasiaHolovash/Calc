@@ -16,7 +16,7 @@
 		5D69B25B238ECD100057D76D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D69B25A238ECD100057D76D /* Main.storyboard */; };
 		5D69B25D238EDF090057D76D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B25C238EDF090057D76D /* ViewController.swift */; };
 		5D69B27F238EFB600057D76D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B27E238EFB600057D76D /* ContentView.swift */; };
-		5D6B043A2411910300AA7D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6B04392411910300AA7D3B /* Assets.xcassets */; };
+		5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6B043D2411949200AA7D3B /* Asset.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		5D69B25A238ECD100057D76D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5D69B25C238EDF090057D76D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D69B27E238EFB600057D76D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5D6B04392411910300AA7D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
+		5D6B043D2411949200AA7D3B /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				5D496FEF23969F76000C0DF7 /* Func.swift */,
 				5D496FED239460BD000C0DF7 /* CalculateViewController.swift */,
 				5D69B25A238ECD100057D76D /* Main.storyboard */,
-				5D6B04392411910300AA7D3B /* Assets.xcassets */,
+				5D6B043D2411949200AA7D3B /* Asset.xcassets */,
 				5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */,
 				5D69B254238ECAB60057D76D /* Info.plist */,
 				5D69B24E238ECAB60057D76D /* Preview Content */,
@@ -147,8 +147,8 @@
 			files = (
 				5D69B253238ECAB60057D76D /* LaunchScreen.storyboard in Resources */,
 				5D69B25B238ECD100057D76D /* Main.storyboard in Resources */,
+				5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */,
 				5D69B250238ECAB60057D76D /* Preview Assets.xcassets in Resources */,
-				5D6B043A2411910300AA7D3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

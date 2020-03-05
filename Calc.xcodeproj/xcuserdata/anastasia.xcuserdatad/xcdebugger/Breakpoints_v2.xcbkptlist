@@ -46,9 +46,9 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CalculateViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
-                  offsetFromSymbolStart = "830">
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "524">
                </Location>
                <Location
                   uuid = "0C4D5CE5-7ADC-4142-80C3-CE85EE8A8579 - 7f7f379c1bd98efe"
@@ -61,9 +61,9 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CalculateViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "208"
-                  endingLineNumber = "208"
-                  offsetFromSymbolStart = "55">
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
          </BreakpointContent>
