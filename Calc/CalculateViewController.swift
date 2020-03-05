@@ -226,48 +226,47 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-// MARK: construction "if recalculate(){}" just hides warnings
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
         changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func changeFormAction2(_ sender: UIButton) {
         changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
-        if recalculate(){}
+        _ = recalculate()
     }
 
     @IBAction func didChangeModulZSign1(_ sender: UIButton) {
         changeSign(modulZSignButton1)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeModulZSign2(_ sender: UIButton) {
         changeSign(modulZSignButton2)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeAngleSign1(_ sender: UIButton) {
         changeSign(angleSignButton1)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeAngleSign2(_ sender: UIButton) {
         changeSign(angleSignButton2)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeReSign1(_ sender: UIButton) {
         changeSign(signReButton1)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeReSign2(_ sender: UIButton) {
         changeSign(signReButton2)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeImSign1(_ sender: UIButton) {
         changeSign(signImButton1)
-        if recalculate(){}
+        _ = recalculate()
     }
     @IBAction func didChangeImSign2(_ sender: UIButton) {
         changeSign(signImButton2)
-        if recalculate(){}
+        _ = recalculate()
     }
     
 
