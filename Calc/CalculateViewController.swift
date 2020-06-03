@@ -34,7 +34,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var complexReTextField2: UITextField!
     @IBOutlet weak var complexImTextField1: UITextField!
     @IBOutlet weak var complexImTextField2: UITextField!
-//  Operation Sidn Buttons
+//  Operation Sign Buttons
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var multiplyButton: UIButton!
@@ -48,13 +48,8 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Rounds the corners of the buttons
-        changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
-        changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
-        cleanButton1.layer.cornerRadius = CGFloat((Double(cleanButton1.frame.height) ) / 2.0)
-        cleanButton2.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
-        showResultButton.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
+       
+        buttonsLayerSetup()
         
         // Hides the showResultButton moving it down
         UIView.animate(withDuration: 0) {
@@ -64,6 +59,15 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func buttonsLayerSetup() {
+        // Rounds the corners of the buttons
+        changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
+        changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
+        cleanButton1.layer.cornerRadius = CGFloat((Double(cleanButton1.frame.height) ) / 2.0)
+        cleanButton2.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
+        showResultButton.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
     }
 
     
@@ -124,12 +128,44 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
      - Returns: A real part of the first number, a real part of the second number, an imaginary part of the first number, an imaginary part of the second number.
      */
     func prepareDataForCalc() -> (Re1: Double, Re2: Double, Im1: Double, Im2: Double) {
+        
+        for expView in [expView1, expView2] {
+            if let expView = expView {
+                if expView.isHidden {
+//                    let complexnumber =
+                }
+            }
+            
+        }
+        
+        
+        
+        
         let firstNumberInComplexForm = allDataToComlexForm(modulZSignButton1, angleSignButton1, beforeExpTextField1, angleExpTextField1, signReButton1, signImButton1, complexReTextField1, complexImTextField1, expView1)
         
          let secondNumberInComplexForm = allDataToComlexForm(modulZSignButton2, angleSignButton2, beforeExpTextField2, angleExpTextField2, signReButton2, signImButton2, complexReTextField2, complexImTextField2, expView2)
         
         return (Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
     }
+    // MARK: - todo func that
+    func allDataToComlexForm(_ modulZSignButton: UIButton, _ angleSignButton: UIButton, _ beforeExpTextField: UITextField, _ angleExpTextField: UITextField, _ signReButton: UIButton, _ signImButton: UIButton, _ complexReTextField: UITextField, _ complexImTextField: UITextField, _ expView: UIView!) ->  (Re: Double, Im: Double){
+                var re: Double?
+                var im: Double?
+                if expView.isHidden == false {
+        //            print("-------EXP--------")
+                    let result = expToComlex(signModulZ: modulZSignButton.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ:  beforeExpTextField.text, arc: angleExpTextField.text)
+                    re = result.Re
+                    im = result.Im
+                } else {
+                    re = Double((signReButton.title(for: .normal) ?? "") + (complexReTextField.text ?? ""))
+                    im = Double((signImButton.title(for: .normal) ?? "") + (complexImTextField.text ?? ""))
+                }
+                guard let re1 = re,
+                      let im1 = im else { return (Re: 0, Im: 0)}
+        
+        return (Re: re1, Im: im1)
+    }
+    
     
     /**
      Presents recult of calculation in exponential form.
@@ -179,34 +215,51 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     /**
      Recalculate.
-     - Description:
+     
         1. Checks which button with the mathematical operation is selected.
         2. Recalculate.
-        3. Returns 'true' if nothing was selected fnd 'false' in other case.
+        3. Returns 'true' if nothing was selected and 'false' in other case.
      */
     func recalculate() -> Bool{
-        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+        
+        switch plusButton.currentImage {
+        case UIImage.init(systemName: "plus.square.fill"):
             showPlusRecult()
             return false
-        }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+        case UIImage.init(systemName: "minus.square.fill"):
             showMinusRecult()
             return false
-        }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+        case UIImage.init(systemName: "multiply.square.fill"):
             showMultiplyRecult()
             return false
-        }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+        case UIImage.init(systemName: "divide.square.fill"):
             showDivideRecult()
             return false
-        }else {
+        default:
             return true
         }
+        
+//        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
+//            showPlusRecult()
+//            return false
+//        }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
+//            showMinusRecult()
+//            return false
+//        }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
+//            showMultiplyRecult()
+//            return false
+//        }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
+//            showDivideRecult()
+//            return false
+//        }else {
+//            return true
+//        }
     }
     
     /**
      Shows Recult
      */
     func showRecult() {
-        
         if recalculate(){
             present(alert2(), animated: true, completion: nil)
         }

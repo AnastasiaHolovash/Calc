@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KE4-p4-V5t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KE4-p4-V5t">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -349,7 +349,7 @@
                                                                 </connections>
                                                             </button>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-wy-U8A">
-                                                                <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="42"/>
+                                                                <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="43.333333333333336"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
@@ -592,7 +592,7 @@
                                                                 </connections>
                                                             </button>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qft-0N-LcT">
-                                                                <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="42"/>
+                                                                <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="43.333333333333336"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
@@ -801,11 +801,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="divide.square" catalog="system" width="64" height="56"/>
-        <image name="minus.square" catalog="system" width="64" height="56"/>
-        <image name="multiply.square" catalog="system" width="64" height="56"/>
-        <image name="plus.slash.minus" catalog="system" width="64" height="56"/>
-        <image name="plus.square" catalog="system" width="64" height="56"/>
-        <image name="repeat" catalog="system" width="64" height="48"/>
+        <image name="divide.square" catalog="system" width="128" height="114"/>
+        <image name="minus.square" catalog="system" width="128" height="114"/>
+        <image name="multiply.square" catalog="system" width="128" height="114"/>
+        <image name="plus.slash.minus" catalog="system" width="128" height="115"/>
+        <image name="plus.square" catalog="system" width="128" height="114"/>
+        <image name="repeat" catalog="system" width="128" height="99"/>
     </resources>
 </document>

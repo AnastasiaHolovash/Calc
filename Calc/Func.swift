@@ -167,41 +167,7 @@ func stringResultforExpForm(_ arcFi: Double, _ stringResultModuleZ: String) -> S
     return stringResult
 }
 
-/**
-All Data To Comlex Form.
-- If a given number is in exponential form it is converted into a complex form and casted in Double type, if a given number is in a complex form it is casted in Double type.
- 
- - Parameters:
-    - modulZSignButton: UIButton with sign of the module of number in exponential form.
-    - angleSignButton: UIButton with sign of the angle of number in exponential form in degrees.
-    - beforeExpTextField: UITextField which should contain a module of number in exponential form.
-    - angleExpTextField: UITextField which should contain an angle of number in exponential form in degrees.
-    - signReButton: UIButton with sign of the real part of the complex number.
-    - signImButton: UIButton with sign of the imaginary part of the complex number.
-    - complexReTextField: UITextField which should contain a real part of the complex number.
-    - complexImTextField: UITextField which should contain an imaginary part of the complex number.
-    - expView: UIView which present an appearance of complex number in exponential form.
 
-- Returns: Number in a complex form.
-*/
-func allDataToComlexForm(_ modulZSignButton: UIButton, _ angleSignButton: UIButton, _ beforeExpTextField: UITextField, _ angleExpTextField: UITextField, _ signReButton: UIButton, _ signImButton: UIButton, _ complexReTextField: UITextField, _ complexImTextField: UITextField, _ expView: UIView!) ->  (Re: Double, Im: Double){
-            var re: Double?
-            var im: Double?
-            if expView.isHidden == false {
-    //            print("-------EXP--------")
-                let result = expToComlex(signModulZ: modulZSignButton.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ:  beforeExpTextField.text, arc: angleExpTextField.text)
-                re = result.Re
-                im = result.Im
-            } else {
-                re = Double((signReButton.title(for: .normal) ?? "") + (complexReTextField.text ?? ""))
-                im = Double((signImButton.title(for: .normal) ?? "") + (complexImTextField.text ?? ""))
-            }
-            guard let re1 = re,
-                  let im1 = im else { return (Re: 0, Im: 0)}
-    
-    return (Re: re1, Im: im1)
-
-}
 
 /// Performs the operation of adding two complex numbers.
 func plus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
