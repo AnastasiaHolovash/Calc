@@ -10,7 +10,7 @@
         <!--Convert-->
         <scene sceneID="FGx-mY-ZkQ">
             <objects>
-                <viewController storyboardIdentifier="ConvertViewController" id="7BB-oD-TJP" customClass="ViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConvertViewController" id="7BB-oD-TJP" customClass="ConvertViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XTN-cO-Fpn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,18 +19,18 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0r-Qb-HYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="62.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="68.666666666666671"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1I-vh-RSN">
-                                        <rect key="frame" x="0.0" y="62.333333333333329" width="375" height="62.333333333333329"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-6Q-989" customClass="ExpView" customModule="Calc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="68.666666666666686" width="375" height="68.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2R-xw-eTy">
-                                        <rect key="frame" x="0.0" y="124.66666666666666" width="375" height="62"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2R-xw-eTy">
+                                        <rect key="frame" x="0.0" y="137" width="375" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABx-Mx-ljy">
-                                                <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="62"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="+"/>
                                                 <connections>
@@ -38,15 +38,15 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sek-x8-UGZ">
-                                                <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="62"/>
+                                                <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omS-6I-Bc0">
-                                                <rect key="frame" x="168.66666666666666" y="0.0" width="64" height="62"/>
+                                                <rect key="frame" x="168.66666666666666" y="0.0" width="64" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9n-cU-XnF">
-                                                        <rect key="frame" x="8.6666666666666856" y="-27.666666666666657" width="46.333333333333336" height="107.66666666666667"/>
+                                                        <rect key="frame" x="8.6666666666666856" y="-48.666666666666657" width="46.333333333333336" height="107.66666666666667"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -59,10 +59,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jW3-ch-bOY">
-                                                <rect key="frame" x="232.66666666666663" y="0.0" width="142.33333333333337" height="62"/>
+                                                <rect key="frame" x="232.66666666666663" y="0.0" width="142.33333333333337" height="20"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2J-c1-mcd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="18.333333333333332" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="18.333333333333332" height="11.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="+"/>
                                                         <connections>
@@ -70,12 +70,12 @@
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nll-Kw-7ZS">
-                                                        <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="35"/>
+                                                        <rect key="frame" x="20.000000000000007" y="0.0" width="99.666666666666686" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5r-P3-icN">
-                                                        <rect key="frame" x="118.00000000000001" y="0.0" width="24.333333333333329" height="46.333333333333336"/>
+                                                        <rect key="frame" x="118.00000000000001" y="0.0" width="24.333333333333329" height="14"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="47"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -105,10 +105,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQP-Vi-tNj">
-                                        <rect key="frame" x="0.0" y="186.66666666666666" width="375" height="62.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="137" width="375" height="68.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xI1-eH-ey8">
-                                                <rect key="frame" x="37.666666666666657" y="16.333333333333339" width="300" height="43.666666666666657"/>
+                                                <rect key="frame" x="37.666666666666657" y="17.333333333333343" width="300" height="48"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Convert to complex">
@@ -128,14 +128,18 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44u-B8-otw">
-                                        <rect key="frame" x="0.0" y="249.00000000000003" width="375" height="62.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="205.66666666666666" width="375" height="68.333333333333343"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-76-84l">
-                                        <rect key="frame" x="0.0" y="311.33333333333331" width="375" height="62.333333333333314"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-ke-ilc" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="274" width="375" height="68.666666666666686"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-76-84l">
+                                        <rect key="frame" x="0.0" y="342.66666666666669" width="375" height="0.0"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYY-c7-lOm">
-                                                <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="62.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="+"/>
                                                 <connections>
@@ -143,12 +147,12 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlp-5Z-yGq">
-                                                <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="62.333333333333336"/>
+                                                <rect key="frame" x="37.666666666666657" y="0.0" width="131" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xt-xm-e0N">
-                                                <rect key="frame" x="168.66666666666666" y="0.0" width="49" height="62.333333333333336"/>
+                                                <rect key="frame" x="168.66666666666666" y="0.0" width="49" height="0.0"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="51"/>
                                                 <state key="normal" title="+"/>
                                                 <connections>
@@ -156,13 +160,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-wc-UDb">
-                                                <rect key="frame" x="217.66666666666666" y="0.0" width="26" height="62.333333333333336"/>
+                                                <rect key="frame" x="217.66666666666666" y="0.0" width="26" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mlh-Ii-KRl">
-                                                <rect key="frame" x="243.66666666666663" y="0.0" width="131.33333333333337" height="62.333333333333336"/>
+                                                <rect key="frame" x="243.66666666666663" y="0.0" width="131.33333333333337" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
@@ -175,10 +179,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-gl-geB">
-                                        <rect key="frame" x="0.0" y="373.66666666666669" width="375" height="62.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="342.66666666666669" width="375" height="68.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-2C-0N2">
-                                                <rect key="frame" x="37.666666666666657" y="16.333333333333311" width="300" height="43.666666666666657"/>
+                                                <rect key="frame" x="37.666666666666657" y="17" width="300" height="48"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Convert to exp">
@@ -198,21 +202,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-mN-ff1">
-                                        <rect key="frame" x="0.0" y="436" width="375" height="62.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="411" width="375" height="68.666666666666686"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReSult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-ld-2OW">
-                                        <rect key="frame" x="0.0" y="498.33333333333337" width="375" height="62"/>
+                                        <rect key="frame" x="0.0" y="479.66666666666657" width="375" height="68.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-Kn-DdX">
-                                        <rect key="frame" x="0.0" y="560.33333333333337" width="375" height="62.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="548" width="375" height="68.666666666666629"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWn-Vy-hgh">
-                                        <rect key="frame" x="0.0" y="622.66666666666663" width="375" height="62.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="616.66666666666663" width="375" height="68.333333333333371"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -233,17 +237,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="repeat" catalog="system" id="C4V-gd-mhk"/>
                     <connections>
-                        <outlet property="angleExpTextField" destination="Nll-Kw-7ZS" id="deq-j1-9dX"/>
-                        <outlet property="angleSignButton" destination="d2J-c1-mcd" id="h6j-ig-APo"/>
-                        <outlet property="beforeExpTextField" destination="sek-x8-UGZ" id="Vrz-n6-CVJ"/>
                         <outlet property="complexImTextField" destination="Mlh-Ii-KRl" id="JeU-iB-rMx"/>
                         <outlet property="complexReTextField" destination="zlp-5Z-yGq" id="Th3-g5-S03"/>
                         <outlet property="convertToComplexButton" destination="xI1-eH-ey8" id="XVx-Ah-nD4"/>
                         <outlet property="convertToExpButton" destination="0pm-2C-0N2" id="chg-0w-BZv"/>
-                        <outlet property="modulZSignButton" destination="ABx-Mx-ljy" id="9RR-oF-u9a"/>
+                        <outlet property="expView" destination="e3H-6Q-989" id="kK0-ks-ZDl"/>
                         <outlet property="resultLabel" destination="HQt-ld-2OW" id="k0a-1g-Eew"/>
                         <outlet property="signImButton" destination="1Xt-xm-e0N" id="DXk-w1-gOd"/>
                         <outlet property="signReButton" destination="IYY-c7-lOm" id="tbf-Xf-2jJ"/>
+                        <outlet property="stackView" destination="XCg-qg-Vpk" id="H1I-sA-Xua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cID-uH-b0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

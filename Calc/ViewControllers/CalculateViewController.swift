@@ -147,6 +147,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         
         return (Re1: firstNumberInComplexForm.Re, Re2: secondNumberInComplexForm.Re, Im1: firstNumberInComplexForm.Im, Im2: secondNumberInComplexForm.Im)
     }
+    
     // MARK: - todo func that
     func allDataToComlexForm(_ modulZSignButton: UIButton, _ angleSignButton: UIButton, _ beforeExpTextField: UITextField, _ angleExpTextField: UITextField, _ signReButton: UIButton, _ signImButton: UIButton, _ complexReTextField: UITextField, _ complexImTextField: UITextField, _ expView: UIView!) ->  (Re: Double, Im: Double){
                 var re: Double?

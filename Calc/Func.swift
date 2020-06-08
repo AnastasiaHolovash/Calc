@@ -107,6 +107,7 @@ func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexR
     return doubleComplexToExp(Im: Double(textIm) ?? 0, Re: Double(textRe) ?? 0)
 }
 
+// MARK:- need delete
 /**
 Converts an exponential number into a complex number.
 - Parameters:
@@ -132,6 +133,35 @@ func expToComlex(signModulZ: String?, signArc: String?, modulZ: String?, arc:Str
     let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
     let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
     
+    return (Re: Re, Im: Im)
+}
+
+/**
+Converts number to Double.
+- Parameters:
+   -  sign: Sign of the number (true if plus; false if minus).
+   -  number: Number in String.
+- Returns: Double number.
+*/
+func makeANumber(sign: Bool, number: String) -> Double {
+    let double = Double(number.replacingOccurrences(of: ",", with: ".")) ?? 0
+    if sign {
+        return double
+    } else {
+        return -double
+    }
+}
+
+/**
+Converts an exponential number into a complex number.
+- Parameters:
+   -  modulZ: Module of number in exponential form.
+   -  arc: Angle of number in exponential form in degrees.
+- Returns: Complex number.
+*/
+func expToComplexNumber(modulZ: Double, arc:Double) -> (Re:Double, Im: Double) {
+    let Re = modulZ * cos(degree(arc))
+    let Im = modulZ * sin(degree(arc))
     return (Re: Re, Im: Im)
 }
 

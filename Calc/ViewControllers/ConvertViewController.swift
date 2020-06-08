@@ -8,30 +8,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConvertViewController: UIViewController {
 
-    @IBOutlet weak var beforeExpTextField: UITextField!
-    @IBOutlet weak var angleExpTextField: UITextField!
+    @IBOutlet weak var stackView: UIStackView!
+    //    @IBOutlet weak var beforeExpTextField: UITextField!
+//    @IBOutlet weak var angleExpTextField: UITextField!
     @IBOutlet weak var complexReTextField: UITextField!
     @IBOutlet weak var complexImTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var modulZSignButton: UIButton!
-    @IBOutlet weak var angleSignButton: UIButton!
+//    @IBOutlet weak var modulZSignButton: UIButton!
+//    @IBOutlet weak var angleSignButton: UIButton!
     @IBOutlet weak var signReButton: UIButton!
     @IBOutlet weak var signImButton: UIButton!
     @IBOutlet weak var convertToComplexButton: UIButton!
     @IBOutlet weak var convertToExpButton: UIButton!
     
+    @IBOutlet weak var expView: ExpView!
+    //    var expView0: ExpView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         convertToComplexButton.layer.cornerRadius = CGFloat((Double(convertToComplexButton.frame.height) ) / 2.0)
         convertToExpButton.layer.cornerRadius = CGFloat((Double(convertToExpButton.frame.height) ) / 2.0)
-
+        
+//        setupViews()
     }
     
+//    func setupViews() {
+//        expView0 = Bundle.main.loadNibNamed("ExpView", owner: self, options: nil)?.first as? ExpView
+//        if let expView0 = expView0 {
+//            stackView.insertArrangedSubview(expView0, at: 2)
+//        }
+//    }
+    
     func hideKeyboard() {
-        beforeExpTextField.resignFirstResponder()
-        angleExpTextField.resignFirstResponder()
+//        beforeExpTextField.resignFirstResponder()
+//        angleExpTextField.resignFirstResponder()
         complexImTextField.resignFirstResponder()
         complexReTextField.resignFirstResponder()
     }
@@ -53,7 +65,10 @@ class ViewController: UIViewController {
     
     @IBAction func didPressConvertToComplex(_ sender: Any) {
 
-        let complex = expToComlex(signModulZ: modulZSignButton.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ: beforeExpTextField.text, arc: angleExpTextField.text)
+        let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
+        let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")
+        let complex = expToComplexNumber(modulZ: modulZ, arc: arc)
+//        let complex = expToComlex(signModulZ: expView.be.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ: beforeExpTextField.text, arc: angleExpTextField.text)
         
         let result = stringResultforComplexForm(complex.Im, complex.Re)
         
@@ -70,10 +85,10 @@ class ViewController: UIViewController {
 
     
     @IBAction func didChangeModulZSign(_ sender: UIButton) {
-        changeSign(modulZSignButton)
+//        changeSign(modulZSignButton)
     }
     @IBAction func didChangeAngleSign(_ sender: UIButton) {
-        changeSign(angleSignButton)
+//        changeSign(angleSignButton)
     }
     @IBAction func didChangeReSign(_ sender: UIButton) {
         changeSign(signReButton)

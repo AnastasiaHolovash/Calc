@@ -30,42 +30,10 @@
             filePath = "Calc/CalculateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "keyboardWillChange(notification:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0C4D5CE5-7ADC-4142-80C3-CE85EE8A8579 - febf4d359cfe62d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Calc.CalculateViewController.keyboardWillChange(notification: Foundation.Notification) -&gt; ()"
-                  moduleName = "Calc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasia/Calc/Calc/CalculateViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "223"
-                  endingLineNumber = "223"
-                  offsetFromSymbolStart = "524">
-               </Location>
-               <Location
-                  uuid = "0C4D5CE5-7ADC-4142-80C3-CE85EE8A8579 - 7f7f379c1bd98efe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in Calc.CalculateViewController.keyboardWillChange(notification: Foundation.Notification) -&gt; ()"
-                  moduleName = "Calc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasia/Calc/Calc/CalculateViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "224"
-                  endingLineNumber = "224"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
