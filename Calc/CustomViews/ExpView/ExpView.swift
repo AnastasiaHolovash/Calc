@@ -9,8 +9,6 @@
 import UIKit
 
 class ExpView: UIView {
-    
-//    MARK:- Corner radius for buttons
 
     @IBOutlet weak var beforeExpTextField: UITextField!
     @IBOutlet weak var afterExpTextField: UITextField!
@@ -22,9 +20,6 @@ class ExpView: UIView {
     var afterExpIsPlus: Bool = true
     
     var view = UIView()
-    
-//    let plusImage = UIImage(systemName: "plus.circle.fill")
-//    let minusImage = UIImage(systemName: "minus.circle.fill")
 
     
     override init(frame: CGRect) {
@@ -49,7 +44,6 @@ class ExpView: UIView {
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(xibView)
     }
-
     
     @IBAction func didPressChangeSignButton(_ sender: UIButton) {
         if sender === beforeExpSignButton {
@@ -59,27 +53,12 @@ class ExpView: UIView {
         }
         
     }
-    
-//    func updateButton(button: UIButton, isPlus: inout Bool) {
-//        if isPlus {
-//            button.setBackgroundImage(minusImage, for: .normal)
-//            isPlus = false
-//        } else {
-//            button.setBackgroundImage(plusImage, for: .normal)
-//            isPlus = true
-//        }
-//    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         beforeExpTextField.setRoundedBourder()
         afterExpTextField.setRoundedBourder()
-//        beforeExpTextField.layer.borderWidth = 1
-//        afterExpTextField.layer.borderWidth = 1
-//        beforeExpTextField.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-//        afterExpTextField.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-//        beforeExpTextField.layer.cornerRadius = beforeExpTextField.frame.height / 2.5
-//        afterExpTextField.layer.cornerRadius = afterExpTextField.frame.height / 2.5
+
     }
 
 

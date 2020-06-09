@@ -34,7 +34,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDZ-zn-yg9">
-                    <rect key="frame" x="213.5" y="28.5" width="30" height="29"/>
+                    <rect key="frame" x="206" y="28.5" width="30" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1:1" id="d5B-AV-64x"/>
                     </constraints>
@@ -46,28 +46,27 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UhD-xT-XZp">
-                    <rect key="frame" x="243.5" y="26" width="112.5" height="34"/>
+                    <rect key="frame" x="236" y="26" width="120" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4y-bL-zZf">
-                    <rect key="frame" x="182" y="9.5" width="11" height="62.5"/>
+                    <rect key="frame" x="182" y="13.5" width="11" height="55"/>
                     <fontDescription key="fontDescription" type="system" pointSize="46"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YJK-ox-kwO">
-                    <rect key="frame" x="34" y="26" width="112.5" height="34"/>
+                    <rect key="frame" x="34" y="26" width="120" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="UhD-xT-XZp" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.3" id="6kC-Li-BSm"/>
+                <constraint firstItem="UhD-xT-XZp" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.32" id="6kC-Li-BSm"/>
                 <constraint firstItem="UhD-xT-XZp" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="8ht-rA-irW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UhD-xT-XZp" secondAttribute="trailing" constant="19" id="Aoc-Pl-Fd0"/>
-                <constraint firstItem="S4y-bL-zZf" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.726744" id="BmV-SM-qTc"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Jnu-pD-Oq4"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.0293333" id="MAE-f5-XPA"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.08" id="Rdl-Zc-inj"/>
@@ -77,7 +76,7 @@
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="fAH-SB-bPi"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.08" id="jlf-MH-u50"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="plT-G5-fb2"/>
-                <constraint firstItem="YJK-ox-kwO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.3" id="qRA-wZ-9UQ"/>
+                <constraint firstItem="YJK-ox-kwO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.32" id="qRA-wZ-9UQ"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.95" id="tu8-nX-GrL"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ty1-4K-0Se"/>
                 <constraint firstItem="UhD-xT-XZp" firstAttribute="leading" secondItem="nDZ-zn-yg9" secondAttribute="trailing" id="wtd-TI-oLB"/>

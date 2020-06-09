@@ -80,12 +80,13 @@ func changeSign(_ buttton: UIButton) {
 
  - Returns: (Module of number in exponential form, Angle of number in exponential form in degrees)
  */
-func doubleComplexToExp(Im: Double, Re: Double) -> (moduleZ: Double, arcFi: Double) {
+func complexToExpNumber(Im: Double, Re: Double) -> (moduleZ: Double, arcFi: Double) {
     let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
     let arcFi = rad(atan(Im / Re))
     return (moduleZ, arcFi)
 }
 
+// MARK:- need delete
 /**
  Converts a complex number into an exponential number.
  - Parameters:
@@ -104,7 +105,7 @@ func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexR
     
     let textIm = (signIm + complexIm).replacingOccurrences(of: ",", with: ".")
     let textRe = (signRe + complexRe).replacingOccurrences(of: ",", with: ".")
-    return doubleComplexToExp(Im: Double(textIm) ?? 0, Re: Double(textRe) ?? 0)
+    return complexToExpNumber(Im: Double(textIm) ?? 0, Re: Double(textRe) ?? 0)
 }
 
 // MARK:- need delete
@@ -164,6 +165,15 @@ func expToComplexNumber(modulZ: Double, arc:Double) -> (Re:Double, Im: Double) {
     let Im = modulZ * sin(degree(arc))
     return (Re: Re, Im: Im)
 }
+
+func convertToComplex(expView: ExpView) -> (Re: Double, Im: Double) {
+
+    let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
+    let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")
+
+    return expToComplexNumber(modulZ: modulZ, arc: arc)
+}
+
 
 /**
 Generates a string of an ful number in a complex form.

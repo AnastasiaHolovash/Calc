@@ -57,12 +57,6 @@ class ComplexView: UIView {
         super.layoutSubviews()
         reTextField.setRoundedBourder()
         imTextField.setRoundedBourder()
-//        reTextField.layer.borderWidth = 1
-//        imTextField.layer.borderWidth = 1
-//        reTextField.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-//        imTextField.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-//        reTextField.layer.cornerRadius = reTextField.frame.height / 2.5
-//        imTextField.layer.cornerRadius = imTextField.frame.height / 2.5
     }
     
 }

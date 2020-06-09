@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd3-mp-TRj">
-                    <rect key="frame" x="0.0" y="28.5" width="30" height="29"/>
+                    <rect key="frame" x="4" y="28.5" width="30" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Pd3-mp-TRj" secondAttribute="height" multiplier="1:1" id="7Po-dH-HLO"/>
                     </constraints>
@@ -34,18 +34,18 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wKD-NJ-utb">
-                    <rect key="frame" x="30" y="26" width="112.5" height="34"/>
+                    <rect key="frame" x="34" y="26" width="120" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-zK-sOh">
-                    <rect key="frame" x="152.5" y="-3.5" width="60" height="84"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <rect key="frame" x="160" y="-7" width="45" height="78.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="65"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnU-bQ-GW9">
-                    <rect key="frame" x="212.5" y="15.5" width="30" height="29"/>
+                    <rect key="frame" x="205" y="15.5" width="30" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="KnU-bQ-GW9" secondAttribute="height" multiplier="1:1" id="up5-c7-DuO"/>
                     </constraints>
@@ -57,7 +57,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0TV-yQ-U0s">
-                    <rect key="frame" x="242.5" y="13" width="112.5" height="34"/>
+                    <rect key="frame" x="235" y="13" width="120" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
@@ -73,23 +73,23 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="wKD-NJ-utb" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.3" id="0Ux-PY-10t"/>
+                <constraint firstItem="wKD-NJ-utb" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.32" id="0Ux-PY-10t"/>
                 <constraint firstItem="Pd3-mp-TRj" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.08" id="2Rf-HT-ZVG"/>
                 <constraint firstItem="wKD-NJ-utb" firstAttribute="leading" secondItem="Pd3-mp-TRj" secondAttribute="trailing" id="733-nY-kHw"/>
                 <constraint firstItem="Wbd-Xj-yke" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.656977" id="8If-Wa-9pZ"/>
                 <constraint firstItem="KnU-bQ-GW9" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.08" id="INQ-9N-oYg"/>
                 <constraint firstItem="KnU-bQ-GW9" firstAttribute="leading" secondItem="ra7-zK-sOh" secondAttribute="trailing" id="J7q-H1-bnP"/>
-                <constraint firstItem="ra7-zK-sOh" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.9" id="K0c-de-Jnf"/>
+                <constraint firstItem="ra7-zK-sOh" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.75" id="K0c-de-Jnf"/>
                 <constraint firstItem="wKD-NJ-utb" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="R3m-6n-5t9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Wbd-Xj-yke" secondAttribute="trailing" constant="5.5" id="SS6-hM-x04"/>
                 <constraint firstItem="0TV-yQ-U0s" firstAttribute="leading" secondItem="KnU-bQ-GW9" secondAttribute="trailing" id="cip-F4-9yI"/>
                 <constraint firstItem="ra7-zK-sOh" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-5" id="dz0-Q3-ipy"/>
-                <constraint firstItem="0TV-yQ-U0s" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.3" id="fYL-hg-2Oi"/>
-                <constraint firstItem="Pd3-mp-TRj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="g6D-3m-WUz"/>
+                <constraint firstItem="0TV-yQ-U0s" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.32" id="fYL-hg-2Oi"/>
+                <constraint firstItem="Pd3-mp-TRj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="g6D-3m-WUz"/>
                 <constraint firstItem="KnU-bQ-GW9" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.7" id="ibw-wd-ksS"/>
                 <constraint firstItem="Pd3-mp-TRj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="rez-wL-zbM"/>
                 <constraint firstItem="0TV-yQ-U0s" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.7" id="tdI-Yr-RDm"/>
-                <constraint firstItem="ra7-zK-sOh" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.16" id="uNk-7l-e1r"/>
+                <constraint firstItem="ra7-zK-sOh" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.12" id="uNk-7l-e1r"/>
                 <constraint firstItem="Wbd-Xj-yke" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="wLx-u2-edj"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
