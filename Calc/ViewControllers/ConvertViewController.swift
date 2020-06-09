@@ -11,15 +11,7 @@ import UIKit
 class ConvertViewController: UIViewController {
 
     @IBOutlet weak var stackView: UIStackView!
-    //    @IBOutlet weak var beforeExpTextField: UITextField!
-//    @IBOutlet weak var angleExpTextField: UITextField!
-//    @IBOutlet weak var complexReTextField: UITextField!
-//    @IBOutlet weak var complexImTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
-//    @IBOutlet weak var modulZSignButton: UIButton!
-//    @IBOutlet weak var angleSignButton: UIButton!
-//    @IBOutlet weak var signReButton: UIButton!
-//    @IBOutlet weak var signImButton: UIButton!
     @IBOutlet weak var convertToComplexButton: UIButton!
     @IBOutlet weak var convertToExpButton: UIButton!
     
@@ -51,8 +43,6 @@ class ConvertViewController: UIViewController {
         let im = makeANumber(sign: complexView.imIsPlus, number: complexView.imTextField.text ?? "")
         
         let comlexToExp = complexToExpNumber(Im: im, Re: re)
- 
-//        let comlexToExp = complexToExp(signIm: signImButton.title(for: .normal), signRe: signReButton.title(for: .normal), complexIm: complexImTextField.text, complexRe: complexReTextField.text)
          
         let attributedStringResultText = attributedStringResult(comlexToExp.0, comlexToExp.1)
         
@@ -93,20 +83,9 @@ class ConvertViewController: UIViewController {
     }
     
 
-    
-//    @IBAction func didChangeModulZSign(_ sender: UIButton) {
-////        changeSign(modulZSignButton)
-//    }
-//    @IBAction func didChangeAngleSign(_ sender: UIButton) {
-////        changeSign(angleSignButton)
-//    }
-//    @IBAction func didChangeReSign(_ sender: UIButton) {
-//        changeSign(signReButton)
-//    }
-//    @IBAction func didChangeSign(_ sender: UIButton) {
-//        changeSign(signImButton)
-//    }
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         hideKeyboard()
     }
+    
+    
 }

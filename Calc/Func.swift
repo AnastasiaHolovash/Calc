@@ -86,56 +86,6 @@ func complexToExpNumber(Im: Double, Re: Double) -> (moduleZ: Double, arcFi: Doub
     return (moduleZ, arcFi)
 }
 
-// MARK:- need delete
-/**
- Converts a complex number into an exponential number.
- - Parameters:
-    - signIm: Sign of the imaginary part of the complex number.
-    - signRe: Sign of the real part of the complex number.
-    -  complexIm: The imaginary part of the complex number.
-    -  complexRe: The real part of the complex number.
- - Returns:Exponential number.
- */
-func complexToExp(signIm: String?, signRe: String?, complexIm: String?, complexRe:String?) -> (Double, Double) {
-    
-    guard let signIm = signIm,
-          let signRe = signRe,
-          let complexIm = complexIm,
-          let complexRe = complexRe else { return (0, 0) }
-    
-    let textIm = (signIm + complexIm).replacingOccurrences(of: ",", with: ".")
-    let textRe = (signRe + complexRe).replacingOccurrences(of: ",", with: ".")
-    return complexToExpNumber(Im: Double(textIm) ?? 0, Re: Double(textRe) ?? 0)
-}
-
-// MARK:- need delete
-/**
-Converts an exponential number into a complex number.
-- Parameters:
-   - signModulZ: Sign of the module of number in exponential form.
-   - signArc: Sign of the angle of number in exponential form in degrees.
-   -  modulZ: Module of number in exponential form.
-   -  arc: Angle of number in exponential form in degrees.
-- Returns: Complex number.
-*/
-func expToComlex(signModulZ: String?, signArc: String?, modulZ: String?, arc:String?) -> (Re:Double, Im: Double) {
-    
-    guard let signModulZ = signModulZ,
-          let signArc = signArc,
-          let modulZ = modulZ,
-          let arc = arc else { return (0, 0) }
-    
-    let beforeExp = signModulZ + modulZ
-    let angleExp = signArc + arc
-
-    let moduleZ = beforeExp.replacingOccurrences(of: ",", with: ".")
-    let angleFi = angleExp.replacingOccurrences(of: ",", with: ".")
-     
-    let Re = (Double(moduleZ) ?? 0) * cos(degree(Double(angleFi) ?? 0))
-    let Im = (Double(moduleZ) ?? 0) * sin(degree(Double(angleFi) ?? 0))
-    
-    return (Re: Re, Im: Im)
-}
 
 /**
 Converts number to Double.

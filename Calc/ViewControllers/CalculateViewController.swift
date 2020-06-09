@@ -9,40 +9,18 @@
 import UIKit
 
 class CalculateViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var changeFormButton1: UIButton!
     @IBOutlet weak var changeFormButton2: UIButton!
 
-//    @IBOutlet weak var expView1: UIView!
-//    @IBOutlet weak var complexView1: UIView!
-//    @IBOutlet weak var expView2: UIView!
-//    @IBOutlet weak var complexView2: UIView!
-//  Sidn Buttons
-//    @IBOutlet weak var modulZSignButton1: UIButton!
-//    @IBOutlet weak var modulZSignButton2: UIButton!
-//    @IBOutlet weak var angleSignButton1: UIButton!
-//    @IBOutlet weak var angleSignButton2: UIButton!
-//    @IBOutlet weak var signReButton1: UIButton!
-//    @IBOutlet weak var signReButton2: UIButton!
-//    @IBOutlet weak var signImButton1: UIButton!
-//    @IBOutlet weak var signImButton2: UIButton!
-////  Text Fields
-//    @IBOutlet weak var beforeExpTextField1: UITextField!
-//    @IBOutlet weak var beforeExpTextField2: UITextField!
-//    @IBOutlet weak var angleExpTextField1: UITextField!
-//    @IBOutlet weak var angleExpTextField2: UITextField!
-//    @IBOutlet weak var complexReTextField1: UITextField!
-//    @IBOutlet weak var complexReTextField2: UITextField!
-//    @IBOutlet weak var complexImTextField1: UITextField!
-//    @IBOutlet weak var complexImTextField2: UITextField!
 //  Operation Sign Buttons
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var divideButton: UIButton!
+    
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultLabel2: UILabel!
-//    @IBOutlet weak var cleanButton1: UIButton!
-//    @IBOutlet weak var cleanButton2: UIButton!
     @IBOutlet weak var showResultButton: UIButton!
     
     @IBOutlet weak var expView1: ExpView!
@@ -71,8 +49,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         // Rounds the corners of the buttons
         changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
         changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
-//        cleanButton1.layer.cornerRadius = CGFloat((Double(cleanButton1.frame.height) ) / 2.0)
-//        cleanButton2.layer.cornerRadius = CGFloat((Double(cleanButton2.frame.height) ) / 2.0)
         showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.0)
     }
 
@@ -139,9 +115,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         var Im1: Double = 0.0
         
         if !expView1.isHidden {
-//            let modulZ = makeANumber(sign: expView1.beforeExpIsPlus, number: expView1.beforeExpTextField.text ?? "")
-//            let arc = makeANumber(sign: expView1.afterExpIsPlus, number: expView1.afterExpTextField.text ?? "")
-//            let complex = expToComplexNumber(modulZ: modulZ, arc: arc)
             let complex = convertToComplex(expView: expView1)
             Re1 = complex.Re
             Im1 = complex.Im
@@ -154,9 +127,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         var Im2: Double = 0.0
         
         if !expView2.isHidden {
-//            let modulZ = makeANumber(sign: expView2.beforeExpIsPlus, number: expView2.beforeExpTextField.text ?? "")
-//            let arc = makeANumber(sign: expView2.afterExpIsPlus, number: expView2.afterExpTextField.text ?? "")
-//            let complex = expToComplexNumber(modulZ: modulZ, arc: arc)
             let complex = convertToComplex(expView: expView2)
             Re2 = complex.Re
             Im2 = complex.Im
@@ -164,34 +134,10 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
             Re2 = makeANumber(sign: complexView2.reIsPlus, number: complexView2.reTextField.text ?? "")
             Im2 = makeANumber(sign: complexView2.imIsPlus, number: complexView2.imTextField.text ?? "")
         }
-
-        
-//        let firstNumberInComplexForm = allDataToComlexForm(modulZSignButton1, angleSignButton1, beforeExpTextField1, angleExpTextField1, signReButton1, signImButton1, complexReTextField1, complexImTextField1, expView1)
-//
-//         let secondNumberInComplexForm = allDataToComlexForm(modulZSignButton2, angleSignButton2, beforeExpTextField2, angleExpTextField2, signReButton2, signImButton2, complexReTextField2, complexImTextField2, expView2)
         
         return (Re1: Re1, Re2: Re2, Im1: Im1, Im2: Im2)
     }
-    
-    // MARK: - todo func that
-    func allDataToComlexForm(_ modulZSignButton: UIButton, _ angleSignButton: UIButton, _ beforeExpTextField: UITextField, _ angleExpTextField: UITextField, _ signReButton: UIButton, _ signImButton: UIButton, _ complexReTextField: UITextField, _ complexImTextField: UITextField, _ expView: UIView!) ->  (Re: Double, Im: Double){
-                var re: Double?
-                var im: Double?
-                if expView.isHidden == false {
-        //            print("-------EXP--------")
-                    let result = expToComlex(signModulZ: modulZSignButton.title(for: .normal), signArc: angleSignButton.title(for: .normal), modulZ:  beforeExpTextField.text, arc: angleExpTextField.text)
-                    re = result.Re
-                    im = result.Im
-                } else {
-                    re = Double((signReButton.title(for: .normal) ?? "") + (complexReTextField.text ?? ""))
-                    im = Double((signImButton.title(for: .normal) ?? "") + (complexImTextField.text ?? ""))
-                }
-                guard let re1 = re,
-                      let im1 = im else { return (Re: 0, Im: 0)}
         
-        return (Re: re1, Im: im1)
-    }
-    
     
     /**
      Presents recult of calculation in exponential form.
@@ -315,40 +261,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         _ = recalculate()
     }
 
-//    @IBAction func didChangeModulZSign1(_ sender: UIButton) {
-//        changeSign(modulZSignButton1)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeModulZSign2(_ sender: UIButton) {
-//        changeSign(modulZSignButton2)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeAngleSign1(_ sender: UIButton) {
-//        changeSign(angleSignButton1)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeAngleSign2(_ sender: UIButton) {
-//        changeSign(angleSignButton2)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeReSign1(_ sender: UIButton) {
-//        changeSign(signReButton1)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeReSign2(_ sender: UIButton) {
-//        changeSign(signReButton2)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeImSign1(_ sender: UIButton) {
-//        changeSign(signImButton1)
-//        _ = recalculate()
-//    }
-//    @IBAction func didChangeImSign2(_ sender: UIButton) {
-//        changeSign(signImButton2)
-//        _ = recalculate()
-//    }
-    
-
     @IBAction func selectedPlusOperation(_ sender: UIButton) {
         selectedOperation(button: plusButton, imageName: "plus.square.fill")
         showPlusRecult()
@@ -366,37 +278,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         selectedOperation(button: divideButton, imageName: "divide.square.fill")
         showDivideRecult()
     }
-    
-    
-    
-//    @IBAction func didPressClean1(_ sender: UIButton) {
-//        if expView1.isHidden == false{
-//            beforeExpTextField1.text = ""
-//            beforeExpTextField1.placeholder = "0"
-//            angleExpTextField1.text = ""
-//            angleExpTextField1.placeholder = "0"
-//        }else{
-//            complexReTextField1.text = ""
-//            complexReTextField1.placeholder = "0"
-//            complexImTextField1.text = ""
-//            complexImTextField1.placeholder = "0"
-//        }
-//        if recalculate(){}
-//    }
-//    @IBAction func didPressClean2(_ sender: UIButton) {
-//        if expView2.isHidden == false{
-//            beforeExpTextField2.text = ""
-//            beforeExpTextField2.placeholder = "0"
-//            angleExpTextField2.text = ""
-//            angleExpTextField2.placeholder = "0"
-//        }else{
-//            complexReTextField2.text = ""
-//            complexReTextField2.placeholder = "0"
-//            complexImTextField2.text = ""
-//            complexImTextField2.placeholder = "0"
-//        }
-//        if recalculate(){}
-//    }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         hideKeyboard()
