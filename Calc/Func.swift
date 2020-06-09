@@ -16,6 +16,7 @@ func alert() -> UIAlertController {
     return alert
 }
 
+
 ///Appears when operation is not selected.
 func alert2() -> UIAlertController {
     let alert = UIAlertController(title: "", message: "Select the operation, please.", preferredStyle: .alert)
@@ -36,6 +37,7 @@ func degree(_ number: Double) -> Double {
     return number * .pi / 180
 }
 
+
 /**
  Formes an appearance of complex number in exponential form.
  - Parameters:
@@ -54,25 +56,14 @@ func attributedStringResult(_ moduleZ: Double, _ arcFi: Double) -> (NSAttributed
      
     let attString:NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
      attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:fullstringResult.count - stringResultModuleZ.count - 1))
-    if fullstringResult.count > 20 {
+    if fullstringResult.count > 30 {
         return (NSMutableAttributedString(string: "No result", attributes: [.font:font!]), true)
     } else {
         return (attString, false)
     }
 }
 
-/**
- Сhanges the sign on the button to the opposite.
- 
- - Parameter buttton: Button on which you need to change the sign.
- */
-func changeSign(_ buttton: UIButton) {
-    if buttton.title(for: .normal) == "+"{
-        buttton.setTitle("-", for: .normal)
-    } else {
-        buttton.setTitle("+", for: .normal)
-    }
-}
+
 /**
  Converts a complex number of type "Double" to a number in exponential form of type "Double".
  - Parameter Im: The imaginary part of the complex number.
@@ -103,6 +94,7 @@ func makeANumber(sign: Bool, number: String) -> Double {
     }
 }
 
+
 /**
 Converts an exponential number into a complex number.
 - Parameters:
@@ -115,6 +107,7 @@ func expToComplexNumber(modulZ: Double, arc:Double) -> (Re:Double, Im: Double) {
     let Im = modulZ * sin(degree(arc))
     return (Re: Re, Im: Im)
 }
+
 
 func convertToComplex(expView: ExpView) -> (Re: Double, Im: Double) {
 
@@ -140,6 +133,7 @@ func stringResultforComplexForm(_ Im: Double, _ Re: Double) -> String {
     }
 }
 
+
 /**
  Generates a string of an ful number in an exponential form.
  - Parameters:
@@ -158,7 +152,6 @@ func stringResultforExpForm(_ arcFi: Double, _ stringResultModuleZ: String) -> S
 }
 
 
-
 /// Performs the operation of adding two complex numbers.
 func plus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
     return (Re: (Re1 + Re2), Im: (Im1 + Im2))
@@ -174,6 +167,6 @@ func multiply(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double
 /// Performs the operation of division two complex numbers.
 func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
     let re = (Re1*Re2 + Im1*Im2) / (pow(Re2, 2) + pow(Im2, 2))
-    let im = -(Re1*Im2 - Re2*Im1) / (pow(Re2, 2) + pow(Im2, 2))
+    let im = (Re2*Im1 - Re1*Im2) / (pow(Re2, 2) + pow(Im2, 2))
     return (Re: re, Im: im)
 }

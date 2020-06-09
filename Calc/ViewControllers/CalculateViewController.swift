@@ -69,7 +69,9 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
 //        complexReTextField2.resignFirstResponder()
 //        complexImTextField1.resignFirstResponder()
 //        complexImTextField2.resignFirstResponder()
-        showRecult()
+        if recalculate(){
+            present(alert2(), animated: true, completion: nil)
+        }
     }
     
     /**
@@ -80,12 +82,12 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         - complexView: View with complex form representation.
      */
     func changeForm(button: UIButton, expViev: UIView, complexView: UIView) {
-        if button.title(for: .normal) == "Complex form" {
-            button.setTitle("Exp form", for: .normal)
+        if button.title(for: .normal) == "Комплексна форма" {
+            button.setTitle("Експоненційна форма", for: .normal)
             expViev.isHidden = true
             complexView.isHidden = false
         } else {
-            button.setTitle("Complex form", for: .normal)
+            button.setTitle("Комплексна форма", for: .normal)
             complexView.isHidden = true
             expViev.isHidden = false
         }
@@ -210,32 +212,8 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         default:
             return true
         }
-        
-//        if plusButton.currentImage == UIImage.init(systemName: "plus.square.fill"){
-//            showPlusRecult()
-//            return false
-//        }else if minusButton.currentImage == UIImage.init(systemName: "minus.square.fill"){
-//            showMinusRecult()
-//            return false
-//        }else if multiplyButton.currentImage == UIImage.init(systemName: "multiply.square.fill"){
-//            showMultiplyRecult()
-//            return false
-//        }else if divideButton.currentImage == UIImage.init(systemName: "divide.square.fill"){
-//            showDivideRecult()
-//            return false
-//        }else {
-//            return true
-//        }
     }
     
-    /**
-     Shows Recult
-     */
-    func showRecult() {
-        if recalculate(){
-            present(alert2(), animated: true, completion: nil)
-        }
-    }
     
     
     @objc func keyboardWillChange(notification: Notification){
@@ -285,7 +263,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func didPressShowResult(_ sender: UIButton) {
         hideKeyboard()
-//        showResultButton.isHidden = true
     }
     
 }

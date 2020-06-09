@@ -82,7 +82,7 @@
 				5D496FEF23969F76000C0DF7 /* Func.swift */,
 				5D956266248EFB7800C03364 /* Extensions */,
 				5D95625C248EE8F000C03364 /* ViewControllers */,
-				5D69B25A238ECD100057D76D /* Main.storyboard */,
+				5D95626924902D5800C03364 /* Storyboard */,
 				5D95625F248EE93800C03364 /* CustomViews */,
 				5D6B043D2411949200AA7D3B /* Asset.xcassets */,
 				5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */,
@@ -134,6 +134,14 @@
 				5D956267248EFB9500C03364 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5D95626924902D5800C03364 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5D69B25A238ECD100057D76D /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		5DBF245E248819FF001EB10B /* ExpView */ = {
