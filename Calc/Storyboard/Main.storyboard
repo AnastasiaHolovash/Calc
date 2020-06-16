@@ -11,8 +11,8 @@
         <scene sceneID="F5E-dH-Lwz">
             <objects>
                 <navigationController id="SqR-6S-NVm" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tLR-PY-cVV">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tLR-PY-cVV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,21 +32,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-qg-Vpk">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0r-Qb-HYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="71.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="65.333333333333329"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-6Q-989" customClass="ExpView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71.333333333333343" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="65.333333333333343" width="375" height="65.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQP-Vi-tNj">
-                                        <rect key="frame" x="0.0" y="142.33333333333334" width="375" height="71.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="131" width="375" height="65.333333333333314"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xI1-eH-ey8">
-                                                <rect key="frame" x="56.666666666666657" y="26.666666666666657" width="262" height="32"/>
+                                                <rect key="frame" x="56.666666666666657" y="23.666666666666686" width="262" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="43U-gW-Qoi"/>
@@ -68,14 +68,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-ke-ilc" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="213.66666666666669" width="375" height="71.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="196.33333333333331" width="375" height="65.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-gl-geB">
-                                        <rect key="frame" x="0.0" y="285" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="261.66666666666669" width="375" height="65.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-2C-0N2">
-                                                <rect key="frame" x="56.666666666666657" y="26.666666666666686" width="262" height="32"/>
+                                                <rect key="frame" x="56.666666666666657" y="24" width="262" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="262" id="kCy-hc-zgr"/>
@@ -97,21 +97,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-mN-ff1">
-                                        <rect key="frame" x="0.0" y="356" width="375" height="71.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="327.33333333333331" width="375" height="65.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-ld-2OW">
-                                        <rect key="frame" x="0.0" y="427.33333333333337" width="375" height="71.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="392.66666666666663" width="375" height="65.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-Kn-DdX">
-                                        <rect key="frame" x="0.0" y="498.66666666666663" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="458" width="375" height="65.666666666666629"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWn-Vy-hgh">
-                                        <rect key="frame" x="0.0" y="569.66666666666663" width="375" height="71.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="523.66666666666663" width="375" height="65.333333333333371"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -131,7 +131,7 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Конвертувати" image="repeat" catalog="system" id="C4V-gd-mhk"/>
-                    <navigationItem key="navigationItem" title="Конвертація" id="th1-gA-Bal"/>
+                    <navigationItem key="navigationItem" title="Конвертація" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
                     <connections>
                         <outlet property="complexView" destination="zws-ke-ilc" id="iBS-aK-qdZ"/>
                         <outlet property="convertToComplexButton" destination="xI1-eH-ey8" id="XVx-Ah-nD4"/>
@@ -150,6 +150,56 @@
             </objects>
             <point key="canvasLocation" x="-729" y="-146"/>
         </scene>
+        <!--Історія-->
+        <scene sceneID="J1u-vH-kml">
+            <objects>
+                <viewController id="41i-ZX-eWK" customClass="HistoryViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="swz-v8-Rj6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-bV-26c">
+                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xdQ-cE-f3V">
+                                        <rect key="frame" x="15" y="55.333332061767578" width="345" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xdQ-cE-f3V" id="w20-go-6Gl">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1TZ-bV-26c" firstAttribute="top" secondItem="Ppu-mq-h5d" secondAttribute="top" id="CBa-ez-Vb8"/>
+                            <constraint firstItem="1TZ-bV-26c" firstAttribute="leading" secondItem="Ppu-mq-h5d" secondAttribute="leading" id="CvK-3X-3NB"/>
+                            <constraint firstItem="Ppu-mq-h5d" firstAttribute="bottom" secondItem="1TZ-bV-26c" secondAttribute="bottom" id="SKX-5R-Sbm"/>
+                            <constraint firstItem="Ppu-mq-h5d" firstAttribute="trailing" secondItem="1TZ-bV-26c" secondAttribute="trailing" id="XhL-VC-ZRw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ppu-mq-h5d"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Історія" largeTitleDisplayMode="always" id="EwZ-oq-35v">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="rwK-lc-E00">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L02-xp-q9U">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Закрити">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="1TZ-bV-26c" id="HRe-za-DLx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fks-ta-ftx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="-887"/>
+        </scene>
         <!--Калькулятор-->
         <scene sceneID="7N5-w7-M6H">
             <objects>
@@ -159,13 +209,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bkU-7Z-2Ex">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-FP-9iT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="73.666666666666671"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF1-ca-qaH">
-                                                <rect key="frame" x="56.666666666666657" y="24" width="262" height="32"/>
+                                                <rect key="frame" x="56.666666666666657" y="20.666666666666657" width="262" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="LEq-he-rcv"/>
@@ -188,18 +238,18 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guJ-Ll-5gi" customClass="ExpView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="80" width="375" height="80.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="73.666666666666657" width="375" height="73.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK3-zX-X2h" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="160.33333333333334" width="375" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="147.33333333333331" width="375" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-XS-hLr">
-                                        <rect key="frame" x="0.0" y="160.33333333333334" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="147.33333333333331" width="375" height="73.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-j8-9fI">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="73.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" image="plus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -209,7 +259,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-Fd-ACA">
-                                                <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="80"/>
+                                                <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="73.666666666666671"/>
                                                 <state key="normal" image="minus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -218,7 +268,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fav-Y4-fuO">
-                                                <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="80"/>
+                                                <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="73.666666666666671"/>
                                                 <state key="normal" image="multiply.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -227,7 +277,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-rs-8Q8">
-                                                <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="80"/>
+                                                <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="73.666666666666671"/>
                                                 <state key="normal" image="divide.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -238,10 +288,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-Bo-lBU">
-                                        <rect key="frame" x="0.0" y="240.33333333333334" width="375" height="80.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="220.99999999999997" width="375" height="73.666666666666657"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-DE-ueV">
-                                                <rect key="frame" x="56.666666666666657" y="24" width="262" height="32"/>
+                                                <rect key="frame" x="56.666666666666657" y="20.666666666666686" width="262" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="262" id="pII-nw-trW"/>
@@ -264,18 +314,18 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGE-vI-wdn" customClass="ExpView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="320.66666666666669" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="294.66666666666669" width="375" height="73.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-Uz-Cb7" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="400.66666666666669" width="375" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="368" width="375" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhj-eP-ZX1">
-                                        <rect key="frame" x="0.0" y="400.66666666666669" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="368" width="375" height="73.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGn-WC-ENc">
-                                                <rect key="frame" x="84.333333333333329" y="0.33333333333331439" width="206.33333333333337" height="39"/>
+                                                <rect key="frame" x="84.333333333333329" y="-1" width="206.33333333333337" height="39"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -293,13 +343,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge4-TY-KZo">
-                                        <rect key="frame" x="0.0" y="480.66666666666657" width="375" height="80.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="441.66666666666663" width="375" height="73.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gC-q3-N6l">
-                                        <rect key="frame" x="0.0" y="561" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="515.33333333333337" width="375" height="73.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -321,7 +371,7 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Калькулятор" image="plus.slash.minus" catalog="system" id="XWk-db-xCG"/>
-                    <navigationItem key="navigationItem" title="Калькулятор" id="U2L-UL-J99"/>
+                    <navigationItem key="navigationItem" title="Калькулятор" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
                         <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="MdT-kH-M71"/>
                         <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="QrD-Ls-Bfg"/>
@@ -351,9 +401,13 @@
         <scene sceneID="7kq-pa-2S7">
             <objects>
                 <tabBarController id="KE4-p4-V5t" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="VZj-OU-WbK">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VZj-OU-WbK">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="questionmark.circle" catalog="system" id="jYe-jz-nKs"/>
-                        <barButtonItem key="rightBarButtonItem" image="list.bullet" catalog="system" id="U23-6s-dcP"/>
+                        <barButtonItem key="rightBarButtonItem" image="list.bullet" catalog="system" id="U23-6s-dcP">
+                            <connections>
+                                <segue destination="41i-ZX-eWK" kind="show" id="I25-GD-fNO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oA4-2t-rYj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
