@@ -17,10 +17,12 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
 //        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         setupTableView()
-        
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.navigationItem.largeTitleDisplayMode = .always
+//        self.navigationItem.largeTitleDisplayMode = .always
     }
     
     private func setupTableView() {
@@ -67,6 +69,11 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        self.dismiss(animated: true) {
+////            self.tabBarController?.selectedIndex = 1
+//        }
+    }
     
 }
