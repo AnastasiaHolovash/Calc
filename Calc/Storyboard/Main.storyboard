@@ -153,23 +153,13 @@
         <!--Історія-->
         <scene sceneID="J1u-vH-kml">
             <objects>
-                <viewController id="41i-ZX-eWK" customClass="HistoryViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" id="41i-ZX-eWK" customClass="HistoryViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="swz-v8-Rj6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-bV-26c">
-                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xdQ-cE-f3V">
-                                        <rect key="frame" x="15" y="55.333332061767578" width="345" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xdQ-cE-f3V" id="w20-go-6Gl">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-bV-26c">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -182,13 +172,16 @@
                         <viewLayoutGuide key="safeArea" id="Ppu-mq-h5d"/>
                     </view>
                     <navigationItem key="navigationItem" title="Історія" largeTitleDisplayMode="always" id="EwZ-oq-35v">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="rwK-lc-E00">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L02-xp-q9U">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="rwK-lc-E00">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L02-xp-q9U">
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Закрити">
+                                <state key="normal" backgroundImage="Close3">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressCloseButton:" destination="41i-ZX-eWK" eventType="touchUpInside" id="Ry2-gN-e9q"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -198,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fks-ta-ftx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="-887"/>
+            <point key="canvasLocation" x="839" y="-887"/>
         </scene>
         <!--Калькулятор-->
         <scene sceneID="7N5-w7-M6H">
@@ -397,16 +390,33 @@
             </objects>
             <point key="canvasLocation" x="181.59999999999999" y="-146.30541871921181"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tap Bar Controller-->
         <scene sceneID="7kq-pa-2S7">
             <objects>
-                <tabBarController id="KE4-p4-V5t" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTapBarController" id="KE4-p4-V5t" customClass="CustomTapBarController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VZj-OU-WbK">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="questionmark.circle" catalog="system" id="jYe-jz-nKs"/>
-                        <barButtonItem key="rightBarButtonItem" image="list.bullet" catalog="system" id="U23-6s-dcP">
-                            <connections>
-                                <segue destination="41i-ZX-eWK" kind="show" id="I25-GD-fNO"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="39y-hY-oaV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y7f-zv-AXL">
+                                <rect key="frame" x="16" y="6" width="35" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="questionmark.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fX4-Zs-JCc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-p6-UUs">
+                                <rect key="frame" x="314" y="7" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="list.bullet" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressHistoryButton:" destination="KE4-p4-V5t" eventType="touchUpInside" id="gXg-wR-1gL"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oA4-2t-rYj">
@@ -425,6 +435,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close3" width="26" height="26.333333969116211"/>
         <image name="divide.square" catalog="system" width="128" height="114"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="minus.square" catalog="system" width="128" height="114"/>

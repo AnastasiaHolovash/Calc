@@ -24,6 +24,10 @@
 		5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626A249042BA00C03364 /* HistoryViewController.swift */; };
 		5D95626E2497DFDD00C03364 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626D2497DFDD00C03364 /* Operation.swift */; };
 		5D9562702497E71200C03364 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626F2497E71200C03364 /* History.swift */; };
+		5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956273249A2F8300C03364 /* CustomTableViewCell.swift */; };
+		5D956276249A2F8300C03364 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956274249A2F8300C03364 /* CustomTableViewCell.xib */; };
+		5D956279249A505D00C03364 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956278249A505D00C03364 /* NavigationController.swift */; };
+		5D95627F249A605B00C03364 /* CustomTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95627E249A605B00C03364 /* CustomTapBarController.swift */; };
 		5DBF245B248819DC001EB10B /* ExpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF245A248819DC001EB10B /* ExpView.xib */; };
 		5DBF245D248819F2001EB10B /* ExpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF245C248819F2001EB10B /* ExpView.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +52,10 @@
 		5D95626A249042BA00C03364 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5D95626D2497DFDD00C03364 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		5D95626F2497E71200C03364 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		5D956273249A2F8300C03364 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5D956274249A2F8300C03364 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		5D956278249A505D00C03364 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Calc/NavigationController.swift; sourceTree = SOURCE_ROOT; };
+		5D95627E249A605B00C03364 /* CustomTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarController.swift; sourceTree = "<group>"; };
 		5DBF245A248819DC001EB10B /* ExpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpView.xib; sourceTree = "<group>"; };
 		5DBF245C248819F2001EB10B /* ExpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +94,7 @@
 				5D69B248238ECAB10057D76D /* SceneDelegate.swift */,
 				5D69B27E238EFB600057D76D /* ContentView.swift */,
 				5D496FEF23969F76000C0DF7 /* Func.swift */,
+				5D95627E249A605B00C03364 /* CustomTapBarController.swift */,
 				5D95626F2497E71200C03364 /* History.swift */,
 				5D95626C2497DF9900C03364 /* Models */,
 				5D956266248EFB7800C03364 /* Extensions */,
@@ -114,6 +123,7 @@
 				5D69B25C238EDF090057D76D /* ConvertViewController.swift */,
 				5D496FED239460BD000C0DF7 /* CalculateViewController.swift */,
 				5D95626A249042BA00C03364 /* HistoryViewController.swift */,
+				5D956278249A505D00C03364 /* NavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +143,7 @@
 				5DBF245E248819FF001EB10B /* ExpView */,
 				5D95625E248EE91D00C03364 /* ComplexView */,
 				5D956264248EF8D300C03364 /* CustomViewFuncs.swift */,
+				5D956277249A2FDF00C03364 /* CustomTableViewCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -159,6 +170,15 @@
 				5D95626D2497DFDD00C03364 /* Operation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5D956277249A2FDF00C03364 /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D956273249A2F8300C03364 /* CustomTableViewCell.swift */,
+				5D956274249A2F8300C03364 /* CustomTableViewCell.xib */,
+			);
+			path = CustomTableViewCell;
 			sourceTree = "<group>";
 		};
 		5DBF245E248819FF001EB10B /* ExpView */ = {
@@ -230,6 +250,7 @@
 			files = (
 				5D69B253238ECAB60057D76D /* LaunchScreen.storyboard in Resources */,
 				5DBF245B248819DC001EB10B /* ExpView.xib in Resources */,
+				5D956276249A2F8300C03364 /* CustomTableViewCell.xib in Resources */,
 				5D69B25B238ECD100057D76D /* Main.storyboard in Resources */,
 				5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */,
 				5D69B250238ECAB60057D76D /* Preview Assets.xcassets in Resources */,
@@ -244,12 +265,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D95627F249A605B00C03364 /* CustomTapBarController.swift in Sources */,
 				5DBF245D248819F2001EB10B /* ExpView.swift in Sources */,
 				5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */,
 				5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */,
 				5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */,
 				5D69B27F238EFB600057D76D /* ContentView.swift in Sources */,
+				5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */,
 				5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */,
+				5D956279249A505D00C03364 /* NavigationController.swift in Sources */,
 				5D496FF023969F76000C0DF7 /* Func.swift in Sources */,
 				5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */,
 				5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */,

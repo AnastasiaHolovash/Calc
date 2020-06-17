@@ -17,9 +17,7 @@ class ConvertViewController: UIViewController {
     
     @IBOutlet weak var expView: ExpView!
     @IBOutlet weak var complexView: ComplexView!
-    
-//    var operstion: Operation?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +51,10 @@ class ConvertViewController: UIViewController {
         }
         
         hideKeyboard()
+        
+        // For history updating
+        let operation = Operation.convert(ComplexNumber(numberType: NumberType.complex, part1: re , part2: im))
+        History.shared.addOperationToHistory(operation: operation)
     }
     
     
@@ -76,7 +78,7 @@ class ConvertViewController: UIViewController {
         let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")
         
         let operation = Operation.convert(ComplexNumber(numberType: NumberType.exp, part1: modulZ , part2: arc))
-        updateHistory(operation: operation)
+        History.shared.addOperationToHistory(operation: operation)
     }
     
 
@@ -84,12 +86,11 @@ class ConvertViewController: UIViewController {
         hideKeyboard()
     }
     
-//    MARK:- take out
-    func updateHistory(operation: Operation) {
-        var allOperations = History.shared.resultHistory
-        print(allOperations)
-        allOperations.insert(operation, at: 0)
-        History.shared.resultHistory = allOperations
-    }
+//    func updateHistory(operation: Operation) {
+//        var allOperations = History.shared.resultHistory
+//        print(allOperations)
+//        allOperations.insert(operation, at: 0)
+//        History.shared.resultHistory = allOperations
+//    }
     
 }

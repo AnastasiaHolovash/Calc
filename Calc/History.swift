@@ -12,7 +12,7 @@ class History {
     
     static let shared = History()
 
-    /// Array of all operations
+    /// Array of 50 operations
     var resultHistory: [Operation] {
         get {
             if let data = UserDefaults.standard.data(forKey: "resultHistory") {
@@ -36,7 +36,15 @@ class History {
         }
     }
     
-//    func <#name#>(<#parameters#>) -> <#return type#> {
-//        <#function body#>
-//    }
+    /**
+     Adds one operation to History
+     - Parameter operation: operation to add
+     */
+    func addOperationToHistory(operation: Operation) {
+        var allOperations = self.resultHistory
+        print(allOperations)
+        allOperations.insert(operation, at: 0)
+        self.resultHistory = allOperations
+    }
+    
 }
