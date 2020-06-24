@@ -8,14 +8,27 @@
 
 import UIKit
 
+enum CustomTabBarIndexes: Int {
+    case convertViewController = 0
+    case calculateViewController = 1
+}
+
+protocol HistoryViewControllerDelegate {
+    func tabBarControllerSelectedIndex(selectedIndex: Int, calculate: Calculate?, number: ComplexNumber?)
+}
+
 class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let history = History.shared.resultHistory
+    var delegate: HistoryViewControllerDelegate?
     
+    let history = History.shared.resultHistory
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let some: NumberType?
         
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
 //        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
@@ -70,6 +83,19 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.dismiss(animated: true) {
+            
+            switch self.history[indexPath.row] {
+            case .convert(let complexNumber):
+                self.delegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.convertViewController.rawValue, calculate: nil, number: complexNumber)
+            case .culculate(let calculate):
+                self.delegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.calculateViewController.rawValue, calculate: calculate, number: nil)
+            }
+            
+        }
+        
+        
 //        tableView.deselectRow(at: indexPath, animated: true)
 //        self.dismiss(animated: true) {
 ////            self.tabBarController?.selectedIndex = 1

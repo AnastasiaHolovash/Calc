@@ -27,7 +27,7 @@
 		5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956273249A2F8300C03364 /* CustomTableViewCell.swift */; };
 		5D956276249A2F8300C03364 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956274249A2F8300C03364 /* CustomTableViewCell.xib */; };
 		5D956279249A505D00C03364 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956278249A505D00C03364 /* NavigationController.swift */; };
-		5D95627F249A605B00C03364 /* CustomTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95627E249A605B00C03364 /* CustomTapBarController.swift */; };
+		5D95627F249A605B00C03364 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95627E249A605B00C03364 /* CustomTabBarController.swift */; };
 		5DBF245B248819DC001EB10B /* ExpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF245A248819DC001EB10B /* ExpView.xib */; };
 		5DBF245D248819F2001EB10B /* ExpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF245C248819F2001EB10B /* ExpView.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		5D956273249A2F8300C03364 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5D956274249A2F8300C03364 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		5D956278249A505D00C03364 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = Calc/NavigationController.swift; sourceTree = SOURCE_ROOT; };
-		5D95627E249A605B00C03364 /* CustomTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapBarController.swift; sourceTree = "<group>"; };
+		5D95627E249A605B00C03364 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		5DBF245A248819DC001EB10B /* ExpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpView.xib; sourceTree = "<group>"; };
 		5DBF245C248819F2001EB10B /* ExpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +94,7 @@
 				5D69B248238ECAB10057D76D /* SceneDelegate.swift */,
 				5D69B27E238EFB600057D76D /* ContentView.swift */,
 				5D496FEF23969F76000C0DF7 /* Func.swift */,
-				5D95627E249A605B00C03364 /* CustomTapBarController.swift */,
+				5D95627E249A605B00C03364 /* CustomTabBarController.swift */,
 				5D95626F2497E71200C03364 /* History.swift */,
 				5D95626C2497DF9900C03364 /* Models */,
 				5D956266248EFB7800C03364 /* Extensions */,
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D95627F249A605B00C03364 /* CustomTapBarController.swift in Sources */,
+				5D95627F249A605B00C03364 /* CustomTabBarController.swift in Sources */,
 				5DBF245D248819F2001EB10B /* ExpView.swift in Sources */,
 				5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */,
 				5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */,

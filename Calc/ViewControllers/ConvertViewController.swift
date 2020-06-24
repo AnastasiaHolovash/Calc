@@ -17,6 +17,8 @@ class ConvertViewController: UIViewController {
     
     @IBOutlet weak var expView: ExpView!
     @IBOutlet weak var complexView: ComplexView!
+    
+    var number: ComplexNumber?
         
     override func viewDidLoad() {
         super.viewDidLoad()
