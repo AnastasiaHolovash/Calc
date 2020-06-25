@@ -59,4 +59,29 @@ class ComplexView: UIView {
         imTextField.setRoundedBourder()
     }
     
+    public func reSignButtonSetSign(setPlus: Bool) {
+        if setPlus {
+            reIsPlus = false
+        } else {
+            reIsPlus = true
+        }
+        updateButton(button: reSignButton, isPlus: &reIsPlus)
+    }
+    
+    public func imSignButtonSetSign(setPlus: Bool) {
+        if setPlus {
+            imIsPlus = false
+        } else {
+            imIsPlus = true
+        }
+        updateButton(button: imSignButton, isPlus: &imIsPlus)
+    }
+    
+    public func clearView() {
+        reTextField.text = ""
+        imTextField.text = ""
+        reSignButtonSetSign(setPlus: true)
+        imSignButtonSetSign(setPlus: true)
+    }
+    
 }

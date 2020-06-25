@@ -60,6 +60,31 @@ class ExpView: UIView {
         afterExpTextField.setRoundedBourder()
 
     }
+    
+    public func beforeExpSignButtonSetSign(setPlus: Bool) {
+        if setPlus {
+            beforeExpIsPlus = false
+        } else {
+            beforeExpIsPlus = true
+        }
+        updateButton(button: beforeExpSignButton, isPlus: &beforeExpIsPlus)
+    }
+    
+    public func afterExpSignButtonSetSign(setPlus: Bool) {
+        if setPlus {
+            afterExpIsPlus = false
+        } else {
+            afterExpIsPlus = true
+        }
+        updateButton(button: afterExpSignButton, isPlus: &afterExpIsPlus)
+    }
+    
+    public func clearView() {
+        beforeExpTextField.text = ""
+        afterExpTextField.text = ""
+        beforeExpSignButtonSetSign(setPlus: true)
+        afterExpSignButtonSetSign(setPlus: true)
+    }
 
 
 }

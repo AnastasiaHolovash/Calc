@@ -13,29 +13,38 @@ enum CustomTabBarIndexes: Int {
     case calculateViewController = 1
 }
 
-protocol HistoryViewControllerDelegate {
+// MARK: - HistoryViewController protocols
+protocol TabBarIndexDelegate {
     func tabBarControllerSelectedIndex(selectedIndex: Int, calculate: Calculate?, number: ComplexNumber?)
 }
+//protocol OperationDelegate {
+//    func setOperationFromHistory(calculate: Calculate?)
+//}
+//protocol NumberDelegate {
+//    func setNumberFromHistory(number: ComplexNumber?)
+//}
 
 class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var delegate: HistoryViewControllerDelegate?
+    // Delegates
+    var tabBarIndexDelegate: TabBarIndexDelegate?
+//    var operationDelegate: OperationDelegate?
+//    var numberDelegate: NumberDelegate?
     
-    let history = History.shared.resultHistory
+    var history = History.shared.resultHistory
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let some: NumberType?
-        
+                
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-//        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         setupTableView()
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
-//        self.navigationItem.largeTitleDisplayMode = .always
-//        self.navigationItem.largeTitleDisplayMode = .always
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        history = History.shared.resultHistory
+        tableView.reloadData()
     }
     
     private func setupTableView() {
@@ -88,9 +97,11 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
             
             switch self.history[indexPath.row] {
             case .convert(let complexNumber):
-                self.delegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.convertViewController.rawValue, calculate: nil, number: complexNumber)
+                self.tabBarIndexDelegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.convertViewController.rawValue, calculate: nil, number: complexNumber )
+//                self.numberDelegate?.setNumberFromHistory(number: complexNumber)
             case .culculate(let calculate):
-                self.delegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.calculateViewController.rawValue, calculate: calculate, number: nil)
+                self.tabBarIndexDelegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.calculateViewController.rawValue, calculate: calculate, number: nil)
+//                self.operationDelegate?.setOperationFromHistory(calculate: calculate)
             }
             
         }

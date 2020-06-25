@@ -35,6 +35,8 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     var operationName: NameOfOperation = NameOfOperation.plus
     
+    var operationFromHistory: Calculate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -50,6 +52,9 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         changeSelectedOperation()
+        
+        guard let tabBarC = self.tabBarController as? CustomTabBarController else { return }
+        tabBarC.operationDelegate = self
     }
     
     func buttonsLayerSetup() {
@@ -306,5 +311,13 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let operation = Operation.culculate(Calculate(operation: operationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
     }
+    
+}
+
+extension CalculateViewController: OperationDelegate {
+    func setOperationFromHistory(calculate: Calculate?) {
+        print("YES")
+    }
+    
     
 }
