@@ -33,7 +33,7 @@ class ConvertViewController: UIViewController {
     func showExpResult(re: Double, im: Double) {
         
         let comlexToExp = complexToExpNumber(Im: im, Re: re)
-        let attributedStringResultText = attributedStringResult(moduleZ: comlexToExp.0, arcFi: comlexToExp.1, roundTo: 4)
+        let attributedStringResultText = attributedStringResult_(moduleZ: comlexToExp.0, arcFi: comlexToExp.1, roundTo: 4)
         
         if attributedStringResultText.1 == true {
             present(alert(), animated: true, completion: nil)
@@ -43,13 +43,16 @@ class ConvertViewController: UIViewController {
     }
     
     @IBAction func didPressConvertToExp(_ sender: UIButton) {
-        
         let re = makeANumber(sign: complexView.reIsPlus, number: complexView.reTextField.text ?? "")
         let im = makeANumber(sign: complexView.imIsPlus, number: complexView.imTextField.text ?? "")
         showExpResult(re: re, im: im)
+        
         // For history updating
         let operation = Operation.convert(ComplexNumber(numberType: NumberType.complex, part1: re , part2: im))
         History.shared.addOperationToHistory(operation: operation)
+        
+        expView.hidekeybourd()
+        complexView.hidekeybourd()
     }
     
     func showComplexResult() {
@@ -66,20 +69,21 @@ class ConvertViewController: UIViewController {
     }
     
     @IBAction func didPressConvertToComplex(_ sender: Any) {
-        
         showComplexResult()
         
         // For history updating
         let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
         let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")
-        
         let operation = Operation.convert(ComplexNumber(numberType: NumberType.exp, part1: modulZ , part2: arc))
         History.shared.addOperationToHistory(operation: operation)
+        
+        expView.hidekeybourd()
+        complexView.hidekeybourd()
     }
-    
 
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
-        
+        expView.hidekeybourd()
+        complexView.hidekeybourd()
     }
     
 }

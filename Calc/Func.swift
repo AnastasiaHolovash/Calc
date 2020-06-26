@@ -37,7 +37,7 @@ func degree(_ number: Double) -> Double {
     return number * .pi / 180
 }
 
-
+//MARK: - delete
 /**
  Formes an appearance of complex number in exponential form.
  - Parameters:
@@ -45,7 +45,7 @@ func degree(_ number: Double) -> Double {
     - arcFi: Angle of number in exponential form in degrees.
  - Returns: complex number in exponential form in 'NSAttributedString' with 'Bool' value: 'true' if result is too long to show, 'false' if all is OK
  */
-func attributedStringResult(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4, fontSize: Int = 30) -> (NSAttributedString, Bool) {
+func attributedStringResult_(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4, fontSize: Int = 30) -> (NSAttributedString, Bool) {
     /// ModuleZ in 'String'. Variable is needed in this function because it is used further.
     let stringModuleZ = String(format: "%.\(decimalPlases)f", moduleZ)
 //    let fullstringResult = expNumberToString(arcFi: arcFi, stringModuleZ: stringResultModuleZ)
@@ -67,6 +67,39 @@ func attributedStringResult(moduleZ: Double, arcFi: Double, roundTo decimalPlase
     } else {
         return (attString, false)
     }
+}
+
+func expNumberToString(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4) -> String {
+    /// ModuleZ in 'String'. Variable is needed in this function because it is used further.
+        let stringModuleZ = String(format: "%.\(decimalPlases)f", moduleZ)
+    //    let fullstringResult = expNumberToString(arcFi: arcFi, stringModuleZ: stringResultModuleZ)
+//        let fullstringResult: String
+        if arcFi < 0{
+            return stringModuleZ + "e-i" + String(format: "%.\(decimalPlases)f", -arcFi) + "˚"
+        }else {
+            return stringModuleZ + "ei" + String(format: "%.\(decimalPlases)f", arcFi) + "˚"
+        }
+}
+
+func attributedStringResult(fullstringResult: String, fontSize: Int = 30) -> NSAttributedString {
+    /// Font for the number before the exponent.
+    let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
+    /// Font for exponent degree.
+    let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 2 / 3))
+     
+    let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
+//    fullstringResult.sub
+    let eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    var eLocation = fullstringResult[..<eIndex].count
+    if fullstringResult.firstIndex(of: "(") != nil {
+        eLocation += 1
+    }
+    var length = fullstringResult.count - eLocation
+    if fullstringResult.firstIndex(of: ")") != nil {
+        length -= 1
+    }
+    attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location: eLocation, length: length))
+    return attString
 }
 
 

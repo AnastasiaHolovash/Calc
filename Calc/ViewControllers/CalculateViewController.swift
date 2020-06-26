@@ -73,19 +73,12 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
 
 //    MARK:- take out to custom Views class
     ///Hide all keyboards and show the result of calculation
-    func hideKeyboard() {
-//        beforeExpTextField1.resignFirstResponder()
-//        beforeExpTextField2.resignFirstResponder()
-//        angleExpTextField1.resignFirstResponder()
-//        angleExpTextField2.resignFirstResponder()
-//        complexReTextField1.resignFirstResponder()
-//        complexReTextField2.resignFirstResponder()
-//        complexImTextField1.resignFirstResponder()
-//        complexImTextField2.resignFirstResponder()
-//        if recalculate(){
-//            present(alert2(), animated: true, completion: nil)
-//        }
-    }
+//    func hideKeyboard() {
+//        expView1.hidekeybourd()
+//        expView2.hidekeybourd()
+//        complexView1.hidekeybourd()
+//        complexView2.hidekeybourd()
+//    }
     
     /**
      Change view with exponential form representation to complex and conversely.
@@ -190,7 +183,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         /// 'result' in exponential form of type "Double".
         let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
         /// An appearance of complex number in exponential form.
-        let attributedStringResultText = attributedStringResult(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi, roundTo: 4)
+        let attributedStringResultText = attributedStringResult_(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi, roundTo: 4)
         resultLabel2.attributedText = attributedStringResultText.0
         if attributedStringResultText.1 == true {
             present(alert(), animated: true, completion: nil)
@@ -301,13 +294,18 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
-//        if recalculate(){
-//            present(alert2(), animated: true, completion: nil)
-//        }
+        expView1.hidekeybourd()
+        expView2.hidekeybourd()
+        complexView1.hidekeybourd()
+        complexView2.hidekeybourd()
     }
     
     @IBAction func didPressShowResult(_ sender: UIButton) {
         recalculate()
+        expView1.hidekeybourd()
+        expView2.hidekeybourd()
+        complexView1.hidekeybourd()
+        complexView2.hidekeybourd()
         let operation = Operation.culculate(Calculate(operation: curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
     }

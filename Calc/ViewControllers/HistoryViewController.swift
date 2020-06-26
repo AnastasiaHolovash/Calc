@@ -79,22 +79,6 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell() }
         cell.setOperation(operation: history[indexPath.row])
-//        var text = ""
-//        switch history[indexPath.row] {
-//        case .convert(let complexNumber):
-//            switch complexNumber.numberType {
-//            case .exp:
-//                cell.numberLabel1.attributedText = attributedStringResult(moduleZ: complexNumber.part1, arcFi: complexNumber.part2, roundTo: 3).0
-//            case .complex:
-//                cell.numberLabel1.text = complexNumberToString(Re: complexNumber.part1, Im: complexNumber.part2, roundTo: 3)
-//            }
-//            cell.operationTypeLabel.text = "Конвертувати"
-//
-//        case .culculate(let calculate):
-//
-//            cell.numberLabel1.text = "calculete operation"
-//        }
-//        cell.operationLabel.text = text
         return cell
     }
     
