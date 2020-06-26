@@ -48,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "prepareDataForCalc()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -114,38 +114,22 @@
             endingLineNumber = "31"
             landmarkName = "tabBarControllerSelectedIndex(selectedIndex:calculate:number:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3F9BB062-C14E-4347-8902-AA958ABED579 - 5adb10e6fffcbf4c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Calc.CustomTabBarController.tabBarControllerSelectedIndex(selectedIndex: Swift.Int, calculate: Swift.Optional&lt;Calc.Calculate&gt;, number: Swift.Optional&lt;Calc.ComplexNumber&gt;) -&gt; ()"
-                  moduleName = "Calc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasia/Calc/Calc/CustomTabBarController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "342">
-               </Location>
-               <Location
-                  uuid = "3F9BB062-C14E-4347-8902-AA958ABED579 - 5adb10e6fffcbf4c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Calc.CustomTabBarController.tabBarControllerSelectedIndex(selectedIndex: Swift.Int, calculate: Swift.Optional&lt;Calc.Calculate&gt;, number: Swift.Optional&lt;Calc.ComplexNumber&gt;) -&gt; ()"
-                  moduleName = "Calc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasia/Calc/Calc/CustomTabBarController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "1077">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6360DAF2-2A65-4657-A771-0124846D3FDB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calc/ViewControllers/HistoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "HistoryViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

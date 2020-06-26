@@ -94,6 +94,11 @@ class ComplexView: UIView {
         self.reTextField.text = String(abs(reNumber))
         self.imTextField.text = String(abs(imNumber))
     }
+    
+    public func hidekeybourd() {
+        reTextField.resignFirstResponder()
+        imTextField.resignFirstResponder()
+    }
 
     
 }

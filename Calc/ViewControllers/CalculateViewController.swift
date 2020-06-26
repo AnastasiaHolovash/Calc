@@ -190,7 +190,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         /// 'result' in exponential form of type "Double".
         let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
         /// An appearance of complex number in exponential form.
-        let attributedStringResultText = attributedStringResult(resulsWithExp.moduleZ, resulsWithExp.arcFi)
+        let attributedStringResultText = attributedStringResult(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi, roundTo: 4)
         resultLabel2.attributedText = attributedStringResultText.0
         if attributedStringResultText.1 == true {
             present(alert(), animated: true, completion: nil)
@@ -201,7 +201,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     func showPlusRecult() {
         let data = prepareDataForCalc()
         let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
         
 //        operationName = .plus
@@ -210,7 +210,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     func showMinusRecult() {
         let data = prepareDataForCalc()
         let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
         
 //        operationName = .minus
@@ -219,7 +219,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     func showMultiplyRecult() {
         let data = prepareDataForCalc()
         let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
         
 //        operationName = .multiplication
@@ -228,7 +228,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     func showDivideRecult() {
         let data = prepareDataForCalc()
         let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = stringResultforComplexForm(result.Im, result.Re)
+        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
         
 //        operationName = .division

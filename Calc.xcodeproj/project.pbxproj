@@ -125,6 +125,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				5D956264248EF8D300C03364 /* CustomViewFuncs.swift */,
+				5DBF245E248819FF001EB10B /* ExpView */,
+				5D95625E248EE91D00C03364 /* ComplexView */,
+			);
+			path = RepresentationOfComplexNumbers;
+			sourceTree = "<group>";
+		};
 		5D95625C248EE8F000C03364 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +158,7 @@
 		5D95625F248EE93800C03364 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				5DBF245E248819FF001EB10B /* ExpView */,
-				5D95625E248EE91D00C03364 /* ComplexView */,
-				5D956264248EF8D300C03364 /* CustomViewFuncs.swift */,
+				5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */,
 				5D956277249A2FDF00C03364 /* CustomTableViewCell */,
 			);
 			path = CustomViews;

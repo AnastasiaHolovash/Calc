@@ -45,17 +45,23 @@ func degree(_ number: Double) -> Double {
     - arcFi: Angle of number in exponential form in degrees.
  - Returns: complex number in exponential form in 'NSAttributedString' with 'Bool' value: 'true' if result is too long to show, 'false' if all is OK
  */
-func attributedStringResult(_ moduleZ: Double, _ arcFi: Double) -> (NSAttributedString, Bool) {
+func attributedStringResult(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4, fontSize: Int = 30) -> (NSAttributedString, Bool) {
     /// ModuleZ in 'String'. Variable is needed in this function because it is used further.
-    let stringResultModuleZ = String(format: "%.4f", moduleZ)
-    let fullstringResult = stringResultforExpForm(arcFi, stringResultModuleZ)
+    let stringModuleZ = String(format: "%.\(decimalPlases)f", moduleZ)
+//    let fullstringResult = expNumberToString(arcFi: arcFi, stringModuleZ: stringResultModuleZ)
+    let fullstringResult: String
+    if arcFi < 0{
+        fullstringResult = stringModuleZ + "e-i" + String(format: "%.\(decimalPlases)f", -arcFi) + "˚"
+    }else {
+        fullstringResult = stringModuleZ + "ei" + String(format: "%.\(decimalPlases)f", arcFi) + "˚"
+    }
     /// Font for the number before the exponent.
-    let font:UIFont? = UIFont(name: "Helvetica", size:30)
+    let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
     /// Font for exponent degree.
-    let fontSuper:UIFont? = UIFont(name: "Helvetica", size:20)
+    let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 2 / 3))
      
-    let attString:NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
-     attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringResultModuleZ.count + 1 ,length:fullstringResult.count - stringResultModuleZ.count - 1))
+    let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
+     attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: NSRange(location:stringModuleZ.count + 1 ,length:fullstringResult.count - stringModuleZ.count - 1))
     if fullstringResult.count > 30 {
         return (NSMutableAttributedString(string: "No result", attributes: [.font:font!]), true)
     } else {
@@ -121,15 +127,15 @@ func convertToComplex(expView: ExpView) -> (Re: Double, Im: Double) {
 /**
 Generates a string of an ful number in a complex form.
 - Parameters:
-   - Im: The imaginary part of the complex number.
-   - Re:The real part of the complex number.
+    - Re:The real part of the complex number.
+    - Im: The imaginary part of the complex number.
 - Returns: String of an ful number.
 */
-func stringResultforComplexForm(_ Im: Double, _ Re: Double) -> String {
+func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int) -> String {
     if Im < 0 {
-        return String(format: "%.4f", Re) + " - i" + String(format: "%.4f", -Im)
+        return String(format: "%.\(decimalPlases)f", Re) + " - i" + String(format: "%.\(decimalPlases)f", -Im)
     } else {
-        return String(format: "%.4f", Re) + " + i" + String(format: "%.4f", Im)
+        return String(format: "%.\(decimalPlases)f", Re) + " + i" + String(format: "%.\(decimalPlases)f", Im)
     }
 }
 
@@ -138,18 +144,18 @@ func stringResultforComplexForm(_ Im: Double, _ Re: Double) -> String {
  Generates a string of an ful number in an exponential form.
  - Parameters:
     - arcFi: Angle of number in exponential form in degrees.
-    - stringResultModuleZ:Module of number in exponential form in 'String'.
+    - stringModuleZ:Module of number in exponential form in 'String'.
  - Returns: String of an ful number.
  */
-func stringResultforExpForm(_ arcFi: Double, _ stringResultModuleZ: String) -> String {
-    let stringResult:String
-    if arcFi < 0{
-        stringResult = stringResultModuleZ + "e-i" + String(format: "%.4f", -arcFi) + "˚"
-    }else {
-        stringResult = stringResultModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
-    }
-    return stringResult
-}
+//func expNumberToString(arcFi: Double, stringModuleZ: String) -> String {
+//    let stringResult:String
+//    if arcFi < 0{
+//        stringResult = stringModuleZ + "e-i" + String(format: "%.4f", -arcFi) + "˚"
+//    }else {
+//        stringResult = stringModuleZ + "ei" + String(format: "%.4f", arcFi) + "˚"
+//    }
+//    return stringResult
+//}
 
 
 /// Performs the operation of adding two complex numbers.

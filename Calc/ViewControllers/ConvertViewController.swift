@@ -33,7 +33,7 @@ class ConvertViewController: UIViewController {
     func showExpResult(re: Double, im: Double) {
         
         let comlexToExp = complexToExpNumber(Im: im, Re: re)
-        let attributedStringResultText = attributedStringResult(comlexToExp.0, comlexToExp.1)
+        let attributedStringResultText = attributedStringResult(moduleZ: comlexToExp.0, arcFi: comlexToExp.1, roundTo: 4)
         
         if attributedStringResultText.1 == true {
             present(alert(), animated: true, completion: nil)
@@ -55,7 +55,7 @@ class ConvertViewController: UIViewController {
     func showComplexResult() {
         // MARK:- don`t transmit expView
         let complex = convertToComplex(expView: expView)
-        let result = stringResultforComplexForm(complex.Im, complex.Re)
+        let result = complexNumberToString(Re: complex.Re, Im: complex.Im, roundTo: 4)
         
         if result.count > 20 {
             resultLabel.text = "No result"
@@ -79,6 +79,7 @@ class ConvertViewController: UIViewController {
     
 
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
+        
     }
     
 }

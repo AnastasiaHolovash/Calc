@@ -98,5 +98,9 @@ class ExpView: UIView {
         self.afterExpTextField.text = String(abs(afterExpNumber))
     }
 
+    public func hidekeybourd() {
+        beforeExpTextField.resignFirstResponder()
+        afterExpTextField.resignFirstResponder()
+    }
 
 }
