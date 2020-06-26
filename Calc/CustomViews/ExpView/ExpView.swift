@@ -61,7 +61,7 @@ class ExpView: UIView {
 
     }
     
-    public func beforeExpSignButtonSetSign(setPlus: Bool) {
+    func beforeExpSignButtonSetSign(setPlus: Bool) {
         if setPlus {
             beforeExpIsPlus = false
         } else {
@@ -70,7 +70,7 @@ class ExpView: UIView {
         updateButton(button: beforeExpSignButton, isPlus: &beforeExpIsPlus)
     }
     
-    public func afterExpSignButtonSetSign(setPlus: Bool) {
+    func afterExpSignButtonSetSign(setPlus: Bool) {
         if setPlus {
             afterExpIsPlus = false
         } else {
@@ -79,11 +79,23 @@ class ExpView: UIView {
         updateButton(button: afterExpSignButton, isPlus: &afterExpIsPlus)
     }
     
+    
     public func clearView() {
         beforeExpTextField.text = ""
         afterExpTextField.text = ""
         beforeExpSignButtonSetSign(setPlus: true)
         afterExpSignButtonSetSign(setPlus: true)
+    }
+    
+    public func setNumber(beforeExpNumber: Double, afterExpNumber: Double) {
+        if beforeExpNumber < 0 {
+            self.beforeExpSignButtonSetSign(setPlus: false)
+        }
+        if afterExpNumber < 0 {
+            self.afterExpSignButtonSetSign(setPlus: false)
+        }
+        self.beforeExpTextField.text = String(abs(beforeExpNumber))
+        self.afterExpTextField.text = String(abs(afterExpNumber))
     }
 
 

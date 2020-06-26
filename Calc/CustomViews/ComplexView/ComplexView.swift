@@ -84,4 +84,16 @@ class ComplexView: UIView {
         imSignButtonSetSign(setPlus: true)
     }
     
+    public func setNumber(reNumber: Double, imNumber: Double) {
+        if reNumber < 0 {
+            self.reSignButtonSetSign(setPlus: false)
+        }
+        if imNumber < 0 {
+            self.imSignButtonSetSign(setPlus: false)
+        }
+        self.reTextField.text = String(abs(reNumber))
+        self.imTextField.text = String(abs(imNumber))
+    }
+
+    
 }

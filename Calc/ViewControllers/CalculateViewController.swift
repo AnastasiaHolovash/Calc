@@ -33,7 +33,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     var firstNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     /// number for save
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
-    var operationName: NameOfOperation = NameOfOperation.plus
+    var curentOperationName: NameOfOperation = NameOfOperation.plus
     
     var operationFromHistory: Calculate?
     
@@ -115,7 +115,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
         divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
         
-        switch operationName {
+        switch curentOperationName {
         case .plus:
             plusButton.setImage(UIImage.init(systemName: "plus.square.fill"), for: .normal)
         case .minus:
@@ -125,7 +125,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         case .division:
             divideButton.setImage(UIImage.init(systemName: "divide.square.fill"), for: .normal)
         }
-//        button.setImage(UIImage.init(systemName: imageName), for: .normal)
+
     }
     
     /**
@@ -242,7 +242,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
 
      */
     func recalculate() {
-        switch operationName {
+        switch curentOperationName {
         case .plus:
             showPlusRecult()
         case .minus:
@@ -279,23 +279,23 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func selectedPlusOperation(_ sender: UIButton) {
-        operationName = .plus
+        curentOperationName = .plus
         changeSelectedOperation()
         showPlusRecult()
     }
     
     @IBAction func selectedMinusOperation(_ sender: UIButton) {
-        operationName = .minus
+        curentOperationName = .minus
         changeSelectedOperation()
         showMinusRecult()
     }
     @IBAction func selectedMultiplyOperation(_ sender: UIButton) {
-        operationName = .multiplication
+        curentOperationName = .multiplication
         changeSelectedOperation()
         showMultiplyRecult()
     }
     @IBAction func selectedDivideOperation(_ sender: UIButton) {
-        operationName = .division
+        curentOperationName = .division
         changeSelectedOperation()
         showDivideRecult()
     }
@@ -308,16 +308,32 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func didPressShowResult(_ sender: UIButton) {
         recalculate()
-        let operation = Operation.culculate(Calculate(operation: operationName, number1: firstNumber, number2: secondNumber))
+        let operation = Operation.culculate(Calculate(operation: curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
     }
     
 }
 
 extension CalculateViewController: OperationDelegate {
-    func setOperationFromHistory(calculate: Calculate?) {
-        print("YES")
-    }
     
+    func setOperationFromHistory(calculate: Calculate?) {
+        if let calculate = calculate {
+            switch calculate.number1.numberType {
+            case .exp:
+                expView1.setNumber(beforeExpNumber: calculate.number1.part1, afterExpNumber: calculate.number1.part2)
+            case .complex:
+                complexView1.setNumber(reNumber: calculate.number1.part1, imNumber: calculate.number1.part2)
+            }
+            switch calculate.number2.numberType {
+            case .exp:
+                expView2.setNumber(beforeExpNumber: calculate.number2.part1, afterExpNumber: calculate.number2.part2)
+            case .complex:
+                complexView2.setNumber(reNumber: calculate.number2.part1, imNumber: calculate.number2.part2)
+            }
+            curentOperationName = calculate.operation
+            changeSelectedOperation()
+            recalculate()
+        }
+    }
     
 }

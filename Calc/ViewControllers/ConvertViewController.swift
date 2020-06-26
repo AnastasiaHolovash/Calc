@@ -53,7 +53,7 @@ class ConvertViewController: UIViewController {
     }
     
     func showComplexResult() {
-        
+        // MARK:- don`t transmit expView
         let complex = convertToComplex(expView: expView)
         let result = stringResultforComplexForm(complex.Im, complex.Re)
         
@@ -68,7 +68,6 @@ class ConvertViewController: UIViewController {
     @IBAction func didPressConvertToComplex(_ sender: Any) {
         
         showComplexResult()
-        
         
         // For history updating
         let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
@@ -93,28 +92,13 @@ extension ConvertViewController: NumberDelegate {
         if let numberFromHistory = number {
             switch numberFromHistory.numberType {
             case .exp:
-                if numberFromHistory.part1 < 0 {
-                    expView.beforeExpSignButtonSetSign(setPlus: false)
-                }
-                if numberFromHistory.part2 < 0 {
-                    expView.afterExpSignButtonSetSign(setPlus: false)
-                }
-                expView.beforeExpTextField.text = String(abs(numberFromHistory.part1))
-                expView.afterExpTextField.text = String(abs(numberFromHistory.part2))
+                expView.setNumber(beforeExpNumber: numberFromHistory.part1, afterExpNumber: numberFromHistory.part2)
                 showComplexResult()
             case .complex:
-                if numberFromHistory.part1 < 0 {
-                    complexView.reSignButtonSetSign(setPlus: false)
-                }
-                if numberFromHistory.part2 < 0 {
-                    complexView.imSignButtonSetSign(setPlus: false)
-                }
-                complexView.reTextField.text = String(abs(numberFromHistory.part1))
-                complexView.imTextField.text = String(abs(numberFromHistory.part2))
+                complexView.setNumber(reNumber: numberFromHistory.part1, imNumber: numberFromHistory.part2)
                 showExpResult(re: numberFromHistory.part1, im: numberFromHistory.part2)
             }
         }
-        
     }
     
 }
