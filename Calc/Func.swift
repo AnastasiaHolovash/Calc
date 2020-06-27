@@ -51,9 +51,9 @@ func attributedStringResult_(moduleZ: Double, arcFi: Double, roundTo decimalPlas
 //    let fullstringResult = expNumberToString(arcFi: arcFi, stringModuleZ: stringResultModuleZ)
     let fullstringResult: String
     if arcFi < 0{
-        fullstringResult = stringModuleZ + "e-i" + String(format: "%.\(decimalPlases)f", -arcFi) + "˚"
+        fullstringResult = stringModuleZ + "e-i" + String(format: "%.\(decimalPlases)f", -arcFi) + "°"
     }else {
-        fullstringResult = stringModuleZ + "ei" + String(format: "%.\(decimalPlases)f", arcFi) + "˚"
+        fullstringResult = stringModuleZ + "ei" + String(format: "%.\(decimalPlases)f", arcFi) + "°"
     }
     /// Font for the number before the exponent.
     let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
@@ -70,30 +70,25 @@ func attributedStringResult_(moduleZ: Double, arcFi: Double, roundTo decimalPlas
 }
 
 func expNumberToString(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4) -> String {
-    /// ModuleZ in 'String'. Variable is needed in this function because it is used further.
-        let stringModuleZ = String(format: "%.\(decimalPlases)f", moduleZ)
-    //    let fullstringResult = expNumberToString(arcFi: arcFi, stringModuleZ: stringResultModuleZ)
-//        let fullstringResult: String
-        if arcFi < 0{
-            return stringModuleZ + "e-i" + String(format: "%.\(decimalPlases)f", -arcFi) + "˚"
-        }else {
-            return stringModuleZ + "ei" + String(format: "%.\(decimalPlases)f", arcFi) + "˚"
-        }
+    let stringModuleZ = "\(moduleZ.smartRound(decimalPlases: decimalPlases))"
+    if arcFi < 0{
+        return stringModuleZ + "e-i" + "\((-arcFi).smartRound(decimalPlases: decimalPlases))" + "°"
+    }else {
+        return stringModuleZ + "ei" + "\(arcFi.smartRound(decimalPlases: decimalPlases))" + "°"
+    }
 }
 
 func attributedStringResult(fullstringResult: String, fontSize: Int = 30) -> NSAttributedString {
     /// Font for the number before the exponent.
     let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
     /// Font for exponent degree.
-    let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 2 / 3))
+    let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 5 / 6))
      
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
-//    fullstringResult.sub
+
     let eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
-    var eLocation = fullstringResult[..<eIndex].count
-    if fullstringResult.firstIndex(of: "(") != nil {
-        eLocation += 1
-    }
+    let eLocation = fullstringResult[..<eIndex].count + 1
+
     var length = fullstringResult.count - eLocation
     if fullstringResult.firstIndex(of: ")") != nil {
         length -= 1
@@ -166,9 +161,9 @@ Generates a string of an ful number in a complex form.
 */
 func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int) -> String {
     if Im < 0 {
-        return String(format: "%.\(decimalPlases)f", Re) + " - i" + String(format: "%.\(decimalPlases)f", -Im)
+        return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
     } else {
-        return String(format: "%.\(decimalPlases)f", Re) + " + i" + String(format: "%.\(decimalPlases)f", Im)
+        return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
     }
 }
 

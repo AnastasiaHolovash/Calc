@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F674924A7616400B59126 /* Double+Extensions.swift */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D496FF023969F76000C0DF7 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FEF23969F76000C0DF7 /* Func.swift */; };
 		5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B246238ECAB10057D76D /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D0F674924A7616400B59126 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D496FEF23969F76000C0DF7 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		5D69B243238ECAB10057D76D /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 			children = (
 				5D956267248EFB9500C03364 /* UITextField+Extensions.swift */,
 				5DD6673D24A6A417002C321D /* String+Extensions.swift */,
+				5D0F674924A7616400B59126 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				5D496FF023969F76000C0DF7 /* Func.swift in Sources */,
 				5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */,
 				5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */,
+				5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */,
 				5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */,
 				5D956263248EF25A00C03364 /* ComplexView.swift in Sources */,
 				5D9562702497E71200C03364 /* History.swift in Sources */,

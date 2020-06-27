@@ -63,7 +63,10 @@ class CustomTableViewCell: UITableViewCell {
             // First number
             switch calculate.number1.numberType {
             case .exp:
-                self.numberLabel1.attributedText = attributedStringResult_(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2, roundTo: 3, fontSize: 20).0
+                let fullString = expNumberToString(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2, roundTo: 3)
+                self.numberLabel1.attributedText = attributedStringResult(fullstringResult: fullString, fontSize: 20)
+
+//                self.numberLabel1.attributedText = attributedStringResult_(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2, roundTo: 3, fontSize: 20).0
             case .complex:
                 self.numberLabel1.text = complexNumberToString(Re: calculate.number1.part1, Im: calculate.number1.part2, roundTo: 3)
             }
