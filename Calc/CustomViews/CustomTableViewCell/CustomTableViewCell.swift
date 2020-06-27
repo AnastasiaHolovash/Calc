@@ -51,6 +51,7 @@ class CustomTableViewCell: UITableViewCell {
         operationSignLabel.text = ""
     }
     
+    // MAKR: - divide for several funcs
     public func setOperation(operation: Operation) {
         
         switch operation {
@@ -60,7 +61,6 @@ class CustomTableViewCell: UITableViewCell {
             case .exp:
                 let fullString = expNumberToString(moduleZ: complexNumber.part1, arcFi: complexNumber.part2, roundTo: 3)
                 self.numberLabel1.attributedText = attributedStringResult(fullstringResult: fullString, fontSize: 20)
-//                self.numberLabel1.attributedText = attributedStringResult_(moduleZ: complexNumber.part1, arcFi: complexNumber.part2, roundTo: 3, fontSize: 24).0
             case .complex:
                 self.numberLabel1.text = complexNumberToString(Re: complexNumber.part1, Im: complexNumber.part2, roundTo: 3)
             }

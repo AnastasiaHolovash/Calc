@@ -70,15 +70,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-//    MARK:- take out to custom Views class
-    ///Hide all keyboards and show the result of calculation
-//    func hideKeyboard() {
-//        expView1.hidekeybourd()
-//        expView2.hidekeybourd()
-//        complexView1.hidekeybourd()
-//        complexView2.hidekeybourd()
-//    }
     
     /**
      Change view with exponential form representation to complex and conversely.
@@ -319,14 +310,26 @@ extension CalculateViewController: OperationDelegate {
             switch calculate.number1.numberType {
             case .exp:
                 expView1.setNumber(beforeExpNumber: calculate.number1.part1, afterExpNumber: calculate.number1.part2)
+                if expView1.isHidden {
+                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+                }
             case .complex:
                 complexView1.setNumber(reNumber: calculate.number1.part1, imNumber: calculate.number1.part2)
+                if complexView1.isHidden {
+                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+                }
             }
             switch calculate.number2.numberType {
             case .exp:
                 expView2.setNumber(beforeExpNumber: calculate.number2.part1, afterExpNumber: calculate.number2.part2)
+                if expView2.isHidden {
+                    changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
+                }
             case .complex:
                 complexView2.setNumber(reNumber: calculate.number2.part1, imNumber: calculate.number2.part2)
+                if complexView2.isHidden {
+                    changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
+                }
             }
             curentOperationName = calculate.operation
             changeSelectedOperation()
