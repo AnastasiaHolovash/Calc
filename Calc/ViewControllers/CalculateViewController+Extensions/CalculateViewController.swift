@@ -14,14 +14,16 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var changeFormButton2: UIButton!
 
 //  Operation Sign Buttons
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var multiplyButton: UIButton!
-    @IBOutlet weak var divideButton: UIButton!
+//    @IBOutlet weak var plusButton: UIButton!
+//    @IBOutlet weak var minusButton: UIButton!
+//    @IBOutlet weak var multiplyButton: UIButton!
+//    @IBOutlet weak var divideButton: UIButton!
     
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultLabel2: UILabel!
     @IBOutlet weak var showResultButton: UIButton!
+    
+    @IBOutlet weak var operationBar: OperationBar!
     
     @IBOutlet weak var expView1: ExpView!
     @IBOutlet weak var complexView1: ComplexView!
@@ -33,7 +35,8 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
     var firstNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     /// number for save
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
-    var curentOperationName: NameOfOperation = NameOfOperation.plus
+    
+//    var curentOperationName: NameOfOperation = NameOfOperation.plus
     
     var operationFromHistory: Calculate?
     
@@ -42,10 +45,10 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
        
         buttonsLayerSetup()
         showResultButtonAnimationSetup()
-        changeSelectedOperation()
-        
+        operationBar.changeSelectedOperation()
         guard let tabBarC = self.tabBarController as? CustomTabBarController else { return }
         tabBarC.operationDelegate = self
+        operationBar.delegate = self
     }
     
     deinit {
@@ -81,79 +84,28 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+//    MARK:- Operation Bar
     /**
     Changes the picture of the selected sign which indicated the operation to the filled picture.
      */
-    func changeSelectedOperation() {
-        plusButton.setImage(UIImage.init(systemName: "plus.square"), for: .normal)
-        minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
-        multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
-        divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
-        
-        switch curentOperationName {
-        case .plus:
-            plusButton.setImage(UIImage.init(systemName: "plus.square.fill"), for: .normal)
-        case .minus:
-            minusButton.setImage(UIImage.init(systemName: "minus.square.fill"), for: .normal)
-        case .multiplication:
-            multiplyButton.setImage(UIImage.init(systemName: "multiply.square.fill"), for: .normal)
-        case .division:
-            divideButton.setImage(UIImage.init(systemName: "divide.square.fill"), for: .normal)
-        }
-
-    }
-    
-    /**
-     Reduces both numbers to a complex form.
-     - Returns: A real part of the first number, a real part of the second number, an imaginary part of the first number, an imaginary part of the second number.
-     */
-    func prepareDataForCalc() -> (Re1: Double, Re2: Double, Im1: Double, Im2: Double) {
-        
-        var Re1: Double = 0.0
-        var Im1: Double = 0.0
-        
-        if !expView1.isHidden {
-            let complex = convertToComplex(expView: expView1)
-            Re1 = complex.Re
-            Im1 = complex.Im
-            
-            // For history updating
-            let modulZ = makeANumber(sign: expView1.beforeExpIsPlus, number: expView1.beforeExpTextField.text ?? "")
-            let arc = makeANumber(sign: expView1.afterExpIsPlus, number: expView1.afterExpTextField.text ?? "")
-            firstNumber = ComplexNumber(numberType: NumberType.exp, part1: modulZ, part2: arc)
-            
-        } else {
-            Re1 = makeANumber(sign: complexView1.reIsPlus, number: complexView1.reTextField.text ?? "")
-            Im1 = makeANumber(sign: complexView1.imIsPlus, number: complexView1.imTextField.text ?? "")
-            
-            // For history updating
-            firstNumber = ComplexNumber(numberType: NumberType.complex, part1: Re1, part2: Im1)
-        }
-        
-        var Re2: Double = 0.0
-        var Im2: Double = 0.0
-        
-        if !expView2.isHidden {
-            let complex = convertToComplex(expView: expView2)
-            Re2 = complex.Re
-            Im2 = complex.Im
-            
-            // For history updating
-            let modulZ = makeANumber(sign: expView2.beforeExpIsPlus, number: expView2.beforeExpTextField.text ?? "")
-            let arc = makeANumber(sign: expView2.afterExpIsPlus, number: expView2.afterExpTextField.text ?? "")
-            secondNumber = ComplexNumber(numberType: NumberType.exp, part1: modulZ, part2: arc)
-            
-        } else {
-            Re2 = makeANumber(sign: complexView2.reIsPlus, number: complexView2.reTextField.text ?? "")
-            Im2 = makeANumber(sign: complexView2.imIsPlus, number: complexView2.imTextField.text ?? "")
-            
-            // For history updating
-            secondNumber = ComplexNumber(numberType: NumberType.complex, part1: Re2, part2: Im2)
-        }
-        
-        return (Re1: Re1, Re2: Re2, Im1: Im1, Im2: Im2)
-    }
-        
+//    func changeSelectedOperation() {
+//        plusButton.setImage(UIImage.init(systemName: "plus.square"), for: .normal)
+//        minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
+//        multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
+//        divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
+//
+//        switch curentOperationName {
+//        case .plus:
+//            plusButton.setImage(UIImage.init(systemName: "plus.square.fill"), for: .normal)
+//        case .minus:
+//            minusButton.setImage(UIImage.init(systemName: "minus.square.fill"), for: .normal)
+//        case .multiplication:
+//            multiplyButton.setImage(UIImage.init(systemName: "multiply.square.fill"), for: .normal)
+//        case .division:
+//            divideButton.setImage(UIImage.init(systemName: "divide.square.fill"), for: .normal)
+//        }
+//
+//    }
     
     /**
      Presents recult of calculation in exponential form.
@@ -172,43 +124,13 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    /// Prepare data for calculetion, calculete and show recult of adding two complex numbers. Recult presents in complex and exponential forms.
-    func showPlusRecult() {
-        let data = prepareDataForCalc()
-        let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)        
-    }
-    /// Prepare data for calculetion, calculete and show recult of subtraction two complex numbers. Recult presents in complex and exponential forms.
-    func showMinusRecult() {
-        let data = prepareDataForCalc()
-        let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
-    }
-    /// Prepare data for calculetion, calculete and show recult of multiplication two complex numbers. Recult presents in complex and exponential forms.
-    func showMultiplyRecult() {
-        let data = prepareDataForCalc()
-        let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
-    }
-    /// Prepare data for calculetion, calculete and show recult of division two complex numbers. Recult presents in complex and exponential forms.
-    func showDivideRecult() {
-        let data = prepareDataForCalc()
-        let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
-        resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
-    }
-    
     /**
      Recalculate.
-     
         1. Checks which mathematical operation is selected.
         2. Recalculate.
      */
     func recalculate() {
-        switch curentOperationName {
+        switch operationBar.curentOperationName {
         case .plus:
             showPlusRecult()
         case .minus:
@@ -229,28 +151,30 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
         recalculate()
     }
-
-    @IBAction func selectedPlusOperation(_ sender: UIButton) {
-        curentOperationName = .plus
-        changeSelectedOperation()
-        showPlusRecult()
-    }
     
-    @IBAction func selectedMinusOperation(_ sender: UIButton) {
-        curentOperationName = .minus
-        changeSelectedOperation()
-        showMinusRecult()
-    }
-    @IBAction func selectedMultiplyOperation(_ sender: UIButton) {
-        curentOperationName = .multiplication
-        changeSelectedOperation()
-        showMultiplyRecult()
-    }
-    @IBAction func selectedDivideOperation(_ sender: UIButton) {
-        curentOperationName = .division
-        changeSelectedOperation()
-        showDivideRecult()
-    }
+    //    MARK:- Operation Bar
+//
+//    @IBAction func selectedPlusOperation(_ sender: UIButton) {
+//        curentOperationName = .plus
+//        changeSelectedOperation()
+//        showPlusRecult()
+//    }
+//
+//    @IBAction func selectedMinusOperation(_ sender: UIButton) {
+//        curentOperationName = .minus
+//        changeSelectedOperation()
+//        showMinusRecult()
+//    }
+//    @IBAction func selectedMultiplyOperation(_ sender: UIButton) {
+//        curentOperationName = .multiplication
+//        changeSelectedOperation()
+//        showMultiplyRecult()
+//    }
+//    @IBAction func selectedDivideOperation(_ sender: UIButton) {
+//        curentOperationName = .division
+//        changeSelectedOperation()
+//        showDivideRecult()
+//    }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         expView1.hidekeybourd()
@@ -265,7 +189,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
-        let operation = Operation.culculate(Calculate(operation: curentOperationName, number1: firstNumber, number2: secondNumber))
+        let operation = Operation.culculate(Calculate(operation: operationBar.curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
     }
     
@@ -299,10 +223,16 @@ extension CalculateViewController: OperationDelegate {
                     changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
                 }
             }
-            curentOperationName = calculate.operation
-            changeSelectedOperation()
+            operationBar.curentOperationName = calculate.operation
+            operationBar.changeSelectedOperation()
             recalculate()
         }
     }
     
+}
+
+extension CalculateViewController: OperationBarDelegate {
+    func selectedNewOperation() {
+        recalculate()
+    }
 }

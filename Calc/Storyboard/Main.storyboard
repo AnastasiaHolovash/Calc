@@ -252,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="149.5" width="414" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-XS-hLr">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-XS-hLr" customClass="OperationBar" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="149.5" width="414" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-j8-9fI">
@@ -262,7 +262,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="selectedPlusOperation:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="LHf-V6-UdW"/>
+                                                    <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="zzz-dI-Wh6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-Fd-ACA">
@@ -271,7 +271,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="selectedMinusOperation:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="Dm7-ds-dy6"/>
+                                                    <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="Pnf-Y3-fU9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fav-Y4-fuO">
@@ -280,7 +280,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="selectedMultiplyOperation:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="7eh-rB-aKk"/>
+                                                    <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="lpM-OP-kQ6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-rs-8Q8">
@@ -289,10 +289,16 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="selectedDivideOperation:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="vhw-qF-6cO"/>
+                                                    <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="jbf-3K-FRa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <connections>
+                                            <outlet property="divideButton" destination="HKR-rs-8Q8" id="BET-kn-Jhw"/>
+                                            <outlet property="minusButton" destination="8PD-Fd-ACA" id="sb6-3I-ubE"/>
+                                            <outlet property="multiplyButton" destination="Fav-Y4-fuO" id="wY9-zw-o55"/>
+                                            <outlet property="plusButton" destination="AAE-j8-9fI" id="7NR-V0-t9Y"/>
+                                        </connections>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-Bo-lBU">
                                         <rect key="frame" x="0.0" y="224.5" width="414" height="74.5"/>
@@ -416,12 +422,9 @@
                         <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="QrD-Ls-Bfg"/>
                         <outlet property="complexView1" destination="sK3-zX-X2h" id="XlE-1P-ksg"/>
                         <outlet property="complexView2" destination="f1G-Uz-Cb7" id="LrX-5g-zP5"/>
-                        <outlet property="divideButton" destination="HKR-rs-8Q8" id="cQ4-aW-1cg"/>
                         <outlet property="expView1" destination="guJ-Ll-5gi" id="DSq-jm-ADv"/>
                         <outlet property="expView2" destination="jGE-vI-wdn" id="RxT-0f-QX9"/>
-                        <outlet property="minusButton" destination="8PD-Fd-ACA" id="IQj-bg-qPw"/>
-                        <outlet property="multiplyButton" destination="Fav-Y4-fuO" id="kLY-8f-Wl4"/>
-                        <outlet property="plusButton" destination="AAE-j8-9fI" id="23H-51-KzK"/>
+                        <outlet property="operationBar" destination="Owh-XS-hLr" id="vBP-XD-LnL"/>
                         <outlet property="resultLabel" destination="Ge4-TY-KZo" id="nQr-ae-hI4"/>
                         <outlet property="resultLabel2" destination="2gC-q3-N6l" id="flI-21-RkE"/>
                         <outlet property="showResultButton" destination="YH5-26-UiX" id="GHt-CJ-zLp"/>

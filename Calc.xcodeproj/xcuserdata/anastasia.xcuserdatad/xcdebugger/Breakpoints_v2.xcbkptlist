@@ -142,10 +142,88 @@
             filePath = "Calc/ViewControllers/CalculateViewController+Extensions/CalculateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "selectedMinusOperation(_:)"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "CalculateViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B877DDBF-C7E5-467E-B779-D8F16EE379C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calc/CustomViews/OperationBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "wasSelectedNewOperation(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B877DDBF-C7E5-467E-B779-D8F16EE379C9 - 8c5946cdeed482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calc.OperationBar.wasSelectedNewOperation(__C.UIButton) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "111">
+               </Location>
+               <Location
+                  uuid = "B877DDBF-C7E5-467E-B779-D8F16EE379C9 - 8c5946cdeed482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calc.OperationBar.wasSelectedNewOperation(__C.UIButton) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "401">
+               </Location>
+               <Location
+                  uuid = "B877DDBF-C7E5-467E-B779-D8F16EE379C9 - 8c5946cdeed482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calc.OperationBar.wasSelectedNewOperation(__C.UIButton) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "638">
+               </Location>
+               <Location
+                  uuid = "B877DDBF-C7E5-467E-B779-D8F16EE379C9 - 8c5946cdeed482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calc.OperationBar.wasSelectedNewOperation(__C.UIButton) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "875">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
