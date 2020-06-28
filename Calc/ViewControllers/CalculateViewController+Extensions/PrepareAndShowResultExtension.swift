@@ -11,6 +11,25 @@ import UIKit
 extension CalculateViewController {
     
     /**
+     Recalculate.
+        1. Checks which mathematical operation is selected.
+        2. Recalculate.
+     */
+    func recalculate() {
+        switch operationBar.curentOperationName {
+        case .plus:
+            showPlusRecult()
+        case .minus:
+            showMinusRecult()
+        case .multiplication:
+            showMultiplyRecult()
+        case .division:
+            showDivideRecult()
+        }
+    }
+    
+    
+    /**
      Reduces both numbers to a complex form.
      - Returns: A real part of the first number, a real part of the second number, an imaginary part of the first number, an imaginary part of the second number.
      */
@@ -95,6 +114,24 @@ extension CalculateViewController {
         let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
+    }
+    
+    
+    /**
+     Presents recult of calculation in exponential form.
+     - Parameter result:Recult of calculation in complex form.
+        - Im: The imaginary part of the complex number.
+        - Re:The real part of the complex number.
+     */
+    func showResulsWithExp(result: (Im: Double, Re: Double)) {
+        /// 'result' in exponential form of type "Double".
+        let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
+        /// An appearance of complex number in exponential form.
+        let attributedStringResultText = attributedStringResult_(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi, roundTo: 4)
+        resultLabel2.attributedText = attributedStringResultText.0
+        if attributedStringResultText.1 == true {
+            present(alert(), animated: true, completion: nil)
+        }
     }
     
 }
