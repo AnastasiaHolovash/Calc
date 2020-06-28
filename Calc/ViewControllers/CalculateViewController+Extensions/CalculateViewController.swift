@@ -41,34 +41,25 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
        
         buttonsLayerSetup()
-        
-        // Hides the showResultButton moving it down
-        UIView.animate(withDuration: 0) {
-            self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        }
-
-        // Listen for keyboard events
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+        showResultButtonAnimationSetup()
         changeSelectedOperation()
         
         guard let tabBarC = self.tabBarController as? CustomTabBarController else { return }
         tabBarC.operationDelegate = self
     }
     
+    deinit {
+        // Stop listening for keyboard show/hide events
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
     func buttonsLayerSetup() {
         // Rounds the corners of the buttons
         changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
         changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
         showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.0)
-    }
-
-    
-    deinit {
-        // Stop listening for keyboard show/hide events
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     /**
@@ -186,9 +177,7 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let data = prepareDataForCalc()
         let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
-        
-//        operationName = .plus
+        showResulsWithExp(result: result)        
     }
     /// Prepare data for calculetion, calculete and show recult of subtraction two complex numbers. Recult presents in complex and exponential forms.
     func showMinusRecult() {
@@ -196,8 +185,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
-        
-//        operationName = .minus
     }
     /// Prepare data for calculetion, calculete and show recult of multiplication two complex numbers. Recult presents in complex and exponential forms.
     func showMultiplyRecult() {
@@ -205,8 +192,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
-        
-//        operationName = .multiplication
     }
     /// Prepare data for calculetion, calculete and show recult of division two complex numbers. Recult presents in complex and exponential forms.
     func showDivideRecult() {
@@ -214,8 +199,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         resultLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
         showResulsWithExp(result: result)
-        
-//        operationName = .division
     }
     
     /**
@@ -223,7 +206,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
      
         1. Checks which mathematical operation is selected.
         2. Recalculate.
-
      */
     func recalculate() {
         switch curentOperationName {
@@ -238,20 +220,6 @@ class CalculateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    @objc func keyboardWillChange(notification: Notification){
-        
-        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
-            UIView.animate(withDuration: 2) {
-                self.showResultButton.transform = CGAffineTransform(translationX: 0, y: 0)
-            }
-        }else{
-            UIView.animate(withDuration: 2) {
-                self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-            }
-        }
-    }
-
     
     @IBAction func changeFormAction1(_ sender: UIButton) {
         changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)

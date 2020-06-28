@@ -18,6 +18,8 @@
 		5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B25C238EDF090057D76D /* ConvertViewController.swift */; };
 		5D69B27F238EFB600057D76D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B27E238EFB600057D76D /* ContentView.swift */; };
 		5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6B043D2411949200AA7D3B /* Asset.xcassets */; };
+		5D6E464424A928B90063CE90 /* ShowResultButtonAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464324A928B90063CE90 /* ShowResultButtonAnimationExtension.swift */; };
+		5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464524A92FB20063CE90 /* OperationBar.swift */; };
 		5D956261248EF24B00C03364 /* ComplexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956260248EF24B00C03364 /* ComplexView.xib */; };
 		5D956263248EF25A00C03364 /* ComplexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956262248EF25A00C03364 /* ComplexView.swift */; };
 		5D956265248EF8D300C03364 /* CustomViewFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956264248EF8D300C03364 /* CustomViewFuncs.swift */; };
@@ -48,6 +50,8 @@
 		5D69B25C238EDF090057D76D /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		5D69B27E238EFB600057D76D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D6B043D2411949200AA7D3B /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		5D6E464324A928B90063CE90 /* ShowResultButtonAnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultButtonAnimationExtension.swift; sourceTree = "<group>"; };
+		5D6E464524A92FB20063CE90 /* OperationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationBar.swift; sourceTree = "<group>"; };
 		5D956260248EF24B00C03364 /* ComplexView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplexView.xib; sourceTree = "<group>"; };
 		5D956262248EF25A00C03364 /* ComplexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexView.swift; sourceTree = "<group>"; };
 		5D956264248EF8D300C03364 /* CustomViewFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewFuncs.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5D6E464224A928630063CE90 /* CalculateViewController+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D496FED239460BD000C0DF7 /* CalculateViewController.swift */,
+				5D6E464324A928B90063CE90 /* ShowResultButtonAnimationExtension.swift */,
+			);
+			path = "CalculateViewController+Extensions";
+			sourceTree = "<group>";
+		};
 		5D7779C424A4C8C7007F2EBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5D69B25C238EDF090057D76D /* ConvertViewController.swift */,
-				5D496FED239460BD000C0DF7 /* CalculateViewController.swift */,
+				5D6E464224A928630063CE90 /* CalculateViewController+Extensions */,
 				5D95626A249042BA00C03364 /* HistoryViewController.swift */,
 				5D956278249A505D00C03364 /* NavigationController.swift */,
 			);
@@ -164,6 +177,7 @@
 			children = (
 				5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */,
 				5D956277249A2FDF00C03364 /* CustomTableViewCell */,
+				5D6E464524A92FB20063CE90 /* OperationBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -294,6 +308,7 @@
 				5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */,
 				5D69B27F238EFB600057D76D /* ContentView.swift in Sources */,
 				5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */,
+				5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */,
 				5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */,
 				5D956279249A505D00C03364 /* NavigationController.swift in Sources */,
 				5D496FF023969F76000C0DF7 /* Func.swift in Sources */,
@@ -305,6 +320,7 @@
 				5D9562702497E71200C03364 /* History.swift in Sources */,
 				5D956265248EF8D300C03364 /* CustomViewFuncs.swift in Sources */,
 				5D95626E2497DFDD00C03364 /* Operation.swift in Sources */,
+				5D6E464424A928B90063CE90 /* ShowResultButtonAnimationExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

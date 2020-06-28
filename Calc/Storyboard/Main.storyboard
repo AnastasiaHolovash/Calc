@@ -328,25 +328,25 @@
                                         <rect key="frame" x="0.0" y="374" width="414" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhj-eP-ZX1">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-5o-Y32">
                                         <rect key="frame" x="0.0" y="374" width="414" height="74.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGn-WC-ENc">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH5-26-UiX">
                                                 <rect key="frame" x="93" y="18" width="228" height="39"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" title="Розрахувати"/>
                                                 <connections>
-                                                    <action selector="didPressShowResult:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="g8G-zp-xJu"/>
+                                                    <action selector="didPressShowResult:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="eBZ-ll-LUg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="GGn-WC-ENc" firstAttribute="centerY" secondItem="Lhj-eP-ZX1" secondAttribute="centerY" id="0bk-GC-2Ci"/>
-                                            <constraint firstItem="GGn-WC-ENc" firstAttribute="width" secondItem="Lhj-eP-ZX1" secondAttribute="width" multiplier="0.55" id="Gex-6s-wDE"/>
-                                            <constraint firstItem="GGn-WC-ENc" firstAttribute="centerX" secondItem="Lhj-eP-ZX1" secondAttribute="centerX" id="Xbh-q3-rDS"/>
+                                            <constraint firstItem="YH5-26-UiX" firstAttribute="centerY" secondItem="k0p-5o-Y32" secondAttribute="centerY" id="DUY-np-Sl7"/>
+                                            <constraint firstItem="YH5-26-UiX" firstAttribute="centerX" secondItem="k0p-5o-Y32" secondAttribute="centerX" id="XcQ-VR-4R4"/>
+                                            <constraint firstItem="YH5-26-UiX" firstAttribute="width" secondItem="k0p-5o-Y32" secondAttribute="width" multiplier="0.55" id="l9b-LH-7XF"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sog-Jp-XnT">
@@ -424,7 +424,7 @@
                         <outlet property="plusButton" destination="AAE-j8-9fI" id="23H-51-KzK"/>
                         <outlet property="resultLabel" destination="Ge4-TY-KZo" id="nQr-ae-hI4"/>
                         <outlet property="resultLabel2" destination="2gC-q3-N6l" id="flI-21-RkE"/>
-                        <outlet property="showResultButton" destination="GGn-WC-ENc" id="KVj-1e-qGC"/>
+                        <outlet property="showResultButton" destination="YH5-26-UiX" id="GHt-CJ-zLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG0-pX-P02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
