@@ -58,7 +58,7 @@ class ExpView: UIView {
         super.layoutSubviews()
         beforeExpTextField.setRoundedBourder()
         afterExpTextField.setRoundedBourder()
-
+//        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
     }
     
     func beforeExpSignButtonSetSign(setPlus: Bool) {

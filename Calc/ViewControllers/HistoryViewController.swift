@@ -13,28 +13,21 @@ enum CustomTabBarIndexes: Int {
     case calculateViewController = 1
 }
 
-// MARK: - HistoryViewController protocols
+
 protocol TabBarIndexDelegate {
     func tabBarControllerSelectedIndex(selectedIndex: Int, calculate: Calculate?, number: ComplexNumber?)
 }
-//protocol OperationDelegate {
-//    func setOperationFromHistory(calculate: Calculate?)
-//}
-//protocol NumberDelegate {
-//    func setNumberFromHistory(number: ComplexNumber?)
-//}
+
 
 class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    // Delegates
     var tabBarIndexDelegate: TabBarIndexDelegate?
-//    var operationDelegate: OperationDelegate?
-//    var numberDelegate: NumberDelegate?
     
     var history = History.shared.resultHistory
         
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -42,19 +35,19 @@ class HistoryViewController: UIViewController {
         setupTableView()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         history = History.shared.resultHistory
         tableView.reloadData()
     }
     
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "CustomTableViewCell")
-        
-//        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-//        tableView.insetsContentViewsToSafeArea = false
     }
+    
     
     @IBAction func didPressCloseButton(_ sender: UIButton) {
         self.dismiss(animated: true) {
@@ -62,7 +55,7 @@ class HistoryViewController: UIViewController {
         }
     }
     
-
+    
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {

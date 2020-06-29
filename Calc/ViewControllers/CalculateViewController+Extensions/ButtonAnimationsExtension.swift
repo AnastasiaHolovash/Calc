@@ -19,16 +19,24 @@ extension CalculateViewController {
         }
     }
     
-    @objc func keyboardWillChange(notification: Notification){
+    @objc func keyboardWillChange(notification: Notification) {
         
         if notification.name.rawValue == "UIKeyboardWillShowNotification"{
+            anwerView.hide()
+            UIView.animate(withDuration: 1) {
+                self.anwerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+            }
             UIView.animate(withDuration: 2) {
                 self.showResultButton.transform = CGAffineTransform(translationX: 0, y: 0)
             }
-        }else{
+        } else {
             UIView.animate(withDuration: 2) {
                 self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
+            UIView.animate(withDuration: 1) {
+                self.anwerView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }
+            anwerView.show()
         }
     }
     

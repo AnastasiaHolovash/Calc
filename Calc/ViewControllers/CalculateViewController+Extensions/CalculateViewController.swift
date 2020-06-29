@@ -13,8 +13,10 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var changeFormButton1: UIButton!
     @IBOutlet weak var changeFormButton2: UIButton!
     
-    @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var resultLabel2: UILabel!
+    @IBOutlet weak var anwerView: AnswerView!
+    //    @IBOutlet weak var resultLabel: UILabel!
+//    @IBOutlet weak var resultLabel2: UILabel!
+    
     @IBOutlet weak var showResultButton: UIButton!
     
     @IBOutlet weak var operationBar: OperationBar!
@@ -62,9 +64,13 @@ class CalculateViewController: UIViewController {
     
     func buttonsLayerSetup() {
         // Rounds the corners of the buttons
-        changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.0)
-        changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.0)
-        showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.0)
+        changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.5)
+        changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.5)
+        showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
+//        expView1.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+//        expView2.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+//        complexView1.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+//        complexView2.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
     }
     
     
@@ -86,6 +92,7 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
+//        anwerView.show()
         let operation = Operation.culculate(Calculate(operation: operationBar.curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
     }
@@ -96,6 +103,7 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
+//        anwerView.show()
     }
     
 }

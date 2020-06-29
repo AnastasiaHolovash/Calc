@@ -57,6 +57,7 @@ class ComplexView: UIView {
         super.layoutSubviews()
         reTextField.setRoundedBourder()
         imTextField.setRoundedBourder()
+//        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
     }
     
     public func reSignButtonSetSign(setPlus: Bool) {

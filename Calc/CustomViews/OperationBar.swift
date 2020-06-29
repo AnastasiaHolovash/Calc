@@ -32,16 +32,23 @@ class OperationBar: UIStackView {
         minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
         multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
         divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
-        
+        plusButton.tintColor = .black
+        minusButton.tintColor = .black
+        multiplyButton.tintColor = .black
+        divideButton.tintColor = .black
         switch curentOperationName {
         case .plus:
             plusButton.setImage(UIImage.init(systemName: "plus.square.fill"), for: .normal)
+            plusButton.tintColor = .systemIndigo
         case .minus:
             minusButton.setImage(UIImage.init(systemName: "minus.square.fill"), for: .normal)
+            minusButton.tintColor = .systemIndigo
         case .multiplication:
             multiplyButton.setImage(UIImage.init(systemName: "multiply.square.fill"), for: .normal)
+            multiplyButton.tintColor = .systemIndigo
         case .division:
             divideButton.setImage(UIImage.init(systemName: "divide.square.fill"), for: .normal)
+            divideButton.tintColor = .systemIndigo
         }
     }
     
