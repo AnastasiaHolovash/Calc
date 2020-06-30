@@ -18,7 +18,7 @@ extension CalculateViewController {
 //            self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
 //        }
         self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        self.anwerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
         
     }
     
@@ -28,7 +28,7 @@ extension CalculateViewController {
         
         if notification.name.rawValue == "UIKeyboardWillShowNotification"{
             UIView.animate(withDuration: 1) {
-                self.anwerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+                self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
             UIView.animate(withDuration: 2) {
                 self.showResultButton.transform = CGAffineTransform(translationX: 0, y: 0)
@@ -38,7 +38,7 @@ extension CalculateViewController {
                 self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
             UIView.animate(withDuration: 1) {
-                self.anwerView.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
             }
         }
         

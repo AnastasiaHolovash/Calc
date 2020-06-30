@@ -13,9 +13,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var changeFormButton1: UIButton!
     @IBOutlet weak var changeFormButton2: UIButton!
     
-    @IBOutlet weak var anwerView: AnswerView!
-    //    @IBOutlet weak var resultLabel: UILabel!
-//    @IBOutlet weak var resultLabel2: UILabel!
+    @IBOutlet weak var answerView: AnswerView!
     
     @IBOutlet weak var showResultButton: UIButton!
     

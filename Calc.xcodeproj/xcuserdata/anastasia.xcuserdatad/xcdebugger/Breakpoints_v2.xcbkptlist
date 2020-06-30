@@ -158,8 +158,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
                   offsetFromSymbolStart = "111">
                </Location>
                <Location
@@ -173,8 +173,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
                   offsetFromSymbolStart = "401">
                </Location>
                <Location
@@ -188,8 +188,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
                   offsetFromSymbolStart = "638">
                </Location>
                <Location
@@ -203,8 +203,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
                   offsetFromSymbolStart = "875">
                </Location>
             </Locations>
@@ -272,38 +272,22 @@
             endingLineNumber = "33"
             landmarkName = "keyboardWillChange(notification:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8D7273DE-33CF-4D4C-B0C6-6D9F28FA72A3 - 592793c6efdc1f54"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Calc.CalculateViewController.keyboardWillChange(notification: Foundation.Notification) -&gt; ()"
-                  moduleName = "Calc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasia/Calc/Calc/ViewControllers/CalculateViewController+Extensions/ButtonAnimationsExtension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "1033">
-               </Location>
-               <Location
-                  uuid = "8D7273DE-33CF-4D4C-B0C6-6D9F28FA72A3 - b3106e48ea8b4d7a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 () -&gt; () in Calc.CalculateViewController.keyboardWillChange(notification: Foundation.Notification) -&gt; ()"
-                  moduleName = "Calc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anastasia/Calc/Calc/ViewControllers/CalculateViewController+Extensions/ButtonAnimationsExtension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "55">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDEDA3AF-2446-4BA5-90AD-1828BC0C3A8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calc/ViewControllers/ConvertViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "didPressConvert(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -31,106 +31,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-qg-Vpk">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-qg-Vpk">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0r-Qb-HYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-uh-din">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="icN-Sl-Inc"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-6Q-989" customClass="ExpView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="75" width="414" height="74.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="30" width="414" height="118"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-ke-ilc" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="414" height="0.0"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQP-Vi-tNj">
-                                        <rect key="frame" x="0.0" y="149.5" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="148" width="414" height="94.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xI1-eH-ey8">
-                                                <rect key="frame" x="76" y="28.5" width="262" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGE-ct-6Sw" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
+                                                <rect key="frame" x="37" y="22" width="150" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="43U-gW-Qoi"/>
-                                                    <constraint firstAttribute="width" constant="262" id="wH6-Kq-vfh"/>
+                                                    <constraint firstAttribute="width" constant="150" id="WtL-wY-KJH"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Zvr-xJ-hpM"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <state key="normal" title="Комплексна форма">
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <state key="normal" title="Button">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="didPressConvertToComplex:" destination="7BB-oD-TJP" eventType="touchUpInside" id="hKz-ae-VhF"/>
+                                                    <action selector="didPressChangeForm:" destination="7BB-oD-TJP" eventType="touchUpInside" id="VtN-UV-yCy"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mre-DZ-JiM">
+                                                <rect key="frame" x="227" y="22" width="150" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="9u1-tv-o01"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Ufa-yg-2hL"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="arrowshape.turn.up.right" catalog="system">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                                </state>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="xI1-eH-ey8" firstAttribute="centerY" secondItem="tQP-Vi-tNj" secondAttribute="centerY" constant="7" id="9HX-SF-8AD"/>
-                                            <constraint firstItem="xI1-eH-ey8" firstAttribute="centerX" secondItem="tQP-Vi-tNj" secondAttribute="centerX" id="V8Y-vR-wCf"/>
+                                            <constraint firstItem="TGE-ct-6Sw" firstAttribute="centerX" secondItem="tQP-Vi-tNj" secondAttribute="centerX" multiplier="0.54" id="8Tr-tt-f4K"/>
+                                            <constraint firstItem="mre-DZ-JiM" firstAttribute="centerX" secondItem="tQP-Vi-tNj" secondAttribute="centerX" multiplier="1.46" id="F2e-Zq-Uv2"/>
+                                            <constraint firstItem="mre-DZ-JiM" firstAttribute="centerY" secondItem="tQP-Vi-tNj" secondAttribute="centerY" id="ueC-GF-iKO"/>
+                                            <constraint firstItem="TGE-ct-6Sw" firstAttribute="centerY" secondItem="tQP-Vi-tNj" secondAttribute="centerY" id="zrr-gp-ghX"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-ke-ilc" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="224.5" width="414" height="74.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-gl-geB">
-                                        <rect key="frame" x="0.0" y="299" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="242.5" width="414" height="94"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-2C-0N2">
-                                                <rect key="frame" x="76" y="28.5" width="262" height="32"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-ne-seB">
+                                                <rect key="frame" x="44.5" y="22" width="325" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="262" id="kCy-hc-zgr"/>
-                                                    <constraint firstAttribute="height" constant="32" id="vX3-q2-yDU"/>
+                                                    <constraint firstAttribute="height" constant="50" id="HSA-V0-cm1"/>
+                                                    <constraint firstAttribute="width" constant="325" id="KHj-ia-EXG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <state key="normal" title="Експоненційна форма">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Конвертувати"/>
                                                 <connections>
-                                                    <action selector="didPressConvertToExp:" destination="7BB-oD-TJP" eventType="touchUpInside" id="FVW-PQ-I5M"/>
+                                                    <action selector="didPressConvert:" destination="7BB-oD-TJP" eventType="touchUpInside" id="QyI-gA-aRD"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="0pm-2C-0N2" firstAttribute="centerX" secondItem="Lg4-gl-geB" secondAttribute="centerX" id="Rjh-YM-zdH"/>
-                                            <constraint firstItem="0pm-2C-0N2" firstAttribute="centerY" secondItem="Lg4-gl-geB" secondAttribute="centerY" constant="7" id="nHS-8t-gqF"/>
+                                            <constraint firstItem="PWB-ne-seB" firstAttribute="centerX" secondItem="Lg4-gl-geB" secondAttribute="centerX" id="TNR-CE-tqZ"/>
+                                            <constraint firstItem="PWB-ne-seB" firstAttribute="centerY" secondItem="Lg4-gl-geB" secondAttribute="centerY" id="s0C-QF-VKW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-mN-ff1">
-                                        <rect key="frame" x="0.0" y="374" width="414" height="74.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-Kn-DdX">
-                                        <rect key="frame" x="0.0" y="448.5" width="414" height="75"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-ld-2OW">
-                                                <rect key="frame" x="8" y="0.0" width="398" height="75"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="HQt-ld-2OW" secondAttribute="trailing" constant="8" id="KMQ-uz-2iZ"/>
-                                            <constraint firstItem="HQt-ld-2OW" firstAttribute="centerY" secondItem="qfn-Kn-DdX" secondAttribute="centerY" id="OkL-di-mKp"/>
-                                            <constraint firstItem="HQt-ld-2OW" firstAttribute="leading" secondItem="qfn-Kn-DdX" secondAttribute="leading" constant="8" id="PSj-i8-q9a"/>
-                                            <constraint firstItem="HQt-ld-2OW" firstAttribute="centerX" secondItem="qfn-Kn-DdX" secondAttribute="centerX" id="i7B-No-phk"/>
-                                            <constraint firstItem="HQt-ld-2OW" firstAttribute="height" secondItem="qfn-Kn-DdX" secondAttribute="height" id="x4a-6H-fR6"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-Pc-oud">
-                                        <rect key="frame" x="0.0" y="523.5" width="414" height="74.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWn-Vy-hgh">
-                                        <rect key="frame" x="0.0" y="598" width="414" height="75"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-Pc-oud" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="336.5" width="414" height="336.5"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lg4-gl-geB" firstAttribute="height" secondItem="XCg-qg-Vpk" secondAttribute="height" multiplier="0.14" id="CqJ-vW-bHh"/>
+                                    <constraint firstItem="U7p-Pc-oud" firstAttribute="height" secondItem="XCg-qg-Vpk" secondAttribute="height" multiplier="0.5" id="Vnl-Kg-A14"/>
+                                    <constraint firstItem="tQP-Vi-tNj" firstAttribute="height" secondItem="XCg-qg-Vpk" secondAttribute="height" multiplier="0.14" id="wYo-oK-RSg"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JlV-gF-cgO" firstAttribute="bottom" secondItem="XCg-qg-Vpk" secondAttribute="bottom" id="4iy-y1-z5N"/>
@@ -146,12 +141,11 @@
                     <tabBarItem key="tabBarItem" title="Конвертувати" image="repeat" catalog="system" id="C4V-gd-mhk"/>
                     <navigationItem key="navigationItem" title="Конвертація" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
                     <connections>
+                        <outlet property="answerView" destination="U7p-Pc-oud" id="hpc-gH-KZ0"/>
+                        <outlet property="changeFormButton" destination="TGE-ct-6Sw" id="tXo-27-NPf"/>
                         <outlet property="complexView" destination="zws-ke-ilc" id="iBS-aK-qdZ"/>
-                        <outlet property="convertToComplexButton" destination="xI1-eH-ey8" id="XVx-Ah-nD4"/>
-                        <outlet property="convertToExpButton" destination="0pm-2C-0N2" id="chg-0w-BZv"/>
+                        <outlet property="convertButton" destination="PWB-ne-seB" id="kGB-OQ-RbH"/>
                         <outlet property="expView" destination="e3H-6Q-989" id="kK0-ks-ZDl"/>
-                        <outlet property="resultLabel" destination="HQt-ld-2OW" id="k0a-1g-Eew"/>
-                        <outlet property="stackView" destination="XCg-qg-Vpk" id="H1I-sA-Xua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cID-uH-b0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -161,7 +155,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-729" y="-146"/>
+            <point key="canvasLocation" x="-730.43478260869574" y="-146.65178571428569"/>
         </scene>
         <!--Історія-->
         <scene sceneID="J1u-vH-kml">
@@ -386,7 +380,7 @@
                     <tabBarItem key="tabBarItem" title="Калькулятор" image="plus.slash.minus" catalog="system" id="XWk-db-xCG"/>
                     <navigationItem key="navigationItem" title="Калькулятор" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
-                        <outlet property="anwerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
+                        <outlet property="answerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
                         <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="MdT-kH-M71"/>
                         <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="QrD-Ls-Bfg"/>
                         <outlet property="complexView1" destination="sK3-zX-X2h" id="XlE-1P-ksg"/>
@@ -455,6 +449,7 @@
     </scenes>
     <resources>
         <image name="Close3" width="39" height="39.5"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="divide.square" catalog="system" width="128" height="114"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="minus.square" catalog="system" width="128" height="114"/>

@@ -159,7 +159,7 @@ Generates a string of an ful number in a complex form.
     - Im: The imaginary part of the complex number.
 - Returns: String of an ful number.
 */
-func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int) -> String {
+func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
     if Im < 0 {
         return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
     } else {
