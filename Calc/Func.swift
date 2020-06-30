@@ -78,7 +78,7 @@ func expNumberToString(moduleZ: Double, arcFi: Double, roundTo decimalPlases: In
     }
 }
 
-func attributedStringResult(fullstringResult: String, fontSize: Int = 30) -> NSAttributedString {
+func attributedStringResult(fullstringResult: String, fontSize: Int = 20) -> NSAttributedString {
     /// Font for the number before the exponent.
     let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
     /// Font for exponent degree.

@@ -32,6 +32,7 @@ class CalculateViewController: UIViewController {
     
     var operationFromHistory: Calculate?
     
+    var tabBarC: CustomTabBarController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,29 @@ class CalculateViewController: UIViewController {
         showResultButtonAnimationSetup()
         operationBar.changeSelectedOperation()
         
-        guard let tabBarC = self.tabBarController as? CustomTabBarController else { return }
+        guard let tabBar = self.tabBarController as? CustomTabBarController else { return }
+        tabBarC = tabBar
         tabBarC.operationDelegate = self
         operationBar.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let number = tabBarC.transferNumber {
+            switch number.numberType {
+            case .exp:
+                expView1.setNumber(beforeExpNumber: number.part1, afterExpNumber: number.part2)
+                if expView1.isHidden {
+                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+                }
+            case .complex:
+                complexView1.setNumber(reNumber: number.part1, imNumber: number.part2)
+                if complexView1.isHidden {
+                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+                }
+            }
+            tabBarC.transferNumber = nil
+        }
     }
     
     func addObserver() {
@@ -134,6 +154,7 @@ extension CalculateViewController: OperationDelegate {
             operationBar.curentOperationName = calculate.operation
             operationBar.changeSelectedOperation()
             recalculate()
+            self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
     

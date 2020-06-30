@@ -79,6 +79,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didPressTransferButton:" destination="7BB-oD-TJP" eventType="touchUpInside" id="L3L-Hu-wne"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -146,6 +149,7 @@
                         <outlet property="complexView" destination="zws-ke-ilc" id="iBS-aK-qdZ"/>
                         <outlet property="convertButton" destination="PWB-ne-seB" id="kGB-OQ-RbH"/>
                         <outlet property="expView" destination="e3H-6Q-989" id="kK0-ks-ZDl"/>
+                        <outlet property="transferButton" destination="mre-DZ-JiM" id="Xkl-ka-HnG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cID-uH-b0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
