@@ -18,14 +18,15 @@
 		5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B25C238EDF090057D76D /* ConvertViewController.swift */; };
 		5D69B27F238EFB600057D76D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B27E238EFB600057D76D /* ContentView.swift */; };
 		5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6B043D2411949200AA7D3B /* Asset.xcassets */; };
-		5D6E464424A928B90063CE90 /* ButtonAnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464324A928B90063CE90 /* ButtonAnimationsExtension.swift */; };
+		5D6E464424A928B90063CE90 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464324A928B90063CE90 /* AnimationsExtension.swift */; };
 		5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464524A92FB20063CE90 /* OperationBar.swift */; };
 		5D6E464824A9318B0063CE90 /* PrepareAndShowResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464724A9318B0063CE90 /* PrepareAndShowResultExtension.swift */; };
 		5D6E464B24A944BD0063CE90 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6E464A24A944BD0063CE90 /* AnswerView.xib */; };
 		5D6E464D24A944CE0063CE90 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464C24A944CE0063CE90 /* AnswerView.swift */; };
+		5D6E465224AB41180063CE90 /* ChangeFormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E465124AB41180063CE90 /* ChangeFormButton.swift */; };
 		5D956261248EF24B00C03364 /* ComplexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956260248EF24B00C03364 /* ComplexView.xib */; };
 		5D956263248EF25A00C03364 /* ComplexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956262248EF25A00C03364 /* ComplexView.swift */; };
-		5D956265248EF8D300C03364 /* CustomViewFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956264248EF8D300C03364 /* CustomViewFuncs.swift */; };
+		5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */; };
 		5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956267248EFB9500C03364 /* UITextField+Extensions.swift */; };
 		5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626A249042BA00C03364 /* HistoryViewController.swift */; };
 		5D95626E2497DFDD00C03364 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626D2497DFDD00C03364 /* Operation.swift */; };
@@ -52,14 +53,15 @@
 		5D69B25C238EDF090057D76D /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		5D69B27E238EFB600057D76D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D6B043D2411949200AA7D3B /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
-		5D6E464324A928B90063CE90 /* ButtonAnimationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimationsExtension.swift; sourceTree = "<group>"; };
+		5D6E464324A928B90063CE90 /* AnimationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		5D6E464524A92FB20063CE90 /* OperationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationBar.swift; sourceTree = "<group>"; };
 		5D6E464724A9318B0063CE90 /* PrepareAndShowResultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareAndShowResultExtension.swift; sourceTree = "<group>"; };
 		5D6E464A24A944BD0063CE90 /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		5D6E464C24A944CE0063CE90 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		5D6E465124AB41180063CE90 /* ChangeFormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFormButton.swift; sourceTree = "<group>"; };
 		5D956260248EF24B00C03364 /* ComplexView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplexView.xib; sourceTree = "<group>"; };
 		5D956262248EF25A00C03364 /* ComplexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexView.swift; sourceTree = "<group>"; };
-		5D956264248EF8D300C03364 /* CustomViewFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewFuncs.swift; sourceTree = "<group>"; };
+		5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersViewFuncs.swift; sourceTree = "<group>"; };
 		5D956267248EFB9500C03364 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		5D95626A249042BA00C03364 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5D95626D2497DFDD00C03364 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				5D496FED239460BD000C0DF7 /* CalculateViewController.swift */,
-				5D6E464324A928B90063CE90 /* ButtonAnimationsExtension.swift */,
+				5D6E464324A928B90063CE90 /* AnimationsExtension.swift */,
 				5D6E464724A9318B0063CE90 /* PrepareAndShowResultExtension.swift */,
 			);
 			path = "CalculateViewController+Extensions";
@@ -159,7 +161,7 @@
 		5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */ = {
 			isa = PBXGroup;
 			children = (
-				5D956264248EF8D300C03364 /* CustomViewFuncs.swift */,
+				5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */,
 				5DBF245E248819FF001EB10B /* ExpView */,
 				5D95625E248EE91D00C03364 /* ComplexView */,
 			);
@@ -192,6 +194,7 @@
 				5D6E464924A944420063CE90 /* AnswerView */,
 				5D956277249A2FDF00C03364 /* CustomTableViewCell */,
 				5D6E464524A92FB20063CE90 /* OperationBar.swift */,
+				5D6E465124AB41180063CE90 /* ChangeFormButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -329,14 +332,15 @@
 				5D496FF023969F76000C0DF7 /* Func.swift in Sources */,
 				5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */,
 				5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */,
+				5D6E465224AB41180063CE90 /* ChangeFormButton.swift in Sources */,
 				5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */,
 				5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */,
 				5D6E464824A9318B0063CE90 /* PrepareAndShowResultExtension.swift in Sources */,
 				5D956263248EF25A00C03364 /* ComplexView.swift in Sources */,
 				5D9562702497E71200C03364 /* History.swift in Sources */,
-				5D956265248EF8D300C03364 /* CustomViewFuncs.swift in Sources */,
+				5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */,
 				5D95626E2497DFDD00C03364 /* Operation.swift in Sources */,
-				5D6E464424A928B90063CE90 /* ButtonAnimationsExtension.swift in Sources */,
+				5D6E464424A928B90063CE90 /* AnimationsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -67,10 +67,7 @@ class CalculateViewController: UIViewController {
         changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.5)
         changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.5)
         showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
-//        expView1.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-//        expView2.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-//        complexView1.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-//        complexView2.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+        
     }
     
     

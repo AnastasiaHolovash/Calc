@@ -14,15 +14,19 @@ extension CalculateViewController {
     
     func showResultButtonAnimationSetup() {
         // Hides the showResultButton moving it down
-        UIView.animate(withDuration: 0) {
-            self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        }
+//        UIView.animate(withDuration: 0) {
+//            self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+//        }
+        self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        self.anwerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        
     }
     
     @objc func keyboardWillChange(notification: Notification) {
+
+        //  MARK:- movement animation
         
         if notification.name.rawValue == "UIKeyboardWillShowNotification"{
-            anwerView.hide()
             UIView.animate(withDuration: 1) {
                 self.anwerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
@@ -36,8 +40,20 @@ extension CalculateViewController {
             UIView.animate(withDuration: 1) {
                 self.anwerView.transform = CGAffineTransform(translationX: 0, y: 0)
             }
-            anwerView.show()
         }
+        
+//  MARK:- appearance animation
+        
+//        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
+//            anwerView.hide()
+//            UIView.animate(withDuration: 2) { self.showResultButton.transform = CGAffineTransform(translationX: 0, y: 0)
+//            }
+//        } else {
+//            UIView.animate(withDuration: 2) {
+//                self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+//            }
+//            anwerView.show()
+//        }
     }
     
     

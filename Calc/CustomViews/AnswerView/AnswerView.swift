@@ -47,14 +47,18 @@ class AnswerView: UIView {
         viewWithShadow.layer.shadowRadius = 8
         expAnswerLabel.text = ""
         complexAnswerLabel.text = ""
-        self.hide()
+//        self.viewWithShadow.alpha = 0
     }
     
     public func show() {
-        viewWithShadow.isHidden = false
+        UIView.animate(withDuration: 2) {
+            self.viewWithShadow.alpha = 1
+        }
     }
     
     public func hide() {
-        viewWithShadow.isHidden = true
+        UIView.animate(withDuration: 2) {
+            self.viewWithShadow.alpha = 0
+        }
     }
 }
