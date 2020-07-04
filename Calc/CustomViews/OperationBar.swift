@@ -10,6 +10,7 @@ import UIKit
 
 protocol OperationBarDelegate {
     func selectedNewOperation()
+    func selectedSwapOperation()
 }
 
 class OperationBar: UIStackView {
@@ -21,6 +22,7 @@ class OperationBar: UIStackView {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var divideButton: UIButton!
+    @IBOutlet weak var swapButton: UIButton!
     
     public var curentOperationName: NameOfOperation = NameOfOperation.plus
     
@@ -62,6 +64,8 @@ class OperationBar: UIStackView {
             curentOperationName = .multiplication
         case divideButton:
             curentOperationName = .division
+        case swapButton:
+            self.delegate?.selectedSwapOperation()
         default:
             print("Error")
         }

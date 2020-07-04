@@ -93,24 +93,22 @@ class ConvertViewController: UIViewController {
     @IBAction func didPressConvert(_ sender: UIButton) {
         switch changeFormButton.curentForm {
         case .exp:
-            let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
-            let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")
-            showComplexResult(modulZ: modulZ, arc: arc)
+            let expNumber = makeExpNumber()
+            showComplexResult(modulZ: expNumber.modulZ, arc: expNumber.arc)
             
             // For history updating
-            let operation = Operation.convert(ComplexNumber(numberType: NumberType.exp, part1: modulZ , part2: arc))
+            let operation = Operation.convert(ComplexNumber(numberType: NumberType.exp, part1: expNumber.modulZ , part2: expNumber.arc))
             History.shared.addOperationToHistory(operation: operation)
             
             expView.hidekeybourd()
             complexView.hidekeybourd()
                 
         case .complex:
-            let re = makeANumber(sign: complexView.reIsPlus, number: complexView.reTextField.text ?? "")
-            let im = makeANumber(sign: complexView.imIsPlus, number: complexView.imTextField.text ?? "")
-            showExpResult(re: re, im: im)
+            let complexNumber = makeComplexNumber()
+            showExpResult(re: complexNumber.re, im: complexNumber.im)
             
             // For history updating
-            let operation = Operation.convert(ComplexNumber(numberType: NumberType.complex, part1: re , part2: im))
+            let operation = Operation.convert(ComplexNumber(numberType: NumberType.complex, part1: complexNumber.re , part2: complexNumber.im))
             History.shared.addOperationToHistory(operation: operation)
             
             expView.hidekeybourd()
@@ -120,11 +118,33 @@ class ConvertViewController: UIViewController {
     
     @IBAction func didPressChangeForm(_ sender: ChangeFormButton) {
         sender.changeForm()
+        switch changeFormButton.curentForm {
+        case .exp:
+            let expNumber = makeExpNumber()
+            showComplexResult(modulZ: expNumber.modulZ, arc: expNumber.arc)
+        case .complex:
+            let complexNumber = makeComplexNumber()
+            showExpResult(re: complexNumber.re, im: complexNumber.im)
+        }
     }
     
     @IBAction func tapOnScreen(_ sender: UITapGestureRecognizer) {
         expView.hidekeybourd()
         complexView.hidekeybourd()
+    }
+    
+    
+    func makeComplexNumber() -> (re: Double, im: Double) {
+        let re = makeANumber(sign: complexView.reIsPlus, number: complexView.reTextField.text ?? "")
+        let im = makeANumber(sign: complexView.imIsPlus, number: complexView.imTextField.text ?? "")
+        return (re: re, im: im)
+    }
+    
+
+    func makeExpNumber() -> (modulZ: Double, arc: Double) {
+        let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
+        let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")
+        return (modulZ: modulZ, arc: arc)
     }
     
     
@@ -140,8 +160,8 @@ class ConvertViewController: UIViewController {
 
     func showComplexResult(modulZ: Double, arc: Double) {
         let complex = expToComplexNumber(modulZ: modulZ, arc: arc)
-        transferNumber = ComplexNumber(numberType: .complex, part1: complex.Re, part2: complex.Im)
-        let result = complexNumberToString(Re: complex.Re, Im: complex.Im, roundTo: 4)
+        transferNumber = ComplexNumber(numberType: .complex, part1: complex.re, part2: complex.im)
+        let result = complexNumberToString(Re: complex.re, Im: complex.im, roundTo: 4)
         let enteredNumber = expNumberToString(moduleZ: modulZ, arcFi: arc)
         
         answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: enteredNumber)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D020ADB24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020ADA24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift */; };
 		5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F674924A7616400B59126 /* Double+Extensions.swift */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D496FF023969F76000C0DF7 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FEF23969F76000C0DF7 /* Func.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D020ADA24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHistoryOperationExtension.swift; sourceTree = "<group>"; };
 		5D0F674924A7616400B59126 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D496FEF23969F76000C0DF7 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				5D496FED239460BD000C0DF7 /* CalculateViewController.swift */,
 				5D6E464324A928B90063CE90 /* AnimationsExtension.swift */,
 				5D6E464724A9318B0063CE90 /* PrepareAndShowResultExtension.swift */,
+				5D020ADA24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift */,
 			);
 			path = "CalculateViewController+Extensions";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */,
 				5D95626E2497DFDD00C03364 /* Operation.swift in Sources */,
 				5D6E464424A928B90063CE90 /* AnimationsExtension.swift in Sources */,
+				5D020ADB24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

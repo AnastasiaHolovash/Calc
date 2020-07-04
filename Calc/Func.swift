@@ -136,14 +136,14 @@ Converts an exponential number into a complex number.
    -  arc: Angle of number in exponential form in degrees.
 - Returns: Complex number.
 */
-func expToComplexNumber(modulZ: Double, arc:Double) -> (Re:Double, Im: Double) {
+func expToComplexNumber(modulZ: Double, arc:Double) -> (re:Double, im: Double) {
     let Re = modulZ * cos(degree(arc))
     let Im = modulZ * sin(degree(arc))
-    return (Re: Re, Im: Im)
+    return (re: Re, im: Im)
 }
 
 
-func convertToComplex(expView: ExpView) -> (Re: Double, Im: Double) {
+func convertToComplex(expView: ExpView) -> (re: Double, im: Double) {
 
     let modulZ = makeANumber(sign: expView.beforeExpIsPlus, number: expView.beforeExpTextField.text ?? "")
     let arc = makeANumber(sign: expView.afterExpIsPlus, number: expView.afterExpTextField.text ?? "")

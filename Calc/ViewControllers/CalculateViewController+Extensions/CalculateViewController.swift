@@ -10,8 +10,8 @@ import UIKit
 
 class CalculateViewController: UIViewController {
     
-    @IBOutlet weak var changeFormButton1: UIButton!
-    @IBOutlet weak var changeFormButton2: UIButton!
+    @IBOutlet weak var changeFormButton1: ChangeFormButton!
+    @IBOutlet weak var changeFormButton2: ChangeFormButton!
     
     @IBOutlet weak var answerView: AnswerView!
     
@@ -30,7 +30,7 @@ class CalculateViewController: UIViewController {
     /// number for save
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     
-    var operationFromHistory: Calculate?
+//    var operationFromHistory: Calculate?
     
     var tabBarC: CustomTabBarController!
     
@@ -38,7 +38,7 @@ class CalculateViewController: UIViewController {
         super.viewDidLoad()
         
         addObserver()
-        buttonsLayerSetup()
+        buttonsSetup()
         showResultButtonAnimationSetup()
         operationBar.changeSelectedOperation()
         
@@ -53,14 +53,14 @@ class CalculateViewController: UIViewController {
         if let number = tabBarC.transferNumber {
             switch number.numberType {
             case .exp:
-                expView1.setNumber(beforeExpNumber: number.part1, afterExpNumber: number.part2)
+                expView1.setNumber(beforeExpNumber: number.part1.simpleRound(decimalPlases: 4), afterExpNumber: number.part2.simpleRound(decimalPlases: 4))
                 if expView1.isHidden {
-                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+                    changeFormButton1.changeForm()
                 }
             case .complex:
-                complexView1.setNumber(reNumber: number.part1, imNumber: number.part2)
+                complexView1.setNumber(reNumber: number.part1.simpleRound(decimalPlases: 4), imNumber: number.part2.simpleRound(decimalPlases: 4))
                 if complexView1.isHidden {
-                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
+                    changeFormButton1.changeForm()
                 }
             }
             tabBarC.transferNumber = nil
@@ -80,23 +80,17 @@ class CalculateViewController: UIViewController {
     }
     
     
-    func buttonsLayerSetup() {
-        // Rounds the corners of the buttons
-        changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 2.5)
-        changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 2.5)
+    func buttonsSetup() {
+        changeFormButton1.expView = expView1
+        changeFormButton1.complexView = complexView1
+        changeFormButton2.expView = expView2
+        changeFormButton2.complexView = complexView2
         showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
         
     }
     
-    
-    @IBAction func changeFormAction1(_ sender: UIButton) {
-        changeForm(button: sender, expViev: expView1, complexView: complexView1)
-        recalculate()
-    }
-    
-    
-    @IBAction func changeFormAction2(_ sender: UIButton) {
-        changeForm(button: sender, expViev: expView2, complexView: complexView2)
+    @IBAction func didPressChangeForm(_ sender: ChangeFormButton) {
+        sender.changeForm()
         recalculate()
     }
     
@@ -107,7 +101,7 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
-//        anwerView.show()
+        prepareNumbersForHistoryUpdating()
         let operation = Operation.culculate(Calculate(operation: operationBar.curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
     }
@@ -118,39 +112,16 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
-//        anwerView.show()
     }
     
 }
+
 
 extension CalculateViewController: OperationDelegate {
     
     func setOperationFromHistory(calculate: Calculate?) {
         if let calculate = calculate {
-            switch calculate.number1.numberType {
-            case .exp:
-                expView1.setNumber(beforeExpNumber: calculate.number1.part1, afterExpNumber: calculate.number1.part2)
-                if expView1.isHidden {
-                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
-                }
-            case .complex:
-                complexView1.setNumber(reNumber: calculate.number1.part1, imNumber: calculate.number1.part2)
-                if complexView1.isHidden {
-                    changeForm(button: changeFormButton1, expViev: expView1, complexView: complexView1)
-                }
-            }
-            switch calculate.number2.numberType {
-            case .exp:
-                expView2.setNumber(beforeExpNumber: calculate.number2.part1, afterExpNumber: calculate.number2.part2)
-                if expView2.isHidden {
-                    changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
-                }
-            case .complex:
-                complexView2.setNumber(reNumber: calculate.number2.part1, imNumber: calculate.number2.part2)
-                if complexView2.isHidden {
-                    changeForm(button: changeFormButton2, expViev: expView2, complexView: complexView2)
-                }
-            }
+            setNumbers(number1: calculate.number1, number2: calculate.number2)
             operationBar.curentOperationName = calculate.operation
             operationBar.changeSelectedOperation()
             recalculate()
@@ -161,6 +132,12 @@ extension CalculateViewController: OperationDelegate {
 }
 
 extension CalculateViewController: OperationBarDelegate {
+    func selectedSwapOperation() {
+        prepareNumbersForHistoryUpdating()
+        setNumbers(number1: secondNumber, number2: firstNumber)
+        recalculate()
+    }
+    
     func selectedNewOperation() {
         recalculate()
     }

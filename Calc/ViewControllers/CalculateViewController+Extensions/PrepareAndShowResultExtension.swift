@@ -35,49 +35,48 @@ extension CalculateViewController {
      */
     func prepareDataForCalc() -> (Re1: Double, Re2: Double, Im1: Double, Im2: Double) {
         
-        var Re1: Double = 0.0
-        var Im1: Double = 0.0
+        var complex1 = (re: 0.0, im: 0.0)
         
         if !expView1.isHidden {
-            let complex = convertToComplex(expView: expView1)
-            Re1 = complex.Re
-            Im1 = complex.Im
-            
-            // For history updating
-            let modulZ = makeANumber(sign: expView1.beforeExpIsPlus, number: expView1.beforeExpTextField.text ?? "")
-            let arc = makeANumber(sign: expView1.afterExpIsPlus, number: expView1.afterExpTextField.text ?? "")
-            firstNumber = ComplexNumber(numberType: NumberType.exp, part1: modulZ, part2: arc)
-            
+            complex1 = convertToComplex(expView: expView1)
         } else {
-            Re1 = makeANumber(sign: complexView1.reIsPlus, number: complexView1.reTextField.text ?? "")
-            Im1 = makeANumber(sign: complexView1.imIsPlus, number: complexView1.imTextField.text ?? "")
-            
-            // For history updating
-            firstNumber = ComplexNumber(numberType: NumberType.complex, part1: Re1, part2: Im1)
+            complex1 = makeComplexNumber1()
         }
         
-        var Re2: Double = 0.0
-        var Im2: Double = 0.0
+        var complex2 = (re: 0.0, im: 0.0)
         
         if !expView2.isHidden {
-            let complex = convertToComplex(expView: expView2)
-            Re2 = complex.Re
-            Im2 = complex.Im
-            
-            // For history updating
-            let modulZ = makeANumber(sign: expView2.beforeExpIsPlus, number: expView2.beforeExpTextField.text ?? "")
-            let arc = makeANumber(sign: expView2.afterExpIsPlus, number: expView2.afterExpTextField.text ?? "")
-            secondNumber = ComplexNumber(numberType: NumberType.exp, part1: modulZ, part2: arc)
-            
+            complex2 = convertToComplex(expView: expView2)
         } else {
-            Re2 = makeANumber(sign: complexView2.reIsPlus, number: complexView2.reTextField.text ?? "")
-            Im2 = makeANumber(sign: complexView2.imIsPlus, number: complexView2.imTextField.text ?? "")
-            
-            // For history updating
-            secondNumber = ComplexNumber(numberType: NumberType.complex, part1: Re2, part2: Im2)
+            complex2 = makeComplexNumber2()
         }
+        return (Re1: complex1.re, Re2: complex2.re, Im1: complex1.im, Im2: complex2.im)
         
-        return (Re1: Re1, Re2: Re2, Im1: Im1, Im2: Im2)
+    }
+    
+    
+    func makeComplexNumber1() -> (re: Double, im: Double) {
+        let re = makeANumber(sign: complexView1.reIsPlus, number: complexView1.reTextField.text ?? "")
+        let im = makeANumber(sign: complexView1.imIsPlus, number: complexView1.imTextField.text ?? "")
+        return (re: re, im: im)
+    }
+
+    func makeComplexNumber2() -> (re: Double, im: Double) {
+        let re = makeANumber(sign: complexView2.reIsPlus, number: complexView2.reTextField.text ?? "")
+        let im = makeANumber(sign: complexView2.imIsPlus, number: complexView2.imTextField.text ?? "")
+        return (re: re, im: im)
+    }
+
+    func makeExpNumber1() -> (modulZ: Double, arc: Double) {
+        let modulZ = makeANumber(sign: expView1.beforeExpIsPlus, number: expView1.beforeExpTextField.text ?? "")
+        let arc = makeANumber(sign: expView1.afterExpIsPlus, number: expView1.afterExpTextField.text ?? "")
+        return (modulZ: modulZ, arc: arc)
+    }
+
+    func makeExpNumber2() -> (modulZ: Double, arc: Double) {
+        let modulZ = makeANumber(sign: expView2.beforeExpIsPlus, number: expView2.beforeExpTextField.text ?? "")
+        let arc = makeANumber(sign: expView2.afterExpIsPlus, number: expView2.afterExpTextField.text ?? "")
+        return (modulZ: modulZ, arc: arc)
     }
 
     

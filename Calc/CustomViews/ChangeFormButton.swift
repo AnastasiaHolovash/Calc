@@ -53,13 +53,25 @@ class ChangeFormButton: UIButton {
 
     
     private func setup() {
+        super.layoutSubviews()
         self.backgroundColor = .systemIndigo
-        self.setTitle("Змінити форму", for: .normal)
         self.tintColor = .white
-//        self.titleLabel?.font.withSize(CGFloat(integerLiteral: 17))
-//        self.titleLabel?.font = UIFont(name: "SFProText-Semibold", size: 17)
         self.layer.cornerRadius = CGFloat((Double(self.frame.height) ) / 2.5)
-
+//        self.setTitle("Змінити форму", for: .normal)
+//        self.titleLabel?.font = UIFont(name: "SFProText-Semibold", size: 5)
+    }
+    
+    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        self.backgroundColor = .systemIndigo
+        if let label = self.titleLabel {
+            self.setTitle("Змінити форму", for: .normal)
+            label.font = .systemFont(ofSize: 17, weight: .semibold)
+        }
+        
+//        self.tintColor = .white
+//        self.layer.cornerRadius = CGFloat((Double(self.frame.height) ) / 2.5)
+//        self.titleLabel?.font = UIFont(name: "SFProText-Semibold", size: 25)
     }
     
 }

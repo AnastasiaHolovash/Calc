@@ -60,7 +60,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Zvr-xJ-hpM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Змінити форму">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -184,7 +184,7 @@
                         <viewLayoutGuide key="safeArea" id="Ppu-mq-h5d"/>
                     </view>
                     <navigationItem key="navigationItem" title="Історія" largeTitleDisplayMode="always" id="EwZ-oq-35v">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="rwK-lc-E00">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="rwK-lc-E00">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L02-xp-q9U">
                                 <rect key="frame" x="329" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fks-ta-ftx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.68115942028987" y="-887.27678571428567"/>
+            <point key="canvasLocation" x="588" y="-887"/>
         </scene>
         <!--Калькулятор-->
         <scene sceneID="7N5-w7-M6H">
@@ -219,20 +219,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-FP-9iT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF1-ca-qaH">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF1-ca-qaH" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="14" width="200" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="LEq-he-rcv"/>
                                                     <constraint firstAttribute="width" constant="200" id="apH-jj-KuN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="Комплексна форма">
+                                                <state key="normal" title="Змінити форму">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeFormAction1:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="exB-yb-b6R"/>
+                                                    <action selector="didPressChangeForm:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="z4r-Nj-ACu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -254,7 +254,7 @@
                                         <rect key="frame" x="0.0" y="156" width="414" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-j8-9fI">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="78"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="plus.square" catalog="system">
@@ -265,7 +265,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-Fd-ACA">
-                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="78"/>
+                                                <rect key="frame" x="83" y="0.0" width="82.5" height="78"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="minus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -275,7 +275,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fav-Y4-fuO">
-                                                <rect key="frame" x="207" y="0.0" width="103.5" height="78"/>
+                                                <rect key="frame" x="165.5" y="0.0" width="83" height="78"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="multiply.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -285,7 +285,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-rs-8Q8">
-                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="78"/>
+                                                <rect key="frame" x="248.5" y="0.0" width="82.5" height="78"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="divide.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -294,31 +294,42 @@
                                                     <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="jbf-3K-FRa"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DK-Yb-OVP">
+                                                <rect key="frame" x="331" y="0.0" width="83" height="78"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="arrow.up.arrow.down" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32" scale="small" weight="regular"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="hkI-rt-j8H"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <connections>
                                             <outlet property="divideButton" destination="HKR-rs-8Q8" id="BET-kn-Jhw"/>
                                             <outlet property="minusButton" destination="8PD-Fd-ACA" id="sb6-3I-ubE"/>
                                             <outlet property="multiplyButton" destination="Fav-Y4-fuO" id="wY9-zw-o55"/>
                                             <outlet property="plusButton" destination="AAE-j8-9fI" id="7NR-V0-t9Y"/>
+                                            <outlet property="swapButton" destination="8DK-Yb-OVP" id="XWo-Rh-aVC"/>
                                         </connections>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-Bo-lBU">
                                         <rect key="frame" x="0.0" y="234" width="414" height="78.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-DE-ueV">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-DE-ueV" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="14" width="200" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="pII-nw-trW"/>
                                                     <constraint firstAttribute="height" constant="50" id="zRb-vB-z3I"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="Комплексна форма">
+                                                <state key="normal" title="Змінити форму">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeFormAction2:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="JhU-bC-aG4"/>
+                                                    <action selector="didPressChangeForm:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="q4w-um-SKy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -385,8 +396,8 @@
                     <navigationItem key="navigationItem" title="Калькулятор" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
                         <outlet property="answerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
-                        <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="MdT-kH-M71"/>
-                        <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="QrD-Ls-Bfg"/>
+                        <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="Cde-pI-eAs"/>
+                        <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="j1a-Zu-Im8"/>
                         <outlet property="complexView1" destination="sK3-zX-X2h" id="XlE-1P-ksg"/>
                         <outlet property="complexView2" destination="f1G-Uz-Cb7" id="LrX-5g-zP5"/>
                         <outlet property="expView1" destination="guJ-Ll-5gi" id="DSq-jm-ADv"/>
@@ -422,7 +433,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="fX4-Zs-JCc">
+                        <barButtonItem key="rightBarButtonItem" id="fX4-Zs-JCc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-p6-UUs">
                                 <rect key="frame" x="349" y="7" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -453,6 +464,7 @@
     </scenes>
     <resources>
         <image name="Close3" width="39" height="39.5"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="divide.square" catalog="system" width="128" height="114"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
