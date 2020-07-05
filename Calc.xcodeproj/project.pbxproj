@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5D020ADB24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020ADA24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift */; };
+		5D020ADF24B0CBE2006B83E7 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020ADD24B0CBE2006B83E7 /* InfoTableViewCell.swift */; };
+		5D020AE024B0CBE2006B83E7 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D020ADE24B0CBE2006B83E7 /* InfoTableViewCell.xib */; };
+		5D020AE224B1FE66006B83E7 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AE124B1FE66006B83E7 /* InformationViewController.swift */; };
 		5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F674924A7616400B59126 /* Double+Extensions.swift */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D496FF023969F76000C0DF7 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FEF23969F76000C0DF7 /* Func.swift */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		5D020ADA24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHistoryOperationExtension.swift; sourceTree = "<group>"; };
+		5D020ADD24B0CBE2006B83E7 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		5D020ADE24B0CBE2006B83E7 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		5D020AE124B1FE66006B83E7 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		5D0F674924A7616400B59126 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D496FEF23969F76000C0DF7 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
@@ -87,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D020ADD24B0CBE2006B83E7 /* InfoTableViewCell.swift */,
+				5D020ADE24B0CBE2006B83E7 /* InfoTableViewCell.xib */,
+			);
+			path = InfoTableViewCell;
+			sourceTree = "<group>";
+		};
 		5D69B23A238ECAB10057D76D = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +189,10 @@
 		5D95625C248EE8F000C03364 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D69B25C238EDF090057D76D /* ConvertViewController.swift */,
 				5D6E464224A928630063CE90 /* CalculateViewController+Extensions */,
+				5D69B25C238EDF090057D76D /* ConvertViewController.swift */,
 				5D95626A249042BA00C03364 /* HistoryViewController.swift */,
+				5D020AE124B1FE66006B83E7 /* InformationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,8 +212,9 @@
 				5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */,
 				5D6E464924A944420063CE90 /* AnswerView */,
 				5D956277249A2FDF00C03364 /* CustomTableViewCell */,
-				5D6E464524A92FB20063CE90 /* OperationBar.swift */,
+				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
 				5D6E465124AB41180063CE90 /* ChangeFormButton.swift */,
+				5D6E464524A92FB20063CE90 /* OperationBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -308,6 +325,7 @@
 				5DBF245B248819DC001EB10B /* ExpView.xib in Resources */,
 				5D6E464B24A944BD0063CE90 /* AnswerView.xib in Resources */,
 				5D956276249A2F8300C03364 /* CustomTableViewCell.xib in Resources */,
+				5D020AE024B0CBE2006B83E7 /* InfoTableViewCell.xib in Resources */,
 				5D69B25B238ECD100057D76D /* Main.storyboard in Resources */,
 				5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */,
 				5D69B250238ECAB60057D76D /* Preview Assets.xcassets in Resources */,
@@ -331,6 +349,7 @@
 				5D69B27F238EFB600057D76D /* ContentView.swift in Sources */,
 				5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */,
 				5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */,
+				5D020ADF24B0CBE2006B83E7 /* InfoTableViewCell.swift in Sources */,
 				5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */,
 				5D496FF023969F76000C0DF7 /* Func.swift in Sources */,
 				5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */,
@@ -340,6 +359,7 @@
 				5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */,
 				5D6E464824A9318B0063CE90 /* PrepareAndShowResultExtension.swift in Sources */,
 				5D956263248EF25A00C03364 /* ComplexView.swift in Sources */,
+				5D020AE224B1FE66006B83E7 /* InformationViewController.swift in Sources */,
 				5D9562702497E71200C03364 /* History.swift in Sources */,
 				5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */,
 				5D95626E2497DFDD00C03364 /* Operation.swift in Sources */,

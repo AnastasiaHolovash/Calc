@@ -50,9 +50,7 @@ class HistoryViewController: UIViewController {
     
     
     @IBAction func didPressCloseButton(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            // Show other VC
-        }
+        self.dismiss(animated: true)
     }
     
     

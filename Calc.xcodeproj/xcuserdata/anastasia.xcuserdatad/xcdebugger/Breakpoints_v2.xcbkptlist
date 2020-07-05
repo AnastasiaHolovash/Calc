@@ -158,8 +158,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
                   offsetFromSymbolStart = "111">
                </Location>
                <Location
@@ -173,8 +173,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
                   offsetFromSymbolStart = "401">
                </Location>
                <Location
@@ -188,8 +188,8 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
                   offsetFromSymbolStart = "638">
                </Location>
                <Location
@@ -203,9 +203,24 @@
                   urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
                   offsetFromSymbolStart = "875">
+               </Location>
+               <Location
+                  uuid = "B877DDBF-C7E5-467E-B779-D8F16EE379C9 - 8c5946cdeed482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calc.OperationBar.wasSelectedNewOperation(__C.UIButton) -&gt; ()"
+                  moduleName = "Calc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anastasia/Calc/Calc/CustomViews/OperationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1112">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -300,8 +315,8 @@
             filePath = "Calc/CustomViews/ChangeFormButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -316,8 +331,8 @@
             filePath = "Calc/CustomViews/ChangeFormButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>

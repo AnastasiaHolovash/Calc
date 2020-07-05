@@ -33,8 +33,15 @@ class CustomTabBarController: UITabBarController {
     }
     
     
-    @IBAction func didPressQuestionButton(_ sender: UIButton) {
+    @IBAction func didPressInformationButton(_ sender: UIButton) {
+        guard let informationVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationViewController") as? InformationViewController else { return }
         
+        let navigationC = UINavigationController()
+        navigationC.viewControllers = [informationVC]
+        navigationC.navigationBar.prefersLargeTitles = true
+        navigationC.navigationItem.largeTitleDisplayMode = .always
+        
+        present(navigationC, animated: true, completion: nil)
     }
     
     @IBAction func didPressHistoryButton(_ sender: UIButton) {
