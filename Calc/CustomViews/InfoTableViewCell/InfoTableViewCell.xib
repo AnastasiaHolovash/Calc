@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="155" id="KGk-i7-Jjw" customClass="InfoTableViewCell" customModule="Calc" customModuleProvider="target">
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="155" id="KGk-i7-Jjw" customClass="InfoTableViewCell" customModule="Calc" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -25,32 +25,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGX-3s-5af" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
-                                <rect key="frame" x="93" y="18" width="130" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Змінити форму"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Змінюють знак числа у полі до якого вони відносяться." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYP-Hn-F7F">
                                 <rect key="frame" x="16" y="60" width="293" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9el-W9-48W">
+                                <rect key="frame" x="104.5" y="12" width="116" height="48"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mGX-3s-5af" firstAttribute="width" secondItem="Ebz-qJ-bUY" secondAttribute="width" multiplier="0.4" id="0OU-Rw-SiW"/>
                             <constraint firstItem="hYP-Hn-F7F" firstAttribute="centerY" secondItem="Ebz-qJ-bUY" secondAttribute="centerY" multiplier="1.4" id="1ee-1G-7bc"/>
+                            <constraint firstItem="9el-W9-48W" firstAttribute="centerX" secondItem="Ebz-qJ-bUY" secondAttribute="centerX" id="1qP-6l-rSe"/>
                             <constraint firstAttribute="trailing" secondItem="hYP-Hn-F7F" secondAttribute="trailing" constant="16" id="2Sw-rj-MgL"/>
-                            <constraint firstItem="mGX-3s-5af" firstAttribute="height" secondItem="Ebz-qJ-bUY" secondAttribute="height" multiplier="0.3" id="5TI-RQ-8wV"/>
                             <constraint firstItem="hYP-Hn-F7F" firstAttribute="height" secondItem="Ebz-qJ-bUY" secondAttribute="height" multiplier="0.4" id="HST-lU-9Dr"/>
                             <constraint firstAttribute="trailing" secondItem="DXH-Bn-KBc" secondAttribute="trailing" constant="218" id="JJk-Mv-l3S"/>
+                            <constraint firstItem="9el-W9-48W" firstAttribute="height" secondItem="Ebz-qJ-bUY" secondAttribute="height" multiplier="0.4" id="LM3-W6-Nqe"/>
                             <constraint firstItem="DXH-Bn-KBc" firstAttribute="centerY" secondItem="Ebz-qJ-bUY" secondAttribute="centerY" multiplier="0.6" id="Qpu-ZK-PMi"/>
+                            <constraint firstItem="9el-W9-48W" firstAttribute="width" secondItem="Ebz-qJ-bUY" secondAttribute="width" multiplier="0.356923" id="RAR-aI-wGQ"/>
                             <constraint firstItem="DXH-Bn-KBc" firstAttribute="leading" secondItem="Ebz-qJ-bUY" secondAttribute="leading" constant="16" id="ZcH-sc-X95"/>
-                            <constraint firstItem="mGX-3s-5af" firstAttribute="leading" secondItem="Ebz-qJ-bUY" secondAttribute="leading" constant="93" id="ey0-RO-vKU"/>
-                            <constraint firstItem="mGX-3s-5af" firstAttribute="centerY" secondItem="Ebz-qJ-bUY" secondAttribute="centerY" constant="-24" id="ozz-dk-tza"/>
                             <constraint firstItem="hYP-Hn-F7F" firstAttribute="leading" secondItem="Ebz-qJ-bUY" secondAttribute="leading" constant="16" id="ssa-G0-CNO"/>
                             <constraint firstItem="DXH-Bn-KBc" firstAttribute="height" secondItem="Ebz-qJ-bUY" secondAttribute="height" multiplier="0.4" id="u94-GD-OPF"/>
+                            <constraint firstItem="9el-W9-48W" firstAttribute="centerY" secondItem="Ebz-qJ-bUY" secondAttribute="centerY" multiplier="0.6" id="wNN-Nm-MtM"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -63,7 +61,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="button" destination="mGX-3s-5af" id="DdB-Ee-mNE"/>
+                <outlet property="infoImageView" destination="9el-W9-48W" id="SK9-bs-S5L"/>
                 <outlet property="titleLabel" destination="DXH-Bn-KBc" id="0kd-FR-w73"/>
                 <outlet property="twoLinestextLabel" destination="hYP-Hn-F7F" id="PPT-5w-e5e"/>
                 <outlet property="viewWithShadow" destination="Ebz-qJ-bUY" id="hZC-E6-7iJ"/>

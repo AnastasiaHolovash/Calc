@@ -1,19 +1,19 @@
 //
-//  InfoTableViewCell.swift
+//  InfoTableViewCell2.swift
 //  Calc
 //
-//  Created by Головаш Анастасия on 04.07.2020.
+//  Created by Головаш Анастасия on 05.07.2020.
 //  Copyright © 2020 Anastasia. All rights reserved.
 //
 
 import UIKit
 
-class InfoTableViewCell: UITableViewCell {
-    
+class InfoTableViewCell2: UITableViewCell {
+
     @IBOutlet weak var viewWithShadow: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var twoLinestextLabel: UILabel!
-    @IBOutlet weak var infoImageView: UIImageView!
+    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var otherTextLabel: UILabel!
+    @IBOutlet weak var formulaImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,6 @@ class InfoTableViewCell: UITableViewCell {
         viewWithShadow.layer.shadowOpacity = 1
         viewWithShadow.layer.shadowOffset = CGSize(width: 0, height: 1)
         viewWithShadow.layer.shadowRadius = 8
-        
     }
     
 }

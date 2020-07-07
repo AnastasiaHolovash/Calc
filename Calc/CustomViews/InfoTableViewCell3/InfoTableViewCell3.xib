@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="155" id="KGk-i7-Jjw" customClass="InfoTableViewCell3" customModule="Calc" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-q2-AsY">
+                        <rect key="frame" x="25" y="17.5" width="325" height="120"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Алгебраїчий запис комплексного числа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8H-0G-IhT">
+                                <rect key="frame" x="16" y="11" width="293" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XMX-EZ-3CT">
+                                <rect key="frame" x="16" y="57" width="293" height="54"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XMX-EZ-3CT" firstAttribute="centerX" secondItem="XnK-q2-AsY" secondAttribute="centerX" id="6ED-RO-PS6"/>
+                            <constraint firstItem="XMX-EZ-3CT" firstAttribute="width" secondItem="XnK-q2-AsY" secondAttribute="width" multiplier="0.901538" id="BX8-BW-1Na"/>
+                            <constraint firstItem="XMX-EZ-3CT" firstAttribute="centerY" secondItem="XnK-q2-AsY" secondAttribute="centerY" multiplier="1.4" id="ONU-J1-7BM"/>
+                            <constraint firstItem="XMX-EZ-3CT" firstAttribute="height" secondItem="XnK-q2-AsY" secondAttribute="height" multiplier="0.45" id="ck6-sI-JBm"/>
+                            <constraint firstItem="b8H-0G-IhT" firstAttribute="leading" secondItem="XnK-q2-AsY" secondAttribute="leading" constant="16" id="fyN-E2-cu6"/>
+                            <constraint firstAttribute="trailing" secondItem="b8H-0G-IhT" secondAttribute="trailing" constant="16" id="n3E-XU-w5g"/>
+                            <constraint firstItem="b8H-0G-IhT" firstAttribute="centerY" secondItem="XnK-q2-AsY" secondAttribute="centerY" multiplier="0.5" id="wOa-ED-KOS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XnK-q2-AsY" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.866667" id="d9M-Vr-Kcb"/>
+                    <constraint firstItem="XnK-q2-AsY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dDj-EA-Vgw"/>
+                    <constraint firstItem="XnK-q2-AsY" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.774194" id="eTL-WG-Hlr"/>
+                    <constraint firstItem="XnK-q2-AsY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="vdU-0N-tRG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="infoImageView" destination="XMX-EZ-3CT" id="MKq-fP-57Q"/>
+                <outlet property="titleLabel" destination="b8H-0G-IhT" id="u5z-1L-k3Q"/>
+                <outlet property="viewWithShadow" destination="XnK-q2-AsY" id="9Ud-Dq-zB6"/>
+            </connections>
+            <point key="canvasLocation" x="176.08695652173915" y="177.79017857142856"/>
+        </tableViewCell>
+    </objects>
+</document>
