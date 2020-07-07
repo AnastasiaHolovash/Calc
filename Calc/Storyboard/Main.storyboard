@@ -186,9 +186,9 @@
                     <navigationItem key="navigationItem" title="Історія" largeTitleDisplayMode="always" id="EwZ-oq-35v">
                         <barButtonItem key="rightBarButtonItem" title="      " width="30" id="rwK-lc-E00">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L02-xp-q9U">
-                                <rect key="frame" x="94" y="0.0" width="300" height="44"/>
+                                <rect key="frame" x="355.5" y="5.5" width="38.5" height="33.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" " backgroundImage="Clear Glyph - Light (1)">
+                                <state key="normal" title=" " image="Button-Close">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -439,11 +439,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Як користуватися?" id="8pK-4p-9ET">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="iq8-CD-Dhe">
+                        <barButtonItem key="rightBarButtonItem" width="30" style="plain" id="iq8-CD-Dhe">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Dn-E9-Up2">
-                                <rect key="frame" x="94" y="0.0" width="300" height="44"/>
+                                <rect key="frame" x="360.5" y="5.5" width="33.5" height="33.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button-Close">
+                                <state key="normal" image="Button-Close">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -512,8 +512,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button-Close" width="300" height="300"/>
-        <image name="Clear Glyph - Light (1)" width="100" height="100"/>
+        <image name="Button-Close" width="33.333332061767578" height="33.333332061767578"/>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="divide.square" catalog="system" width="128" height="114"/>
