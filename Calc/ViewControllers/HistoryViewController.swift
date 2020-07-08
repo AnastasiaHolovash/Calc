@@ -31,7 +31,7 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+        self.navigationController?.navigationBar.backgroundColor = mainBackgroundColor
         setupTableView()
     }
     

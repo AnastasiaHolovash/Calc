@@ -15,6 +15,8 @@
 		5D020AF424B22F43006B83E7 /* InfoTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D020AF224B22F43006B83E7 /* InfoTableViewCell2.xib */; };
 		5D020AF824B50B63006B83E7 /* InfoTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AF624B50B63006B83E7 /* InfoTableViewCell3.swift */; };
 		5D020AF924B50B63006B83E7 /* InfoTableViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D020AF724B50B63006B83E7 /* InfoTableViewCell3.xib */; };
+		5D020AFB24B5F223006B83E7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AFA24B5F223006B83E7 /* Colors.swift */; };
+		5D020AFD24B5FC15006B83E7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */; };
 		5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F674924A7616400B59126 /* Double+Extensions.swift */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D496FF023969F76000C0DF7 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FEF23969F76000C0DF7 /* Func.swift */; };
@@ -56,6 +58,8 @@
 		5D020AF224B22F43006B83E7 /* InfoTableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell2.xib; sourceTree = "<group>"; };
 		5D020AF624B50B63006B83E7 /* InfoTableViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell3.swift; sourceTree = "<group>"; };
 		5D020AF724B50B63006B83E7 /* InfoTableViewCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell3.xib; sourceTree = "<group>"; };
+		5D020AFA24B5F223006B83E7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		5D0F674924A7616400B59126 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D496FEF23969F76000C0DF7 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				5D69B27E238EFB600057D76D /* ContentView.swift */,
 				5D496FEF23969F76000C0DF7 /* Func.swift */,
 				5D95626F2497E71200C03364 /* History.swift */,
+				5D020AFA24B5F223006B83E7 /* Colors.swift */,
 				5D95626C2497DF9900C03364 /* Models */,
 				5D956266248EFB7800C03364 /* Extensions */,
 				5D7779C424A4C8C7007F2EBB /* Controllers */,
@@ -253,6 +258,7 @@
 				5D956267248EFB9500C03364 /* UITextField+Extensions.swift */,
 				5DD6673D24A6A417002C321D /* String+Extensions.swift */,
 				5D0F674924A7616400B59126 /* Double+Extensions.swift */,
+				5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,11 +393,13 @@
 				5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */,
 				5D020AF824B50B63006B83E7 /* InfoTableViewCell3.swift in Sources */,
 				5D6E465224AB41180063CE90 /* ChangeFormButton.swift in Sources */,
+				5D020AFB24B5F223006B83E7 /* Colors.swift in Sources */,
 				5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */,
 				5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */,
 				5D6E464824A9318B0063CE90 /* PrepareAndShowResultExtension.swift in Sources */,
 				5D956263248EF25A00C03364 /* ComplexView.swift in Sources */,
 				5D020AE224B1FE66006B83E7 /* InformationViewController.swift in Sources */,
+				5D020AFD24B5FC15006B83E7 /* UIView+Extensions.swift in Sources */,
 				5D9562702497E71200C03364 /* History.swift in Sources */,
 				5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */,
 				5D95626E2497DFDD00C03364 /* Operation.swift in Sources */,

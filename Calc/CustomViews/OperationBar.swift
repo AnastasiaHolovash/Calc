@@ -34,10 +34,10 @@ class OperationBar: UIStackView {
         minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
         multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
         divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
-        plusButton.tintColor = .black
-        minusButton.tintColor = .black
-        multiplyButton.tintColor = .black
-        divideButton.tintColor = .black
+        plusButton.tintColor = .label
+        minusButton.tintColor = .label
+        multiplyButton.tintColor = .label
+        divideButton.tintColor = .label
         switch curentOperationName {
         case .plus:
             plusButton.setImage(UIImage.init(systemName: "plus.square.fill"), for: .normal)

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "6black.png",
+      "filename" : "10black.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "6white.png",
+      "filename" : "10white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

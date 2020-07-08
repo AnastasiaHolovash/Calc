@@ -19,12 +19,8 @@ class CustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-        viewWithShadow.layer.cornerRadius = 20
-        viewWithShadow.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        viewWithShadow.layer.shadowOpacity = 1
-        viewWithShadow.layer.shadowOffset = CGSize(width: 0, height: 1)
-        viewWithShadow.layer.shadowRadius = 8
+        self.backgroundColor = mainBackgroundColor
+        viewWithShadow.addShadow()
         numberLabel1.text = ""
         numberLabel2.text = ""
         operationSignLabel.text = ""
@@ -37,11 +33,11 @@ class CustomTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            self.contentView.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+            self.contentView.backgroundColor = mainBackgroundColor
             viewWithShadow.backgroundColor = .systemGray5
         } else {
-            self.contentView.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-            viewWithShadow.backgroundColor = .white
+            self.contentView.backgroundColor = mainBackgroundColor
+            viewWithShadow.backgroundColor = infoPresentBackgroundColor
         }
     }
     

@@ -35,6 +35,10 @@ class ConvertViewController: UIViewController {
         self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.title = "Конвертація"
+    }
+    
     func addObserver() {
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)

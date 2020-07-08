@@ -50,6 +50,8 @@ class CalculateViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.title = "Калькулятор"
+        
         if let number = tabBarC.transferNumber {
             switch number.numberType {
             case .exp:

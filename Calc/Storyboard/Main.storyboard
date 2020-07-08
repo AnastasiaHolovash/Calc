@@ -103,8 +103,9 @@
                                                     <constraint firstAttribute="width" constant="325" id="KHj-ia-EXG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="Конвертувати"/>
+                                                <state key="normal" title="Конвертувати">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="didPressConvert:" destination="7BB-oD-TJP" eventType="touchUpInside" id="QyI-gA-aRD"/>
                                                 </connections>
@@ -141,7 +142,9 @@
                             <outletCollection property="gestureRecognizers" destination="KOC-qj-QcO" appends="YES" id="w61-oe-7Dv"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Конвертувати" image="repeat" catalog="system" id="C4V-gd-mhk"/>
+                    <tabBarItem key="tabBarItem" title="Конвертувати" image="Convert" id="C4V-gd-mhk">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Конвертація" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
                     <connections>
                         <outlet property="answerView" destination="U7p-Pc-oud" id="hpc-gH-KZ0"/>
@@ -166,11 +169,11 @@
             <objects>
                 <viewController storyboardIdentifier="HistoryViewController" id="41i-ZX-eWK" customClass="HistoryViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="swz-v8-Rj6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-bV-26c">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -256,7 +259,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-j8-9fI">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="78"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" image="plus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -266,7 +269,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-Fd-ACA">
                                                 <rect key="frame" x="83" y="0.0" width="82.5" height="78"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" image="minus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -276,7 +279,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fav-Y4-fuO">
                                                 <rect key="frame" x="165.5" y="0.0" width="83" height="78"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" image="multiply.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -286,7 +289,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-rs-8Q8">
                                                 <rect key="frame" x="248.5" y="0.0" width="82.5" height="78"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" image="divide.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -296,7 +299,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DK-Yb-OVP">
                                                 <rect key="frame" x="331" y="0.0" width="83" height="78"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" image="arrow.up.arrow.down.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32" scale="medium" weight="regular"/>
                                                 </state>
@@ -371,7 +374,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <state key="normal" title="Розрахувати"/>
+                                <state key="normal" title="Розрахувати">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="didPressShowResult:" destination="Xc5-J0-IcI" eventType="touchUpInside" id="eBZ-ll-LUg"/>
                                 </connections>
@@ -392,7 +397,9 @@
                             <outletCollection property="gestureRecognizers" destination="6bP-w6-7dN" appends="YES" id="Nfg-ZM-XKR"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Калькулятор" image="plus.slash.minus" catalog="system" id="XWk-db-xCG"/>
+                    <tabBarItem key="tabBarItem" title="Калькулятор" image="Calculate" id="XWk-db-xCG">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Калькулятор" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
                         <outlet property="answerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
@@ -420,15 +427,15 @@
             <objects>
                 <viewController storyboardIdentifier="InformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZDy-sy-muq" customClass="InformationViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hg-fo-XRV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFC-7g-I76">
-                                <rect key="frame" x="0.0" y="140" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xc3-0x-46F" firstAttribute="bottom" secondItem="qFC-7g-I76" secondAttribute="bottom" constant="-34" id="Fqj-sa-cNF"/>
                             <constraint firstItem="qFC-7g-I76" firstAttribute="top" secondItem="xc3-0x-46F" secondAttribute="top" id="Jhu-uj-CkQ"/>
@@ -471,9 +478,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y7f-zv-AXL">
                                 <rect key="frame" x="20" y="6" width="35" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" backgroundImage="questionmark.circle" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressInformationButton:" destination="KE4-p4-V5t" eventType="touchUpInside" id="QXT-TF-z0i"/>
@@ -482,11 +489,11 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="fX4-Zs-JCc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-p6-UUs">
-                                <rect key="frame" x="349" y="7" width="45" height="30"/>
+                                <rect key="frame" x="359" y="9.5" width="35" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" backgroundImage="list.bullet" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="black"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressHistoryButton:" destination="KE4-p4-V5t" eventType="touchUpInside" id="gXg-wR-1gL"/>
@@ -498,12 +505,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="7BB-oD-TJP" kind="relationship" relationship="viewControllers" id="MqZ-wl-4GS"/>
                         <segue destination="Xc5-J0-IcI" kind="relationship" relationship="viewControllers" id="Oud-bZ-AtK"/>
-                        <segue destination="ZDy-sy-muq" kind="show" id="Dzg-nJ-1YD"/>
-                        <segue destination="41i-ZX-eWK" kind="show" id="lfI-Ha-gtO"/>
+                        <segue destination="ZDy-sy-muq" kind="presentation" id="Dzg-nJ-1YD"/>
+                        <segue destination="41i-ZX-eWK" kind="presentation" id="lfI-Ha-gtO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTW-Q8-1ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -513,15 +521,15 @@
     </scenes>
     <resources>
         <image name="Button-Close" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Calculate" width="32" height="32"/>
+        <image name="Convert" width="32" height="32"/>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="divide.square" catalog="system" width="128" height="114"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="minus.square" catalog="system" width="128" height="114"/>
         <image name="multiply.square" catalog="system" width="128" height="114"/>
-        <image name="plus.slash.minus" catalog="system" width="128" height="115"/>
         <image name="plus.square" catalog="system" width="128" height="114"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="repeat" catalog="system" width="128" height="99"/>
     </resources>
 </document>
