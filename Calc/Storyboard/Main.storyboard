@@ -427,11 +427,11 @@
             <objects>
                 <viewController storyboardIdentifier="InformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZDy-sy-muq" customClass="InformationViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hg-fo-XRV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFC-7g-I76">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="707"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -450,6 +450,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Dn-E9-Up2">
                                 <rect key="frame" x="360.5" y="5.5" width="33.5" height="33.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Button-Close">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -510,7 +511,7 @@
                     <connections>
                         <segue destination="7BB-oD-TJP" kind="relationship" relationship="viewControllers" id="MqZ-wl-4GS"/>
                         <segue destination="Xc5-J0-IcI" kind="relationship" relationship="viewControllers" id="Oud-bZ-AtK"/>
-                        <segue destination="ZDy-sy-muq" kind="presentation" id="Dzg-nJ-1YD"/>
+                        <segue destination="ZDy-sy-muq" kind="show" id="Dzg-nJ-1YD"/>
                         <segue destination="41i-ZX-eWK" kind="presentation" id="lfI-Ha-gtO"/>
                     </connections>
                 </tabBarController>
@@ -520,7 +521,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button-Close" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Button-Close" width="30" height="30"/>
         <image name="Calculate" width="32" height="32"/>
         <image name="Convert" width="32" height="32"/>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>

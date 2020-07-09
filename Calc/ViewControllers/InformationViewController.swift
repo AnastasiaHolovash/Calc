@@ -102,8 +102,10 @@ extension InformationViewController: UITableViewDelegate, UITableViewDataSource 
         label.text = sectionTitles[section]
 
         returnedView.addSubview(label)
+//        returnedView.addShadowForLabel()
         return returnedView
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {

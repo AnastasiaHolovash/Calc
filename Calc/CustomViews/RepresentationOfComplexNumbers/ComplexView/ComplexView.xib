@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-eF-25w">
-                    <rect key="frame" x="4" y="28.5" width="30" height="29"/>
+                    <rect key="frame" x="4" y="30" width="26.5" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Vx6-eF-25w" secondAttribute="height" multiplier="1:1" id="ZKw-9o-CpS"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" backgroundImage="plus.circle.fill" catalog="system">
+                    <state key="normal" backgroundImage="Button-Plus">
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                     </state>
                     <connections>
@@ -35,12 +35,12 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDZ-zn-yg9">
-                    <rect key="frame" x="206" y="28.5" width="30" height="29"/>
+                    <rect key="frame" x="206" y="30" width="26" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1:1" id="d5B-AV-64x"/>
                     </constraints>
                     <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" backgroundImage="plus.circle.fill" catalog="system">
+                    <state key="normal" backgroundImage="Button-Plus">
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                     </state>
                     <connections>
@@ -59,7 +59,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 0.0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YJK-ox-kwO">
-                    <rect key="frame" x="34" y="26" width="120" height="34"/>
+                    <rect key="frame" x="34.5" y="26" width="120" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
@@ -71,18 +71,18 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UhD-xT-XZp" secondAttribute="trailing" constant="19" id="Aoc-Pl-Fd0"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Jnu-pD-Oq4"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.0293333" id="MAE-f5-XPA"/>
-                <constraint firstItem="Vx6-eF-25w" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.08" id="Rdl-Zc-inj"/>
+                <constraint firstItem="Vx6-eF-25w" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.07" id="Rdl-Zc-inj"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="width" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1:1" id="VVh-NI-ROc"/>
                 <constraint firstItem="YJK-ox-kwO" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="bZX-X2-LPF"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="width" secondItem="Vx6-eF-25w" secondAttribute="height" multiplier="1:1" id="baV-yW-qCX"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="fAH-SB-bPi"/>
-                <constraint firstItem="nDZ-zn-yg9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.08" id="jlf-MH-u50"/>
+                <constraint firstItem="nDZ-zn-yg9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.07" id="jlf-MH-u50"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="plT-G5-fb2"/>
                 <constraint firstItem="YJK-ox-kwO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.32" id="qRA-wZ-9UQ"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.95" id="tu8-nX-GrL"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ty1-4K-0Se"/>
-                <constraint firstItem="UhD-xT-XZp" firstAttribute="leading" secondItem="nDZ-zn-yg9" secondAttribute="trailing" id="wtd-TI-oLB"/>
-                <constraint firstItem="YJK-ox-kwO" firstAttribute="leading" secondItem="Vx6-eF-25w" secondAttribute="trailing" id="wv7-00-haP"/>
+                <constraint firstItem="UhD-xT-XZp" firstAttribute="leading" secondItem="nDZ-zn-yg9" secondAttribute="trailing" constant="4" id="wtd-TI-oLB"/>
+                <constraint firstItem="YJK-ox-kwO" firstAttribute="leading" secondItem="Vx6-eF-25w" secondAttribute="trailing" constant="4" id="wv7-00-haP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -90,6 +90,6 @@
         </view>
     </objects>
     <resources>
-        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="Button-Plus" width="30" height="30"/>
     </resources>
 </document>

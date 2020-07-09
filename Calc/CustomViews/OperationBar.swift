@@ -40,16 +40,16 @@ class OperationBar: UIStackView {
         divideButton.tintColor = .label
         switch curentOperationName {
         case .plus:
-            plusButton.setImage(UIImage.init(systemName: "plus.square.fill"), for: .normal)
+            plusButton.setImage(UIImage.init(named: "plus-square-fill"), for: .normal)
             plusButton.tintColor = .systemIndigo
         case .minus:
-            minusButton.setImage(UIImage.init(systemName: "minus.square.fill"), for: .normal)
+            minusButton.setImage(UIImage.init(named: "minus-square-fill"), for: .normal)
             minusButton.tintColor = .systemIndigo
         case .multiplication:
-            multiplyButton.setImage(UIImage.init(systemName: "multiply.square.fill"), for: .normal)
+            multiplyButton.setImage(UIImage.init(named: "multiply-square-fill"), for: .normal)
             multiplyButton.tintColor = .systemIndigo
         case .division:
-            divideButton.setImage(UIImage.init(systemName: "divide.square.fill"), for: .normal)
+            divideButton.setImage(UIImage.init(named: "divide-square-fill"), for: .normal)
             divideButton.tintColor = .systemIndigo
         }
     }

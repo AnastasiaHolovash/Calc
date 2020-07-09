@@ -8,8 +8,8 @@
 
 import UIKit
 
-let plusImage = UIImage(systemName: "plus.circle.fill")
-let minusImage = UIImage(systemName: "minus.circle.fill")
+let plusImage = UIImage(named: "Button-Plus")
+let minusImage = UIImage(named: "Button-Minus")
 
 func updateButton(button: UIButton, isPlus: inout Bool) {
     if isPlus {
