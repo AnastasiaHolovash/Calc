@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var viewWithShadow: UIView!
     @IBOutlet weak var numberLabel1: UILabel!
@@ -64,7 +64,7 @@ class CustomTableViewCell: UITableViewCell {
             self.numberLabel1Width.constant = 267
             self.operationTypeLabel.text = "Конвертувати"
         // Culculate operation
-        case .culculate(let calculate):
+        case .calculate(let calculate):
             // First number
             switch calculate.number1.numberType {
             case .exp:

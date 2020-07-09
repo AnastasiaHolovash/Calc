@@ -9,7 +9,7 @@
 import UIKit
 
 enum Operation {
-    case culculate(Calculate)
+    case calculate(Calculate)
     case convert(ComplexNumber)
 }
 
@@ -18,7 +18,7 @@ extension Operation: Codable, Equatable {
     //MARK:- Equatable
     static func == (lhs: Operation, rhs: Operation) -> Bool {
         switch (lhs, rhs) {
-        case (let .culculate(lhsCalculate), let .culculate(rhsCalculate)):
+        case (let .calculate(lhsCalculate), let .calculate(rhsCalculate)):
             return lhsCalculate == rhsCalculate
         case (let .convert(lhsComplexNumber), let .convert(rhsComplexNumber)):
         return lhsComplexNumber == rhsComplexNumber
@@ -43,7 +43,7 @@ extension Operation: Codable, Equatable {
         switch rawValue {
         case 0:
             let culculate = try container.decode(Calculate.self, forKey: .associatedValue)
-            self = .culculate(culculate)
+            self = .calculate(culculate)
         case 1:
             let convert = try container.decode(ComplexNumber.self, forKey: .associatedValue)
             self = .convert(convert)
@@ -55,7 +55,7 @@ extension Operation: Codable, Equatable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: Key.self)
         switch self {
-        case .culculate(let culculate):
+        case .calculate(let culculate):
             try container.encode(0, forKey: .rawValue)
             try container.encode(culculate, forKey: .associatedValue)
         case .convert(let convert):
@@ -63,11 +63,12 @@ extension Operation: Codable, Equatable {
             try container.encode(convert, forKey: .associatedValue)
         }
     }
-    
-    
 }
 
 
+/**
+ Name of operation
+ */
 enum NameOfOperation: String, Codable {
     case plus
     case minus
@@ -75,11 +76,12 @@ enum NameOfOperation: String, Codable {
     case division
 }
 
+
+
 enum NumberType: String, Codable {
     case exp
     case complex
 }
-
 
 
 struct Calculate: Codable, Equatable {
@@ -93,7 +95,15 @@ struct Calculate: Codable, Equatable {
     }
 }
 
-
+/**
+ Complex Number in exponensial or complex form wich consist with 2 parts
+ 
+ For exponensial:       part1 - Module of number;
+                part2 - Angle of number in degrees.
+ 
+ For complex:             part1 - The real part of the complex number;
+                part2 - The imaginary part of the complex number.
+*/
 struct ComplexNumber: Codable, Equatable {
     let numberType: NumberType
     let part1: Double

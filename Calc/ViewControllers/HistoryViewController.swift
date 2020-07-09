@@ -46,7 +46,7 @@ class HistoryViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "CustomTableViewCell")
+        tableView.register(UINib(nibName: "HistoryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "HistoryTableViewCell")
     }
     
     
@@ -68,7 +68,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as? HistoryTableViewCell else {
             return UITableViewCell() }
         cell.setOperation(operation: history[indexPath.row])
         return cell
@@ -80,7 +80,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
             switch self.history[indexPath.row] {
             case .convert(let complexNumber):
                 self.tabBarIndexDelegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.convertViewController.rawValue, calculate: nil, number: complexNumber )
-            case .culculate(let calculate):
+            case .calculate(let calculate):
                 self.tabBarIndexDelegate?.tabBarControllerSelectedIndex(selectedIndex: CustomTabBarIndexes.calculateViewController.rawValue, calculate: calculate, number: nil)
             }
             tableView.deselectRow(at: indexPath, animated: true)

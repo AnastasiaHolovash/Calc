@@ -38,7 +38,8 @@ extension CalculateViewController {
         var complex1 = (re: 0.0, im: 0.0)
         
         if !expView1.isHidden {
-            complex1 = convertToComplex(expView: expView1)
+            let exp1 = makeExpNumber1()
+            complex1 = expToComplexNumber(modulZ: exp1.modulZ, arc: exp1.arc)
         } else {
             complex1 = makeComplexNumber1()
         }
@@ -46,7 +47,8 @@ extension CalculateViewController {
         var complex2 = (re: 0.0, im: 0.0)
         
         if !expView2.isHidden {
-            complex2 = convertToComplex(expView: expView2)
+            let exp2 = makeExpNumber2()
+            complex2 = expToComplexNumber(modulZ: exp2.modulZ, arc: exp2.arc)
         } else {
             complex2 = makeComplexNumber2()
         }
@@ -126,11 +128,8 @@ extension CalculateViewController {
         /// 'result' in exponential form of type "Double".
         let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
         /// An appearance of complex number in exponential form.
-        let attributedStringResultText = attributedStringResult_(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi, roundTo: 4)
-        answerView.expAnswerLabel.attributedText = attributedStringResultText.0
-        if attributedStringResultText.1 == true {
-            present(alert(), animated: true, completion: nil)
-        }
+        let stringResult = expNumberToString(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi)
+        answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: stringResult)
     }
     
 }

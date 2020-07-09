@@ -15,11 +15,10 @@
 		5D020AF424B22F43006B83E7 /* InfoTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D020AF224B22F43006B83E7 /* InfoTableViewCell2.xib */; };
 		5D020AF824B50B63006B83E7 /* InfoTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AF624B50B63006B83E7 /* InfoTableViewCell3.swift */; };
 		5D020AF924B50B63006B83E7 /* InfoTableViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D020AF724B50B63006B83E7 /* InfoTableViewCell3.xib */; };
-		5D020AFB24B5F223006B83E7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AFA24B5F223006B83E7 /* Colors.swift */; };
+		5D020AFB24B5F223006B83E7 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AFA24B5F223006B83E7 /* AppColors.swift */; };
 		5D020AFD24B5FC15006B83E7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */; };
 		5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F674924A7616400B59126 /* Double+Extensions.swift */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
-		5D496FF023969F76000C0DF7 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FEF23969F76000C0DF7 /* Func.swift */; };
 		5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B246238ECAB10057D76D /* AppDelegate.swift */; };
 		5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B248238ECAB10057D76D /* SceneDelegate.swift */; };
 		5D69B250238ECAB60057D76D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D69B24F238ECAB60057D76D /* Preview Assets.xcassets */; };
@@ -41,9 +40,11 @@
 		5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626A249042BA00C03364 /* HistoryViewController.swift */; };
 		5D95626E2497DFDD00C03364 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626D2497DFDD00C03364 /* Operation.swift */; };
 		5D9562702497E71200C03364 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626F2497E71200C03364 /* History.swift */; };
-		5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956273249A2F8300C03364 /* CustomTableViewCell.swift */; };
-		5D956276249A2F8300C03364 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956274249A2F8300C03364 /* CustomTableViewCell.xib */; };
+		5D956275249A2F8300C03364 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956273249A2F8300C03364 /* HistoryTableViewCell.swift */; };
+		5D956276249A2F8300C03364 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956274249A2F8300C03364 /* HistoryTableViewCell.xib */; };
 		5D95627F249A605B00C03364 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95627E249A605B00C03364 /* CustomTabBarController.swift */; };
+		5DB8B8BB24B7C143007167D6 /* CalculationFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8B8BA24B7C143007167D6 /* CalculationFormulas.swift */; };
+		5DB8B8BD24B7CC42007167D6 /* ComplexNumbersStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8B8BC24B7CC42007167D6 /* ComplexNumbersStrings.swift */; };
 		5DBF245B248819DC001EB10B /* ExpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF245A248819DC001EB10B /* ExpView.xib */; };
 		5DBF245D248819F2001EB10B /* ExpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF245C248819F2001EB10B /* ExpView.swift */; };
 		5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD6673D24A6A417002C321D /* String+Extensions.swift */; };
@@ -58,11 +59,10 @@
 		5D020AF224B22F43006B83E7 /* InfoTableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell2.xib; sourceTree = "<group>"; };
 		5D020AF624B50B63006B83E7 /* InfoTableViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell3.swift; sourceTree = "<group>"; };
 		5D020AF724B50B63006B83E7 /* InfoTableViewCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell3.xib; sourceTree = "<group>"; };
-		5D020AFA24B5F223006B83E7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5D020AFA24B5F223006B83E7 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		5D0F674924A7616400B59126 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
-		5D496FEF23969F76000C0DF7 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		5D69B243238ECAB10057D76D /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D69B246238ECAB10057D76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D69B248238ECAB10057D76D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,9 +86,11 @@
 		5D95626A249042BA00C03364 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5D95626D2497DFDD00C03364 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		5D95626F2497E71200C03364 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		5D956273249A2F8300C03364 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		5D956274249A2F8300C03364 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		5D956273249A2F8300C03364 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		5D956274249A2F8300C03364 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		5D95627E249A605B00C03364 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		5DB8B8BA24B7C143007167D6 /* CalculationFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationFormulas.swift; sourceTree = "<group>"; };
+		5DB8B8BC24B7CC42007167D6 /* ComplexNumbersStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersStrings.swift; sourceTree = "<group>"; };
 		5DBF245A248819DC001EB10B /* ExpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpView.xib; sourceTree = "<group>"; };
 		5DBF245C248819F2001EB10B /* ExpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpView.swift; sourceTree = "<group>"; };
 		5DD6673D24A6A417002C321D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -132,6 +134,17 @@
 			path = InfoTableViewCell3;
 			sourceTree = "<group>";
 		};
+		5D020AFE24B7B36C006B83E7 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5D956277249A2FDF00C03364 /* HistoryTableViewCell */,
+				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
+				5D020AF024B22F1D006B83E7 /* InfoTableViewCell2 */,
+				5D020AF524B50B33006B83E7 /* InfoTableViewCell3 */,
+			);
+			path = CustomTableViewCells;
+			sourceTree = "<group>";
+		};
 		5D69B23A238ECAB10057D76D = {
 			isa = PBXGroup;
 			children = (
@@ -154,15 +167,14 @@
 				5D69B246238ECAB10057D76D /* AppDelegate.swift */,
 				5D69B248238ECAB10057D76D /* SceneDelegate.swift */,
 				5D69B27E238EFB600057D76D /* ContentView.swift */,
-				5D496FEF23969F76000C0DF7 /* Func.swift */,
-				5D95626F2497E71200C03364 /* History.swift */,
-				5D020AFA24B5F223006B83E7 /* Colors.swift */,
-				5D95626C2497DF9900C03364 /* Models */,
-				5D956266248EFB7800C03364 /* Extensions */,
+				5D95626924902D5800C03364 /* Storyboard */,
 				5D7779C424A4C8C7007F2EBB /* Controllers */,
 				5D95625C248EE8F000C03364 /* ViewControllers */,
-				5D95626924902D5800C03364 /* Storyboard */,
+				5DB8B8BE24B7CCFC007167D6 /* Managers */,
+				5D95626C2497DF9900C03364 /* Models */,
 				5D95625F248EE93800C03364 /* CustomViews */,
+				5DB8B8B924B7C082007167D6 /* ComplexNumbersFuncs */,
+				5D956266248EFB7800C03364 /* Extensions */,
 				5D6B043D2411949200AA7D3B /* Asset.xcassets */,
 				5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */,
 				5D69B254238ECAB60057D76D /* Info.plist */,
@@ -242,10 +254,7 @@
 			children = (
 				5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */,
 				5D6E464924A944420063CE90 /* AnswerView */,
-				5D956277249A2FDF00C03364 /* CustomTableViewCell */,
-				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
-				5D020AF024B22F1D006B83E7 /* InfoTableViewCell2 */,
-				5D020AF524B50B33006B83E7 /* InfoTableViewCell3 */,
+				5D020AFE24B7B36C006B83E7 /* CustomTableViewCells */,
 				5D6E464524A92FB20063CE90 /* OperationBar.swift */,
 				5D6E465124AB41180063CE90 /* ChangeFormButton.swift */,
 			);
@@ -279,13 +288,39 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5D956277249A2FDF00C03364 /* CustomTableViewCell */ = {
+		5D956277249A2FDF00C03364 /* HistoryTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				5D956273249A2F8300C03364 /* CustomTableViewCell.swift */,
-				5D956274249A2F8300C03364 /* CustomTableViewCell.xib */,
+				5D956273249A2F8300C03364 /* HistoryTableViewCell.swift */,
+				5D956274249A2F8300C03364 /* HistoryTableViewCell.xib */,
 			);
-			path = CustomTableViewCell;
+			path = HistoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		5DB8B8B824B7B70B007167D6 /* SaveManager */ = {
+			isa = PBXGroup;
+			children = (
+				5D95626F2497E71200C03364 /* History.swift */,
+			);
+			path = SaveManager;
+			sourceTree = "<group>";
+		};
+		5DB8B8B924B7C082007167D6 /* ComplexNumbersFuncs */ = {
+			isa = PBXGroup;
+			children = (
+				5DB8B8BA24B7C143007167D6 /* CalculationFormulas.swift */,
+				5DB8B8BC24B7CC42007167D6 /* ComplexNumbersStrings.swift */,
+			);
+			path = ComplexNumbersFuncs;
+			sourceTree = "<group>";
+		};
+		5DB8B8BE24B7CCFC007167D6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5DB8B8B824B7B70B007167D6 /* SaveManager */,
+				5D020AFA24B5F223006B83E7 /* AppColors.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5DBF245E248819FF001EB10B /* ExpView */ = {
@@ -358,7 +393,7 @@
 				5D69B253238ECAB60057D76D /* LaunchScreen.storyboard in Resources */,
 				5DBF245B248819DC001EB10B /* ExpView.xib in Resources */,
 				5D6E464B24A944BD0063CE90 /* AnswerView.xib in Resources */,
-				5D956276249A2F8300C03364 /* CustomTableViewCell.xib in Resources */,
+				5D956276249A2F8300C03364 /* HistoryTableViewCell.xib in Resources */,
 				5D020AF424B22F43006B83E7 /* InfoTableViewCell2.xib in Resources */,
 				5D020AF924B50B63006B83E7 /* InfoTableViewCell3.xib in Resources */,
 				5D020AE024B0CBE2006B83E7 /* InfoTableViewCell.xib in Resources */,
@@ -383,17 +418,18 @@
 				5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */,
 				5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */,
 				5D69B27F238EFB600057D76D /* ContentView.swift in Sources */,
-				5D956275249A2F8300C03364 /* CustomTableViewCell.swift in Sources */,
+				5D956275249A2F8300C03364 /* HistoryTableViewCell.swift in Sources */,
 				5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */,
 				5D020ADF24B0CBE2006B83E7 /* InfoTableViewCell.swift in Sources */,
+				5DB8B8BD24B7CC42007167D6 /* ComplexNumbersStrings.swift in Sources */,
 				5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */,
-				5D496FF023969F76000C0DF7 /* Func.swift in Sources */,
 				5D020AF324B22F43006B83E7 /* InfoTableViewCell2.swift in Sources */,
 				5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */,
 				5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */,
 				5D020AF824B50B63006B83E7 /* InfoTableViewCell3.swift in Sources */,
+				5DB8B8BB24B7C143007167D6 /* CalculationFormulas.swift in Sources */,
 				5D6E465224AB41180063CE90 /* ChangeFormButton.swift in Sources */,
-				5D020AFB24B5F223006B83E7 /* Colors.swift in Sources */,
+				5D020AFB24B5F223006B83E7 /* AppColors.swift in Sources */,
 				5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */,
 				5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */,
 				5D6E464824A9318B0063CE90 /* PrepareAndShowResultExtension.swift in Sources */,
