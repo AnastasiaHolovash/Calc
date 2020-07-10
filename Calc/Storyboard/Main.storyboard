@@ -10,6 +10,7 @@
         <!--Navigation Controller-->
         <scene sceneID="F5E-dH-Lwz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7g-nf-5Ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="SqR-6S-NVm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tLR-PY-cVV">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -19,7 +20,6 @@
                         <segue destination="KE4-p4-V5t" kind="relationship" relationship="rootViewController" id="zGj-Ac-2fi"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W7g-nf-5Ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-290" y="-1615"/>
         </scene>
@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-bV-26c">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="734"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -186,10 +186,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ppu-mq-h5d"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Історія" largeTitleDisplayMode="always" id="EwZ-oq-35v">
+                    <navigationItem key="navigationItem" title="Історія" id="EwZ-oq-35v">
                         <barButtonItem key="rightBarButtonItem" title="      " width="30" id="rwK-lc-E00">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L02-xp-q9U">
-                                <rect key="frame" x="355.5" y="5.5" width="38.5" height="33.5"/>
+                                <rect key="frame" x="355.5" y="11.5" width="38.5" height="33.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" " image="Button-Close">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fks-ta-ftx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="-887"/>
+            <point key="canvasLocation" x="1049" y="-147"/>
         </scene>
         <!--Калькулятор-->
         <scene sceneID="7N5-w7-M6H">
@@ -427,18 +427,18 @@
             <objects>
                 <viewController storyboardIdentifier="InformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZDy-sy-muq" customClass="InformationViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hg-fo-XRV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFC-7g-I76">
-                                <rect key="frame" x="0.0" y="140" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xc3-0x-46F" firstAttribute="bottom" secondItem="qFC-7g-I76" secondAttribute="bottom" constant="-34" id="Fqj-sa-cNF"/>
-                            <constraint firstItem="qFC-7g-I76" firstAttribute="top" secondItem="xc3-0x-46F" secondAttribute="top" id="Jhu-uj-CkQ"/>
+                            <constraint firstAttribute="bottom" secondItem="qFC-7g-I76" secondAttribute="bottom" constant="49" id="Fqj-sa-cNF"/>
+                            <constraint firstItem="qFC-7g-I76" firstAttribute="top" secondItem="9hg-fo-XRV" secondAttribute="top" id="Jhu-uj-CkQ"/>
                             <constraint firstItem="qFC-7g-I76" firstAttribute="leading" secondItem="xc3-0x-46F" secondAttribute="leading" id="jWH-PS-Y7o"/>
                             <constraint firstItem="xc3-0x-46F" firstAttribute="trailing" secondItem="qFC-7g-I76" secondAttribute="trailing" id="mH1-po-u3I"/>
                         </constraints>
@@ -448,7 +448,7 @@
                     <navigationItem key="navigationItem" title="Як користуватися?" id="8pK-4p-9ET">
                         <barButtonItem key="rightBarButtonItem" width="30" style="plain" id="iq8-CD-Dhe">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Dn-E9-Up2">
-                                <rect key="frame" x="360.5" y="5.5" width="33.5" height="33.5"/>
+                                <rect key="frame" x="360.5" y="11.5" width="33.5" height="33.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Button-Close">
@@ -468,7 +468,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iwx-5z-fgH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1204.3478260869565" y="-887.27678571428567"/>
+            <point key="canvasLocation" x="-1620" y="-147"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gKr-me-Djw">
+            <objects>
+                <navigationController storyboardIdentifier="InformationNavController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fQR-HL-nEJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="TDs-6c-8Mj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZDy-sy-muq" kind="relationship" relationship="rootViewController" id="VOU-UJ-FpK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcX-a0-g6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1620" y="-887"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="7kq-pa-2S7">
@@ -484,9 +500,12 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressInformationButton:" destination="KE4-p4-V5t" eventType="touchUpInside" id="QXT-TF-z0i"/>
+                                    <action selector="didPressInformationButton:" destination="KE4-p4-V5t" eventType="touchUpInside" id="9m8-iT-ioY"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <segue destination="fQR-HL-nEJ" kind="presentation" identifier="HistoryNavController" id="bHv-mV-tfv"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="fX4-Zs-JCc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-p6-UUs">
@@ -500,6 +519,9 @@
                                     <action selector="didPressHistoryButton:" destination="KE4-p4-V5t" eventType="touchUpInside" id="gXg-wR-1gL"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <segue destination="ile-n8-Mec" kind="presentation" id="QxW-dD-vah"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oA4-2t-rYj">
@@ -511,13 +533,27 @@
                     <connections>
                         <segue destination="7BB-oD-TJP" kind="relationship" relationship="viewControllers" id="MqZ-wl-4GS"/>
                         <segue destination="Xc5-J0-IcI" kind="relationship" relationship="viewControllers" id="Oud-bZ-AtK"/>
-                        <segue destination="ZDy-sy-muq" kind="show" id="Dzg-nJ-1YD"/>
-                        <segue destination="41i-ZX-eWK" kind="presentation" id="lfI-Ha-gtO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kTW-Q8-1ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-289" y="-887"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XQC-b9-lKX">
+            <objects>
+                <navigationController storyboardIdentifier="HistoryNavController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ile-n8-Mec" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sid-Pq-V0q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="41i-ZX-eWK" kind="relationship" relationship="rootViewController" id="lCu-wa-Z0U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oln-QZ-nTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-887"/>
         </scene>
     </scenes>
     <resources>

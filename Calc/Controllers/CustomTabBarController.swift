@@ -34,25 +34,29 @@ class CustomTabBarController: UITabBarController {
     
     
     @IBAction func didPressInformationButton(_ sender: UIButton) {
-        guard let informationVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationViewController") as? InformationViewController else { return }
+//        guard let informationVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationViewController") as? InformationViewController else { return }
+//
+//        let navigationC = UINavigationController()
+//        navigationC.viewControllers = [informationVC]
+//        navigationC.navigationBar.prefersLargeTitles = true
+//        navigationC.navigationItem.largeTitleDisplayMode = .always
         
-        let navigationC = UINavigationController()
-        navigationC.viewControllers = [informationVC]
-        navigationC.navigationBar.prefersLargeTitles = true
-        navigationC.navigationItem.largeTitleDisplayMode = .always
-        
-        present(navigationC, animated: true, completion: nil)
+        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationNavController") as? UINavigationController else { return }
+
+        present(navController, animated: true, completion: nil)
     }
     
     @IBAction func didPressHistoryButton(_ sender: UIButton) {
-        guard let historyVCc = historyVCc else { return }
+//        guard let historyVCc = historyVCc else { return }
+//
+//        let navigationC = UINavigationController()
+//        navigationC.viewControllers = [historyVCc]
+//        navigationC.navigationBar.prefersLargeTitles = true
+//        navigationC.navigationItem.largeTitleDisplayMode = .always
         
-        let navigationC = UINavigationController()
-        navigationC.viewControllers = [historyVCc]
-        navigationC.navigationBar.prefersLargeTitles = true
-        navigationC.navigationItem.largeTitleDisplayMode = .always
+        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
         
-        present(navigationC, animated: true, completion: nil)
+        present(navController, animated: true, completion: nil)
     }
     
 }
