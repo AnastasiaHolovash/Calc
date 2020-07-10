@@ -42,19 +42,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="EDL-P3-71T">
+                                <rect key="frame" x="137" y="50" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="KTV-fI-68P"/>
+                                    <constraint firstAttribute="width" secondItem="EDL-P3-71T" secondAttribute="height" multiplier="1:1" id="TgH-zO-zNE"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="375.65505" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Pk-LX-jFi">
                                 <rect key="frame" x="157" y="48" width="122" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="O6t-u6-Wy0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5v-zx-7iz">
-                                <rect key="frame" x="130" y="48" width="27" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="Pdc-cd-aUQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -66,10 +64,10 @@
                             <constraint firstItem="7Pk-LX-jFi" firstAttribute="centerY" secondItem="XpB-ja-Hck" secondAttribute="centerY" id="0ta-hr-Isc"/>
                             <constraint firstAttribute="trailing" secondItem="7Pk-LX-jFi" secondAttribute="trailing" constant="46" id="4jr-03-E3n"/>
                             <constraint firstItem="lSw-1b-WDj" firstAttribute="centerY" secondItem="XpB-ja-Hck" secondAttribute="centerY" id="9vW-iM-f72"/>
+                            <constraint firstItem="EDL-P3-71T" firstAttribute="centerY" secondItem="XpB-ja-Hck" secondAttribute="centerY" id="Gsb-m7-pOO"/>
                             <constraint firstItem="lSw-1b-WDj" firstAttribute="trailing" secondItem="XpB-ja-Hck" secondAttribute="trailing" constant="-8" id="I3y-5z-37y"/>
-                            <constraint firstItem="n5v-zx-7iz" firstAttribute="trailing" secondItem="7Pk-LX-jFi" secondAttribute="leading" id="QHo-O6-y7o"/>
+                            <constraint firstItem="EDL-P3-71T" firstAttribute="trailing" secondItem="7Pk-LX-jFi" secondAttribute="leading" id="LUY-at-q98"/>
                             <constraint firstItem="bcx-eB-wNq" firstAttribute="leading" secondItem="o85-yR-NVH" secondAttribute="leading" id="TKX-ZC-UDS"/>
-                            <constraint firstItem="n5v-zx-7iz" firstAttribute="centerY" secondItem="XpB-ja-Hck" secondAttribute="centerY" id="TRf-Af-YaH"/>
                             <constraint firstItem="bcx-eB-wNq" firstAttribute="top" secondItem="o85-yR-NVH" secondAttribute="bottom" constant="7.5" id="dxa-dn-P7l"/>
                             <constraint firstItem="o85-yR-NVH" firstAttribute="leading" secondItem="XpB-ja-Hck" secondAttribute="leading" constant="12" id="wr6-ph-lzS"/>
                             <constraint firstItem="o85-yR-NVH" firstAttribute="centerY" secondItem="XpB-ja-Hck" secondAttribute="centerY" id="yxA-Vv-Lgy"/>
@@ -89,7 +87,7 @@
                 <outlet property="numberLabel1" destination="o85-yR-NVH" id="eTO-66-R71"/>
                 <outlet property="numberLabel1Width" destination="C4z-IF-yms" id="0oN-YU-Qla"/>
                 <outlet property="numberLabel2" destination="7Pk-LX-jFi" id="CCX-Ez-47u"/>
-                <outlet property="operationSignLabel" destination="n5v-zx-7iz" id="LWd-Pa-OQx"/>
+                <outlet property="operationSignImage" destination="EDL-P3-71T" id="hIM-Go-mWu"/>
                 <outlet property="operationTypeLabel" destination="bcx-eB-wNq" id="v65-GE-HdU"/>
                 <outlet property="viewWithShadow" destination="XpB-ja-Hck" id="EFG-BR-ctN"/>
             </connections>
@@ -98,5 +96,6 @@
     </objects>
     <resources>
         <image name="Arrow" width="300" height="300"/>
+        <image name="plus" width="17.333333969116211" height="17.333333969116211"/>
     </resources>
 </document>

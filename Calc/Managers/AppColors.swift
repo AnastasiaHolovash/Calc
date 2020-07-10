@@ -48,6 +48,8 @@ public var shadowColor: UIColor = {
             if UITraitCollection.userInterfaceStyle == .dark {
                 /// Return the color for Dark Mode
                 return UIColor.systemGray
+//                return UIColor.black
+//                return UIColor.systemGray2
             } else {
                 /// Return the color for Light Mode
                 return UIColor(red: 0, green: 0, blue: 0, alpha: 0.25)

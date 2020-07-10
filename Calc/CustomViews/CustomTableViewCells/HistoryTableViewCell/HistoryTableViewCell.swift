@@ -12,8 +12,8 @@ class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var viewWithShadow: UIView!
     @IBOutlet weak var numberLabel1: UILabel!
+    @IBOutlet weak var operationSignImage: UIImageView!
     @IBOutlet weak var numberLabel2: UILabel!
-    @IBOutlet weak var operationSignLabel: UILabel!
     @IBOutlet weak var operationTypeLabel: UILabel!
     @IBOutlet weak var numberLabel1Width: NSLayoutConstraint!
     
@@ -23,7 +23,7 @@ class HistoryTableViewCell: UITableViewCell {
         viewWithShadow.addShadow()
         numberLabel1.text = ""
         numberLabel2.text = ""
-        operationSignLabel.text = ""
+        operationSignImage.image = nil
         numberLabel1.adjustsFontSizeToFitWidth = true
         numberLabel2.adjustsFontSizeToFitWidth = true
         numberLabel1.minimumScaleFactor = 0.5
@@ -44,7 +44,7 @@ class HistoryTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         numberLabel1.text = ""
         numberLabel2.text = ""
-        operationSignLabel.text = ""
+        operationSignImage.image = nil
     }
     
     // MAKR: - divide for several funcs
@@ -84,13 +84,13 @@ class HistoryTableViewCell: UITableViewCell {
             // Operation Sign
             switch calculate.operation {
             case .plus:
-                self.operationSignLabel.text = "➕"
+                self.operationSignImage.image = UIImage(named: "plus")
             case .minus:
-                self.operationSignLabel.text = "➖"
+                self.operationSignImage.image = UIImage(named: "minus")
             case .multiplication:
-                self.operationSignLabel.text = "✖️"
+                self.operationSignImage.image = UIImage(named: "multiply")
             case .division:
-                self.operationSignLabel.text = "➗"
+                self.operationSignImage.image = UIImage(named: "divide")
             }
             self.numberLabel1.textAlignment = .center
             self.numberLabel1Width.constant = 122
