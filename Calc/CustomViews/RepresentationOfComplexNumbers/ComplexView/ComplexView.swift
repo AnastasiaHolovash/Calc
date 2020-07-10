@@ -13,9 +13,11 @@ class ComplexView: UIView {
     @IBOutlet weak var reSignButton: UIButton!
     @IBOutlet weak var imSignButton: UIButton!
     
-    @IBOutlet weak var reTextField: UITextField!
-    @IBOutlet weak var imTextField: UITextField!
+    @IBOutlet weak var reTextFieldView: CustomBorderedTextField!
+    @IBOutlet weak var imTextFieldView: CustomBorderedTextField!
     
+    var reTextField: UITextField!
+    var imTextField: UITextField!
     var reIsPlus: Bool = true
     var imIsPlus: Bool = true
     
@@ -43,6 +45,8 @@ class ComplexView: UIView {
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(xibView)
+        reTextField = reTextFieldView.textField
+        imTextField = imTextFieldView.textField
     }
 
     @IBAction func didPressSignButton(_ sender: UIButton) {
@@ -53,12 +57,12 @@ class ComplexView: UIView {
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        reTextField.setRoundedBourder()
-        imTextField.setRoundedBourder()
-//        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+////        reTextField.setRoundedBourder()
+////        imTextField.setRoundedBourder()
+////        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+//    }
     
     public func reSignButtonSetSign(setPlus: Bool) {
         if setPlus {

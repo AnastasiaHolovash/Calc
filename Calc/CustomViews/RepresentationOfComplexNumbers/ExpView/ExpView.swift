@@ -10,11 +10,13 @@ import UIKit
 
 class ExpView: UIView {
 
-    @IBOutlet weak var beforeExpTextField: UITextField!
-    @IBOutlet weak var afterExpTextField: UITextField!
-    
+    @IBOutlet weak var beforeExpTextFieldView: CustomBorderedTextField!
+    @IBOutlet weak var afterExpTextFieldView: CustomBorderedTextField!
     @IBOutlet weak var beforeExpSignButton: UIButton!
     @IBOutlet weak var afterExpSignButton: UIButton!
+    
+    var beforeExpTextField: UITextField!
+    var afterExpTextField: UITextField!
     
     var beforeExpIsPlus: Bool = true
     var afterExpIsPlus: Bool = true
@@ -43,6 +45,8 @@ class ExpView: UIView {
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(xibView)
+        self.beforeExpTextField = beforeExpTextFieldView.textField
+        self.afterExpTextField = afterExpTextFieldView.textField
     }
     
     @IBAction func didPressChangeSignButton(_ sender: UIButton) {
@@ -54,12 +58,12 @@ class ExpView: UIView {
         
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        beforeExpTextField.setRoundedBourder()
-        afterExpTextField.setRoundedBourder()
-//        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+////        beforeExpTextField.setRoundedBourder()
+////        afterExpTextField.setRoundedBourder()
+////        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
+//    }
     
     func beforeExpSignButtonSetSign(setPlus: Bool) {
         if setPlus {
