@@ -10,6 +10,8 @@ import UIKit
 
 class ComplexView: UIView {
     
+    var delegate: ChangeSignBottomsDelegate?
+    
     @IBOutlet weak var reSignButton: UIButton!
     @IBOutlet weak var imSignButton: UIButton!
     
@@ -20,9 +22,7 @@ class ComplexView: UIView {
     var imTextField: UITextField!
     var reIsPlus: Bool = true
     var imIsPlus: Bool = true
-    
-    let plusImage = UIImage(systemName: "plus.circle.fill")
-    let minusImage = UIImage(systemName: "minus.circle.fill")
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,14 +55,8 @@ class ComplexView: UIView {
         } else {
             updateButton(button: sender, isPlus: &imIsPlus)
         }
+        delegate?.recalculate()
     }
-    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-////        reTextField.setRoundedBourder()
-////        imTextField.setRoundedBourder()
-////        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-//    }
     
     public func reSignButtonSetSign(setPlus: Bool) {
         if setPlus {

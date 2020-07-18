@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ChangeSignBottomsDelegate {
+    func recalculate()
+}
+
 let plusImage = UIImage(named: "Button-Plus")
 let minusImage = UIImage(named: "Button-Minus")
 

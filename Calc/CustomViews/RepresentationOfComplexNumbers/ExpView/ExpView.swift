@@ -9,6 +9,8 @@
 import UIKit
 
 class ExpView: UIView {
+    
+    var delegate: ChangeSignBottomsDelegate?
 
     @IBOutlet weak var beforeExpTextFieldView: CustomBorderedTextField!
     @IBOutlet weak var afterExpTextFieldView: CustomBorderedTextField!
@@ -55,16 +57,9 @@ class ExpView: UIView {
         } else {
             updateButton(button: sender, isPlus: &afterExpIsPlus)
         }
-        
+        delegate?.recalculate()
     }
 
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-////        beforeExpTextField.setRoundedBourder()
-////        afterExpTextField.setRoundedBourder()
-////        self.backgroundColor = UIColor(red: 0.945, green: 0.949, blue: 0.965, alpha: 1)
-//    }
-    
     func beforeExpSignButtonSetSign(setPlus: Bool) {
         if setPlus {
             beforeExpIsPlus = false

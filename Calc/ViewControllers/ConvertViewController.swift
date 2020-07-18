@@ -27,11 +27,15 @@ class ConvertViewController: UIViewController {
         addObserver()
         setupKeyboardToolbar()
         
+        expView.delegate = self
+        complexView.delegate = self
+        
         guard let tabBarC = self.tabBarController as? CustomTabBarController else { return }
         tabBarC.numberDelegate = self
         
         convertButton.layer.cornerRadius = CGFloat(Double(convertButton.frame.height) / 2.5)
         transferButton.layer.cornerRadius = CGFloat(Double(transferButton.frame.height) / 2.5)
+        recalculate()
         self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
     }
     
@@ -158,7 +162,11 @@ class ConvertViewController: UIViewController {
         let result = expNumberToString(moduleZ: exp.moduleZ, arcFi: exp.arcFi)
         let enteredNumber = complexNumberToString(Re: re, Im: im)
         
-        answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: result)
+        if result == "Невизначеність" {
+            answerView.expAnswerLabel.text = result
+        } else {
+            answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: result)
+        }
         answerView.complexAnswerLabel.text = enteredNumber
     }
 
@@ -168,7 +176,11 @@ class ConvertViewController: UIViewController {
         let result = complexNumberToString(Re: complex.re, Im: complex.im, roundTo: 4)
         let enteredNumber = expNumberToString(moduleZ: modulZ, arcFi: arc)
         
-        answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: enteredNumber)
+        if enteredNumber == "Невизначеність" {
+            answerView.expAnswerLabel.text = enteredNumber
+        } else {
+            answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: enteredNumber)
+        }
         answerView.complexAnswerLabel.text = result
     }
     
@@ -196,6 +208,20 @@ extension ConvertViewController: NumberDelegate {
                 }
             }
             self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+    }
+    
+}
+
+extension ConvertViewController: ChangeSignBottomsDelegate {
+    func recalculate() {
+        switch changeFormButton.curentForm {
+        case .exp:
+            let expNumber = makeExpNumber()
+            showComplexResult(modulZ: expNumber.modulZ, arc: expNumber.arc)
+        case .complex:
+            let complexNumber = makeComplexNumber()
+            showExpResult(re: complexNumber.re, im: complexNumber.im)
         }
     }
     

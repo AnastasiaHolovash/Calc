@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CalculateViewController {
+extension CalculateViewController: ChangeSignBottomsDelegate {
     
     /**
      Recalculate.
@@ -129,7 +129,12 @@ extension CalculateViewController {
         let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
         /// An appearance of complex number in exponential form.
         let stringResult = expNumberToString(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi)
-        answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: stringResult)
+        
+        if stringResult == "Невизначеність" {
+            answerView.expAnswerLabel.text = stringResult
+        } else {
+            answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: stringResult)
+        }
     }
     
 }

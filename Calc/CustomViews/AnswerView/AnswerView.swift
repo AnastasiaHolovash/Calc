@@ -41,8 +41,8 @@ class AnswerView: UIView {
         super.layoutSubviews()
         self.backgroundColor = mainBackgroundColor
         viewWithShadow.addShadow()
-        expAnswerLabel.text = ""
-        complexAnswerLabel.text = ""
+//        expAnswerLabel.text = ""
+//        complexAnswerLabel.text = ""
     }
     
     public func show() {

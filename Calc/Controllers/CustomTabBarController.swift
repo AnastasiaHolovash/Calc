@@ -19,53 +19,32 @@ class CustomTabBarController: UITabBarController {
     
     var historyVCc: HistoryViewController?
     var historyNavController: UINavigationController?
+    var informationNavController: UINavigationController?
     
     var operationDelegate: OperationDelegate?
     var numberDelegate: NumberDelegate?
     
     public var transferNumber: ComplexNumber?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        guard let historyVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryViewController") as? HistoryViewController else { return }
-//        historyVCc = historyVC
-//        historyVCc?.tabBarIndexDelegate = self
+        guard let informationNC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationNavController") as? UINavigationController else { return }
+        informationNavController = informationNC
         
-        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
-        historyNavController = navController
-        historyVCc = navController.viewControllers.first as? HistoryViewController
+        guard let historyNC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
+        historyNavController = historyNC
+        historyVCc = historyNC.viewControllers.first as? HistoryViewController
         historyVCc?.tabBarIndexDelegate = self
     }
     
     
     @IBAction func didPressInformationButton(_ sender: UIButton) {
-//        guard let informationVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationViewController") as? InformationViewController else { return }
-//
-//        let navigationC = UINavigationController()
-//        navigationC.viewControllers = [informationVC]
-//        navigationC.navigationBar.prefersLargeTitles = true
-//        navigationC.navigationItem.largeTitleDisplayMode = .always
-        
-        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "InformationNavController") as? UINavigationController else { return }
-
-        present(navController, animated: true, completion: nil)
+        present(informationNavController ?? UINavigationController(), animated: true, completion: nil)
     }
     
     @IBAction func didPressHistoryButton(_ sender: UIButton) {
-//        guard let historyVCc = historyVCc else { return }
-//
-//        let navigationC = UINavigationController()
-//        navigationC.viewControllers = [historyVCc]
-//        navigationC.navigationBar.prefersLargeTitles = true
-//        navigationC.navigationItem.largeTitleDisplayMode = .always
-        
-//        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
-//
-//        historyVCc = navController.viewControllers.first as? HistoryViewController
-        
-//        present(navController, animated: true, completion: nil)
-        
         present(historyNavController ?? UINavigationController(), animated: true, completion: nil)
     }
     

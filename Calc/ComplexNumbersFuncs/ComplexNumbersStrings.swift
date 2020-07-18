@@ -19,12 +19,17 @@ Creates a string of number in a exponensial form.
 - Returns: String of complex number.
 */
 func expNumberToString(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4) -> String {
-    let stringModuleZ = "\(moduleZ.smartRound(decimalPlases: decimalPlases))"
-    if arcFi < 0{
-        return stringModuleZ + "e-i" + "\((-arcFi).smartRound(decimalPlases: decimalPlases))" + "°"
-    }else {
-        return stringModuleZ + "ei" + "\(arcFi.smartRound(decimalPlases: decimalPlases))" + "°"
+    if moduleZ.isNaN || arcFi.isNaN {
+        return "Невизначеність"
+    } else {
+        let stringModuleZ = "\(moduleZ.smartRound(decimalPlases: decimalPlases))"
+        if arcFi < 0{
+            return stringModuleZ + "e-i" + "\((-arcFi).smartRound(decimalPlases: decimalPlases))" + "°"
+        }else {
+            return stringModuleZ + "ei" + "\(arcFi.smartRound(decimalPlases: decimalPlases))" + "°"
+        }
     }
+    
 }
 
 
@@ -66,10 +71,16 @@ Creates a string of number in a complex form.
 - Returns: String of complex number.
 */
 func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
-    if Im < 0 {
-        return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
+//    print(Re)
+//    print(Im)
+    if Re.isNaN || Im.isNaN {
+        return "Невизначеність"
     } else {
-        return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
+        if Im < 0 {
+            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
+        } else {
+            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
+        }
     }
 }
 

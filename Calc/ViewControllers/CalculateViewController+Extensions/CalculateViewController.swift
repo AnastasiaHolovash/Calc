@@ -42,11 +42,17 @@ class CalculateViewController: UIViewController {
         showResultButtonAnimationSetup()
         operationBar.changeSelectedOperation()
         
+        expView1.delegate = self
+        expView2.delegate = self
+        complexView1.delegate = self
+        complexView2.delegate = self
+        
         guard let tabBar = self.tabBarController as? CustomTabBarController else { return }
         tabBarC = tabBar
         tabBarC.operationDelegate = self
         operationBar.delegate = self
         
+        recalculate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,3 +150,4 @@ extension CalculateViewController: OperationBarDelegate {
         recalculate()
     }
 }
+
