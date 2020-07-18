@@ -34,6 +34,7 @@
 		5D6E464B24A944BD0063CE90 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6E464A24A944BD0063CE90 /* AnswerView.xib */; };
 		5D6E464D24A944CE0063CE90 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464C24A944CE0063CE90 /* AnswerView.swift */; };
 		5D6E465224AB41180063CE90 /* ChangeFormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E465124AB41180063CE90 /* ChangeFormButton.swift */; };
+		5D85989424C39D9F001A1F21 /* ChangeSignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */; };
 		5D956261248EF24B00C03364 /* ComplexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956260248EF24B00C03364 /* ComplexView.xib */; };
 		5D956263248EF25A00C03364 /* ComplexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956262248EF25A00C03364 /* ComplexView.swift */; };
 		5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */; };
@@ -81,6 +82,7 @@
 		5D6E464A24A944BD0063CE90 /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		5D6E464C24A944CE0063CE90 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		5D6E465124AB41180063CE90 /* ChangeFormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFormButton.swift; sourceTree = "<group>"; };
+		5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSignButton.swift; sourceTree = "<group>"; };
 		5D956260248EF24B00C03364 /* ComplexView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplexView.xib; sourceTree = "<group>"; };
 		5D956262248EF25A00C03364 /* ComplexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexView.swift; sourceTree = "<group>"; };
 		5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersViewFuncs.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */,
 				5DBF245E248819FF001EB10B /* ExpView */,
 				5D95625E248EE91D00C03364 /* ComplexView */,
+				5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */,
 			);
 			path = RepresentationOfComplexNumbers;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				5DBF245D248819F2001EB10B /* ExpView.swift in Sources */,
 				5D6E464D24A944CE0063CE90 /* AnswerView.swift in Sources */,
 				5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */,
+				5D85989424C39D9F001A1F21 /* ChangeSignButton.swift in Sources */,
 				5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */,
 				5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */,
 				5D69B27F238EFB600057D76D /* ContentView.swift in Sources */,

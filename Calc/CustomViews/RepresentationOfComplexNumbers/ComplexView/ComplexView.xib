@@ -9,9 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
             <connections>
-                <outlet property="imSignButton" destination="nDZ-zn-yg9" id="RhT-p3-bbA"/>
+                <outlet property="imSignButton" destination="nDZ-zn-yg9" id="wgF-Qi-SOc"/>
                 <outlet property="imTextFieldView" destination="dBC-oM-Fw2" id="BcH-nr-pgG"/>
-                <outlet property="reSignButton" destination="Vx6-eF-25w" id="mQn-7p-hBa"/>
+                <outlet property="reSignButton" destination="Vx6-eF-25w" id="2JH-Kv-pdr"/>
                 <outlet property="reTextFieldView" destination="F3i-pv-Kgx" id="0tH-z8-p1s"/>
             </connections>
         </placeholder>
@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-eF-25w">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx6-eF-25w" customClass="ChangeSignButton" customModule="Calc" customModuleProvider="target">
                     <rect key="frame" x="4" y="30" width="26.5" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Vx6-eF-25w" secondAttribute="height" multiplier="1:1" id="ZKw-9o-CpS"/>
@@ -48,7 +48,7 @@
                     <rect key="frame" x="235" y="26" width="120" height="34"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDZ-zn-yg9">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDZ-zn-yg9" customClass="ChangeSignButton" customModule="Calc" customModuleProvider="target">
                     <rect key="frame" x="190" y="30" width="26" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1:1" id="d5B-AV-64x"/>

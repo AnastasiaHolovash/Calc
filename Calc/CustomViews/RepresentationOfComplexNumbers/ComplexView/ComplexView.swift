@@ -12,8 +12,10 @@ class ComplexView: UIView {
     
     var delegate: ChangeSignBottomsDelegate?
     
-    @IBOutlet weak var reSignButton: UIButton!
-    @IBOutlet weak var imSignButton: UIButton!
+//    @IBOutlet weak var reSignButton: UIButton!
+//    @IBOutlet weak var imSignButton: UIButton!
+    @IBOutlet weak var reSignButton: ChangeSignButton!
+    @IBOutlet weak var imSignButton: ChangeSignButton!
     
     @IBOutlet weak var reTextFieldView: CustomBorderedTextField!
     @IBOutlet weak var imTextFieldView: CustomBorderedTextField!
@@ -49,11 +51,16 @@ class ComplexView: UIView {
         imTextField = imTextFieldView.textField
     }
 
-    @IBAction func didPressSignButton(_ sender: UIButton) {
+    @IBAction func didPressSignButton(_ sender: ChangeSignButton) {
+//        if sender === reSignButton {
+//            updateButton(button: sender, isPlus: &reIsPlus)
+//        } else {
+//            updateButton(button: sender, isPlus: &imIsPlus)
+//        }
         if sender === reSignButton {
-            updateButton(button: sender, isPlus: &reIsPlus)
+            sender.updateButton(isPlus: &reIsPlus)
         } else {
-            updateButton(button: sender, isPlus: &imIsPlus)
+            sender.updateButton(isPlus: &imIsPlus)
         }
         delegate?.recalculate()
     }
@@ -64,7 +71,7 @@ class ComplexView: UIView {
         } else {
             reIsPlus = true
         }
-        updateButton(button: reSignButton, isPlus: &reIsPlus)
+        reSignButton.updateButton(isPlus: &reIsPlus)
     }
     
     public func imSignButtonSetSign(setPlus: Bool) {
@@ -73,7 +80,7 @@ class ComplexView: UIView {
         } else {
             imIsPlus = true
         }
-        updateButton(button: imSignButton, isPlus: &imIsPlus)
+        imSignButton.updateButton(isPlus: &imIsPlus)
     }
     
     public func clearView() {

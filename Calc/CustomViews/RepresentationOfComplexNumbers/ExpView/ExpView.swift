@@ -14,8 +14,10 @@ class ExpView: UIView {
 
     @IBOutlet weak var beforeExpTextFieldView: CustomBorderedTextField!
     @IBOutlet weak var afterExpTextFieldView: CustomBorderedTextField!
-    @IBOutlet weak var beforeExpSignButton: UIButton!
-    @IBOutlet weak var afterExpSignButton: UIButton!
+//    @IBOutlet weak var beforeExpSignButton: UIButton!
+//    @IBOutlet weak var afterExpSignButton: UIButton!
+    @IBOutlet weak var beforeExpSignButton: ChangeSignButton!
+    @IBOutlet weak var afterExpSignButton: ChangeSignButton!
     
     var beforeExpTextField: UITextField!
     var afterExpTextField: UITextField!
@@ -51,11 +53,15 @@ class ExpView: UIView {
         self.afterExpTextField = afterExpTextFieldView.textField
     }
     
-    @IBAction func didPressChangeSignButton(_ sender: UIButton) {
+    @IBAction func didPressChangeSignButton(_ sender: ChangeSignButton) {
+//        if sender === beforeExpSignButton {
+//            updateButton(button: sender, isPlus: &beforeExpIsPlus)
+//        } else {
+//            updateButton(button: sender, isPlus: &afterExpIsPlus)
         if sender === beforeExpSignButton {
-            updateButton(button: sender, isPlus: &beforeExpIsPlus)
+            sender.updateButton(isPlus: &beforeExpIsPlus)
         } else {
-            updateButton(button: sender, isPlus: &afterExpIsPlus)
+            sender.updateButton(isPlus: &afterExpIsPlus)
         }
         delegate?.recalculate()
     }
@@ -66,7 +72,8 @@ class ExpView: UIView {
         } else {
             beforeExpIsPlus = true
         }
-        updateButton(button: beforeExpSignButton, isPlus: &beforeExpIsPlus)
+//        updateButton(button: beforeExpSignButton, isPlus: &beforeExpIsPlus)
+        beforeExpSignButton.updateButton(isPlus: &beforeExpIsPlus)
     }
     
     func afterExpSignButtonSetSign(setPlus: Bool) {
@@ -75,7 +82,8 @@ class ExpView: UIView {
         } else {
             afterExpIsPlus = true
         }
-        updateButton(button: afterExpSignButton, isPlus: &afterExpIsPlus)
+//        updateButton(button: afterExpSignButton, isPlus: &afterExpIsPlus)
+        afterExpSignButton.updateButton(isPlus: &afterExpIsPlus)
     }
     
     

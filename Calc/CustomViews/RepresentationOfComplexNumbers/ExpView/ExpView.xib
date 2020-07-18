@@ -9,9 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpView" customModule="Calc" customModuleProvider="target">
             <connections>
-                <outlet property="afterExpSignButton" destination="KnU-bQ-GW9" id="cqO-Js-hH8"/>
+                <outlet property="afterExpSignButton" destination="KnU-bQ-GW9" id="A2l-cU-BWP"/>
                 <outlet property="afterExpTextFieldView" destination="7Sn-3k-ouu" id="dth-ZK-ciN"/>
-                <outlet property="beforeExpSignButton" destination="Pd3-mp-TRj" id="x3z-m5-9p6"/>
+                <outlet property="beforeExpSignButton" destination="Pd3-mp-TRj" id="yU0-PD-myy"/>
                 <outlet property="beforeExpTextFieldView" destination="8qy-AH-t2I" id="nbl-hS-ETf"/>
             </connections>
         </placeholder>
@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd3-mp-TRj">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd3-mp-TRj" customClass="ChangeSignButton" customModule="Calc" customModuleProvider="target">
                     <rect key="frame" x="4" y="30" width="26.5" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Pd3-mp-TRj" secondAttribute="height" multiplier="1:1" id="7Po-dH-HLO"/>
@@ -44,7 +44,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnU-bQ-GW9">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnU-bQ-GW9" customClass="ChangeSignButton" customModule="Calc" customModuleProvider="target">
                     <rect key="frame" x="205" y="17" width="26.5" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="KnU-bQ-GW9" secondAttribute="height" multiplier="1:1" id="up5-c7-DuO"/>
