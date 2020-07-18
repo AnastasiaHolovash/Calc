@@ -62,9 +62,9 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="˚" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbd-Xj-yke">
-                    <rect key="frame" x="350" y="0.0" width="19.5" height="56.5"/>
+                    <rect key="frame" x="350.5" y="0.0" width="19" height="56.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="19.5" id="frq-Le-mTw"/>
+                        <constraint firstAttribute="width" constant="19" id="frq-Le-mTw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="47"/>
                     <nil key="textColor"/>

@@ -21,7 +21,7 @@ class CustomBorderedTextField: UIView {
         
         textField.backgroundColor = mainBackgroundColor
         textField.borderStyle = .none
-        textField.font = UIFont(name: "Helvetica", size: CGFloat(25))
+        textField.font = UIFont(name: "Helvetica", size: CGFloat(20))
         textField.adjustsFontSizeToFitWidth = true
         textField.minimumFontSize = CGFloat(16)
         textField.clearButtonMode = .always

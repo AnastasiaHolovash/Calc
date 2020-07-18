@@ -18,6 +18,7 @@ protocol NumberDelegate {
 class CustomTabBarController: UITabBarController {
     
     var historyVCc: HistoryViewController?
+    var historyNavController: UINavigationController?
     
     var operationDelegate: OperationDelegate?
     var numberDelegate: NumberDelegate?
@@ -27,8 +28,13 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let historyVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryViewController") as? HistoryViewController else { return }
-        historyVCc = historyVC
+//        guard let historyVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryViewController") as? HistoryViewController else { return }
+//        historyVCc = historyVC
+//        historyVCc?.tabBarIndexDelegate = self
+        
+        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
+        historyNavController = navController
+        historyVCc = navController.viewControllers.first as? HistoryViewController
         historyVCc?.tabBarIndexDelegate = self
     }
     
@@ -54,9 +60,13 @@ class CustomTabBarController: UITabBarController {
 //        navigationC.navigationBar.prefersLargeTitles = true
 //        navigationC.navigationItem.largeTitleDisplayMode = .always
         
-        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
+//        guard let navController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNavController") as? UINavigationController else { return }
+//
+//        historyVCc = navController.viewControllers.first as? HistoryViewController
         
-        present(navController, animated: true, completion: nil)
+//        present(navController, animated: true, completion: nil)
+        
+        present(historyNavController ?? UINavigationController(), animated: true, completion: nil)
     }
     
 }

@@ -38,8 +38,18 @@
                     <rect key="frame" x="34.5" y="26" width="120" height="34"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4y-bL-zZf">
+                    <rect key="frame" x="220" y="16" width="11" height="55"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBC-oM-Fw2" customClass="CustomBorderedTextField" customModule="Calc" customModuleProvider="target">
+                    <rect key="frame" x="235" y="26" width="120" height="34"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDZ-zn-yg9">
-                    <rect key="frame" x="206" y="30" width="26.5" height="26"/>
+                    <rect key="frame" x="190" y="30" width="26" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1:1" id="d5B-AV-64x"/>
                     </constraints>
@@ -51,26 +61,17 @@
                         <action selector="didPressSignButton:" destination="-1" eventType="touchUpInside" id="9H5-wZ-r2s"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBC-oM-Fw2" customClass="CustomBorderedTextField" customModule="Calc" customModuleProvider="target">
-                    <rect key="frame" x="236.5" y="26" width="120" height="34"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4y-bL-zZf">
-                    <rect key="frame" x="182" y="13.5" width="11" height="55"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="F3i-pv-Kgx" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.32" id="2cg-yS-JiI"/>
+                <constraint firstItem="nDZ-zn-yg9" firstAttribute="trailing" secondItem="S4y-bL-zZf" secondAttribute="leading" constant="-4" id="33q-uL-ZLB"/>
                 <constraint firstItem="dBC-oM-Fw2" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.32" id="3t1-Uc-lmL"/>
                 <constraint firstItem="F3i-pv-Kgx" firstAttribute="height" secondItem="Vx6-eF-25w" secondAttribute="height" multiplier="1.30769" id="Crx-Iy-0UF"/>
                 <constraint firstItem="dBC-oM-Fw2" firstAttribute="height" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1.30769" id="JN2-dK-eUf"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Jnu-pD-Oq4"/>
                 <constraint firstItem="S4y-bL-zZf" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.0293333" id="MAE-f5-XPA"/>
-                <constraint firstItem="dBC-oM-Fw2" firstAttribute="leading" secondItem="nDZ-zn-yg9" secondAttribute="trailing" constant="4" id="OMm-pY-vdA"/>
+                <constraint firstItem="S4y-bL-zZf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" multiplier="1.20267" id="P7M-CC-DiN"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.07" id="Rdl-Zc-inj"/>
                 <constraint firstItem="F3i-pv-Kgx" firstAttribute="leading" secondItem="Vx6-eF-25w" secondAttribute="trailing" constant="4" id="Tu5-WU-1Xh"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="width" secondItem="nDZ-zn-yg9" secondAttribute="height" multiplier="1:1" id="VVh-NI-ROc"/>
@@ -79,10 +80,9 @@
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="fAH-SB-bPi"/>
                 <constraint firstItem="F3i-pv-Kgx" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ifi-HR-zd4"/>
                 <constraint firstItem="nDZ-zn-yg9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.07" id="jlf-MH-u50"/>
-                <constraint firstItem="nDZ-zn-yg9" firstAttribute="leading" secondItem="S4y-bL-zZf" secondAttribute="trailing" constant="13" id="lg2-ga-lDC"/>
+                <constraint firstItem="S4y-bL-zZf" firstAttribute="trailing" secondItem="dBC-oM-Fw2" secondAttribute="leading" constant="-4" id="lrZ-l3-wI9"/>
                 <constraint firstItem="Vx6-eF-25w" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="plT-G5-fb2"/>
-                <constraint firstItem="S4y-bL-zZf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.95" id="tu8-nX-GrL"/>
-                <constraint firstItem="S4y-bL-zZf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ty1-4K-0Se"/>
+                <constraint firstItem="S4y-bL-zZf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="0.95" constant="2.6499999999999986" id="tu8-nX-GrL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
