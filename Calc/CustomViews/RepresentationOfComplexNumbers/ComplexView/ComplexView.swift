@@ -12,16 +12,17 @@ class ComplexView: UIView {
     
     var delegate: ChangeSignBottomsDelegate?
     
-//    @IBOutlet weak var reSignButton: UIButton!
-//    @IBOutlet weak var imSignButton: UIButton!
+    // MARK:- IBOutlets
     @IBOutlet weak var reSignButton: ChangeSignButton!
     @IBOutlet weak var imSignButton: ChangeSignButton!
     
     @IBOutlet weak var reTextFieldView: CustomBorderedTextField!
     @IBOutlet weak var imTextFieldView: CustomBorderedTextField!
     
+    // MARK:- Number values
     var reTextField: UITextField!
     var imTextField: UITextField!
+    
     var reIsPlus: Bool = true
     var imIsPlus: Bool = true
 
@@ -31,16 +32,19 @@ class ComplexView: UIView {
         setup()
     }
     
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
+    
     
     private func loudViewFromXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "ComplexView", bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first! as! UIView
     }
+    
     
     private func setup() {
         let xibView = loudViewFromXib()
@@ -51,38 +55,21 @@ class ComplexView: UIView {
         imTextField = imTextFieldView.textField
     }
 
+    
     @IBAction func didPressSignButton(_ sender: ChangeSignButton) {
-//        if sender === reSignButton {
-//            updateButton(button: sender, isPlus: &reIsPlus)
-//        } else {
-//            updateButton(button: sender, isPlus: &imIsPlus)
-//        }
+        
         if sender === reSignButton {
-            sender.updateButton(isPlus: &reIsPlus)
+            sender.changeSign(isPlus: &reIsPlus)
         } else {
-            sender.updateButton(isPlus: &imIsPlus)
+            sender.changeSign(isPlus: &imIsPlus)
         }
         delegate?.recalculate()
     }
     
-    public func reSignButtonSetSign(setPlus: Bool) {
-        if setPlus {
-            reIsPlus = false
-        } else {
-            reIsPlus = true
-        }
-        reSignButton.updateButton(isPlus: &reIsPlus)
-    }
     
-    public func imSignButtonSetSign(setPlus: Bool) {
-        if setPlus {
-            imIsPlus = false
-        } else {
-            imIsPlus = true
-        }
-        imSignButton.updateButton(isPlus: &imIsPlus)
-    }
-    
+    /**
+     Sets default values.
+     */
     public func clearView() {
         reTextField.text = ""
         imTextField.text = ""
@@ -90,6 +77,14 @@ class ComplexView: UIView {
         imSignButtonSetSign(setPlus: true)
     }
     
+    
+    /**
+     Sets values from parameters.
+     
+    - Parameters:
+        - reNumber: The real part of the complex number whith sign.
+        - imNumber: The imaginary part of the complex number.
+     */
     public func setNumber(reNumber: Double, imNumber: Double) {
         if reNumber < 0 {
             self.reSignButtonSetSign(setPlus: false)
@@ -101,6 +96,36 @@ class ComplexView: UIView {
         self.imTextField.text = String(abs(imNumber))
     }
     
+    
+    /**
+     Sets sign for real part of the complex number.
+     */
+    func reSignButtonSetSign(setPlus: Bool) {
+        if setPlus {
+            reIsPlus = false
+        } else {
+            reIsPlus = true
+        }
+        reSignButton.changeSign(isPlus: &reIsPlus)
+    }
+    
+    
+    /**
+    Sets sign for imaginary part of the complex number.
+    */
+    func imSignButtonSetSign(setPlus: Bool) {
+        if setPlus {
+            imIsPlus = false
+        } else {
+            imIsPlus = true
+        }
+        imSignButton.changeSign(isPlus: &imIsPlus)
+    }
+    
+    
+    /**
+     Hides all eybourds.
+     */
     public func hidekeybourd() {
         reTextField.resignFirstResponder()
         imTextField.resignFirstResponder()

@@ -18,9 +18,11 @@ class ChangeSignButton: UIButton {
     let plusImage = UIImage(named: "Button-Plus")
     let minusImage = UIImage(named: "Button-Minus")
 
-    //MARK:- remove isPlus !!!
     
-    func updateButton(isPlus: inout Bool) {
+    /**
+     Changes Sign image and isPlus inout value to opposite.
+     */
+    func changeSign(isPlus: inout Bool) {
         if isPlus {
             self.setBackgroundImage(minusImage, for: .normal)
             isPlus = false

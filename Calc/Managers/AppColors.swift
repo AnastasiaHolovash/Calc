@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 public var mainBackgroundColor: UIColor = {
     if #available(iOS 13, *) {
         return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
@@ -25,6 +26,7 @@ public var mainBackgroundColor: UIColor = {
     }
 }()
 
+
 public var infoPresentBackgroundColor: UIColor = {
     if #available(iOS 13, *) {
         return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
@@ -41,6 +43,7 @@ public var infoPresentBackgroundColor: UIColor = {
         return UIColor.white
     }
 }()
+
 
 public var shadowColor: UIColor = {
     if #available(iOS 13, *) {

@@ -59,9 +59,9 @@ class ExpView: UIView {
 //        } else {
 //            updateButton(button: sender, isPlus: &afterExpIsPlus)
         if sender === beforeExpSignButton {
-            sender.updateButton(isPlus: &beforeExpIsPlus)
+            sender.changeSign(isPlus: &beforeExpIsPlus)
         } else {
-            sender.updateButton(isPlus: &afterExpIsPlus)
+            sender.changeSign(isPlus: &afterExpIsPlus)
         }
         delegate?.recalculate()
     }
@@ -73,7 +73,7 @@ class ExpView: UIView {
             beforeExpIsPlus = true
         }
 //        updateButton(button: beforeExpSignButton, isPlus: &beforeExpIsPlus)
-        beforeExpSignButton.updateButton(isPlus: &beforeExpIsPlus)
+        beforeExpSignButton.changeSign(isPlus: &beforeExpIsPlus)
     }
     
     func afterExpSignButtonSetSign(setPlus: Bool) {
@@ -83,7 +83,7 @@ class ExpView: UIView {
             afterExpIsPlus = true
         }
 //        updateButton(button: afterExpSignButton, isPlus: &afterExpIsPlus)
-        afterExpSignButton.updateButton(isPlus: &afterExpIsPlus)
+        afterExpSignButton.changeSign(isPlus: &afterExpIsPlus)
     }
     
     

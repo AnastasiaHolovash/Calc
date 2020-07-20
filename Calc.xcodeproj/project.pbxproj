@@ -37,7 +37,6 @@
 		5D85989424C39D9F001A1F21 /* ChangeSignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */; };
 		5D956261248EF24B00C03364 /* ComplexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D956260248EF24B00C03364 /* ComplexView.xib */; };
 		5D956263248EF25A00C03364 /* ComplexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956262248EF25A00C03364 /* ComplexView.swift */; };
-		5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */; };
 		5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D956267248EFB9500C03364 /* UITextField+Extensions.swift */; };
 		5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626A249042BA00C03364 /* HistoryViewController.swift */; };
 		5D95626E2497DFDD00C03364 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D95626D2497DFDD00C03364 /* Operation.swift */; };
@@ -85,7 +84,6 @@
 		5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSignButton.swift; sourceTree = "<group>"; };
 		5D956260248EF24B00C03364 /* ComplexView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplexView.xib; sourceTree = "<group>"; };
 		5D956262248EF25A00C03364 /* ComplexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexView.swift; sourceTree = "<group>"; };
-		5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexNumbersViewFuncs.swift; sourceTree = "<group>"; };
 		5D956267248EFB9500C03364 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		5D95626A249042BA00C03364 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5D95626D2497DFDD00C03364 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 		5D7FF49C24A673200037DBDE /* RepresentationOfComplexNumbers */ = {
 			isa = PBXGroup;
 			children = (
-				5D956264248EF8D300C03364 /* ComplexNumbersViewFuncs.swift */,
 				5DBF245E248819FF001EB10B /* ExpView */,
 				5D95625E248EE91D00C03364 /* ComplexView */,
 				5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */,
@@ -445,7 +442,6 @@
 				5D020AE224B1FE66006B83E7 /* InformationViewController.swift in Sources */,
 				5D020AFD24B5FC15006B83E7 /* UIView+Extensions.swift in Sources */,
 				5D9562702497E71200C03364 /* History.swift in Sources */,
-				5D956265248EF8D300C03364 /* ComplexNumbersViewFuncs.swift in Sources */,
 				5D95626E2497DFDD00C03364 /* Operation.swift in Sources */,
 				5D6E464424A928B90063CE90 /* AnimationsExtension.swift in Sources */,
 				5D020ADB24B0C8E1006B83E7 /* ShowHistoryOperationExtension.swift in Sources */,
