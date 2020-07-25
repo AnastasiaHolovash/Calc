@@ -38,6 +38,8 @@ extension Double {
     }
     
     
+    
+    
     ///Сonverts radians to degrees.
     func rad() -> Double {
         return self * 180 / .pi

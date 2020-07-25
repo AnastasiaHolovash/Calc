@@ -19,6 +19,7 @@
 		5D020AFD24B5FC15006B83E7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */; };
 		5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F674924A7616400B59126 /* Double+Extensions.swift */; };
 		5D19B2EF24B875670023A8E4 /* CustomBorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D19B2EE24B875670023A8E4 /* CustomBorderedTextField.swift */; };
+		5D37525224CB4BF8006775D4 /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37525124CB4BF8006775D4 /* Formatter+Extensions.swift */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B246238ECAB10057D76D /* AppDelegate.swift */; };
 		5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B248238ECAB10057D76D /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 		5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		5D0F674924A7616400B59126 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		5D19B2EE24B875670023A8E4 /* CustomBorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBorderedTextField.swift; sourceTree = "<group>"; };
+		5D37525124CB4BF8006775D4 /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D69B243238ECAB10057D76D /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D69B246238ECAB10057D76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				5DD6673D24A6A417002C321D /* String+Extensions.swift */,
 				5D0F674924A7616400B59126 /* Double+Extensions.swift */,
 				5D020AFC24B5FC15006B83E7 /* UIView+Extensions.swift */,
+				5D37525124CB4BF8006775D4 /* Formatter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				5D19B2EF24B875670023A8E4 /* CustomBorderedTextField.swift in Sources */,
 				5D020AF824B50B63006B83E7 /* InfoTableViewCell3.swift in Sources */,
 				5DB8B8BB24B7C143007167D6 /* CalculationFormulas.swift in Sources */,
+				5D37525224CB4BF8006775D4 /* Formatter+Extensions.swift in Sources */,
 				5D6E465224AB41180063CE90 /* ChangeFormButton.swift in Sources */,
 				5D020AFB24B5F223006B83E7 /* AppColors.swift in Sources */,
 				5D0F674A24A7616400B59126 /* Double+Extensions.swift in Sources */,
