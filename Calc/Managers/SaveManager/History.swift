@@ -42,7 +42,7 @@ class History {
      */
     func addOperationToHistory(operation: Operation) {
         var allOperations = self.resultHistory
-        print("HISTORY : \(allOperations.count)")
+//        print("HISTORY : \(allOperations.count)")
         allOperations.insert(operation, at: 0)
         self.resultHistory = allOperations
     }

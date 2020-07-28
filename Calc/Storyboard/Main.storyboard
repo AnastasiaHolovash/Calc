@@ -446,7 +446,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Як користуватися?" id="8pK-4p-9ET">
-                        <barButtonItem key="rightBarButtonItem" width="30" style="plain" id="iq8-CD-Dhe">
+                        <barButtonItem key="rightBarButtonItem" width="30" id="iq8-CD-Dhe">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Dn-E9-Up2">
                                 <rect key="frame" x="360.5" y="11.5" width="33.5" height="33.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -491,7 +491,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="CustomTapBarController" id="KE4-p4-V5t" customClass="CustomTabBarController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VZj-OU-WbK">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="39y-hY-oaV">
+                        <barButtonItem key="leftBarButtonItem" id="39y-hY-oaV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y7f-zv-AXL">
                                 <rect key="frame" x="20" y="6" width="35" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -509,7 +509,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="fX4-Zs-JCc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-p6-UUs">
-                                <rect key="frame" x="359" y="6" width="35" height="36"/>
+                                <rect key="frame" x="359" y="4.5" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="History">

@@ -106,7 +106,7 @@ class HistoryTableViewCell: UITableViewCell {
             case .division:
                 self.operationSignImage.image = UIImage(named: "divide")
             }
-            self.numberLabel1.textAlignment = .center
+//            self.numberLabel1.textAlignment = .center
 //            self.numberLabel1Width.constant = 122
             self.operationTypeLabel.text = "Розрахувати"
         }
