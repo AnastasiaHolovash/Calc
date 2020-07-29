@@ -31,7 +31,7 @@ class HistoryTableViewCell: UITableViewCell {
         numberLabel2.minimumScaleFactor = 0.5
         
         NSLayoutConstraint.activate([
-            stackView.widthAnchor.constraint(equalTo: viewWithShadow.widthAnchor, constant: -54)
+            stackView.widthAnchor.constraint(lessThanOrEqualTo: viewWithShadow.widthAnchor, constant: -54)
         ])
     }
 

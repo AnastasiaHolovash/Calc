@@ -46,7 +46,7 @@ class InformationViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Інформація"
-        self.navigationController?.navigationBar.backgroundColor = mainBackgroundColor
+        tableView.backgroundColor = mainBackgroundColor
         setupTableView()
     }
 
