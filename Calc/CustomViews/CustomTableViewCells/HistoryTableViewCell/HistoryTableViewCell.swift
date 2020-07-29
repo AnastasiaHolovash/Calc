@@ -15,7 +15,8 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var operationSignImage: UIImageView!
     @IBOutlet weak var numberLabel2: UILabel!
     @IBOutlet weak var operationTypeLabel: UILabel!
-    @IBOutlet weak var numberLabel1Width: NSLayoutConstraint!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackViewWidth: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +29,10 @@ class HistoryTableViewCell: UITableViewCell {
         numberLabel2.adjustsFontSizeToFitWidth = true
         numberLabel1.minimumScaleFactor = 0.5
         numberLabel2.minimumScaleFactor = 0.5
+        
+        NSLayoutConstraint.activate([
+            stackView.widthAnchor.constraint(equalTo: viewWithShadow.widthAnchor, constant: -54)
+        ])
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -74,7 +79,7 @@ class HistoryTableViewCell: UITableViewCell {
                 var fullString = expNumberToStringWithFormating(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2, roundTo: 3)
                 self.numberLabel1.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
             case .complex:
-//                self.numberLabel1.text = "(" + complexNumberToString(Re: calculate.number1.part1, Im: calculate.number1.part2, roundTo: 3) + ")"
+
                 let firstResult = NSMutableAttributedString()
                 firstResult.append(NSAttributedString(string: "("))
                 firstResult.append(complexNumberToStringWithFormating(Re: calculate.number1.part1, Im: calculate.number1.part2, roundTo: 3))
@@ -87,7 +92,6 @@ class HistoryTableViewCell: UITableViewCell {
                 var fullString = expNumberToStringWithFormating(moduleZ: calculate.number2.part1, arcFi: calculate.number2.part2, roundTo: 3).addParentheses()
                 self.numberLabel2.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
             case .complex:
-//                self.numberLabel2.text = "(" + complexNumberToString(Re: calculate.number2.part1, Im: calculate.number2.part2, roundTo: 3) + ")"
                 let secondResult = NSMutableAttributedString()
                 secondResult.append(NSAttributedString(string: "("))
                 secondResult.append(complexNumberToStringWithFormating(Re: calculate.number2.part1, Im: calculate.number2.part2, roundTo: 3))
@@ -106,8 +110,6 @@ class HistoryTableViewCell: UITableViewCell {
             case .division:
                 self.operationSignImage.image = UIImage(named: "divide")
             }
-//            self.numberLabel1.textAlignment = .center
-//            self.numberLabel1Width.constant = 122
             self.operationTypeLabel.text = "Розрахувати"
         }
         

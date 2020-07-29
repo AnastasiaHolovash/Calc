@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="30" id="wei-xQ-fHk"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSw-1b-WDj">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSw-1b-WDj">
                                 <rect key="frame" x="287" y="45" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lSw-1b-WDj" secondAttribute="height" multiplier="1:1" id="0y4-0c-fEV"/>
@@ -90,6 +90,8 @@
                 <outlet property="numberLabel2" destination="7Pk-LX-jFi" id="CCX-Ez-47u"/>
                 <outlet property="operationSignImage" destination="EDL-P3-71T" id="hIM-Go-mWu"/>
                 <outlet property="operationTypeLabel" destination="bcx-eB-wNq" id="v65-GE-HdU"/>
+                <outlet property="stackView" destination="qpz-0r-q59" id="iOB-OV-meK"/>
+                <outlet property="stackViewWidth" destination="rZJ-Ao-V0F" id="Bu6-sf-ZJb"/>
                 <outlet property="viewWithShadow" destination="XpB-ja-Hck" id="EFG-BR-ctN"/>
             </connections>
             <point key="canvasLocation" x="185" y="133"/>

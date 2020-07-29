@@ -12,10 +12,13 @@ class CalculateViewController: UIViewController {
     
     @IBOutlet weak var changeFormButton1: ChangeFormButton!
     @IBOutlet weak var changeFormButton2: ChangeFormButton!
+    @IBOutlet weak var changeFormButtonSuperHeight1: NSLayoutConstraint!
+    @IBOutlet weak var changeFormButtonSuperHeight2: NSLayoutConstraint!
     
     @IBOutlet weak var answerView: AnswerView!
     
     @IBOutlet weak var showResultButton: UIButton!
+    @IBOutlet weak var showResultButtonHeight: NSLayoutConstraint!
     
     @IBOutlet weak var operationBar: OperationBar!
     
@@ -41,16 +44,7 @@ class CalculateViewController: UIViewController {
         buttonsSetup()
         showResultButtonAnimationSetup()
         operationBar.changeSelectedOperation()
-        
-        expView1.delegate = self
-        expView2.delegate = self
-        complexView1.delegate = self
-        complexView2.delegate = self
-        
-        guard let tabBar = self.tabBarController as? CustomTabBarController else { return }
-        tabBarC = tabBar
-        tabBarC.operationDelegate = self
-        operationBar.delegate = self
+        delegatesSetup()
         
         recalculate()
     }
@@ -75,7 +69,19 @@ class CalculateViewController: UIViewController {
         }
     }
     
-    func addObserver() {
+    private func delegatesSetup() {
+        expView1.delegate = self
+        expView2.delegate = self
+        complexView1.delegate = self
+        complexView2.delegate = self
+        
+        guard let tabBar = self.tabBarController as? CustomTabBarController else { return }
+        tabBarC = tabBar
+        tabBarC.operationDelegate = self
+        operationBar.delegate = self
+    }
+    
+    private func addObserver() {
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -88,12 +94,27 @@ class CalculateViewController: UIViewController {
     }
     
     
-    func buttonsSetup() {
+    private func buttonsSetup() {
         changeFormButton1.expView = expView1
         changeFormButton1.complexView = complexView1
         changeFormButton2.expView = expView2
         changeFormButton2.complexView = complexView2
-        showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
+        
+        if UIScreen.main.nativeBounds.height < 1140 {
+            NSLayoutConstraint.activate([
+                showResultButton.heightAnchor.constraint(equalToConstant: 30),
+                showResultButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 47),
+                changeFormButton1.heightAnchor.constraint(equalToConstant: 30),
+                changeFormButton2.heightAnchor.constraint(equalToConstant: 30),
+            ])
+            showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 3.75)
+            changeFormButton1.layer.cornerRadius = CGFloat((Double(changeFormButton1.frame.height) ) / 3.75)
+            changeFormButton2.layer.cornerRadius = CGFloat((Double(changeFormButton2.frame.height) ) / 3.75)
+            changeFormButtonSuperHeight1.constant = -10
+            changeFormButtonSuperHeight2.constant = -10
+        } else {
+            showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
+        }
         
     }
     

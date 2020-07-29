@@ -255,8 +255,8 @@
 		5D95625C248EE8F000C03364 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D6E464224A928630063CE90 /* CalculateViewController+Extensions */,
 				5D17F2FD24D0E2D2009501C7 /* ConvertViewController+Extensions */,
+				5D6E464224A928630063CE90 /* CalculateViewController+Extensions */,
 				5D95626A249042BA00C03364 /* HistoryViewController.swift */,
 				5D020AE124B1FE66006B83E7 /* InformationViewController.swift */,
 			);

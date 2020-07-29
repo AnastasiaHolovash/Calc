@@ -33,8 +33,8 @@ class CustomBorderedTextField: UIView {
         NSLayoutConstraint.activate([
             textField.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 4),
             textField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            textField.widthAnchor.constraint(equalToConstant: 116),
-            textField.heightAnchor.constraint(equalToConstant: 34),
+            textField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -4),
+            textField.heightAnchor.constraint(equalTo: self.heightAnchor),
         ])
         
     }
