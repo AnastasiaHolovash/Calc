@@ -325,6 +325,7 @@
 		5DB8B8B824B7B70B007167D6 /* SaveManager */ = {
 			isa = PBXGroup;
 			children = (
+				5D2E911C24D0E8A8002118B3 /* UserData.swift */,
 				5D95626F2497E71200C03364 /* History.swift */,
 			);
 			path = SaveManager;
@@ -342,7 +343,6 @@
 		5DB8B8BE24B7CCFC007167D6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				5D2E911C24D0E8A8002118B3 /* UserData.swift */,
 				5DB8B8B824B7B70B007167D6 /* SaveManager */,
 				5D020AFA24B5F223006B83E7 /* AppColors.swift */,
 			);
