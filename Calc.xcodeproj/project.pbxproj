@@ -200,6 +200,7 @@
 				5D956266248EFB7800C03364 /* Extensions */,
 				5DF11BF224D3354D006C7DA7 /* SuppotingFiles */,
 				5D69B24E238ECAB60057D76D /* Preview Content */,
+				5D69B254238ECAB60057D76D /* Info.plist */,
 			);
 			path = Calc;
 			sourceTree = "<group>";
@@ -361,7 +362,6 @@
 			children = (
 				5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */,
 				5D6B043D2411949200AA7D3B /* Asset.xcassets */,
-				5D69B254238ECAB60057D76D /* Info.plist */,
 			);
 			path = SuppotingFiles;
 			sourceTree = "<group>";
