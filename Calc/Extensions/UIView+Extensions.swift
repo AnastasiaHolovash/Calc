@@ -20,6 +20,13 @@ extension UIView {
         self.layer.shadowRadius = 8
     }
     
+    
+    func setInfoPresentStyle() {
+        self.backgroundColor = infoPresentBackgroundColor
+        self.layer.cornerRadius = 20
+    }
+    
+    
     func addShadowForLabel() {
         self.backgroundColor = infoPresentBackgroundColor
         self.layer.shadowColor = shadowColor.cgColor

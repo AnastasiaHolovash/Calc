@@ -198,9 +198,7 @@
 				5D95625F248EE93800C03364 /* CustomViews */,
 				5DB8B8B924B7C082007167D6 /* ComplexNumbersFuncs */,
 				5D956266248EFB7800C03364 /* Extensions */,
-				5D6B043D2411949200AA7D3B /* Asset.xcassets */,
-				5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */,
-				5D69B254238ECAB60057D76D /* Info.plist */,
+				5DF11BF224D3354D006C7DA7 /* SuppotingFiles */,
 				5D69B24E238ECAB60057D76D /* Preview Content */,
 			);
 			path = Calc;
@@ -356,6 +354,16 @@
 				5DBF245A248819DC001EB10B /* ExpView.xib */,
 			);
 			path = ExpView;
+			sourceTree = "<group>";
+		};
+		5DF11BF224D3354D006C7DA7 /* SuppotingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */,
+				5D6B043D2411949200AA7D3B /* Asset.xcassets */,
+				5D69B254238ECAB60057D76D /* Info.plist */,
+			);
+			path = SuppotingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

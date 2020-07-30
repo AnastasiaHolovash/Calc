@@ -33,7 +33,6 @@ class HistoryViewController: UIViewController {
                 
         self.navigationController?.navigationBar.backgroundColor = mainBackgroundColor
         tableView.backgroundColor = mainBackgroundColor
-        self.navigationController?.navigationBar.backgroundColor = mainBackgroundColor
         setupTableView()
     }
     
