@@ -76,7 +76,8 @@ func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, 
  */
 func complexToExpNumber(Im: Double, Re: Double) -> (moduleZ: Double, arcFi: Double) {
     let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
-    let arcFi = atan(Im / Re).rad()
+//    let arcFi = atan(Im / Re).rad()
+    let arcFi = atan2(Im, Re).rad()
     return (moduleZ, arcFi)
 }
 
@@ -103,3 +104,7 @@ func expToComplexNumber(modulZ: Double, arc:Double) -> (re:Double, im: Double) {
     let Im = modulZ * sin(arc.degree())
     return (re: Re, im: Im)
 }
+
+//func atan2(y: Double, x: Double) -> Double {
+//    ata
+//}

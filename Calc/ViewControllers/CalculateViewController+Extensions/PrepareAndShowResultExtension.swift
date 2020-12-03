@@ -87,7 +87,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         let data = prepareDataForCalc()
         let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
+        showResulsWithExp(result: (Im: result.Im, Re: result.Re))
     }
     
     
@@ -96,7 +96,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         let data = prepareDataForCalc()
         let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
+        showResulsWithExp(result: (Im: result.Im, Re: result.Re))
     }
     
     
@@ -105,7 +105,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         let data = prepareDataForCalc()
         let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
+        showResulsWithExp(result: (Im: result.Im, Re: result.Re))
     }
     
     
@@ -114,7 +114,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         let data = prepareDataForCalc()
         let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        showResulsWithExp(result: result)
+        showResulsWithExp(result: (Im: result.Im, Re: result.Re))
     }
     
     
