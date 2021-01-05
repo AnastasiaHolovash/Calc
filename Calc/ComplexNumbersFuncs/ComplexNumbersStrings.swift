@@ -20,7 +20,7 @@ Creates a string of number in a exponensial form.
 */
 func expNumberToString(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4) -> String {
     if moduleZ.isNaN || arcFi.isNaN {
-        return "Невизначеність"
+        return NSLocalizedString("Uncertainty", comment: "")
     } else {
         let stringModuleZ = "\(moduleZ.smartRound(decimalPlases: decimalPlases))"
         if arcFi < 0{
@@ -73,7 +73,7 @@ func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 
 //    print(Re)
 //    print(Im)
     if Re.isNaN || Im.isNaN {
-        return "Невизначеність"
+        return NSLocalizedString("Uncertainty", comment: "")
     } else {
         if Im < 0 {
             return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
@@ -107,7 +107,7 @@ func makeANumber(sign: Bool, number: String) -> Double {
 
 func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> NSAttributedString {
     if Re.isNaN || Im.isNaN {
-        return NSAttributedString(string: "Невизначеність")
+        return NSAttributedString(string: NSLocalizedString("Uncertainty", comment: ""))
     } else {
         
         var im: NSAttributedString {
@@ -144,7 +144,7 @@ Creates a string of number in a exponensial form.
 */
 func expNumberToStringWithFormating(moduleZ: Double, arcFi: Double, roundTo decimalPlases: Int = 4) -> String {
     if moduleZ.isNaN || arcFi.isNaN {
-        return "Невизначеність"
+        return NSLocalizedString("Uncertainty", comment: "")
     } else {
         
         var stringModuleZ: String {

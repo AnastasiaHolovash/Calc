@@ -27,6 +27,7 @@
 		5D43D75025A4839E00349E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D43D75225A4839E00349E6C /* Main.storyboard */; };
 		5D43D75E25A4E3C100349E6C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D43D75C25A4E3C100349E6C /* Localizable.strings */; };
 		5D43D76225A4E78700349E6C /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D43D76425A4E78700349E6C /* AnswerView.xib */; };
+		5D43D76F25A4ECD100349E6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D43D76D25A4ECD100349E6C /* InfoPlist.strings */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B246238ECAB10057D76D /* AppDelegate.swift */; };
 		5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B248238ECAB10057D76D /* SceneDelegate.swift */; };
@@ -85,6 +86,8 @@
 		5D43D76725A4E79200349E6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AnswerView.strings; sourceTree = "<group>"; };
 		5D43D76925A4E79300349E6C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AnswerView.strings; sourceTree = "<group>"; };
 		5D43D76B25A4E79500349E6C /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/AnswerView.strings; sourceTree = "<group>"; };
+		5D43D76E25A4ECD100349E6C /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5D43D77125A4ECE000349E6C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D69B243238ECAB10057D76D /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D69B246238ECAB10057D76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 				5DF11BF224D3354D006C7DA7 /* SuppotingFiles */,
 				5D69B24E238ECAB60057D76D /* Preview Content */,
 				5D69B254238ECAB60057D76D /* Info.plist */,
+				5D43D76D25A4ECD100349E6C /* InfoPlist.strings */,
 				5D43D75C25A4E3C100349E6C /* Localizable.strings */,
 			);
 			path = Calc;
@@ -439,6 +443,7 @@
 				5D69B253238ECAB60057D76D /* LaunchScreen.storyboard in Resources */,
 				5D43D75E25A4E3C100349E6C /* Localizable.strings in Resources */,
 				5DBF245B248819DC001EB10B /* ExpView.xib in Resources */,
+				5D43D76F25A4ECD100349E6C /* InfoPlist.strings in Resources */,
 				5D43D76225A4E78700349E6C /* AnswerView.xib in Resources */,
 				5D956276249A2F8300C03364 /* HistoryTableViewCell.xib in Resources */,
 				5D020AF424B22F43006B83E7 /* InfoTableViewCell2.xib in Resources */,
@@ -529,6 +534,15 @@
 				5D43D76B25A4E79500349E6C /* uk */,
 			);
 			name = AnswerView.xib;
+			sourceTree = "<group>";
+		};
+		5D43D76D25A4ECD100349E6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D43D76E25A4ECD100349E6C /* uk */,
+				5D43D77125A4ECE000349E6C /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */ = {

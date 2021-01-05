@@ -11,7 +11,22 @@
 "Algebraic notation of a complex number" = "Алгебраическая запись комплексного числа";
 
 /* No comment provided by engineer. */
+"Button:" = "Кнопка:";
+
+/* No comment provided by engineer. */
+"Buttons:" = "Кнопки:";
+
+/* No comment provided by engineer. */
+"Calculate" = "Рассчитать";
+
+/* No comment provided by engineer. */
 "Calculating the root of degree n" = "Вычисления корня степени n";
+
+/* No comment provided by engineer. */
+"Calculator" = "Калькулятор";
+
+/* No comment provided by engineer. */
+"Change the form" = "Изменить форму";
 
 /* No comment provided by engineer. */
 "Change the sign of the number in the field to which they belong." = "Меняют знак числа в поле к которому они относятся.";
@@ -27,6 +42,12 @@
 
 /* Tab bar controller title */
 "Conversion" = "Конвертация";
+
+/* No comment provided by engineer. */
+"Convert" = "Конвертировать";
+
+/* No comment provided by engineer. */
+"corresponds to the distance from a point on the complex plane to the origin." = "соответствует расстоянию от точки на комплексной плоскости до начала координат.";
 
 /* No comment provided by engineer. */
 "Division of complex numbers" = "Деление комплексных чисел";
