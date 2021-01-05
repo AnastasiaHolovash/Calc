@@ -13,44 +13,44 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let sectionTitles = [
-        "How to use?",
-        "About complex numbers"]
+        NSLocalizedString("How to use?", comment: ""),
+        NSLocalizedString("About complex numbers", comment: "")]
     
     let titlesForsection1: [String] = [
-        "Buttons:",
-        "Button:",
-        "Button:"]
+        NSLocalizedString("Buttons:", comment: ""),
+        NSLocalizedString("Button:", comment: ""),
+        NSLocalizedString("Button:", comment: "")]
     
     let titlesForsection2: [String] = [
-        "Algebraic notation of a complex number",
-        "Trigonometric notation of a complex number",
-        "Complex number module:",
-        "Exponential notation of a complex number",
-        "The main argument",
-        "Conjugate complex number",
-        "Addition/subtraction of complex numbers",
-        "Multiplication of complex numbers",
-        "Division of complex numbers",
-        "Elevation to the degree",
-        "Calculating the root of degree n"]
+        NSLocalizedString("Algebraic notation of a complex number", comment: ""),
+        NSLocalizedString("Trigonometric notation of a complex number", comment: ""),
+        NSLocalizedString("Complex number module:", comment: ""),
+        NSLocalizedString("Exponential notation of a complex number", comment: ""),
+        NSLocalizedString("The main argument", comment: ""),
+        NSLocalizedString("Conjugate complex number", comment: ""),
+        NSLocalizedString("Addition/subtraction of complex numbers", comment: ""),
+        NSLocalizedString("Multiplication of complex numbers", comment: ""),
+        NSLocalizedString("Division of complex numbers", comment: ""),
+        NSLocalizedString("Elevation to the degree", comment: ""),
+        NSLocalizedString("Calculating the root of degree n", comment: "")]
     
     let textForsection1: [String] = [
-        "Change the sign of the number in the field to which they belong.",
-        "Changes exponential to complex and vice versa.",
-        "Transfers the result obtained after conversion to a calculator."]
+        NSLocalizedString("Change the sign of the number in the field to which they belong.", comment: ""),
+        NSLocalizedString("Changes exponential to complex and vice versa.", comment: ""),
+        NSLocalizedString("Transfers the result obtained after conversion to a calculator.", comment: "")]
     
     let textForsection2: [String] = [
-        "where, i is an imaginary unit, a is a real part, bi is an imaginary part.",
-        "where r is the modulus of the complex number, 𝝋 is the angle of inclination of the vector 0-z to the axis of real values or the argument of the complex number.",
-        "orresponds to the distance from a point on the complex plane to the origin.",
-        "(is an abbreviation of trigonometric form)",
-        "The main argument is the value of the argument in the range (-π..π]"]
+        NSLocalizedString("where, i is an imaginary unit, a is a real part, bi is an imaginary part.", comment: ""),
+        NSLocalizedString("where r is the modulus of the complex number, 𝝋 is the angle of inclination of the vector 0-z to the axis of real values or the argument of the complex number.", comment: ""),
+        NSLocalizedString("corresponds to the distance from a point on the complex plane to the origin.", comment: ""),
+        NSLocalizedString("(is an abbreviation of trigonometric form)", comment: ""),
+        NSLocalizedString("The main argument is the value of the argument in the range (-π..π]", comment: "")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Інформація"
+        self.title = NSLocalizedString("Information", comment: "")
         tableView.backgroundColor = mainBackgroundColor
         setupTableView()
     }

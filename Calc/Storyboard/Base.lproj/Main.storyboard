@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-290" y="-1615"/>
         </scene>
-        <!--Конвертація-->
+        <!--Conversion-->
         <scene sceneID="FGx-mY-ZkQ">
             <objects>
                 <viewController storyboardIdentifier="ConvertViewController" id="7BB-oD-TJP" customClass="ConvertViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                     <tabBarItem key="tabBarItem" title="Convert" image="Convert" id="C4V-gd-mhk">
                         <color key="badgeColor" systemColor="systemIndigoColor"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Конвертація" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
+                    <navigationItem key="navigationItem" title="Conversion" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
                     <connections>
                         <outlet property="answerView" destination="U7p-Pc-oud" id="hpc-gH-KZ0"/>
                         <outlet property="changeFormButton" destination="TGE-ct-6Sw" id="tXo-27-NPf"/>
@@ -211,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="1049" y="-147"/>
         </scene>
-        <!--Калькулятор-->
+        <!--Calculator-->
         <scene sceneID="7N5-w7-M6H">
             <objects>
                 <viewController storyboardIdentifier="CalculateViewController" id="Xc5-J0-IcI" customClass="CalculateViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
@@ -403,7 +403,7 @@
                     <tabBarItem key="tabBarItem" title="Calculator" image="Calculate" id="XWk-db-xCG">
                         <color key="badgeColor" systemColor="systemIndigoColor"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Калькулятор" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
+                    <navigationItem key="navigationItem" title="Calculator" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
                         <outlet property="answerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
                         <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="Cde-pI-eAs"/>

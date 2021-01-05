@@ -54,7 +54,7 @@ class ChangeFormButton: UIButton {
     override func layoutSubviews() {
         
         if let label = self.titleLabel {
-            self.setTitle("Змінити форму", for: .normal)
+            self.setTitle(NSLocalizedString("Change the form", comment: ""), for: .normal)
             
             label.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([

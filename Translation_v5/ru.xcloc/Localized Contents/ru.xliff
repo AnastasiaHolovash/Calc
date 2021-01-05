@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Calc/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Calc</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Calc/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+    </header>
+    <body>
+      <trans-unit id="(is an abbreviation of trigonometric form)" xml:space="preserve">
+        <source>(is an abbreviation of trigonometric form)</source>
+        <target>(есть сокращением тригонометрической записи)</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="About complex numbers" xml:space="preserve">
+        <source>About complex numbers</source>
+        <target>О комплексных числах</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Addition/subtraction of complex numbers" xml:space="preserve">
+        <source>Addition/subtraction of complex numbers</source>
+        <target>Сложение/вычитание комплексных чисел</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Algebraic notation of a complex number" xml:space="preserve">
+        <source>Algebraic notation of a complex number</source>
+        <target>Алгебраическая запись комплексного числа</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Calculating the root of degree n" xml:space="preserve">
+        <source>Calculating the root of degree n</source>
+        <target>Вычисления корня степени n</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Change the sign of the number in the field to which they belong." xml:space="preserve">
+        <source>Change the sign of the number in the field to which they belong.</source>
+        <target>Меняют знак числа в поле к которому они относятся.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Changes exponential to complex and vice versa." xml:space="preserve">
+        <source>Changes exponential to complex and vice versa.</source>
+        <target>Меняет экспоненциальную на комплексную и наоборот</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Complex number module:" xml:space="preserve">
+        <source>Complex number module:</source>
+        <target>Модуль комплексного числа:</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Conjugate complex number" xml:space="preserve">
+        <source>Conjugate complex number</source>
+        <target>Сопряженное комплексное число</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Conversion" xml:space="preserve">
+        <source>Conversion</source>
+        <target>Конвертация</target>
+        <note>Tab bar controller title</note>
+      </trans-unit>
+      <trans-unit id="Division of complex numbers" xml:space="preserve">
+        <source>Division of complex numbers</source>
+        <target>Деление комплексных чисел</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Elevation to the degree" xml:space="preserve">
+        <source>Elevation to the degree</source>
+        <target>Возведение в степень</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Exponential notation of a complex number" xml:space="preserve">
+        <source>Exponential notation of a complex number</source>
+        <target>Показательная запись комплексного числа</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Hello, World!" xml:space="preserve">
+        <source>Hello, World!</source>
+        <target>Hello, World!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="How to use?" xml:space="preserve">
+        <source>How to use?</source>
+        <target>Как пользоваться?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Information" xml:space="preserve">
+        <source>Information</source>
+        <target>Информация</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Multiplication of complex numbers" xml:space="preserve">
+        <source>Multiplication of complex numbers</source>
+        <target>Умножение комплексных чисел</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The main argument" xml:space="preserve">
+        <source>The main argument</source>
+        <target>Главный аргумент</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The main argument is the value of the argument in the range (-π..π]" xml:space="preserve">
+        <source>The main argument is the value of the argument in the range (-π..π]</source>
+        <target>Главный аргумент - это значение аргумента, который лежит в диапазоне (-π..π]</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Transfers the result obtained after conversion to a calculator." xml:space="preserve">
+        <source>Transfers the result obtained after conversion to a calculator.</source>
+        <target>Переносит полученный результат после конвертации в калькулятор.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Trigonometric notation of a complex number" xml:space="preserve">
+        <source>Trigonometric notation of a complex number</source>
+        <target>Тригонометрическая запись комплексного числа</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Uncertainty" xml:space="preserve">
+        <source>Uncertainty</source>
+        <target>Неопределенность</target>
+        <note>It is impossible to calculate the exact value</note>
+      </trans-unit>
+      <trans-unit id="сorresponds to the distance from a point on the complex plane to the origin." xml:space="preserve">
+        <source>сorresponds to the distance from a point on the complex plane to the origin.</source>
+        <target>соответствует расстоянию от точки на комплексной плоскости до начала координат.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="where r is the modulus of the complex number, 𝝋 is the angle of inclination of the vector 0-z to the axis of real values or the argument of the complex number." xml:space="preserve">
+        <source>where r is the modulus of the complex number, 𝝋 is the angle of inclination of the vector 0-z to the axis of real values or the argument of the complex number.</source>
+        <target>где r - модуль комплексного числа, φ - угол наклона вектора 0-z к оси действительных значений или аргумент комплексного числа.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="where, i is an imaginary unit, a is a real part, bi is an imaginary part." xml:space="preserve">
+        <source>where, i is an imaginary unit, a is a real part, bi is an imaginary part.</source>
+        <target>где, i - мнимая единица, a - действительная часть, bi - мнимая часть.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Calc/Storyboard/Base.lproj/Main.storyboard" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+    </header>
+    <body>
+      <trans-unit id="8pK-4p-9ET.title" xml:space="preserve">
+        <source>How to use?</source>
+        <target>Как пользоваться?</target>
+        <note>Class = "UINavigationItem"; title = "How to use?"; ObjectID = "8pK-4p-9ET";</note>
+      </trans-unit>
+      <trans-unit id="C4V-gd-mhk.title" xml:space="preserve">
+        <source>Convert</source>
+        <target>Конвертировать</target>
+        <note>Class = "UITabBarItem"; title = "Convert"; ObjectID = "C4V-gd-mhk";</note>
+      </trans-unit>
+      <trans-unit id="EwZ-oq-35v.title" xml:space="preserve">
+        <source>History</source>
+        <target>История</target>
+        <note>Class = "UINavigationItem"; title = "History"; ObjectID = "EwZ-oq-35v";</note>
+      </trans-unit>
+      <trans-unit id="JjW-DE-ueV.normalTitle" xml:space="preserve">
+        <source>Change the form</source>
+        <target>Изменить форму</target>
+        <note>Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "JjW-DE-ueV";</note>
+      </trans-unit>
+      <trans-unit id="L02-xp-q9U.normalTitle" xml:space="preserve">
+        <source> </source>
+        <target> </target>
+        <note>Class = "UIButton"; normalTitle = " "; ObjectID = "L02-xp-q9U";</note>
+      </trans-unit>
+      <trans-unit id="OF1-ca-qaH.normalTitle" xml:space="preserve">
+        <source>Change the form</source>
+        <target>Изменить форму</target>
+        <note>Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "OF1-ca-qaH";</note>
+      </trans-unit>
+      <trans-unit id="PWB-ne-seB.normalTitle" xml:space="preserve">
+        <source>Convert</source>
+        <target>Конвертировать</target>
+        <note>Class = "UIButton"; normalTitle = "Convert"; ObjectID = "PWB-ne-seB";</note>
+      </trans-unit>
+      <trans-unit id="TGE-ct-6Sw.normalTitle" xml:space="preserve">
+        <source>Change the form</source>
+        <target>Изменить форму</target>
+        <note>Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "TGE-ct-6Sw";</note>
+      </trans-unit>
+      <trans-unit id="U2L-UL-J99.title" xml:space="preserve">
+        <source>Calculator</source>
+        <target>Калькулятор</target>
+        <note>Class = "UINavigationItem"; title = "Calculator"; ObjectID = "U2L-UL-J99";</note>
+      </trans-unit>
+      <trans-unit id="XWk-db-xCG.title" xml:space="preserve">
+        <source>Calculator</source>
+        <target>Калькулятор</target>
+        <note>Class = "UITabBarItem"; title = "Calculator"; ObjectID = "XWk-db-xCG";</note>
+      </trans-unit>
+      <trans-unit id="YH5-26-UiX.normalTitle" xml:space="preserve">
+        <source>Calculate</source>
+        <target>Рассчитать</target>
+        <note>Class = "UIButton"; normalTitle = "Calculate"; ObjectID = "YH5-26-UiX";</note>
+      </trans-unit>
+      <trans-unit id="rwK-lc-E00.title" xml:space="preserve">
+        <source>      </source>
+        <target>      </target>
+        <note>Class = "UIBarButtonItem"; title = "      "; ObjectID = "rwK-lc-E00";</note>
+      </trans-unit>
+      <trans-unit id="th1-gA-Bal.title" xml:space="preserve">
+        <source>Conversion</source>
+        <target>Конвертация</target>
+        <note>Class = "UINavigationItem"; title = "Conversion"; ObjectID = "th1-gA-Bal";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -32,9 +32,7 @@ class CalculateViewController: UIViewController {
     var firstNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     /// number for save
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
-    
-//    var operationFromHistory: Calculate?
-    
+        
     var tabBarC: CustomTabBarController!
     
     override func viewDidLoad() {
@@ -50,7 +48,7 @@ class CalculateViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.title = "Калькулятор"
+        self.tabBarController?.title = NSLocalizedString("Calculator", comment: "")
         
         if let number = tabBarC.transferNumber {
             switch number.numberType {

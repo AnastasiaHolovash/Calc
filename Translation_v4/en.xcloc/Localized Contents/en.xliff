@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Calc/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Calc</source>
+        <target>Calc</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Calc/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+    </header>
+    <body>
+      <trans-unit id="Conversion" xml:space="preserve">
+        <source>Conversion</source>
+        <target>Conversion</target>
+        <note>Tab bar controller title</note>
+      </trans-unit>
+      <trans-unit id="Hello, World!" xml:space="preserve">
+        <source>Hello, World!</source>
+        <target>Hello, World!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Uncertainty" xml:space="preserve">
+        <source>Uncertainty</source>
+        <target>Uncertainty</target>
+        <note>It is impossible to calculate the exact value</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Calc/Storyboard/Base.lproj/Main.storyboard" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.3" build-num="12C33"/>
+    </header>
+    <body>
+      <trans-unit id="8pK-4p-9ET.title" xml:space="preserve">
+        <source>How to use?</source>
+        <target>How to use?</target>
+        <note>Class = "UINavigationItem"; title = "How to use?"; ObjectID = "8pK-4p-9ET";</note>
+      </trans-unit>
+      <trans-unit id="C4V-gd-mhk.title" xml:space="preserve">
+        <source>Convert</source>
+        <target>Convert</target>
+        <note>Class = "UITabBarItem"; title = "Convert"; ObjectID = "C4V-gd-mhk";</note>
+      </trans-unit>
+      <trans-unit id="EwZ-oq-35v.title" xml:space="preserve">
+        <source>History</source>
+        <target>History</target>
+        <note>Class = "UINavigationItem"; title = "History"; ObjectID = "EwZ-oq-35v";</note>
+      </trans-unit>
+      <trans-unit id="JjW-DE-ueV.normalTitle" xml:space="preserve">
+        <source>Change the form</source>
+        <target>Change the form</target>
+        <note>Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "JjW-DE-ueV";</note>
+      </trans-unit>
+      <trans-unit id="L02-xp-q9U.normalTitle" xml:space="preserve">
+        <source> </source>
+        <target> </target>
+        <note>Class = "UIButton"; normalTitle = " "; ObjectID = "L02-xp-q9U";</note>
+      </trans-unit>
+      <trans-unit id="OF1-ca-qaH.normalTitle" xml:space="preserve">
+        <source>Change the form</source>
+        <target>Change the form</target>
+        <note>Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "OF1-ca-qaH";</note>
+      </trans-unit>
+      <trans-unit id="PWB-ne-seB.normalTitle" xml:space="preserve">
+        <source>Convert</source>
+        <target>Convert</target>
+        <note>Class = "UIButton"; normalTitle = "Convert"; ObjectID = "PWB-ne-seB";</note>
+      </trans-unit>
+      <trans-unit id="TGE-ct-6Sw.normalTitle" xml:space="preserve">
+        <source>Change the form</source>
+        <target>Change the form</target>
+        <note>Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "TGE-ct-6Sw";</note>
+      </trans-unit>
+      <trans-unit id="U2L-UL-J99.title" xml:space="preserve">
+        <source>Calculator</source>
+        <target>Calculator</target>
+        <note>Class = "UINavigationItem"; title = "Calculator"; ObjectID = "U2L-UL-J99";</note>
+      </trans-unit>
+      <trans-unit id="XWk-db-xCG.title" xml:space="preserve">
+        <source>Calculator</source>
+        <target>Calculator</target>
+        <note>Class = "UITabBarItem"; title = "Calculator"; ObjectID = "XWk-db-xCG";</note>
+      </trans-unit>
+      <trans-unit id="YH5-26-UiX.normalTitle" xml:space="preserve">
+        <source>Calculate</source>
+        <target>Calculate</target>
+        <note>Class = "UIButton"; normalTitle = "Calculate"; ObjectID = "YH5-26-UiX";</note>
+      </trans-unit>
+      <trans-unit id="rwK-lc-E00.title" xml:space="preserve">
+        <source>      </source>
+        <target>      </target>
+        <note>Class = "UIBarButtonItem"; title = "      "; ObjectID = "rwK-lc-E00";</note>
+      </trans-unit>
+      <trans-unit id="th1-gA-Bal.title" xml:space="preserve">
+        <source>Conversion</source>
+        <target>Conversion</target>
+        <note>Class = "UINavigationItem"; title = "Conversion"; ObjectID = "th1-gA-Bal";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

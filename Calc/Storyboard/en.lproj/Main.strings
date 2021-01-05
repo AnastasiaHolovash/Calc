@@ -1,0 +1,39 @@
+
+/* Class = "UINavigationItem"; title = "How to use?"; ObjectID = "8pK-4p-9ET"; */
+"8pK-4p-9ET.title" = "How to use?";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "C4V-gd-mhk"; */
+"C4V-gd-mhk.title" = "Convert";
+
+/* Class = "UINavigationItem"; title = "History"; ObjectID = "EwZ-oq-35v"; */
+"EwZ-oq-35v.title" = "History";
+
+/* Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "JjW-DE-ueV"; */
+"JjW-DE-ueV.normalTitle" = "Change the form";
+
+/* Class = "UIButton"; normalTitle = " "; ObjectID = "L02-xp-q9U"; */
+"L02-xp-q9U.normalTitle" = " ";
+
+/* Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "OF1-ca-qaH"; */
+"OF1-ca-qaH.normalTitle" = "Change the form";
+
+/* Class = "UIButton"; normalTitle = "Convert"; ObjectID = "PWB-ne-seB"; */
+"PWB-ne-seB.normalTitle" = "Convert";
+
+/* Class = "UIButton"; normalTitle = "Change the form"; ObjectID = "TGE-ct-6Sw"; */
+"TGE-ct-6Sw.normalTitle" = "Change the form";
+
+/* Class = "UINavigationItem"; title = "Calculator"; ObjectID = "U2L-UL-J99"; */
+"U2L-UL-J99.title" = "Calculator";
+
+/* Class = "UITabBarItem"; title = "Calculator"; ObjectID = "XWk-db-xCG"; */
+"XWk-db-xCG.title" = "Calculator";
+
+/* Class = "UIButton"; normalTitle = "Calculate"; ObjectID = "YH5-26-UiX"; */
+"YH5-26-UiX.normalTitle" = "Calculate";
+
+/* Class = "UIBarButtonItem"; title = "      "; ObjectID = "rwK-lc-E00"; */
+"rwK-lc-E00.title" = "      ";
+
+/* Class = "UINavigationItem"; title = "Conversion"; ObjectID = "th1-gA-Bal"; */
+"th1-gA-Bal.title" = "Conversion";
