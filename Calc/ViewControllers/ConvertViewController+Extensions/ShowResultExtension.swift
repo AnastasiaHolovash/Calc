@@ -31,7 +31,7 @@ extension ConvertViewController {
         let result = expNumberToString(moduleZ: exp.moduleZ, arcFi: exp.arcFi)
         let enteredNumber = complexNumberToString(Re: re, Im: im)
         
-        if result == "Невизначеність" {
+        if result == NSLocalizedString("Uncertainty", comment: "It is impossible to calculate the exact value") {
             answerView.expAnswerLabel.text = result
         } else {
             answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: result)
@@ -46,7 +46,7 @@ extension ConvertViewController {
         let result = complexNumberToString(Re: complex.re, Im: complex.im, roundTo: 4)
         let enteredNumber = expNumberToString(moduleZ: modulZ, arcFi: arc)
         
-        if enteredNumber == "Невизначеність" {
+        if enteredNumber == NSLocalizedString("Uncertainty", comment: "It is impossible to calculate the exact value") {
             answerView.expAnswerLabel.text = enteredNumber
         } else {
             answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: enteredNumber)

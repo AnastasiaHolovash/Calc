@@ -130,7 +130,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         /// An appearance of complex number in exponential form.
         let stringResult = expNumberToString(moduleZ: resulsWithExp.moduleZ, arcFi: resulsWithExp.arcFi)
         
-        if stringResult == "Невизначеність" {
+        if stringResult == NSLocalizedString("Uncertainty", comment: "It is impossible to calculate the exact value") {
             answerView.expAnswerLabel.text = stringResult
         } else {
             answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: stringResult)

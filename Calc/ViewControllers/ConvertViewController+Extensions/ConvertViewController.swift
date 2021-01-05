@@ -40,7 +40,7 @@ class ConvertViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.title = "Конвертація"
+        self.tabBarController?.title = NSLocalizedString("Conversion", comment: "Tab bar controller title")
     }
     
     
