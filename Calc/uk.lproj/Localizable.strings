@@ -1,0 +1,93 @@
+/* No comment provided by engineer. */
+"(is an abbreviation of trigonometric form)" = "(є скороченням тригонометричного запису)";
+
+/* No comment provided by engineer. */
+"About complex numbers" = "Про комплексні числа";
+
+/* No comment provided by engineer. */
+"Addition/subtraction of complex numbers" = "Додавання/віднімання комплексних чисел";
+
+/* No comment provided by engineer. */
+"Algebraic notation of a complex number" = "Алгебраїчний запис комплексного числа";
+
+/* No comment provided by engineer. */
+"Button:" = "Кнопка:";
+
+/* No comment provided by engineer. */
+"Buttons:" = "Кнопки:";
+
+/* No comment provided by engineer. */
+"Calculate" = "Розрахувати";
+
+/* No comment provided by engineer. */
+"Calculating the root of degree n" = "Обчислення кореня степеня n";
+
+/* No comment provided by engineer. */
+"Calculator" = "Калькулятор";
+
+/* No comment provided by engineer. */
+"Change the form" = "Змінити форму";
+
+/* No comment provided by engineer. */
+"Change the sign of the number in the field to which they belong." = "Змінюють знак числа у полі до якого вони відносяться.";
+
+/* No comment provided by engineer. */
+"Changes exponential to complex and vice versa." = "Змінює екзпоненційну на комплексну та навпаки.";
+
+/* No comment provided by engineer. */
+"Complex number module:" = "Модуль комплексного числа:";
+
+/* No comment provided by engineer. */
+"Conjugate complex number" = "Спряжене комплексне число";
+
+/* Tab bar controller title */
+"Conversion" = "Конвертація";
+
+/* No comment provided by engineer. */
+"Convert" = "Конвертувати";
+
+/* No comment provided by engineer. */
+"corresponds to the distance from a point on the complex plane to the origin." = "відповідає відстані від точки на комплексній площині до початку координат.";
+
+/* No comment provided by engineer. */
+"Division of complex numbers" = "Ділення комплексних чисел";
+
+/* No comment provided by engineer. */
+"Elevation to the degree" = "Піднесення до степеня";
+
+/* No comment provided by engineer. */
+"Exponential notation of a complex number" = "Показниковий запис комплексного числа";
+
+/* No comment provided by engineer. */
+"Hello, World!" = "Hello, World!";
+
+/* No comment provided by engineer. */
+"How to use?" = "Як користуватися?";
+
+/* No comment provided by engineer. */
+"Information" = "Інформація";
+
+/* No comment provided by engineer. */
+"Multiplication of complex numbers" = "Множення комплексних чисел";
+
+/* No comment provided by engineer. */
+"The main argument" = "Головний аргумент";
+
+/* No comment provided by engineer. */
+"The main argument is the value of the argument in the range (-π..π]" = "Головний аргумент - це значення аргументу, що лежить в діапазоні (-π..π]";
+
+/* No comment provided by engineer. */
+"Transfers the result obtained after conversion to a calculator." = "Переносить отриманий результат після конвертації до калькулятора.";
+
+/* No comment provided by engineer. */
+"Trigonometric notation of a complex number" = "Тригонометричний запис комплексного числа";
+
+/* It is impossible to calculate the exact value */
+"Uncertainty" = "Невизначеність";
+
+/* No comment provided by engineer. */
+"where r is the modulus of the complex number, 𝝋 is the angle of inclination of the vector 0-z to the axis of real values or the argument of the complex number." = "де r - модуль комплексного числа, 𝝋 - кут нахилу вектора 0-z до осі дійсних значень або аргумент комплексного числа.";
+
+/* No comment provided by engineer. */
+"where, i is an imaginary unit, a is a real part, bi is an imaginary part." = "де, i - уявна одиниця, a - дійсна частина, bi - уявна частина.";
+

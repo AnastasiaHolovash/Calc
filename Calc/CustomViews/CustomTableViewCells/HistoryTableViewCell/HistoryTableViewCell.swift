@@ -67,8 +67,7 @@ class HistoryTableViewCell: UITableViewCell {
                 self.numberLabel1.attributedText = complexNumberToStringWithFormating(Re: complexNumber.part1, Im: complexNumber.part2, roundTo: 3)
             }
             self.numberLabel1.textAlignment = .left
-//            self.numberLabel1Width.constant = 267
-            self.operationTypeLabel.text = "Конвертувати"
+            self.operationTypeLabel.text = NSLocalizedString("Convert", comment: "")
             
         // Culculate operation
         case .calculate(let calculate):
@@ -110,7 +109,7 @@ class HistoryTableViewCell: UITableViewCell {
             case .division:
                 self.operationSignImage.image = UIImage(named: "divide")
             }
-            self.operationTypeLabel.text = "Розрахувати"
+            self.operationTypeLabel.text = NSLocalizedString("Calculate", comment: "")
         }
         
     }

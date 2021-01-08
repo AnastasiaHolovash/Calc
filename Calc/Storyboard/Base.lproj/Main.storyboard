@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SqR-6S-NVm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SqR-6S-NVm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-290" y="-1615"/>
         </scene>
-        <!--Конвертація-->
+        <!--Conversion-->
         <scene sceneID="FGx-mY-ZkQ">
             <objects>
                 <viewController storyboardIdentifier="ConvertViewController" id="7BB-oD-TJP" customClass="ConvertViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,30 +38,30 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-uh-din">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="icN-Sl-Inc"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-6Q-989" customClass="ExpView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="30" width="414" height="118"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-ke-ilc" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="148" width="414" height="0.0"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQP-Vi-tNj">
                                         <rect key="frame" x="0.0" y="148" width="414" height="94.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGE-ct-6Sw" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGE-ct-6Sw" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
                                                 <rect key="frame" x="27" y="22" width="166" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MM5-cy-FSC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <state key="normal" title="Змінити форму">
+                                                <state key="normal" title="Change the form">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -68,7 +70,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mre-DZ-JiM">
                                                 <rect key="frame" x="221" y="22" width="166" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="f3S-1H-1CI"/>
                                                 </constraints>
@@ -82,7 +84,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="TGE-ct-6Sw" firstAttribute="leading" secondItem="tQP-Vi-tNj" secondAttribute="leading" constant="27" id="EcC-Oo-n3O"/>
                                             <constraint firstAttribute="trailing" secondItem="mre-DZ-JiM" secondAttribute="trailing" constant="27" id="UoR-54-0A3"/>
@@ -95,14 +97,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lg4-gl-geB">
                                         <rect key="frame" x="0.0" y="242.5" width="414" height="94"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-ne-seB">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-ne-seB">
                                                 <rect key="frame" x="27" y="22" width="360" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="HSA-V0-cm1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <state key="normal" title="Конвертувати">
+                                                <state key="normal" title="Convert">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -110,7 +112,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="PWB-ne-seB" firstAttribute="leading" secondItem="Lg4-gl-geB" secondAttribute="leading" constant="27" id="8Gj-aU-ZWf"/>
                                             <constraint firstItem="PWB-ne-seB" firstAttribute="centerX" secondItem="Lg4-gl-geB" secondAttribute="centerX" id="TNR-CE-tqZ"/>
@@ -120,7 +122,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-Pc-oud" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="336.5" width="414" height="336.5"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -130,7 +132,8 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="JlV-gF-cgO"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JlV-gF-cgO" firstAttribute="bottom" secondItem="XCg-qg-Vpk" secondAttribute="bottom" id="4iy-y1-z5N"/>
@@ -138,15 +141,14 @@
                             <constraint firstItem="XCg-qg-Vpk" firstAttribute="leading" secondItem="JlV-gF-cgO" secondAttribute="leading" id="co2-Ey-351"/>
                             <constraint firstItem="JlV-gF-cgO" firstAttribute="trailing" secondItem="XCg-qg-Vpk" secondAttribute="trailing" id="erL-LU-B1G"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JlV-gF-cgO"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="KOC-qj-QcO" appends="YES" id="w61-oe-7Dv"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Конвертувати" image="Convert" id="C4V-gd-mhk">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <tabBarItem key="tabBarItem" title="Convert" image="Convert" id="C4V-gd-mhk">
+                        <color key="badgeColor" systemColor="systemIndigoColor"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Конвертація" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
+                    <navigationItem key="navigationItem" title="Conversion" largeTitleDisplayMode="never" id="th1-gA-Bal"/>
                     <connections>
                         <outlet property="answerView" destination="U7p-Pc-oud" id="hpc-gH-KZ0"/>
                         <outlet property="changeFormButton" destination="TGE-ct-6Sw" id="tXo-27-NPf"/>
@@ -165,7 +167,7 @@
             </objects>
             <point key="canvasLocation" x="-730.43478260869574" y="-146.65178571428569"/>
         </scene>
-        <!--Історія-->
+        <!--History-->
         <scene sceneID="J1u-vH-kml">
             <objects>
                 <viewController storyboardIdentifier="HistoryViewController" id="41i-ZX-eWK" customClass="HistoryViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,25 +177,25 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-bV-26c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ppu-mq-h5d"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1TZ-bV-26c" firstAttribute="top" secondItem="swz-v8-Rj6" secondAttribute="top" id="CBa-ez-Vb8"/>
                             <constraint firstItem="1TZ-bV-26c" firstAttribute="leading" secondItem="Ppu-mq-h5d" secondAttribute="leading" id="CvK-3X-3NB"/>
                             <constraint firstAttribute="bottom" secondItem="1TZ-bV-26c" secondAttribute="bottom" id="SKX-5R-Sbm"/>
                             <constraint firstItem="Ppu-mq-h5d" firstAttribute="trailing" secondItem="1TZ-bV-26c" secondAttribute="trailing" id="XhL-VC-ZRw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ppu-mq-h5d"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Історія" id="EwZ-oq-35v">
+                    <navigationItem key="navigationItem" title="History" id="EwZ-oq-35v">
                         <barButtonItem key="rightBarButtonItem" title="      " width="30" id="rwK-lc-E00">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L02-xp-q9U">
                                 <rect key="frame" x="355.5" y="11.5" width="38.5" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" " image="Button-Close">
-                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressCloseButton:" destination="41i-ZX-eWK" eventType="touchUpInside" id="Ry2-gN-e9q"/>
@@ -209,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="1049" y="-147"/>
         </scene>
-        <!--Калькулятор-->
+        <!--Calculator-->
         <scene sceneID="7N5-w7-M6H">
             <objects>
                 <viewController storyboardIdentifier="CalculateViewController" id="Xc5-J0-IcI" customClass="CalculateViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,15 +225,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-FP-9iT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF1-ca-qaH" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF1-ca-qaH" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="14" width="200" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="LEq-he-rcv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="Змінити форму">
+                                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Change the form">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -239,7 +241,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="OF1-ca-qaH" firstAttribute="centerX" secondItem="bsc-FP-9iT" secondAttribute="centerX" id="NgD-X4-142"/>
                                             <constraint firstItem="OF1-ca-qaH" firstAttribute="width" secondItem="bsc-FP-9iT" secondAttribute="width" multiplier="0.483092" id="uPa-c3-Pde"/>
@@ -248,11 +250,11 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guJ-Ll-5gi" customClass="ExpView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="414" height="78"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK3-zX-X2h" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="156" width="414" height="78"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-XS-hLr" customClass="OperationBar" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="156" width="414" height="78"/>
@@ -260,7 +262,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-j8-9fI">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="78"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="plus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -270,7 +272,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-Fd-ACA">
                                                 <rect key="frame" x="83" y="0.0" width="82.5" height="78"/>
-                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="minus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -280,7 +282,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fav-Y4-fuO">
                                                 <rect key="frame" x="165.5" y="0.0" width="83" height="78"/>
-                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="multiply.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -290,7 +292,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-rs-8Q8">
                                                 <rect key="frame" x="248.5" y="0.0" width="82.5" height="78"/>
-                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="divide.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                                 </state>
@@ -300,7 +302,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DK-Yb-OVP">
                                                 <rect key="frame" x="331" y="0.0" width="83" height="78"/>
-                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="arrow.up.arrow.down.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32" scale="medium" weight="regular"/>
                                                 </state>
@@ -320,15 +322,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-Bo-lBU">
                                         <rect key="frame" x="0.0" y="234" width="414" height="78.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-DE-ueV" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjW-DE-ueV" customClass="ChangeFormButton" customModule="Calc" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="14" width="200" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="zRb-vB-z3I"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="Змінити форму">
+                                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                                <state key="normal" title="Change the form">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -336,7 +338,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="JjW-DE-ueV" firstAttribute="width" secondItem="f1I-Bo-lBU" secondAttribute="width" multiplier="0.483092" id="CqJ-NM-aQ3"/>
                                             <constraint firstItem="JjW-DE-ueV" firstAttribute="centerY" secondItem="f1I-Bo-lBU" secondAttribute="centerY" id="TlW-aS-Luk"/>
@@ -345,15 +347,15 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGE-vI-wdn" customClass="ExpView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="312.5" width="414" height="78"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-Uz-Cb7" customClass="ComplexView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="390.5" width="414" height="78"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-5o-Y32" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="390.5" width="414" height="282.5"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -366,15 +368,15 @@
                                     <constraint firstItem="Owh-XS-hLr" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="vHF-Kh-mbv"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH5-26-UiX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH5-26-UiX">
                                 <rect key="frame" x="93" y="536.5" width="228" height="50"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wVw-11-X0M"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <state key="normal" title="Розрахувати">
+                                <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Calculate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -382,7 +384,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="ijV-J3-7Jd"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ijV-J3-7Jd" firstAttribute="trailing" secondItem="bkU-7Z-2Ex" secondAttribute="trailing" id="2aW-KG-Ffd"/>
@@ -393,15 +396,14 @@
                             <constraint firstItem="YH5-26-UiX" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="lso-HP-ZGH"/>
                             <constraint firstItem="ijV-J3-7Jd" firstAttribute="bottom" secondItem="bkU-7Z-2Ex" secondAttribute="bottom" id="pjM-fS-A51"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ijV-J3-7Jd"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="6bP-w6-7dN" appends="YES" id="Nfg-ZM-XKR"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Калькулятор" image="Calculate" id="XWk-db-xCG">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Calculate" id="XWk-db-xCG">
+                        <color key="badgeColor" systemColor="systemIndigoColor"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Калькулятор" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
+                    <navigationItem key="navigationItem" title="Calculator" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
                         <outlet property="answerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
                         <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="Cde-pI-eAs"/>
@@ -426,7 +428,7 @@
             </objects>
             <point key="canvasLocation" x="181.15942028985509" y="-146.65178571428569"/>
         </scene>
-        <!--Як користуватися?-->
+        <!--How to use?-->
         <scene sceneID="eYb-wY-Le6">
             <objects>
                 <viewController storyboardIdentifier="InformationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZDy-sy-muq" customClass="InformationViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
@@ -436,27 +438,27 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFC-7g-I76">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="xc3-0x-46F"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qFC-7g-I76" secondAttribute="bottom" id="Fqj-sa-cNF"/>
                             <constraint firstItem="qFC-7g-I76" firstAttribute="top" secondItem="9hg-fo-XRV" secondAttribute="top" id="Jhu-uj-CkQ"/>
                             <constraint firstItem="qFC-7g-I76" firstAttribute="leading" secondItem="xc3-0x-46F" secondAttribute="leading" id="jWH-PS-Y7o"/>
                             <constraint firstItem="xc3-0x-46F" firstAttribute="trailing" secondItem="qFC-7g-I76" secondAttribute="trailing" id="mH1-po-u3I"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xc3-0x-46F"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Як користуватися?" id="8pK-4p-9ET">
+                    <navigationItem key="navigationItem" title="How to use?" id="8pK-4p-9ET">
                         <barButtonItem key="rightBarButtonItem" width="30" id="iq8-CD-Dhe">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Dn-E9-Up2">
                                 <rect key="frame" x="360.5" y="11.5" width="33.5" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" image="Button-Close">
-                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressCloseButton:" destination="ZDy-sy-muq" eventType="touchUpInside" id="cic-IS-JRa"/>
@@ -496,10 +498,10 @@
                 <tabBarController storyboardIdentifier="CustomTapBarController" id="KE4-p4-V5t" customClass="CustomTabBarController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VZj-OU-WbK">
                         <barButtonItem key="leftBarButtonItem" id="39y-hY-oaV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y7f-zv-AXL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="y7f-zv-AXL">
                                 <rect key="frame" x="20" y="6" width="35" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="questionmark.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                 </state>
@@ -515,7 +517,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wHg-p6-UUs">
                                 <rect key="frame" x="359" y="4.5" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" image="History">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="black"/>
                                 </state>
@@ -532,7 +534,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemIndigoColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="7BB-oD-TJP" kind="relationship" relationship="viewControllers" id="MqZ-wl-4GS"/>
@@ -572,5 +574,20 @@
         <image name="multiply.square" catalog="system" width="128" height="114"/>
         <image name="plus.square" catalog="system" width="128" height="114"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

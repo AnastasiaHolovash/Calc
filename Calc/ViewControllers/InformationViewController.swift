@@ -12,40 +12,45 @@ class InformationViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let sectionTitles = ["Як користуватися?",
-                         "Про комплексні числа"]
+    let sectionTitles = [
+        NSLocalizedString("How to use?", comment: ""),
+        NSLocalizedString("About complex numbers", comment: "")]
     
-    let titlesForsection1: [String] = ["Кнопки:",
-                                        "Кнопка:",
-                                        "Кнопка:"]
+    let titlesForsection1: [String] = [
+        NSLocalizedString("Buttons:", comment: ""),
+        NSLocalizedString("Button:", comment: ""),
+        NSLocalizedString("Button:", comment: "")]
     
-    let titlesForsection2: [String] = ["Алгебраїчний запис комплексного числа",
-                                       "Тригонометричний запис комплексного числа",
-                                       "Модуль комплексного числа:",
-                                       "Показниковий запис комплексного числа",
-                                       "Головний аргумент",
-                                       "Спряжене комплексне число",
-                                       "Додавання/віднімання комплексних чисел",
-                                       "Множення комплексних чисел",
-                                       "Ділення комплексних чисел",
-                                       "Піднесення до степеня",
-                                       "Обчислення кореня степеня n"]
+    let titlesForsection2: [String] = [
+        NSLocalizedString("Algebraic notation of a complex number", comment: ""),
+        NSLocalizedString("Trigonometric notation of a complex number", comment: ""),
+        NSLocalizedString("Complex number module:", comment: ""),
+        NSLocalizedString("Exponential notation of a complex number", comment: ""),
+        NSLocalizedString("The main argument", comment: ""),
+        NSLocalizedString("Conjugate complex number", comment: ""),
+        NSLocalizedString("Addition/subtraction of complex numbers", comment: ""),
+        NSLocalizedString("Multiplication of complex numbers", comment: ""),
+        NSLocalizedString("Division of complex numbers", comment: ""),
+        NSLocalizedString("Elevation to the degree", comment: ""),
+        NSLocalizedString("Calculating the root of degree n", comment: "")]
     
-    let textForsection1: [String] = ["Змінюють знак числа у полі до якого вони відносяться.",
-                                     "Змінює екзпоненційну на комплексну та навпаки.",
-                                     "Переносить отриманий результат після конвертації до калькулятора."]
+    let textForsection1: [String] = [
+        NSLocalizedString("Change the sign of the number in the field to which they belong.", comment: ""),
+        NSLocalizedString("Changes exponential to complex and vice versa.", comment: ""),
+        NSLocalizedString("Transfers the result obtained after conversion to a calculator.", comment: "")]
     
-    let textForsection2: [String] = ["де, i - уявна одиниця, a - дійсна частина, bi - уявна частина.",
-                                     "де r - модуль комплексного числа, 𝝋 - кут нахилу вектора 0-z до осі дійсних значень або аргумент комплексного числа.",
-                                     "відповідає відстані від точки на комплексній площині до початку координат.",
-                                     "(є скороченням тригонометричного запису)",
-                                     "Головний аргумент - це значення аргументу, що лежить в діапазоні (-π..π]"]
+    let textForsection2: [String] = [
+        NSLocalizedString("where, i is an imaginary unit, a is a real part, bi is an imaginary part.", comment: ""),
+        NSLocalizedString("where r is the modulus of the complex number, 𝝋 is the angle of inclination of the vector 0-z to the axis of real values or the argument of the complex number.", comment: ""),
+        NSLocalizedString("corresponds to the distance from a point on the complex plane to the origin.", comment: ""),
+        NSLocalizedString("(is an abbreviation of trigonometric form)", comment: ""),
+        NSLocalizedString("The main argument is the value of the argument in the range (-π..π]", comment: "")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Інформація"
+        self.title = NSLocalizedString("Information", comment: "")
         tableView.backgroundColor = mainBackgroundColor
         setupTableView()
     }
@@ -102,7 +107,6 @@ extension InformationViewController: UITableViewDelegate, UITableViewDataSource 
         label.text = sectionTitles[section]
 
         returnedView.addSubview(label)
-//        returnedView.addShadowForLabel()
         return returnedView
     }
     
