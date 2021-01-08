@@ -74,6 +74,8 @@ enum NameOfOperation: String, Codable {
     case minus
     case multiplication
     case division
+    case pow
+    case root
 }
 
 

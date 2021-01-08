@@ -108,6 +108,10 @@ class HistoryTableViewCell: UITableViewCell {
                 self.operationSignImage.image = UIImage(named: "multiply")
             case .division:
                 self.operationSignImage.image = UIImage(named: "divide")
+            case .pow:
+                print("^")
+            case .root:
+                print("1")
             }
             self.operationTypeLabel.text = NSLocalizedString("Calculate", comment: "")
         }

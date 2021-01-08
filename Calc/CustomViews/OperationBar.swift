@@ -22,7 +22,10 @@ class OperationBar: UIStackView {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var multiplyButton: UIButton!
     @IBOutlet weak var divideButton: UIButton!
+    @IBOutlet weak var powButton: UIButton!
+    @IBOutlet weak var rootButton: UIButton!
     @IBOutlet weak var swapButton: UIButton!
+    
     
     public var curentOperationName: NameOfOperation = NameOfOperation.plus
     
@@ -34,23 +37,33 @@ class OperationBar: UIStackView {
         minusButton.setImage(UIImage.init(systemName: "minus.square"), for: .normal)
         multiplyButton.setImage(UIImage.init(systemName: "multiply.square"), for: .normal)
         divideButton.setImage(UIImage.init(systemName: "divide.square"), for: .normal)
-        plusButton.tintColor = .label
-        minusButton.tintColor = .label
-        multiplyButton.tintColor = .label
-        divideButton.tintColor = .label
+        powButton.setImage(UIImage(named: "z^n-square"), for: .normal)
+        rootButton.setImage(UIImage(named: "root-square"), for: .normal)
+        
+//        plusButton.tintColor = .label
+//        minusButton.tintColor = .label
+//        multiplyButton.tintColor = .label
+//        divideButton.tintColor = .label
+        
         switch curentOperationName {
         case .plus:
             plusButton.setImage(UIImage.init(named: "plus-square-fill"), for: .normal)
-            plusButton.tintColor = .systemIndigo
+//            plusButton.tintColor = .systemIndigo
         case .minus:
             minusButton.setImage(UIImage.init(named: "minus-square-fill"), for: .normal)
-            minusButton.tintColor = .systemIndigo
+//            minusButton.tintColor = .systemIndigo
         case .multiplication:
             multiplyButton.setImage(UIImage.init(named: "multiply-square-fill"), for: .normal)
-            multiplyButton.tintColor = .systemIndigo
+//            multiplyButton.tintColor = .systemIndigo
         case .division:
             divideButton.setImage(UIImage.init(named: "divide-square-fill"), for: .normal)
-            divideButton.tintColor = .systemIndigo
+//            divideButton.tintColor = .systemIndigo
+        case .pow:
+            powButton.setImage(UIImage(named: "z^n-square-fill"), for: .normal)
+//            powButton.tintColor = .systemIndigo
+        case .root:
+            rootButton.setImage(UIImage(named: "root-square-fill"), for: .normal)
+//            rootButton.tintColor = .systemIndigo
         }
     }
     
@@ -64,6 +77,10 @@ class OperationBar: UIStackView {
             curentOperationName = .multiplication
         case divideButton:
             curentOperationName = .division
+        case powButton:
+            curentOperationName = .pow
+        case rootButton:
+            curentOperationName = .root
         case swapButton:
             self.delegate?.selectedSwapOperation()
         default:

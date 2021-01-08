@@ -25,6 +25,10 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
             showMultiplyRecult()
         case .division:
             showDivideRecult()
+        case .pow:
+            print("---")
+        case .root:
+            print("---")
         }
     }
     
