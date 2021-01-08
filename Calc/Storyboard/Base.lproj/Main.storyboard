@@ -260,7 +260,7 @@
                                         <rect key="frame" x="0.0" y="156" width="414" height="78"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-j8-9fI">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="78"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="plus.square" catalog="system">
@@ -271,7 +271,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-Fd-ACA">
-                                                <rect key="frame" x="83" y="0.0" width="82.5" height="78"/>
+                                                <rect key="frame" x="59" y="0.0" width="59.5" height="78"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="minus.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -281,7 +281,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fav-Y4-fuO">
-                                                <rect key="frame" x="165.5" y="0.0" width="83" height="78"/>
+                                                <rect key="frame" x="118.5" y="0.0" width="59" height="78"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="multiply.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -291,7 +291,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-rs-8Q8">
-                                                <rect key="frame" x="248.5" y="0.0" width="82.5" height="78"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="59" height="78"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="divide.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
@@ -300,8 +300,16 @@
                                                     <action selector="wasSelectedNewOperation:" destination="Owh-XS-hLr" eventType="touchUpInside" id="jbf-3K-FRa"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-BA-IsK">
+                                                <rect key="frame" x="236.5" y="0.0" width="59" height="78"/>
+                                                <state key="normal" image="z^n"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEE-9i-rnz">
+                                                <rect key="frame" x="295.5" y="0.0" width="59.5" height="78"/>
+                                                <state key="normal" image="root-square"/>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DK-Yb-OVP">
-                                                <rect key="frame" x="331" y="0.0" width="83" height="78"/>
+                                                <rect key="frame" x="355" y="0.0" width="59" height="78"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="arrow.up.arrow.down.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32" scale="medium" weight="regular"/>
@@ -574,6 +582,8 @@
         <image name="multiply.square" catalog="system" width="128" height="114"/>
         <image name="plus.square" catalog="system" width="128" height="114"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <image name="root-square" width="40" height="40"/>
+        <image name="z^n" width="40" height="40"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
