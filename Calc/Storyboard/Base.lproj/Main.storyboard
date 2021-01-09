@@ -370,6 +370,10 @@
                                         <rect key="frame" x="0.0" y="390.5" width="414" height="78"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-gK-5Wd" customClass="NView" customModule="Calc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="390.5" width="414" height="78"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-5o-Y32" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="390.5" width="414" height="282.5"/>
                                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
@@ -380,6 +384,7 @@
                                     <constraint firstItem="jGE-vI-wdn" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="AgV-fV-agE"/>
                                     <constraint firstItem="guJ-Ll-5gi" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="Fz0-Mn-mFZ"/>
                                     <constraint firstItem="bsc-FP-9iT" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="Sev-70-JYA"/>
+                                    <constraint firstItem="eWc-gK-5Wd" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="Uw1-2W-sy0"/>
                                     <constraint firstItem="f1G-Uz-Cb7" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="p3E-Q4-7Qv"/>
                                     <constraint firstItem="sK3-zX-X2h" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="vDx-gL-R8Y"/>
                                     <constraint firstItem="Owh-XS-hLr" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="vHF-Kh-mbv"/>
@@ -431,6 +436,7 @@
                         <outlet property="complexView2" destination="f1G-Uz-Cb7" id="LrX-5g-zP5"/>
                         <outlet property="expView1" destination="guJ-Ll-5gi" id="DSq-jm-ADv"/>
                         <outlet property="expView2" destination="jGE-vI-wdn" id="RxT-0f-QX9"/>
+                        <outlet property="nView" destination="eWc-gK-5Wd" id="Lb4-5M-HA4"/>
                         <outlet property="operationBar" destination="Owh-XS-hLr" id="vBP-XD-LnL"/>
                         <outlet property="showResultButton" destination="YH5-26-UiX" id="GHt-CJ-zLp"/>
                         <outlet property="showResultButtonHeight" destination="wVw-11-X0M" id="eCi-uQ-9zW"/>

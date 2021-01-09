@@ -151,7 +151,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     /// Prepare data for calculetion, calculete and show recult of division two complex numbers. Recult presents in complex and exponential forms.
     func showPowRecult() {
         let data = prepareExpDataForCalc()
-        let result = complexPow(modulZ: data.moduleZ, arc: data.arc, n: 2.0)
+        let result = complexPow(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 0.0)
 
         // Conversion to complex and back is needed for correct display of arc
         let complex = expToComplexNumber(modulZ: result.moduleZ, arc: result.arc)

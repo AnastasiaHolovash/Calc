@@ -27,6 +27,7 @@ class CalculateViewController: UIViewController {
     
     @IBOutlet weak var expView2: ExpView!
     @IBOutlet weak var complexView2: ComplexView!
+    @IBOutlet weak var nView: NView!
     
     /// number for save
     var firstNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
@@ -159,13 +160,30 @@ extension CalculateViewController: OperationDelegate {
 }
 
 extension CalculateViewController: OperationBarDelegate {
+    func selectedPowOrRootOperation() {
+        expView2.isHidden = true
+        complexView2.isHidden = true
+        nView.isHidden = false
+        changeFormButton2.isUserInteractionEnabled = false
+        changeFormButton2.backgroundColor = .gray
+    }
+    
     func selectedSwapOperation() {
         prepareNumbersForHistoryUpdating()
         setNumbers(number1: secondNumber, number2: firstNumber)
         recalculate()
     }
     
-    func selectedNewOperation() {
+    func selectedNewSimpleOperation() {
+        nView.isHidden = true
+        switch changeFormButton2.curentForm {
+        case .complex:
+            complexView2.isHidden = false
+        case .exp:
+            expView2.isHidden = false
+        }
+        changeFormButton2.isUserInteractionEnabled = true
+        changeFormButton2.backgroundColor = .systemIndigo
         recalculate()
     }
 }
