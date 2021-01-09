@@ -261,22 +261,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E5C4DC66-DA4A-4D49-82E1-228656870B7A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Calc/ComplexNumbersFuncs/ComplexNumbersStrings.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "complexNumberToStringWithFormating(Re:Im:roundTo:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F3CFA1AA-E88F-46D9-A28B-4EF1E21115D4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -300,8 +284,8 @@
             filePath = "Calc/ComplexNumbersFuncs/ComplexNumbersStrings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "attributedStringResultWithFormating(fullstringResult:fontSize:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -352,6 +336,22 @@
             endingLineNumber = "14"
             landmarkName = "keyboardWillChange(notification:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1B6C2BE-A622-48BB-B09C-18AD50D715DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calc/ComplexNumbersFuncs/CalculationFormulas.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "complexPow(modulZ:arc:n:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -13,14 +13,14 @@ extension CalculateViewController {
     func prepareNumbersForHistoryUpdating() {
         if !expView1.isHidden {
             let exp1 = makeExpNumber1()
-            firstNumber = ComplexNumber(numberType: NumberType.exp, part1: exp1.modulZ, part2: exp1.arc)
+            firstNumber = ComplexNumber(numberType: NumberType.exp, part1: exp1.moduleZ, part2: exp1.arc)
         } else {
             let complex1 = makeComplexNumber1()
             firstNumber = ComplexNumber(numberType: NumberType.complex, part1: complex1.re, part2: complex1.im)
         }
         if !expView2.isHidden {
             let exp2 = makeExpNumber2()
-            secondNumber = ComplexNumber(numberType: NumberType.exp, part1: exp2.modulZ, part2: exp2.arc)
+            secondNumber = ComplexNumber(numberType: NumberType.exp, part1: exp2.moduleZ, part2: exp2.arc)
         } else {
             let complex2 = makeComplexNumber2()
             secondNumber = ComplexNumber(numberType: NumberType.complex, part1: complex2.re, part2: complex2.im)

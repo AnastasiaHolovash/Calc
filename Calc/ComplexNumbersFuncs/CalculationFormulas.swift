@@ -74,7 +74,7 @@ func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, 
 
  - Returns: Module of number in exponential form, Angle of number in exponential form in degrees
  */
-func complexToExpNumber(Im: Double, Re: Double) -> (moduleZ: Double, arcFi: Double) {
+func complexToExpNumber(Im: Double, Re: Double) -> (moduleZ: Double, arc: Double) {
     let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
     let im = Im == -0 ? 0 : Im
     let re = Re == -0 ? 0 : Re
@@ -104,4 +104,18 @@ func expToComplexNumber(modulZ: Double, arc:Double) -> (re:Double, im: Double) {
     let Re = modulZ * cos(arc.degree())
     let Im = modulZ * sin(arc.degree())
     return (re: Re, im: Im)
+}
+
+
+/**
+ Performs the operation of elevation to the degree complex number.
+ 
+ z^n = |z|^(n) e^(in𝝋),
+ 
+ i = √(-1)
+*/
+func complexPow(modulZ: Double, arc:Double, n: Double) -> (moduleZ: Double, arc:Double) {
+    let modulZ = pow(modulZ, n)
+    let arc = arc * n
+    return (moduleZ: modulZ, arc: arc)
 }

@@ -70,8 +70,6 @@ Creates a string of number in a complex form.
 - Returns: String of complex number.
 */
 func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
-//    print(Re)
-//    print(Im)
     if Re.isNaN || Im.isNaN {
         return NSLocalizedString("Uncertainty", comment: "")
     } else {
@@ -102,8 +100,6 @@ func makeANumber(sign: Bool, number: String) -> Double {
     }
 }
 
-
-// MARK:- using scientificFormatted() func
 
 func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> NSAttributedString {
     if Re.isNaN || Im.isNaN {
