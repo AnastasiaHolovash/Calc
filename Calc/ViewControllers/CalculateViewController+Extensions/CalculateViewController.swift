@@ -129,6 +129,7 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
+        nView.hidekeybourd()
         prepareNumbersForHistoryUpdating()
         let operation = Operation.calculate(Calculate(operation: operationBar.curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
@@ -140,6 +141,7 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
+        nView.hidekeybourd()
     }
     
 }

@@ -41,11 +41,23 @@ class NView: UIView {
         textField = nTextFieldView.textField
     }
     
+    override func layoutSubviews() {
+        textField.keyboardType = .numberPad
+        textField.placeholder = "1"
+    }
+    
     /**
      Sets default values.
      */
     public func clearView() {
         textField.text = "1"
+    }
+    
+    /**
+     Hides kybourd.
+     */
+    public func hidekeybourd() {
+        textField.resignFirstResponder()
     }
     
 }
