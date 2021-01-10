@@ -21,9 +21,11 @@ extension CalculateViewController {
         if !expView2.isHidden {
             let exp2 = makeExpNumber2()
             secondNumber = ComplexNumber(numberType: NumberType.exp, part1: exp2.moduleZ, part2: exp2.arc)
-        } else {
+        } else if !complexView2.isHidden {
             let complex2 = makeComplexNumber2()
             secondNumber = ComplexNumber(numberType: NumberType.complex, part1: complex2.re, part2: complex2.im)
+        } else {
+            secondNumber = ComplexNumber(numberType: .n, part1: Double(nView.textField.text ?? "1") ?? 1.0, part2: nil)
         }
     }
     
@@ -31,27 +33,31 @@ extension CalculateViewController {
     func setNumbers(number1: ComplexNumber, number2: ComplexNumber) {
         switch number1.numberType {
         case .exp:
-            expView1.setNumber(beforeExpNumber: number1.part1, afterExpNumber: number1.part2)
+            expView1.setNumber(beforeExpNumber: number1.part1, afterExpNumber: number1.part2 ?? 0.0)
             if expView1.isHidden {
                 changeFormButton1.changeForm()
             }
         case .complex:
-            complexView1.setNumber(reNumber: number1.part1, imNumber: number1.part2)
+            complexView1.setNumber(reNumber: number1.part1, imNumber: number1.part2 ?? 0.0)
             if complexView1.isHidden {
                 changeFormButton1.changeForm()
             }
+        case .n:
+            print("Error")
         }
         switch number2.numberType {
         case .exp:
-            expView2.setNumber(beforeExpNumber: number2.part1, afterExpNumber: number2.part2)
+            expView2.setNumber(beforeExpNumber: number2.part1, afterExpNumber: number2.part2 ?? 0.0)
             if expView2.isHidden {
                 changeFormButton2.changeForm()
             }
         case .complex:
-            complexView2.setNumber(reNumber: number2.part1, imNumber: number2.part2)
+            complexView2.setNumber(reNumber: number2.part1, imNumber: number2.part2 ?? 0.0)
             if complexView2.isHidden {
                 changeFormButton2.changeForm()
             }
+        case .n:
+            nView.setNumber(number: number2.part1)
         }
     }
 }

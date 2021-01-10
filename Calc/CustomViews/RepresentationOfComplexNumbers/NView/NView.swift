@@ -47,6 +47,13 @@ class NView: UIView {
     }
     
     /**
+     Sets value from parameters.
+     */
+    public func setNumber(number: Double) {
+        self.textField.text = String(Int(number))
+    }
+    
+    /**
      Sets default values.
      */
     public func clearView() {

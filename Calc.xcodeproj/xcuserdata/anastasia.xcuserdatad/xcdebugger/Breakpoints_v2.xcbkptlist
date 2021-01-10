@@ -268,8 +268,8 @@
             filePath = "Calc/CustomViews/CustomTableViewCells/HistoryTableViewCell/HistoryTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "setOperation(operation:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -278,7 +278,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3018A6E3-B33A-4EFA-9101-2FCDF3C9F6FA"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Calc/ComplexNumbersFuncs/ComplexNumbersStrings.swift"
@@ -300,8 +300,8 @@
             filePath = "Calc/CustomViews/ChangeFormButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>

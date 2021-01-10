@@ -54,15 +54,17 @@ class CalculateViewController: UIViewController {
         if let number = tabBarC.transferNumber {
             switch number.numberType {
             case .exp:
-                expView1.setNumber(beforeExpNumber: number.part1.simpleRound(decimalPlases: 4), afterExpNumber: number.part2.simpleRound(decimalPlases: 4))
+                expView1.setNumber(beforeExpNumber: number.part1.simpleRound(decimalPlases: 4), afterExpNumber: number.part2?.simpleRound(decimalPlases: 4) ?? 0.0)
                 if expView1.isHidden {
                     changeFormButton1.changeForm()
                 }
             case .complex:
-                complexView1.setNumber(reNumber: number.part1.simpleRound(decimalPlases: 4), imNumber: number.part2.simpleRound(decimalPlases: 4))
+                complexView1.setNumber(reNumber: number.part1.simpleRound(decimalPlases: 4), imNumber: number.part2?.simpleRound(decimalPlases: 4) ?? 0.0)
                 if complexView1.isHidden {
                     changeFormButton1.changeForm()
                 }
+            default:
+                print("Error")
             }
             tabBarC.transferNumber = nil
         }
@@ -183,6 +185,8 @@ extension CalculateViewController: OperationBarDelegate {
             complexView2.isHidden = false
         case .exp:
             expView2.isHidden = false
+        default:
+            print("Error")
         }
         changeFormButton2.isUserInteractionEnabled = true
         changeFormButton2.backgroundColor = .systemIndigo

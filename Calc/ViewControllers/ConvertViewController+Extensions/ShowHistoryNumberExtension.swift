@@ -16,17 +16,19 @@ extension ConvertViewController: NumberDelegate {
         if let numberFromHistory = number {
             switch numberFromHistory.numberType {
             case .exp:
-                expView.setNumber(beforeExpNumber: numberFromHistory.part1, afterExpNumber: numberFromHistory.part2)
-                showComplexResult(modulZ: numberFromHistory.part1, arc: numberFromHistory.part2)
+                expView.setNumber(beforeExpNumber: numberFromHistory.part1, afterExpNumber: numberFromHistory.part2 ?? 0.0)
+                showComplexResult(modulZ: numberFromHistory.part1, arc: numberFromHistory.part2 ?? 0.0)
                 if expView.isHidden {
                     changeFormButton.changeForm()
                 }
             case .complex:
-                complexView.setNumber(reNumber: numberFromHistory.part1, imNumber: numberFromHistory.part2)
-                showExpResult(re: numberFromHistory.part1, im: numberFromHistory.part2)
+                complexView.setNumber(reNumber: numberFromHistory.part1, imNumber: numberFromHistory.part2 ?? 0.0)
+                showExpResult(re: numberFromHistory.part1, im: numberFromHistory.part2 ?? 0.0)
                 if complexView.isHidden {
                     changeFormButton.changeForm()
                 }
+            case .n:
+                print("Error")
             }
             self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
         }

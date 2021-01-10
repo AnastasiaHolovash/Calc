@@ -194,9 +194,19 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     
     eLocation = fullstringResult[..<eIndex].count + 1
     var length = fullstringResult.count - eLocation
-    if fullstringResult.firstIndex(of: ")") != nil {
-        length -= 1
+    
+    if let indexOfClosePartnth = fullstringResult.firstIndex(of: ")") {
+        
+        let lengthAfterClosePartnth = fullstringResult[indexOfClosePartnth...].count
+        length -= lengthAfterClosePartnth
+        
+        if lengthAfterClosePartnth > 1 {
+            
+            let afterClosePartnthLocation = [..<indexOfClosePartnth].count + 1
+            ranges.append(NSRange(location: afterClosePartnthLocation, length: lengthAfterClosePartnth - 1))
+        }
     }
+    
     ranges.append(NSRange(location: eLocation, length: length))
     
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
