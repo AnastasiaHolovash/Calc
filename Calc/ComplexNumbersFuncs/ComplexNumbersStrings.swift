@@ -179,6 +179,7 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     var eIndex: String.Index
     var eLocation: Int
     
+    /// For exponential representation for too big numbers
     if let upperSignIndex = fullstringResult.firstIndex(of: "^") {
         fullstringResult.remove(at: upperSignIndex)
         let upperSignLocation = fullstringResult[..<upperSignIndex].count
@@ -191,7 +192,6 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     }
     
     eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
-    
     eLocation = fullstringResult[..<eIndex].count + 1
     var length = fullstringResult.count - eLocation
     
@@ -200,13 +200,16 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
         let lengthAfterClosePartnth = fullstringResult[indexOfClosePartnth...].count
         length -= lengthAfterClosePartnth
         
+        /// If there is number after ")"
         if lengthAfterClosePartnth > 1 {
             
-            let afterClosePartnthLocation = [..<indexOfClosePartnth].count + 1
+            let afterClosePartnthLocation = fullstringResult[..<indexOfClosePartnth].count + 1
+            /// Part of string after ")"
             ranges.append(NSRange(location: afterClosePartnthLocation, length: lengthAfterClosePartnth - 1))
         }
     }
     
+    /// Part of string after "e" before ")"
     ranges.append(NSRange(location: eLocation, length: length))
     
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
