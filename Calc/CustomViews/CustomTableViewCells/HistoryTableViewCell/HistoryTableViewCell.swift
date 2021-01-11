@@ -100,9 +100,9 @@ class HistoryTableViewCell: UITableViewCell {
             
             } else if .complex == calculate.number1.numberType {
                 
-                let firstResult = NSMutableAttributedString()
+                let firstResult = NSMutableAttributedString(string: " ")
                 if .root == calculate.operation {
-//                    firstResult.append(String(Int(calculate.number2.part1)).exponent())
+                    firstResult.append(String(Int(calculate.number2.part1)).exponent())
                     firstResult.append(NSAttributedString(string: "√"))
                 }
                 firstResult.append(NSAttributedString(string: "("))

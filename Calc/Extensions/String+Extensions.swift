@@ -31,4 +31,33 @@ extension String {
         }
         return nil
     }
+    
+    /// For exponential representation for too big numbers
+    mutating func findTheDegreeOfBigNumbers() -> NSRange? {
+        
+        if let indexOfUpperSign = self.firstIndex(of: "^") {
+            
+            self.remove(at: indexOfUpperSign)
+            let upperSignLocation = self[..<indexOfUpperSign].count
+            let eIndex = self.firstIndex(of: "e") ?? self.endIndex
+            let eLocation = self[..<eIndex].count - 1
+            let length = eLocation - upperSignLocation
+            
+            return NSRange(location: upperSignLocation, length: length)
+        }
+        return nil
+    }
+    
+    /// Finds NSRange for part of string after ")"
+    func findTheDegreeOfNuberRange() -> NSRange? {
+        
+        if let indexOfCloseParenth = self.firstIndex(of: ")") {
+            
+            let location = self[..<indexOfCloseParenth].count + 1
+            let length = self[indexOfCloseParenth...].count - 1
+            
+            return NSRange(location: location, length: length)
+        }
+        return nil
+    }
 }

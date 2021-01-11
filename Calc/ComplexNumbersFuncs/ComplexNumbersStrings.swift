@@ -47,7 +47,7 @@ func attributedStringResult(fullstringResult: String, fontSize: Int = 20) -> NSA
      
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
 
-    let eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    let eIndex = fullstringResult.lastIndex(of: "e") ?? fullstringResult.endIndex
     let eLocation = fullstringResult[..<eIndex].count + 1
 
     var length = fullstringResult.count - eLocation
@@ -69,38 +69,29 @@ Creates a string of number in a complex form.
  
 - Returns: String of complex number.
 */
-//func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
-//    if Re.isNaN || Im.isNaN {
-//        return NSLocalizedString("Uncertainty", comment: "")
-//    } else {
-//        if Im < 0 {
-//            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
-//        } else {
-//            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
-//        }
-//    }
-//}
-
-
-/**
-Converts number to Double.
- 
-- Parameters:
-   -  sign: Sign of the number (true if plus; false if minus).
-   -  number: Number in String.
- 
-- Returns: Double number.
-*/
-func makeANumber(sign: Bool, number: String) -> Double {
-    let double = Double(number.replacingOccurrences(of: ",", with: ".")) ?? 0
-    if sign {
-        return double
+func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
+    if Re.isNaN || Im.isNaN {
+        return NSLocalizedString("Uncertainty", comment: "")
     } else {
-        return -double
+        if Im < 0 {
+            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
+        } else {
+            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
+        }
     }
 }
 
 
+/**
+Creates a string of number in a complex form using scientific formating.
+ 
+- Parameters:
+    - Re:The real part of the complex number.
+    - Im: The imaginary part of the complex number.
+    - decimalPlases: The required number of digits after the floating point. The default equel 4.
+ 
+- Returns: String of complex number.
+*/
 func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> NSAttributedString {
     if Re.isNaN || Im.isNaN {
         return NSAttributedString(string: NSLocalizedString("Uncertainty", comment: ""))
@@ -123,6 +114,25 @@ func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalP
         result.append(im)
         
         return result
+    }
+}
+
+
+/**
+Converts number to Double.
+ 
+- Parameters:
+   -  sign: Sign of the number (true if plus; false if minus).
+   -  number: Number in String.
+ 
+- Returns: Double number.
+*/
+func makeANumber(sign: Bool, number: String) -> Double {
+    let double = Double(number.replacingOccurrences(of: ",", with: ".")) ?? 0
+    if sign {
+        return double
+    } else {
+        return -double
     }
 }
 
@@ -167,7 +177,7 @@ func expNumberToStringWithFormating(moduleZ: Double, arcFi: Double, roundTo deci
  
 - Returns: Attributed String of complex number.
 */
-func attributedStringResultWithFormating(fullstringResult: inout String, fontSize: Int = 20) -> NSAttributedString {
+func expAttributedStringResultWithFormating(fullstringResult: inout String, fontSize: Int = 20) -> NSAttributedString {
     let firstSymbolFont: UIFont? = UIFont.systemFont(ofSize: 15, weight: .light)
     /// Font for the number before the exponent.
     let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
@@ -175,9 +185,6 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 5 / 6))
     /// Ranges which should be atttributed
     var ranges: [NSRange] = []
-    
-    var eIndex: String.Index
-    var eLocation: Int
     
     fullstringResult = " " + fullstringResult
     
@@ -187,46 +194,34 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     }
     
     /// For exponential representation for too big numbers
-    if let upperSignIndex = fullstringResult.firstIndex(of: "^") {
-        fullstringResult.remove(at: upperSignIndex)
-        let upperSignLocation = fullstringResult[..<upperSignIndex].count
-        
-        eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
-        eLocation = fullstringResult[..<eIndex].count - 1
-        
-        let length = eLocation - upperSignLocation
-        ranges.append(NSRange(location: upperSignLocation, length: length))
+    if let degreeOfBigNumberRange = fullstringResult.findTheDegreeOfBigNumbers() {
+        ranges.append(degreeOfBigNumberRange)
     }
     
-    eIndex = fullstringResult.lastIndex(of: "e") ?? fullstringResult.endIndex
-    eLocation = fullstringResult[..<eIndex].count + 1
+    /// Part of string after "e" before ")"
+    let eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    let eLocation = fullstringResult[..<eIndex].count + 1
     var length = fullstringResult.count - eLocation
     
     if let indexOfClosePartnth = fullstringResult.firstIndex(of: ")") {
         
         let lengthAfterClosePartnth = fullstringResult[indexOfClosePartnth...].count
         length -= lengthAfterClosePartnth
-        
-        /// If there is number after ")"
-        if lengthAfterClosePartnth > 1 {
-            
-            let afterClosePartnthLocation = fullstringResult[..<indexOfClosePartnth].count + 1
-            /// Part of string after ")"
-            ranges.append(NSRange(location: afterClosePartnthLocation, length: lengthAfterClosePartnth - 1))
-        }
     }
-    
-    /// Part of string after "e" before ")"
     ranges.append(NSRange(location: eLocation, length: length))
     
-    let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
+    /// If there is number after ")"
+    if let afterClosePartnthRange = fullstringResult.findTheDegreeOfNuberRange() {
+        ranges.append(afterClosePartnthRange)
+    }
     
+    /// Seting the attributes
+    let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
     attString.setAttributes([.font:firstSymbolFont!], range: NSRange(location: 0, length: 1))
     
     for i in 0..<ranges.count {
         attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: ranges[i])
     }
-
     attString.endEditing()
     
     return attString
