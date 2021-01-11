@@ -69,17 +69,17 @@ Creates a string of number in a complex form.
  
 - Returns: String of complex number.
 */
-func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
-    if Re.isNaN || Im.isNaN {
-        return NSLocalizedString("Uncertainty", comment: "")
-    } else {
-        if Im < 0 {
-            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
-        } else {
-            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
-        }
-    }
-}
+//func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
+//    if Re.isNaN || Im.isNaN {
+//        return NSLocalizedString("Uncertainty", comment: "")
+//    } else {
+//        if Im < 0 {
+//            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " - i" + "\((-Im).smartRound(decimalPlases: decimalPlases))"
+//        } else {
+//            return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
+//        }
+//    }
+//}
 
 
 /**
@@ -105,7 +105,6 @@ func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalP
     if Re.isNaN || Im.isNaN {
         return NSAttributedString(string: NSLocalizedString("Uncertainty", comment: ""))
     } else {
-        
         var im: NSAttributedString {
             if abs(Im) > 10000 {
                 return Im > 0 ? Im.scientificFormatted() : (-Im).scientificFormatted()
@@ -199,7 +198,7 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
         ranges.append(NSRange(location: upperSignLocation, length: length))
     }
     
-    eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    eIndex = fullstringResult.lastIndex(of: "e") ?? fullstringResult.endIndex
     eLocation = fullstringResult[..<eIndex].count + 1
     var length = fullstringResult.count - eLocation
     
@@ -222,25 +221,12 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
     
-//    var ranges2: [NSRange] = []
-//
-//    for i in 0..<ranges.count {
-//        if i == 1 && ranges[i - 1].location != 0 {
-//            ranges2.append(NSRange(location: 0, length: ranges[i - 1].location))
-//        } else if i != 0 {
-//            ranges2.append(NSRange(location: ranges[i - 1].location + ranges[i - 1].length, length: ranges[i].location - ranges[i - 1].length))
-//
-//        }
-//    }
     attString.setAttributes([.font:firstSymbolFont!], range: NSRange(location: 0, length: 1))
     
     for i in 0..<ranges.count {
         attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: ranges[i])
     }
-    
-//    for i in 0..<ranges2.count {
-//        attString.setAttributes([.font:font!,.baselineOffset:0], range: ranges2[i])
-//    }
+
     attString.endEditing()
     
     return attString
