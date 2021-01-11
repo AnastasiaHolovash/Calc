@@ -28,7 +28,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         case .pow:
             showPowRecult()
         case .root:
-            print("---")
+            showRootRecult()
         }
     }
     
@@ -140,7 +140,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     }
     
     
-    /// Prepare data for calculetion, calculete and show recult of division two complex numbers. Recult presents in complex and exponential forms.
+    /// Prepare data for calculetion, calculete and show recult of pow operation. Recult presents in complex and exponential forms.
     func showPowRecult() {
         let data = prepareExpDataForCalc()
         let result = complexPow(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 0.0)
@@ -152,6 +152,19 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     }
     
     
+    /// Prepare data for calculetion, calculete and show recult of pow operation. Recult presents in complex and exponential forms.
+    func showRootRecult() {
+        let data = prepareExpDataForCalc()
+        let result = complexRoot(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 0.0)
+
+        print(result)
+        // Conversion to complex and back is needed for correct display of arc
+//        let complex = expToComplexNumber(modulZ: result.moduleZ, arc: result.arc)
+//        answerView.complexAnswerLabel.text = complexNumberToString(Re: complex.re, Im: complex.im, roundTo: 4)
+//        showResulsWithExp(result: complexToExpNumber(Im: complex.im, Re: complex.re))
+    }
+    
+    
     /**
      Presents recult of calculation in exponential form.
      - Parameter result:Recult of calculation in complex form.
@@ -159,8 +172,6 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         - Re:The real part of the complex number.
      */
     func showResulsWithExp(result: (moduleZ: Double, arc: Double)) {
-//        /// 'result' in exponential form of type "Double".
-//        let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
         
         /// An appearance of complex number in exponential form.
         let stringResult = expNumberToString(moduleZ: result.moduleZ, arcFi: result.arc)
@@ -171,5 +182,4 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
             answerView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: stringResult)
         }
     }
-    
 }

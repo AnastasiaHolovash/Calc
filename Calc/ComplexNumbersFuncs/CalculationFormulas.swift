@@ -119,3 +119,27 @@ func complexPow(modulZ: Double, arc:Double, n: Double) -> (moduleZ: Double, arc:
     let arc = arc * n
     return (moduleZ: modulZ, arc: arc)
 }
+
+
+/**
+ Performs the operation of root complex number.
+ 
+ n√(z) =n√ |z| ∙(cos((𝝋 + 2𝜋k) / n) + i∙sin((𝝋 + 2𝜋k) / n)),
+ 
+ i = √(-1),
+ 
+ k = 0..n-1.
+*/
+func complexRoot(modulZ: Double, arc:Double, n: Double) -> [(re: Double, im:Double)] {
+    let modulZ = pow(modulZ, 1/n)
+    let radArc = arc.degree()
+    var result : [(re: Double, im:Double)] = []
+    
+    for k in 0..<Int(n) {
+        let re = modulZ * cos((radArc + 2 * Double.pi * Double(k)) / n)
+        let im = modulZ * sin((radArc + 2 * Double.pi * Double(k)) / n)
+        result.append((re: re, im: im))
+    }
+    
+    return result
+}
