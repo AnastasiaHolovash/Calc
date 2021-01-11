@@ -52,7 +52,7 @@ class HistoryTableViewCell: UITableViewCell {
         operationSignImage.image = nil
     }
     
-    // MAKR: - divide for several funcs
+    
     public func setOperation(operation: Operation) {
         
         switch operation {
@@ -69,7 +69,7 @@ class HistoryTableViewCell: UITableViewCell {
                 print("Error")
             }
             self.numberLabel1.textAlignment = .left
-            self.operationTypeLabel.text = NSLocalizedString("Convert", comment: "")
+            self.operationTypeLabel.text = " " + NSLocalizedString("Convert", comment: "")
             
         // Culculate operation
         case .calculate(let calculate):
@@ -91,18 +91,25 @@ class HistoryTableViewCell: UITableViewCell {
             // First number
             if .exp == calculate.number1.numberType {
                 
-                var fullString = (.pow == calculate.operation) || (.root == calculate.operation) ? "(" : ""
+                var fullString = .root == calculate.operation ? "\(Int(calculate.number2.part1))√" : ""
+                fullString += (.pow == calculate.operation) || (.root == calculate.operation) ? "(" : ""
                 fullString += expNumberToStringWithFormating(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2 ?? 0.0, roundTo: 3)
-                fullString += (.pow == calculate.operation) || (.root == calculate.operation) ? ")\(Int(calculate.number2.part1))" : ""
+                fullString += (.pow == calculate.operation) || (.root == calculate.operation) ? ")" : ""
+                fullString += .pow == calculate.operation ? "\(Int(calculate.number2.part1))" : ""
                 self.numberLabel1.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
             
             } else if .complex == calculate.number1.numberType {
                 
                 let firstResult = NSMutableAttributedString()
+                if .root == calculate.operation {
+//                    firstResult.append(String(Int(calculate.number2.part1)).exponent())
+                    firstResult.append(NSAttributedString(string: "√"))
+                }
                 firstResult.append(NSAttributedString(string: "("))
                 firstResult.append(complexNumberToStringWithFormating(Re: calculate.number1.part1, Im: calculate.number1.part2 ?? 0.0, roundTo: 3))
                 firstResult.append(NSAttributedString(string: ")"))
-                if (.pow == calculate.operation) || (.root == calculate.operation) { firstResult.append(String(Int(calculate.number2.part1)).exponent())
+                if .pow == calculate.operation {
+                    firstResult.append(String(Int(calculate.number2.part1)).exponent())
                 }
                 self.numberLabel1.attributedText = firstResult
             }
@@ -122,7 +129,7 @@ class HistoryTableViewCell: UITableViewCell {
                 self.numberLabel2.attributedText = secondResult
             }
             
-            self.operationTypeLabel.text = NSLocalizedString("Calculate", comment: "")
+            self.operationTypeLabel.text = " " + NSLocalizedString("Calculate", comment: "")
         }
     }
 }

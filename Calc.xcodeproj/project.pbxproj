@@ -166,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				5D956277249A2FDF00C03364 /* HistoryTableViewCell */,
-				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
 				5D020AF024B22F1D006B83E7 /* InfoTableViewCell2 */,
+				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
 				5D020AF524B50B33006B83E7 /* InfoTableViewCell3 */,
 			);
 			path = CustomTableViewCells;

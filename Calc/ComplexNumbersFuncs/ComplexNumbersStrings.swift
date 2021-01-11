@@ -169,15 +169,23 @@ func expNumberToStringWithFormating(moduleZ: Double, arcFi: Double, roundTo deci
 - Returns: Attributed String of complex number.
 */
 func attributedStringResultWithFormating(fullstringResult: inout String, fontSize: Int = 20) -> NSAttributedString {
+    let firstSymbolFont: UIFont? = UIFont.systemFont(ofSize: 15, weight: .light)
     /// Font for the number before the exponent.
     let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
     /// Font for exponent degree.
     let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 5 / 6))
-
+    /// Ranges which should be atttributed
     var ranges: [NSRange] = []
     
     var eIndex: String.Index
     var eLocation: Int
+    
+    fullstringResult = " " + fullstringResult
+    
+    /// Part of string before "√"
+    if let degreeOfTheRootRange = fullstringResult.findTheDegreeOfTheRootRange() {
+        ranges.append(degreeOfTheRootRange)
+    }
     
     /// For exponential representation for too big numbers
     if let upperSignIndex = fullstringResult.firstIndex(of: "^") {
@@ -214,9 +222,26 @@ func attributedStringResultWithFormating(fullstringResult: inout String, fontSiz
     
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
     
+//    var ranges2: [NSRange] = []
+//
+//    for i in 0..<ranges.count {
+//        if i == 1 && ranges[i - 1].location != 0 {
+//            ranges2.append(NSRange(location: 0, length: ranges[i - 1].location))
+//        } else if i != 0 {
+//            ranges2.append(NSRange(location: ranges[i - 1].location + ranges[i - 1].length, length: ranges[i].location - ranges[i - 1].length))
+//
+//        }
+//    }
+    attString.setAttributes([.font:firstSymbolFont!], range: NSRange(location: 0, length: 1))
+    
     for i in 0..<ranges.count {
         attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: ranges[i])
     }
+    
+//    for i in 0..<ranges2.count {
+//        attString.setAttributes([.font:font!,.baselineOffset:0], range: ranges2[i])
+//    }
+    attString.endEditing()
     
     return attString
 }

@@ -18,4 +18,17 @@ extension String {
         let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(textFontSize * 5 / 6))
         return NSMutableAttributedString(string: self, attributes: [.font:fontSuper!,.baselineOffset:10])
     }
+    
+    
+    /// Finds NSRange for part of string before "√"
+    func findTheDegreeOfTheRootRange() -> NSRange? {
+        
+        if let indexOfRoot = self.firstIndex(of: "√") {
+//            let location = 0
+            let location = 1
+            let length = self[..<indexOfRoot].count - 1
+            return NSRange(location: location, length: length)
+        }
+        return nil
+    }
 }
