@@ -84,43 +84,42 @@ class HistoryTableViewCell: UITableViewCell {
                 self.operationSignImage.image = UIImage(named: "multiply")
             case .division:
                 self.operationSignImage.image = UIImage(named: "divide")
-            case .pow:
-                print("Pow")
-            case .root:
-                print("Root")
+            case .pow, .root:
+                self.operationSignImage.image = UIImage()
             }
             
             // First number
-            switch calculate.number1.numberType {
-            case .exp:
+            if .exp == calculate.number1.numberType {
+                
                 var fullString = (.pow == calculate.operation) || (.root == calculate.operation) ? "(" : ""
                 fullString += expNumberToStringWithFormating(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2 ?? 0.0, roundTo: 3)
                 fullString += (.pow == calculate.operation) || (.root == calculate.operation) ? ")\(Int(calculate.number2.part1))" : ""
                 self.numberLabel1.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
-            case .complex:
-
+            
+            } else if .complex == calculate.number1.numberType {
+                
                 let firstResult = NSMutableAttributedString()
                 firstResult.append(NSAttributedString(string: "("))
                 firstResult.append(complexNumberToStringWithFormating(Re: calculate.number1.part1, Im: calculate.number1.part2 ?? 0.0, roundTo: 3))
                 firstResult.append(NSAttributedString(string: ")"))
+                if (.pow == calculate.operation) || (.root == calculate.operation) { firstResult.append(String(Int(calculate.number2.part1)).exponent())
+                }
                 self.numberLabel1.attributedText = firstResult
-            case .n:
-                print("Error")
             }
             
             // Second number
-            switch calculate.number2.numberType {
-            case .exp:
+            if .exp == calculate.number2.numberType {
+                
                 var fullString = expNumberToStringWithFormating(moduleZ: calculate.number2.part1, arcFi: calculate.number2.part2 ?? 0.0, roundTo: 3).addParentheses()
                 self.numberLabel2.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
-            case .complex:
+            
+            } else if .complex == calculate.number2.numberType {
+                
                 let secondResult = NSMutableAttributedString()
                 secondResult.append(NSAttributedString(string: "("))
                 secondResult.append(complexNumberToStringWithFormating(Re: calculate.number2.part1, Im: calculate.number2.part2 ?? 0.0, roundTo: 3))
                 secondResult.append(NSAttributedString(string: ")"))
                 self.numberLabel2.attributedText = secondResult
-            case .n:
-                print("n = \(calculate.number2.part1)")
             }
             
             self.operationTypeLabel.text = NSLocalizedString("Calculate", comment: "")

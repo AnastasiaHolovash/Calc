@@ -30,14 +30,19 @@ extension Double {
     func smartRound(decimalPlases: Int) -> Any {
         let divisor = pow(10.0, Double(decimalPlases))
         let rounded = (self * divisor).rounded() / divisor
+        
         if rounded.remainder(dividingBy: 1) == 0 {
-            return Int(rounded)
+            
+            if (rounded > Double(Int.max)) || (rounded < Double(Int.min)){
+                return rounded
+            } else {
+                return Int(rounded)
+            }
+            
         } else {
             return rounded
         }
     }
-    
-    
     
     
     ///Сonverts radians to degrees.

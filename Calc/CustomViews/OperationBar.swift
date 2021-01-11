@@ -44,51 +44,63 @@ class OperationBar: UIStackView {
         switch curentOperationName {
         case .plus:
             plusButton.setImage(UIImage.init(named: "plus-square-fill"), for: .normal)
+            swapButton.isUserInteractionEnabled = true
+            swapButton.tintColor = .label
+            self.delegate?.selectedNewSimpleOperation()
+        
         case .minus:
             minusButton.setImage(UIImage.init(named: "minus-square-fill"), for: .normal)
+            swapButton.isUserInteractionEnabled = true
+            swapButton.tintColor = .label
+            self.delegate?.selectedNewSimpleOperation()
+        
         case .multiplication:
             multiplyButton.setImage(UIImage.init(named: "multiply-square-fill"), for: .normal)
+            swapButton.isUserInteractionEnabled = true
+            swapButton.tintColor = .label
+            self.delegate?.selectedNewSimpleOperation()
+        
         case .division:
             divideButton.setImage(UIImage.init(named: "divide-square-fill"), for: .normal)
+            swapButton.isUserInteractionEnabled = true
+            swapButton.tintColor = .label
+            self.delegate?.selectedNewSimpleOperation()
+        
         case .pow:
             powButton.setImage(UIImage(named: "z^n-square-fill"), for: .normal)
+            swapButton.isUserInteractionEnabled = false
+            swapButton.tintColor = .gray
+            self.delegate?.selectedPowOrRootOperation()
+            
         case .root:
             rootButton.setImage(UIImage(named: "root-square-fill"), for: .normal)
+            swapButton.isUserInteractionEnabled = false
+            swapButton.tintColor = .gray
+            self.delegate?.selectedPowOrRootOperation()
         }
     }
+    
     
     @IBAction func wasSelectedNewOperation(_ sender: UIButton) {
         switch sender {
         case plusButton:
             curentOperationName = .plus
-            swapButton.isUserInteractionEnabled = true
-            swapButton.tintColor = .label
-            self.delegate?.selectedNewSimpleOperation()
+            
         case minusButton:
             curentOperationName = .minus
-            swapButton.isUserInteractionEnabled = true
-            swapButton.tintColor = .label
-            self.delegate?.selectedNewSimpleOperation()
+            
         case multiplyButton:
             curentOperationName = .multiplication
-            swapButton.isUserInteractionEnabled = true
-            swapButton.tintColor = .label
-            self.delegate?.selectedNewSimpleOperation()
+            
         case divideButton:
             curentOperationName = .division
-            swapButton.isUserInteractionEnabled = true
-            swapButton.tintColor = .label
-            self.delegate?.selectedNewSimpleOperation()
+            
         case powButton:
             curentOperationName = .pow
-            swapButton.isUserInteractionEnabled = false
-            swapButton.tintColor = .gray
-            self.delegate?.selectedPowOrRootOperation()
+            
         case rootButton:
             curentOperationName = .root
-            swapButton.isUserInteractionEnabled = false
-            swapButton.tintColor = .gray
-            self.delegate?.selectedPowOrRootOperation()
+            
         case swapButton:
             self.delegate?.selectedSwapOperation()
         default:

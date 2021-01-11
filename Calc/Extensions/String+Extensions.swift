@@ -12,4 +12,10 @@ extension String {
     func addParentheses() -> String {
         return "(\(self))"
     }
+    
+    func exponent(textFontSize: Int = 20) -> NSMutableAttributedString {
+        /// Font for  degree.
+        let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(textFontSize * 5 / 6))
+        return NSMutableAttributedString(string: self, attributes: [.font:fontSuper!,.baselineOffset:10])
+    }
 }

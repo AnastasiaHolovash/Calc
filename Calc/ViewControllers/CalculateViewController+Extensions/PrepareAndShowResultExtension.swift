@@ -60,15 +60,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     }
     
     func prepareExpDataForCalc() -> (moduleZ: Double, arc: Double) {
-//        var exp = (moduleZ: 0.0, arc: 0.0)
-//
-//        if !complexView1.isHidden {
-//            let complex1 = makeComplexNumber1()
-//            exp = complexToExpNumber(Im: complex1.im, Re: complex1.re)
-//        } else {
-//            exp = makeExpNumber1()
-//        }
-        
+
         var complex = (re: 0.0, im: 0.0)
         
         if !expView1.isHidden {
