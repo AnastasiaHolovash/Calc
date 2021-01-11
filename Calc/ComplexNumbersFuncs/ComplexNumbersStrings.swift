@@ -110,17 +110,8 @@ func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalP
             let formatedRe = (Formatter.scientific.string(for: Re) ?? "").remuvePlus()
             return abs(Re) > 10000 ? formatedRe : "\(Re.smartRound(decimalPlases: decimalPlases))"
         }
-        
     
         return Im > 0 ? re + " + i" + im : re + " - i" + im
-        
-        
-//        let result = NSMutableAttributedString()
-//        result.append(re)
-//        Im > 0 ? result.append(NSAttributedString(string: " + i")) : result.append(NSAttributedString(string: " - i"))
-//        result.append(im)
-//
-//        return result
     }
 }
 

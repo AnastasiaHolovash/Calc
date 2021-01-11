@@ -32,6 +32,7 @@ extension String {
         return nil
     }
     
+    
     /// For exponential representation for too big numbers
     mutating func findTheDegreeOfBigNumbers() -> NSRange? {
         
@@ -41,27 +42,19 @@ extension String {
             let upperSignLocation = self[..<indexOfUpperSign].count
             
             var i = upperSignLocation
-//            let ch = self[indexOfUpperSign]
-            
-            for ch in self[indexOfUpperSign...] {
-                if Int(String(ch)) == nil {
+            for simbol in self[indexOfUpperSign...] {
+                if Int(String(simbol)) == nil {
                     break
                 }
                 i += 1
             }
-//            while let number = self[i] as? Int {
-//                <#code#>
-//            }
-//            let eIndex = self.firstIndex(of: "e") ?? self.firstIndex(of: "+") ?? self.firstIndex(of: "-") ?? self.endIndex
-//            let eLocation = self[..<eIndex].count - 1
-//            let length = eLocation - upperSignLocation
-            
             let length = i - upperSignLocation
             
             return NSRange(location: upperSignLocation, length: length)
         }
         return nil
     }
+    
     
     /// Finds NSRange for part of string after ")"
     func findTheDegreeOfNuberRange() -> NSRange? {
