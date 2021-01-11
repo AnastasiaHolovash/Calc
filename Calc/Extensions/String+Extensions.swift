@@ -39,9 +39,24 @@ extension String {
             
             self.remove(at: indexOfUpperSign)
             let upperSignLocation = self[..<indexOfUpperSign].count
-            let eIndex = self.firstIndex(of: "e") ?? self.endIndex
-            let eLocation = self[..<eIndex].count - 1
-            let length = eLocation - upperSignLocation
+            
+            var i = upperSignLocation
+//            let ch = self[indexOfUpperSign]
+            
+            for ch in self[indexOfUpperSign...] {
+                if Int(String(ch)) == nil {
+                    break
+                }
+                i += 1
+            }
+//            while let number = self[i] as? Int {
+//                <#code#>
+//            }
+//            let eIndex = self.firstIndex(of: "e") ?? self.firstIndex(of: "+") ?? self.firstIndex(of: "-") ?? self.endIndex
+//            let eLocation = self[..<eIndex].count - 1
+//            let length = eLocation - upperSignLocation
+            
+            let length = i - upperSignLocation
             
             return NSRange(location: upperSignLocation, length: length)
         }

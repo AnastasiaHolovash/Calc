@@ -62,9 +62,10 @@ class HistoryTableViewCell: UITableViewCell {
             switch complexNumber.numberType {
             case .exp:
                 var fullString = expNumberToStringWithFormating(moduleZ: complexNumber.part1, arcFi: complexNumber.part2 ?? 0.0, roundTo: 3)
-                self.numberLabel1.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
+                self.numberLabel1.attributedText = expAttributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
             case .complex:
-                self.numberLabel1.attributedText = complexNumberToStringWithFormating(Re: complexNumber.part1, Im: complexNumber.part2 ?? 0.0, roundTo: 3)
+                var fullString = complexNumberToStringWithFormating(Re: complexNumber.part1, Im: complexNumber.part2 ?? 0.0, roundTo: 3)
+                self.numberLabel1.attributedText = complexAttributedStringResultWithFormating(fullstringResult: &fullString)
             case .n:
                 print("Error")
             }
@@ -96,37 +97,29 @@ class HistoryTableViewCell: UITableViewCell {
                 fullString += expNumberToStringWithFormating(moduleZ: calculate.number1.part1, arcFi: calculate.number1.part2 ?? 0.0, roundTo: 3)
                 fullString += (.pow == calculate.operation) || (.root == calculate.operation) ? ")" : ""
                 fullString += .pow == calculate.operation ? "\(Int(calculate.number2.part1))" : ""
-                self.numberLabel1.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
+                
+                self.numberLabel1.attributedText = expAttributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
             
             } else if .complex == calculate.number1.numberType {
                 
-                let firstResult = NSMutableAttributedString(string: " ")
-                if .root == calculate.operation {
-                    firstResult.append(String(Int(calculate.number2.part1)).exponent())
-                    firstResult.append(NSAttributedString(string: "√"))
-                }
-                firstResult.append(NSAttributedString(string: "("))
-                firstResult.append(complexNumberToStringWithFormating(Re: calculate.number1.part1, Im: calculate.number1.part2 ?? 0.0, roundTo: 3))
-                firstResult.append(NSAttributedString(string: ")"))
-                if .pow == calculate.operation {
-                    firstResult.append(String(Int(calculate.number2.part1)).exponent())
-                }
-                self.numberLabel1.attributedText = firstResult
+                var fullString = .root == calculate.operation ? "\(Int(calculate.number2.part1))√" : ""
+                fullString += "("
+                fullString += complexNumberToStringWithFormating(Re: calculate.number1.part1, Im: calculate.number1.part2 ?? 0.0, roundTo: 3)
+                fullString += ")"
+                fullString += .pow == calculate.operation ? "\(Int(calculate.number2.part1))" : ""
+                
+                self.numberLabel1.attributedText = complexAttributedStringResultWithFormating(fullstringResult: &fullString)
             }
             
             // Second number
             if .exp == calculate.number2.numberType {
                 
                 var fullString = expNumberToStringWithFormating(moduleZ: calculate.number2.part1, arcFi: calculate.number2.part2 ?? 0.0, roundTo: 3).addParentheses()
-                self.numberLabel2.attributedText = attributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
+                self.numberLabel2.attributedText = expAttributedStringResultWithFormating(fullstringResult: &fullString, fontSize: 20)
             
             } else if .complex == calculate.number2.numberType {
-                
-                let secondResult = NSMutableAttributedString()
-                secondResult.append(NSAttributedString(string: "("))
-                secondResult.append(complexNumberToStringWithFormating(Re: calculate.number2.part1, Im: calculate.number2.part2 ?? 0.0, roundTo: 3))
-                secondResult.append(NSAttributedString(string: ")"))
-                self.numberLabel2.attributedText = secondResult
+                var fullString = "(" + complexNumberToStringWithFormating(Re: calculate.number2.part1, Im: calculate.number2.part2 ?? 0.0, roundTo: 3) + ")"
+                self.numberLabel2.attributedText = complexAttributedStringResultWithFormating(fullstringResult: &fullString)
             }
             
             self.operationTypeLabel.text = " " + NSLocalizedString("Calculate", comment: "")
