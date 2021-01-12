@@ -13,6 +13,7 @@ class AnswerView: UIView {
     @IBOutlet weak var viewWithShadow: UIView!
     @IBOutlet weak var expAnswerLabel: UILabel!
     @IBOutlet weak var complexAnswerLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,24 +35,28 @@ class AnswerView: UIView {
         let xibView = loudViewFromXib()
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        numberLabel.isHidden = true
         self.addSubview(xibView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = mainBackgroundColor
+        numberLabel.layer.borderWidth = 1.5
+        numberLabel.layer.borderColor = UIColor.label.cgColor
+        numberLabel.layer.cornerRadius = numberLabel.frame.height / 2
         viewWithShadow.addShadow()
     }
     
-    public func show() {
-        UIView.animate(withDuration: 2) {
-            self.viewWithShadow.alpha = 1
-        }
-    }
-    
-    public func hide() {
-        UIView.animate(withDuration: 2) {
-            self.viewWithShadow.alpha = 0
-        }
-    }
+//    public func show() {
+//        UIView.animate(withDuration: 2) {
+//            self.viewWithShadow.alpha = 1
+//        }
+//    }
+//    
+//    public func hide() {
+//        UIView.animate(withDuration: 2) {
+//            self.viewWithShadow.alpha = 0
+//        }
+//    }
 }

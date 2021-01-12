@@ -16,6 +16,8 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var changeFormButtonSuperHeight2: NSLayoutConstraint!
     
     @IBOutlet weak var answerView: AnswerView!
+    @IBOutlet weak var answerScrollView: UIScrollView!
+    @IBOutlet weak var answerPageControl: UIPageControl!
     
     @IBOutlet weak var showResultButton: UIButton!
     @IBOutlet weak var showResultButtonHeight: NSLayoutConstraint!
@@ -33,6 +35,8 @@ class CalculateViewController: UIViewController {
     var firstNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     /// number for save
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
+    /// Array of Answer Views for root operation redults
+    var answerViews: [AnswerView] = []
         
     var tabBarC: CustomTabBarController!
     
@@ -75,6 +79,7 @@ class CalculateViewController: UIViewController {
         expView2.delegate = self
         complexView1.delegate = self
         complexView2.delegate = self
+        answerScrollView.delegate = self
         
         guard let tabBar = self.tabBarController as? CustomTabBarController else { return }
         tabBarC = tabBar
@@ -117,6 +122,8 @@ class CalculateViewController: UIViewController {
             showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
         }
         
+        answerPageControl.currentPageIndicatorTintColor = .label
+        answerPageControl.pageIndicatorTintColor = .lightGray
     }
     
     @IBAction func didPressChangeForm(_ sender: ChangeFormButton) {
@@ -146,6 +153,11 @@ class CalculateViewController: UIViewController {
         nView.hidekeybourd()
     }
     
+    
+    @IBAction func didChangeAnswerPageControl(_ sender: UIPageControl) {
+        answerScrollView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(sender.currentPage), y: 0), animated: true)
+    }
+    
 }
 
 
@@ -157,7 +169,11 @@ extension CalculateViewController: OperationDelegate {
             operationBar.curentOperationName = calculate.operation
             operationBar.changeSelectedOperation()
             recalculate()
-            self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+            if operationBar.curentOperationName == .root {
+                self.answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+            } else {
+                self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }
         }
     }
     
@@ -191,6 +207,13 @@ extension CalculateViewController: OperationBarDelegate {
         changeFormButton2.isUserInteractionEnabled = true
         changeFormButton2.backgroundColor = .systemIndigo
         recalculate()
+    }
+}
+
+extension CalculateViewController : UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageIndex = round(Float(scrollView.contentOffset.x / view.frame.width))
+        answerPageControl.currentPage = Int(pageIndex)
     }
 }
 

@@ -158,12 +158,42 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         let result = complexRoot(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 0.0)
 
         print(result)
-        // Conversion to complex and back is needed for correct display of arc
-//        let complex = expToComplexNumber(modulZ: result.moduleZ, arc: result.arc)
-//        answerView.complexAnswerLabel.text = complexNumberToString(Re: complex.re, Im: complex.im, roundTo: 4)
-//        showResulsWithExp(result: complexToExpNumber(Im: complex.im, Re: complex.re))
+        
+        let answerViews = crearePages(result)
+        setupSlideScrollView(slides: answerViews)
+        answerPageControl.numberOfPages = answerViews.count
+        answerPageControl.currentPage = 0
+        view.bringSubviewToFront(answerPageControl)
     }
     
+    
+    func setupSlideScrollView(slides: [AnswerView]) {
+        answerScrollView.frame = CGRect(x: 0, y: view.frame.height * 0.5, width: view.frame.width, height: answerView.frame.height)
+        answerScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: answerView.frame.height)
+        answerScrollView.isPagingEnabled = true
+            
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: answerView.frame.height)
+            answerScrollView.addSubview(slides[i])
+        }
+    }
+    
+    
+    func crearePages(_ result: [(re: Double, im: Double)]) -> [AnswerView] {
+        
+        var resultViews : [AnswerView] = []
+        
+        for i in 0..<result.count {
+            let newView = AnswerView()
+            let expForm = complexToExpNumber(Im: result[i].im, Re: result[i].re)
+            newView.expAnswerLabel.text = expNumberToString(moduleZ: expForm.moduleZ, arcFi: expForm.arc)
+            newView.complexAnswerLabel.text = complexNumberToString(Re: result[i].re, Im: result[i].im)
+            newView.numberLabel.isHidden = false
+            newView.numberLabel.text = "\(i + 1)"
+            resultViews.append(newView)
+        }
+        return resultViews
+    }
     
     /**
      Presents recult of calculation in exponential form.

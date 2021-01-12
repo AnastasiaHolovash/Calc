@@ -390,6 +390,15 @@
                                     <constraint firstItem="Owh-XS-hLr" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="vHF-Kh-mbv"/>
                                 </constraints>
                             </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-M3-hkp">
+                                <rect key="frame" x="0.0" y="530.5" width="414" height="282.5"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-CZ-WMO">
+                                <rect key="frame" x="146" y="785.5" width="122.5" height="27.5"/>
+                                <connections>
+                                    <action selector="didChangeAnswerPageControl:" destination="Xc5-J0-IcI" eventType="valueChanged" id="Tn2-4G-z8o"/>
+                                </connections>
+                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH5-26-UiX">
                                 <rect key="frame" x="93" y="536.5" width="228" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -410,13 +419,20 @@
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="2T5-M3-hkp" firstAttribute="height" secondItem="k0p-5o-Y32" secondAttribute="height" id="1nj-ig-3Un"/>
                             <constraint firstItem="ijV-J3-7Jd" firstAttribute="trailing" secondItem="bkU-7Z-2Ex" secondAttribute="trailing" id="2aW-KG-Ffd"/>
+                            <constraint firstItem="tDa-CZ-WMO" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="79s-2N-e80"/>
+                            <constraint firstItem="ijV-J3-7Jd" firstAttribute="trailing" secondItem="2T5-M3-hkp" secondAttribute="trailing" id="Dfu-fj-8Jf"/>
                             <constraint firstItem="YH5-26-UiX" firstAttribute="centerY" secondItem="ijV-J3-7Jd" secondAttribute="centerY" multiplier="1.178" id="Pzq-WW-jvA"/>
                             <constraint firstItem="bkU-7Z-2Ex" firstAttribute="top" secondItem="ijV-J3-7Jd" secondAttribute="top" id="cFf-Iy-cEt"/>
+                            <constraint firstItem="2T5-M3-hkp" firstAttribute="bottom" secondItem="ijV-J3-7Jd" secondAttribute="bottom" id="fhh-Ud-Pxt"/>
                             <constraint firstItem="YH5-26-UiX" firstAttribute="width" secondItem="xsr-mT-LOK" secondAttribute="width" multiplier="0.550725" id="hQB-TV-EDu"/>
                             <constraint firstItem="bkU-7Z-2Ex" firstAttribute="leading" secondItem="ijV-J3-7Jd" secondAttribute="leading" id="hoB-Nx-RkO"/>
                             <constraint firstItem="YH5-26-UiX" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="lso-HP-ZGH"/>
                             <constraint firstItem="ijV-J3-7Jd" firstAttribute="bottom" secondItem="bkU-7Z-2Ex" secondAttribute="bottom" id="pjM-fS-A51"/>
+                            <constraint firstItem="tDa-CZ-WMO" firstAttribute="bottom" secondItem="2T5-M3-hkp" secondAttribute="bottom" id="rGE-7N-6dl"/>
+                            <constraint firstItem="2T5-M3-hkp" firstAttribute="leading" secondItem="ijV-J3-7Jd" secondAttribute="leading" id="wik-Yg-Jub"/>
+                            <constraint firstItem="2T5-M3-hkp" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="ysJ-qA-IlM"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="6bP-w6-7dN" appends="YES" id="Nfg-ZM-XKR"/>
@@ -427,6 +443,8 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Calculator" largeTitleDisplayMode="never" id="U2L-UL-J99"/>
                     <connections>
+                        <outlet property="answerPageControl" destination="tDa-CZ-WMO" id="7ZK-p5-9zI"/>
+                        <outlet property="answerScrollView" destination="2T5-M3-hkp" id="Dkf-VW-s3V"/>
                         <outlet property="answerView" destination="k0p-5o-Y32" id="IMs-8q-Zh3"/>
                         <outlet property="changeFormButton1" destination="OF1-ca-qaH" id="Cde-pI-eAs"/>
                         <outlet property="changeFormButton2" destination="JjW-DE-ueV" id="j1a-Zu-Im8"/>
