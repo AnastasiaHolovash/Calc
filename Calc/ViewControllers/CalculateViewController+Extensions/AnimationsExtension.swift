@@ -13,10 +13,10 @@ extension CalculateViewController {
     // MARK: - showResultButton Animation
     
     func showResultButtonAnimationSetup() {
-        self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        self.answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        self.answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
     }
     
     @objc func keyboardWillChange(notification: Notification) {
@@ -54,6 +54,16 @@ extension CalculateViewController {
         }
     }
     
-    
+    func changeAnswerView(toScroll: Bool) {
+        if toScroll {
+            answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+            answerPageControl.transform = CGAffineTransform(translationX: 0, y: 0)
+            answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        } else {
+            answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+            answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+            answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+    }
 
 }

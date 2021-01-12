@@ -19,16 +19,22 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         switch operationBar.curentOperationName {
         case .plus:
             showPlusRecult()
+//            changeAnswerView(toScroll: false)
         case .minus:
             showMinusRecult()
+//            changeAnswerView(toScroll: false)
         case .multiplication:
             showMultiplyRecult()
+//            changeAnswerView(toScroll: false)
         case .division:
             showDivideRecult()
+//            changeAnswerView(toScroll: false)
         case .pow:
             showPowRecult()
+//            changeAnswerView(toScroll: false)
         case .root:
             showRootRecult()
+//            changeAnswerView(toScroll: true)
         }
     }
     
@@ -155,7 +161,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     /// Prepare data for calculetion, calculete and show recult of pow operation. Recult presents in complex and exponential forms.
     func showRootRecult() {
         let data = prepareExpDataForCalc()
-        let result = complexRoot(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 0.0)
+        let result = complexRoot(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 1.0)
 
         print(result)
         

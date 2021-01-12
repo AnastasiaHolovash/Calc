@@ -186,6 +186,7 @@ extension CalculateViewController: OperationBarDelegate {
         nView.isHidden = false
         changeFormButton2.isUserInteractionEnabled = false
         changeFormButton2.backgroundColor = .gray
+        recalculate()
     }
     
     func selectedSwapOperation() {
