@@ -19,27 +19,21 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         switch operationBar.curentOperationName {
         case .plus:
             showPlusRecult()
-//            changeAnswerView(toScroll: false)
             showBaseAnswerView()
         case .minus:
             showMinusRecult()
-//            changeAnswerView(toScroll: false)
             showBaseAnswerView()
         case .multiplication:
             showMultiplyRecult()
-//            changeAnswerView(toScroll: false)
             showBaseAnswerView()
         case .division:
             showDivideRecult()
-//            changeAnswerView(toScroll: false)
             showBaseAnswerView()
         case .pow:
             showPowRecult()
-//            changeAnswerView(toScroll: false)
             showBaseAnswerView()
         case .root:
             showRootRecult()
-//            changeAnswerView(toScroll: true)
             showScrolAnswerView()
         }
     }
@@ -175,6 +169,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         setupSlideScrollView(slides: answerViews)
         answerPageControl.numberOfPages = answerViews.count
         answerPageControl.currentPage = 0
+        answerScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         view.bringSubviewToFront(answerPageControl)
     }
     

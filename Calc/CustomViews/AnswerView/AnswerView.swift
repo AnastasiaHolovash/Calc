@@ -48,15 +48,4 @@ class AnswerView: UIView {
         viewWithShadow.addShadow()
     }
     
-//    public func show() {
-//        UIView.animate(withDuration: 2) {
-//            self.viewWithShadow.alpha = 1
-//        }
-//    }
-//    
-//    public func hide() {
-//        UIView.animate(withDuration: 2) {
-//            self.viewWithShadow.alpha = 0
-//        }
-//    }
 }

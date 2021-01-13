@@ -11,19 +11,15 @@ import UIKit
 extension UIView {
     
     func addShadow() {
-        self.backgroundColor = infoPresentBackgroundColor
-        self.layer.cornerRadius = 20
+        backgroundColor = infoPresentBackgroundColor
+        layer.cornerRadius = 20
         
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shadowRadius = 8
-        self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 1
-        self.layer.shadowColor = shadowColor.cgColor
-        
-        
-//        self.layer.shadowOffset = CGSize(width: 0, height: 1)
-        
-        
+        layer.shadowRadius = 8
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = 1
+        layer.shadowColor = shadowColor.cgColor
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
     }
     
     
