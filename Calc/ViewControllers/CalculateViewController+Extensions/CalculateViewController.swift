@@ -15,6 +15,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var changeFormButtonSuperHeight1: NSLayoutConstraint!
     @IBOutlet weak var changeFormButtonSuperHeight2: NSLayoutConstraint!
     
+    @IBOutlet weak var generalAnswerView: UIView!
     @IBOutlet weak var answerView: AnswerView!
     @IBOutlet weak var answerScrollView: UIScrollView!
     @IBOutlet weak var answerPageControl: UIPageControl!
@@ -45,7 +46,7 @@ class CalculateViewController: UIViewController {
         
         addObserver()
         buttonsSetup()
-        showResultButtonAnimationSetup()
+        showResultAnimationSetup()
         operationBar.changeSelectedOperation()
         delegatesSetup()
         

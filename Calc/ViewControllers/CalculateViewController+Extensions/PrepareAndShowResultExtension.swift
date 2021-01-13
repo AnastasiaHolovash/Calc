@@ -20,21 +20,27 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         case .plus:
             showPlusRecult()
 //            changeAnswerView(toScroll: false)
+            showBaseAnswerView()
         case .minus:
             showMinusRecult()
 //            changeAnswerView(toScroll: false)
+            showBaseAnswerView()
         case .multiplication:
             showMultiplyRecult()
 //            changeAnswerView(toScroll: false)
+            showBaseAnswerView()
         case .division:
             showDivideRecult()
 //            changeAnswerView(toScroll: false)
+            showBaseAnswerView()
         case .pow:
             showPowRecult()
 //            changeAnswerView(toScroll: false)
+            showBaseAnswerView()
         case .root:
             showRootRecult()
 //            changeAnswerView(toScroll: true)
+            showScrolAnswerView()
         }
     }
     
@@ -174,6 +180,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     
     
     func setupSlideScrollView(slides: [AnswerView]) {
+        answerScrollView.subviews.forEach({ $0.removeFromSuperview() })
         answerScrollView.frame = CGRect(x: 0, y: view.frame.height * 0.5, width: view.frame.width, height: answerView.frame.height)
         answerScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: answerView.frame.height)
         answerScrollView.isPagingEnabled = true

@@ -374,9 +374,36 @@
                                         <rect key="frame" x="0.0" y="390.5" width="414" height="78"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-5o-Y32" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEq-23-nR1">
                                         <rect key="frame" x="0.0" y="390.5" width="414" height="282.5"/>
-                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-5o-Y32" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="282.5"/>
+                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                            </view>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-M3-hkp">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="282.5"/>
+                                            </scrollView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-CZ-WMO">
+                                                <rect key="frame" x="146" y="255" width="122.5" height="27.5"/>
+                                                <connections>
+                                                    <action selector="didChangeAnswerPageControl:" destination="Xc5-J0-IcI" eventType="valueChanged" id="Tn2-4G-z8o"/>
+                                                </connections>
+                                            </pageControl>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="k0p-5o-Y32" firstAttribute="leading" secondItem="eEq-23-nR1" secondAttribute="leading" id="1xK-AW-qxS"/>
+                                            <constraint firstAttribute="bottom" secondItem="tDa-CZ-WMO" secondAttribute="bottom" id="HG2-lP-oM6"/>
+                                            <constraint firstItem="k0p-5o-Y32" firstAttribute="top" secondItem="eEq-23-nR1" secondAttribute="top" id="KTV-vK-f7l"/>
+                                            <constraint firstAttribute="bottom" secondItem="k0p-5o-Y32" secondAttribute="bottom" id="Sst-fy-4Su"/>
+                                            <constraint firstItem="tDa-CZ-WMO" firstAttribute="centerX" secondItem="eEq-23-nR1" secondAttribute="centerX" id="Uac-JX-nBr"/>
+                                            <constraint firstItem="2T5-M3-hkp" firstAttribute="leading" secondItem="eEq-23-nR1" secondAttribute="leading" id="bnr-Wc-PQc"/>
+                                            <constraint firstAttribute="bottom" secondItem="2T5-M3-hkp" secondAttribute="bottom" id="dia-PP-kSv"/>
+                                            <constraint firstAttribute="trailing" secondItem="k0p-5o-Y32" secondAttribute="trailing" id="fTZ-bh-88K"/>
+                                            <constraint firstItem="2T5-M3-hkp" firstAttribute="top" secondItem="eEq-23-nR1" secondAttribute="top" id="khM-cx-f0Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="2T5-M3-hkp" secondAttribute="trailing" id="yA9-Yw-CjI"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -390,15 +417,6 @@
                                     <constraint firstItem="Owh-XS-hLr" firstAttribute="height" secondItem="bkU-7Z-2Ex" secondAttribute="height" multiplier="0.116" id="vHF-Kh-mbv"/>
                                 </constraints>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-M3-hkp">
-                                <rect key="frame" x="0.0" y="530.5" width="414" height="282.5"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-CZ-WMO">
-                                <rect key="frame" x="146" y="785.5" width="122.5" height="27.5"/>
-                                <connections>
-                                    <action selector="didChangeAnswerPageControl:" destination="Xc5-J0-IcI" eventType="valueChanged" id="Tn2-4G-z8o"/>
-                                </connections>
-                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH5-26-UiX">
                                 <rect key="frame" x="93" y="536.5" width="228" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -419,20 +437,13 @@
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="2T5-M3-hkp" firstAttribute="height" secondItem="k0p-5o-Y32" secondAttribute="height" id="1nj-ig-3Un"/>
                             <constraint firstItem="ijV-J3-7Jd" firstAttribute="trailing" secondItem="bkU-7Z-2Ex" secondAttribute="trailing" id="2aW-KG-Ffd"/>
-                            <constraint firstItem="tDa-CZ-WMO" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="79s-2N-e80"/>
-                            <constraint firstItem="ijV-J3-7Jd" firstAttribute="trailing" secondItem="2T5-M3-hkp" secondAttribute="trailing" id="Dfu-fj-8Jf"/>
                             <constraint firstItem="YH5-26-UiX" firstAttribute="centerY" secondItem="ijV-J3-7Jd" secondAttribute="centerY" multiplier="1.178" id="Pzq-WW-jvA"/>
                             <constraint firstItem="bkU-7Z-2Ex" firstAttribute="top" secondItem="ijV-J3-7Jd" secondAttribute="top" id="cFf-Iy-cEt"/>
-                            <constraint firstItem="2T5-M3-hkp" firstAttribute="bottom" secondItem="ijV-J3-7Jd" secondAttribute="bottom" id="fhh-Ud-Pxt"/>
                             <constraint firstItem="YH5-26-UiX" firstAttribute="width" secondItem="xsr-mT-LOK" secondAttribute="width" multiplier="0.550725" id="hQB-TV-EDu"/>
                             <constraint firstItem="bkU-7Z-2Ex" firstAttribute="leading" secondItem="ijV-J3-7Jd" secondAttribute="leading" id="hoB-Nx-RkO"/>
                             <constraint firstItem="YH5-26-UiX" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="lso-HP-ZGH"/>
                             <constraint firstItem="ijV-J3-7Jd" firstAttribute="bottom" secondItem="bkU-7Z-2Ex" secondAttribute="bottom" id="pjM-fS-A51"/>
-                            <constraint firstItem="tDa-CZ-WMO" firstAttribute="bottom" secondItem="2T5-M3-hkp" secondAttribute="bottom" id="rGE-7N-6dl"/>
-                            <constraint firstItem="2T5-M3-hkp" firstAttribute="leading" secondItem="ijV-J3-7Jd" secondAttribute="leading" id="wik-Yg-Jub"/>
-                            <constraint firstItem="2T5-M3-hkp" firstAttribute="centerX" secondItem="ijV-J3-7Jd" secondAttribute="centerX" id="ysJ-qA-IlM"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="6bP-w6-7dN" appends="YES" id="Nfg-ZM-XKR"/>
@@ -454,6 +465,7 @@
                         <outlet property="complexView2" destination="f1G-Uz-Cb7" id="LrX-5g-zP5"/>
                         <outlet property="expView1" destination="guJ-Ll-5gi" id="DSq-jm-ADv"/>
                         <outlet property="expView2" destination="jGE-vI-wdn" id="RxT-0f-QX9"/>
+                        <outlet property="generalAnswerView" destination="eEq-23-nR1" id="qgN-JE-vQp"/>
                         <outlet property="nView" destination="eWc-gK-5Wd" id="Lb4-5M-HA4"/>
                         <outlet property="operationBar" destination="Owh-XS-hLr" id="vBP-XD-LnL"/>
                         <outlet property="showResultButton" destination="YH5-26-UiX" id="GHt-CJ-zLp"/>
