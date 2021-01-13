@@ -162,8 +162,6 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     func showRootRecult() {
         let data = prepareExpDataForCalc()
         let result = complexRoot(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 1.0)
-
-        print(result)
         
         let answerViews = crearePages(result)
         setupSlideScrollView(slides: answerViews)
@@ -194,7 +192,12 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         for i in 0..<result.count {
             let newView = AnswerView()
             let expForm = complexToExpNumber(Im: result[i].im, Re: result[i].re)
-            newView.expAnswerLabel.text = expNumberToString(moduleZ: expForm.moduleZ, arcFi: expForm.arc)
+            let expFormString = expNumberToString(moduleZ: expForm.moduleZ, arcFi: expForm.arc)
+            if expFormString == NSLocalizedString("Uncertainty", comment: "It is impossible to calculate the exact value") {
+                newView.expAnswerLabel.text = expFormString
+            } else {
+                newView.expAnswerLabel.attributedText = attributedStringResult(fullstringResult: expFormString)
+            }
             newView.complexAnswerLabel.text = complexNumberToString(Re: result[i].re, Im: result[i].im)
             newView.numberLabel.isHidden = false
             newView.numberLabel.text = "\(i + 1)"
