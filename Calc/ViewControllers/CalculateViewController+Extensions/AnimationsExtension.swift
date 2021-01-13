@@ -12,31 +12,56 @@ extension CalculateViewController {
     
     // MARK: - showResultButton Animation
     
-    func showResultButtonAnimationSetup() {
-        self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        
+    func showResultAnimationSetup() {
+        showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        generalAnswerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+
     }
     
     @objc func keyboardWillChange(notification: Notification) {
         
         if notification.name.rawValue == "UIKeyboardWillShowNotification"{
             UIView.animate(withDuration: 1) {
-                self.answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+                self.generalAnswerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
             UIView.animate(withDuration: 2) {
                 self.showResultButton.transform = CGAffineTransform(translationX: 0, y: 0)
             }
         } else {
+            
             UIView.animate(withDuration: 2) {
                 self.showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
             UIView.animate(withDuration: 1) {
-                self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.generalAnswerView.transform = CGAffineTransform(translationX: 0, y: 0)
             }
         }
     }
     
+    func changeAnswerView(toScroll: Bool) {
+        if toScroll {
+            answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+            answerPageControl.transform = CGAffineTransform(translationX: 0, y: 0)
+            answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        } else {
+            answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+            answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+            answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+    }
     
+    func showBaseAnswerView() {
+        
+        answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+    }
+    
+    func showScrolAnswerView() {
+        
+        answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+        answerPageControl.transform = CGAffineTransform(translationX: 0, y: 0)
+        answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+    }
 
 }

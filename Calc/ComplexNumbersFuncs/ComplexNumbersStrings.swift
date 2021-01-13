@@ -47,7 +47,7 @@ func attributedStringResult(fullstringResult: String, fontSize: Int = 20) -> NSA
      
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
 
-    let eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    let eIndex = fullstringResult.lastIndex(of: "e") ?? fullstringResult.endIndex
     let eLocation = fullstringResult[..<eIndex].count + 1
 
     var length = fullstringResult.count - eLocation
@@ -70,8 +70,6 @@ Creates a string of number in a complex form.
 - Returns: String of complex number.
 */
 func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
-//    print(Re)
-//    print(Im)
     if Re.isNaN || Im.isNaN {
         return NSLocalizedString("Uncertainty", comment: "")
     } else {
@@ -80,6 +78,40 @@ func complexNumberToString(Re: Double, Im: Double, roundTo decimalPlases: Int = 
         } else {
             return "\(Re.smartRound(decimalPlases: decimalPlases))" + " + i" + "\(Im.smartRound(decimalPlases: decimalPlases))"
         }
+    }
+}
+
+
+/**
+Creates a string of number in a complex form using scientific formating.
+ 
+- Parameters:
+    - Re:The real part of the complex number.
+    - Im: The imaginary part of the complex number.
+    - decimalPlases: The required number of digits after the floating point. The default equel 4.
+ 
+- Returns: String of complex number.
+*/
+func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> String {
+    if Re.isNaN || Im.isNaN {
+        return NSLocalizedString("Uncertainty", comment: "")
+    } else {
+        
+        var im: String {
+            if abs(Im) > 10000 {
+                return Im > 0 ? (Formatter.scientific.string(for: Im) ?? "").remuvePlus()
+ : (Formatter.scientific.string(for: -Im) ?? "").remuvePlus()
+            } else {
+                return Im > 0 ? "\(Im.smartRound(decimalPlases: decimalPlases))" : "\((-Im).smartRound(decimalPlases: decimalPlases))"
+            }
+        }
+    
+        var re: String {
+            let formatedRe = (Formatter.scientific.string(for: Re) ?? "").remuvePlus()
+            return abs(Re) > 10000 ? formatedRe : "\(Re.smartRound(decimalPlases: decimalPlases))"
+        }
+    
+        return Im > 0 ? re + " + i" + im : re + " - i" + im
     }
 }
 
@@ -99,35 +131,6 @@ func makeANumber(sign: Bool, number: String) -> Double {
         return double
     } else {
         return -double
-    }
-}
-
-
-// MARK:- using scientificFormatted() func
-
-func complexNumberToStringWithFormating(Re: Double, Im: Double, roundTo decimalPlases: Int = 4) -> NSAttributedString {
-    if Re.isNaN || Im.isNaN {
-        return NSAttributedString(string: NSLocalizedString("Uncertainty", comment: ""))
-    } else {
-        
-        var im: NSAttributedString {
-            if abs(Im) > 10000 {
-                return Im > 0 ? Im.scientificFormatted() : (-Im).scientificFormatted()
-            } else {
-                return Im > 0 ? NSAttributedString(string: "\(Im.smartRound(decimalPlases: decimalPlases))") : NSAttributedString(string: "\((-Im).smartRound(decimalPlases: decimalPlases))")
-            }
-        }
-    
-        var re: NSAttributedString {
-            return abs(Re) > 10000 ? Re.scientificFormatted() : NSAttributedString(string: "\(Re.smartRound(decimalPlases: decimalPlases))")
-        }
-        
-        let result = NSMutableAttributedString()
-        result.append(re)
-        Im > 0 ? result.append(NSAttributedString(string: " + i")) : result.append(NSAttributedString(string: " - i"))
-        result.append(im)
-        
-        return result
     }
 }
 
@@ -156,11 +159,8 @@ func expNumberToStringWithFormating(moduleZ: Double, arcFi: Double, roundTo deci
             return arcFi > 0 ? "\(arcFi.smartRound(decimalPlases: decimalPlases))" : "\((-arcFi).smartRound(decimalPlases: decimalPlases))"
         }
         
-        if arcFi < 0{
-            return stringModuleZ + "∙e-i" + "\(stringArcFi)" + "°"
-        } else {
-            return stringModuleZ + "∙ei" + "\(stringArcFi)" + "°"
-        }
+        return arcFi < 0 ? stringModuleZ + "∙e-i" + "\(stringArcFi)" + "°" : stringModuleZ + "∙ei" + "\(stringArcFi)" + "°"
+        
     }
 }
 
@@ -172,42 +172,104 @@ func expNumberToStringWithFormating(moduleZ: Double, arcFi: Double, roundTo deci
  
 - Returns: Attributed String of complex number.
 */
-func attributedStringResultWithFormating(fullstringResult: inout String, fontSize: Int = 20) -> NSAttributedString {
+func expAttributedStringResultWithFormating(fullstringResult: inout String, fontSize: Int = 20) -> NSAttributedString {
+    let firstSymbolFont: UIFont? = UIFont.systemFont(ofSize: 15, weight: .light)
+    
     /// Font for the number before the exponent.
     let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
+    
     /// Font for exponent degree.
     let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 5 / 6))
-
+    
+    /// Ranges which should be atttributed
     var ranges: [NSRange] = []
     
-    var eIndex: String.Index
-    var eLocation: Int
+    fullstringResult = " " + fullstringResult
     
-    if let upperSignIndex = fullstringResult.firstIndex(of: "^") {
-        fullstringResult.remove(at: upperSignIndex)
-        let upperSignLocation = fullstringResult[..<upperSignIndex].count
-        
-        eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
-        eLocation = fullstringResult[..<eIndex].count - 1
-        
-        let length = eLocation - upperSignLocation
-        ranges.append(NSRange(location: upperSignLocation, length: length))
+    /// Part of string before "√"
+    if let degreeOfTheRootRange = fullstringResult.findTheDegreeOfTheRootRange() {
+        ranges.append(degreeOfTheRootRange)
     }
     
-    eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    /// For exponential representation for too big numbers
+    if let degreeOfBigNumberRange = fullstringResult.findTheDegreeOfBigNumbers() {
+        ranges.append(degreeOfBigNumberRange)
+    }
     
-    eLocation = fullstringResult[..<eIndex].count + 1
+    /// Part of string after "e" before ")"
+    let eIndex = fullstringResult.firstIndex(of: "e") ?? fullstringResult.endIndex
+    let eLocation = fullstringResult[..<eIndex].count + 1
     var length = fullstringResult.count - eLocation
-    if fullstringResult.firstIndex(of: ")") != nil {
-        length -= 1
+    
+    if let indexOfClosePartnth = fullstringResult.firstIndex(of: ")") {
+        
+        let lengthAfterClosePartnth = fullstringResult[indexOfClosePartnth...].count
+        length -= lengthAfterClosePartnth
     }
     ranges.append(NSRange(location: eLocation, length: length))
     
+    /// If there is number after ")"
+    if let afterClosePartnthRange = fullstringResult.findTheDegreeOfNuberRange() {
+        ranges.append(afterClosePartnthRange)
+    }
+    
+    /// Seting the attributes
     let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
+    attString.setAttributes([.font:firstSymbolFont!], range: NSRange(location: 0, length: 1))
     
     for i in 0..<ranges.count {
         attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: ranges[i])
     }
+    attString.endEditing()
+    
+    return attString
+}
+
+
+/**
+- Parameters:
+   -  fullstringResult: String of complex number in a exponensial form.
+   -  fontSize: Font size of module of number. Size of angle calculated automatically.  The default value is 20.
+ 
+- Returns: Attributed String of complex number.
+*/
+func complexAttributedStringResultWithFormating(fullstringResult: inout String, fontSize: Int = 20) -> NSAttributedString {
+    let firstSymbolFont: UIFont? = UIFont.systemFont(ofSize: 15, weight: .light)
+    
+    /// Font for the number before the exponent.
+    let font: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize))
+    
+    /// Font for exponent degree.
+    let fontSuper: UIFont? = UIFont(name: "Helvetica", size: CGFloat(fontSize * 5 / 6))
+    
+    /// Ranges which should be atttributed
+    var ranges: [NSRange] = []
+    
+    fullstringResult = " " + fullstringResult
+    
+    /// Part of string before "√"
+    if let degreeOfTheRootRange = fullstringResult.findTheDegreeOfTheRootRange() {
+        ranges.append(degreeOfTheRootRange)
+    }
+    
+    /// For exponential representation for too big numbers
+    while let degreeOfBigNumberRange = fullstringResult.findTheDegreeOfBigNumbers() {
+        ranges.append(degreeOfBigNumberRange)
+    }
+    
+    /// If there is number after ")"
+    if let afterClosePartnthRange = fullstringResult.findTheDegreeOfNuberRange() {
+        ranges.append(afterClosePartnthRange)
+    }
+    
+    /// Seting the attributes
+    let attString: NSMutableAttributedString = NSMutableAttributedString(string: fullstringResult, attributes: [.font:font!])
+    attString.setAttributes([.font:firstSymbolFont!], range: NSRange(location: 0, length: 1))
+    
+    for i in 0..<ranges.count {
+        attString.setAttributes([.font:fontSuper!,.baselineOffset:10], range: ranges[i])
+    }
+    attString.endEditing()
     
     return attString
 }

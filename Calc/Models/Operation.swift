@@ -74,6 +74,8 @@ enum NameOfOperation: String, Codable {
     case minus
     case multiplication
     case division
+    case pow
+    case root
 }
 
 
@@ -81,6 +83,7 @@ enum NameOfOperation: String, Codable {
 enum NumberType: String, Codable {
     case exp
     case complex
+    case n
 }
 
 
@@ -107,5 +110,5 @@ struct Calculate: Codable, Equatable {
 struct ComplexNumber: Codable, Equatable {
     let numberType: NumberType
     let part1: Double
-    let part2: Double
+    let part2: Double?
 }

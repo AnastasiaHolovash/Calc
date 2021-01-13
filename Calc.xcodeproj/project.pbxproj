@@ -56,6 +56,8 @@
 		5DBF245B248819DC001EB10B /* ExpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBF245A248819DC001EB10B /* ExpView.xib */; };
 		5DBF245D248819F2001EB10B /* ExpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBF245C248819F2001EB10B /* ExpView.swift */; };
 		5DD6673E24A6A417002C321D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD6673D24A6A417002C321D /* String+Extensions.swift */; };
+		5DF10F9D25AA2B9300E701D9 /* NView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF10F9C25AA2B9300E701D9 /* NView.xib */; };
+		5DF10FA025AA2FEF00E701D9 /* NView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF10F9F25AA2FEF00E701D9 /* NView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		5DBF245A248819DC001EB10B /* ExpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpView.xib; sourceTree = "<group>"; };
 		5DBF245C248819F2001EB10B /* ExpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpView.swift; sourceTree = "<group>"; };
 		5DD6673D24A6A417002C321D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5DF10F9C25AA2B9300E701D9 /* NView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NView.xib; sourceTree = "<group>"; };
+		5DF10F9F25AA2FEF00E701D9 /* NView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				5D956277249A2FDF00C03364 /* HistoryTableViewCell */,
-				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
 				5D020AF024B22F1D006B83E7 /* InfoTableViewCell2 */,
+				5D020ADC24B0CB98006B83E7 /* InfoTableViewCell */,
 				5D020AF524B50B33006B83E7 /* InfoTableViewCell3 */,
 			);
 			path = CustomTableViewCells;
@@ -260,6 +264,7 @@
 			children = (
 				5DBF245E248819FF001EB10B /* ExpView */,
 				5D95625E248EE91D00C03364 /* ComplexView */,
+				5DF10F9B25AA2B6300E701D9 /* NView */,
 				5D85989324C39D9F001A1F21 /* ChangeSignButton.swift */,
 			);
 			path = RepresentationOfComplexNumbers;
@@ -371,6 +376,15 @@
 			path = ExpView;
 			sourceTree = "<group>";
 		};
+		5DF10F9B25AA2B6300E701D9 /* NView */ = {
+			isa = PBXGroup;
+			children = (
+				5DF10F9F25AA2FEF00E701D9 /* NView.swift */,
+				5DF10F9C25AA2B9300E701D9 /* NView.xib */,
+			);
+			path = NView;
+			sourceTree = "<group>";
+		};
 		5DF11BF224D3354D006C7DA7 /* SuppotingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +461,7 @@
 				5D43D76225A4E78700349E6C /* AnswerView.xib in Resources */,
 				5D956276249A2F8300C03364 /* HistoryTableViewCell.xib in Resources */,
 				5D020AF424B22F43006B83E7 /* InfoTableViewCell2.xib in Resources */,
+				5DF10F9D25AA2B9300E701D9 /* NView.xib in Resources */,
 				5D020AF924B50B63006B83E7 /* InfoTableViewCell3.xib in Resources */,
 				5D020AE024B0CBE2006B83E7 /* InfoTableViewCell.xib in Resources */,
 				5D43D75025A4839E00349E6C /* Main.storyboard in Resources */,
@@ -477,6 +492,7 @@
 				5D020ADF24B0CBE2006B83E7 /* InfoTableViewCell.swift in Sources */,
 				5DB8B8BD24B7CC42007167D6 /* ComplexNumbersStrings.swift in Sources */,
 				5D95626B249042BA00C03364 /* HistoryViewController.swift in Sources */,
+				5DF10FA025AA2FEF00E701D9 /* NView.swift in Sources */,
 				5D020AF324B22F43006B83E7 /* InfoTableViewCell2.swift in Sources */,
 				5D17F30124D0E35E009501C7 /* ShowResultExtension.swift in Sources */,
 				5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */,

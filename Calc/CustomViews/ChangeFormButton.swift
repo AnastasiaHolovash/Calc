@@ -38,6 +38,8 @@ class ChangeFormButton: UIButton {
                 complexView.isHidden = true
                 expView.isHidden = false
                 curentForm = .exp
+            default:
+                print("Error")
             }
         }
     }

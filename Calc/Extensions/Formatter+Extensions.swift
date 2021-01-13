@@ -32,27 +32,27 @@ extension String {
     }
 }
 
-extension Numeric where Self: Comparable {
-    
-    func scientificFormatted() -> NSMutableAttributedString {
-        
-        let stringFromFormatter = (Formatter.scientific.string(for: self) ?? "").remuvePlus()
-        
-        /// ["4.267∙10", "-1"] example of  `splitedString`
-        let splitedString = stringFromFormatter.split(separator: "^")
-
-        let result = NSMutableAttributedString()
-
-        guard let font: UIFont = UIFont(name: "Helvetica", size:18) else { return NSMutableAttributedString() }
-        guard let fontUpper: UIFont = UIFont(name: "Helvetica", size:12) else { return NSMutableAttributedString() }
-        
-        let attributedPart1: NSMutableAttributedString = NSMutableAttributedString(string: String(splitedString[0]), attributes: [.font: font])
-        let attributedPart2: NSMutableAttributedString = NSMutableAttributedString(string: String(splitedString[1]), attributes: [.font: fontUpper,.baselineOffset:10])
-
-        result.append(attributedPart1)
-        result.append(attributedPart2)
-
-        return result
-    }
-}
+//extension Numeric where Self: Comparable {
+//    
+//    func scientificFormatted() -> NSMutableAttributedString {
+//        
+//        let stringFromFormatter = (Formatter.scientific.string(for: self) ?? "").remuvePlus()
+//        
+//        /// ["4.267∙10", "-1"] example of  `splitedString`
+//        let splitedString = stringFromFormatter.split(separator: "^")
+//
+//        let result = NSMutableAttributedString()
+//
+//        guard let font: UIFont = UIFont(name: "Helvetica", size:18) else { return NSMutableAttributedString() }
+//        guard let fontUpper: UIFont = UIFont(name: "Helvetica", size:12) else { return NSMutableAttributedString() }
+//        
+//        let attributedPart1: NSMutableAttributedString = NSMutableAttributedString(string: String(splitedString[0]), attributes: [.font: font])
+//        let attributedPart2: NSMutableAttributedString = NSMutableAttributedString(string: String(splitedString[1]), attributes: [.font: fontUpper,.baselineOffset:10])
+//
+//        result.append(attributedPart1)
+//        result.append(attributedPart2)
+//
+//        return result
+//    }
+//}
     

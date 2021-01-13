@@ -15,7 +15,10 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var changeFormButtonSuperHeight1: NSLayoutConstraint!
     @IBOutlet weak var changeFormButtonSuperHeight2: NSLayoutConstraint!
     
+    @IBOutlet weak var generalAnswerView: UIView!
     @IBOutlet weak var answerView: AnswerView!
+    @IBOutlet weak var answerScrollView: UIScrollView!
+    @IBOutlet weak var answerPageControl: UIPageControl!
     
     @IBOutlet weak var showResultButton: UIButton!
     @IBOutlet weak var showResultButtonHeight: NSLayoutConstraint!
@@ -27,11 +30,14 @@ class CalculateViewController: UIViewController {
     
     @IBOutlet weak var expView2: ExpView!
     @IBOutlet weak var complexView2: ComplexView!
+    @IBOutlet weak var nView: NView!
     
     /// number for save
     var firstNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
     /// number for save
     var secondNumber: ComplexNumber = ComplexNumber(numberType: NumberType.exp, part1: 0.0, part2: 0.0)
+    /// Array of Answer Views for root operation redults
+    var answerViews: [AnswerView] = []
         
     var tabBarC: CustomTabBarController!
     
@@ -40,7 +46,7 @@ class CalculateViewController: UIViewController {
         
         addObserver()
         buttonsSetup()
-        showResultButtonAnimationSetup()
+        showResultAnimationSetup()
         operationBar.changeSelectedOperation()
         delegatesSetup()
         
@@ -53,15 +59,17 @@ class CalculateViewController: UIViewController {
         if let number = tabBarC.transferNumber {
             switch number.numberType {
             case .exp:
-                expView1.setNumber(beforeExpNumber: number.part1.simpleRound(decimalPlases: 4), afterExpNumber: number.part2.simpleRound(decimalPlases: 4))
+                expView1.setNumber(beforeExpNumber: number.part1.simpleRound(decimalPlases: 4), afterExpNumber: number.part2?.simpleRound(decimalPlases: 4) ?? 0.0)
                 if expView1.isHidden {
                     changeFormButton1.changeForm()
                 }
             case .complex:
-                complexView1.setNumber(reNumber: number.part1.simpleRound(decimalPlases: 4), imNumber: number.part2.simpleRound(decimalPlases: 4))
+                complexView1.setNumber(reNumber: number.part1.simpleRound(decimalPlases: 4), imNumber: number.part2?.simpleRound(decimalPlases: 4) ?? 0.0)
                 if complexView1.isHidden {
                     changeFormButton1.changeForm()
                 }
+            default:
+                print("Error")
             }
             tabBarC.transferNumber = nil
         }
@@ -72,6 +80,7 @@ class CalculateViewController: UIViewController {
         expView2.delegate = self
         complexView1.delegate = self
         complexView2.delegate = self
+        answerScrollView.delegate = self
         
         guard let tabBar = self.tabBarController as? CustomTabBarController else { return }
         tabBarC = tabBar
@@ -114,6 +123,8 @@ class CalculateViewController: UIViewController {
             showResultButton.layer.cornerRadius = CGFloat((Double(showResultButton.frame.height) ) / 2.5)
         }
         
+        answerPageControl.currentPageIndicatorTintColor = .label
+        answerPageControl.pageIndicatorTintColor = .lightGray
     }
     
     @IBAction func didPressChangeForm(_ sender: ChangeFormButton) {
@@ -128,6 +139,7 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
+        nView.hidekeybourd()
         prepareNumbersForHistoryUpdating()
         let operation = Operation.calculate(Calculate(operation: operationBar.curentOperationName, number1: firstNumber, number2: secondNumber))
         History.shared.addOperationToHistory(operation: operation)
@@ -139,6 +151,12 @@ class CalculateViewController: UIViewController {
         expView2.hidekeybourd()
         complexView1.hidekeybourd()
         complexView2.hidekeybourd()
+        nView.hidekeybourd()
+    }
+    
+    
+    @IBAction func didChangeAnswerPageControl(_ sender: UIPageControl) {
+        answerScrollView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(sender.currentPage), y: 0), animated: true)
     }
     
 }
@@ -152,21 +170,52 @@ extension CalculateViewController: OperationDelegate {
             operationBar.curentOperationName = calculate.operation
             operationBar.changeSelectedOperation()
             recalculate()
-            self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+            if operationBar.curentOperationName == .root {
+                self.answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+            } else {
+                self.answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+            }
         }
     }
     
 }
 
 extension CalculateViewController: OperationBarDelegate {
+    func selectedPowOrRootOperation() {
+        expView2.isHidden = true
+        complexView2.isHidden = true
+        nView.isHidden = false
+        changeFormButton2.isUserInteractionEnabled = false
+        changeFormButton2.backgroundColor = .gray
+        recalculate()
+    }
+    
     func selectedSwapOperation() {
         prepareNumbersForHistoryUpdating()
         setNumbers(number1: secondNumber, number2: firstNumber)
         recalculate()
     }
     
-    func selectedNewOperation() {
+    func selectedNewSimpleOperation() {
+        nView.isHidden = true
+        switch changeFormButton2.curentForm {
+        case .complex:
+            complexView2.isHidden = false
+        case .exp:
+            expView2.isHidden = false
+        default:
+            print("Error")
+        }
+        changeFormButton2.isUserInteractionEnabled = true
+        changeFormButton2.backgroundColor = .systemIndigo
         recalculate()
+    }
+}
+
+extension CalculateViewController : UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageIndex = round(Float(scrollView.contentOffset.x / view.frame.width))
+        answerPageControl.currentPage = Int(pageIndex)
     }
 }
 

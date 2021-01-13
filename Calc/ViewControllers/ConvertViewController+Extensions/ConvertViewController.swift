@@ -109,6 +109,8 @@ class ConvertViewController: UIViewController {
             
             expView.hidekeybourd()
             complexView.hidekeybourd()
+        default:
+            print("Error")
         }
     }
     
@@ -122,6 +124,8 @@ class ConvertViewController: UIViewController {
         case .complex:
             let complexNumber = makeComplexNumber()
             showExpResult(re: complexNumber.re, im: complexNumber.im)
+        default:
+            print("Error")
         }
     }
     
@@ -145,6 +149,8 @@ extension ConvertViewController: ChangeSignBottomsDelegate {
         case .complex:
             let complexNumber = makeComplexNumber()
             showExpResult(re: complexNumber.re, im: complexNumber.im)
+        default:
+            print("Error")
         }
     }
     
