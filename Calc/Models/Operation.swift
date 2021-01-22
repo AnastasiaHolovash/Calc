@@ -76,6 +76,21 @@ enum NameOfOperation: String, Codable {
     case division
     case pow
     case root
+    
+    var image: UIImage? {
+        switch self {
+        case .plus:
+            return UIImage(named: "plus")
+        case .minus:
+            return UIImage(named: "minus")
+        case .multiplication:
+            return UIImage(named: "multiply")
+        case .division:
+            return UIImage(named: "divide")
+        case .pow, .root:
+            return UIImage()
+        }
+    }
 }
 
 

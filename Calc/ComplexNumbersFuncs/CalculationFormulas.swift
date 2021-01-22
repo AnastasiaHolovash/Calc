@@ -15,8 +15,8 @@ import UIKit
  
  i = √(-1)
 */
-func plus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
-    return (Re: (Re1 + Re2), Im: (Im1 + Im2))
+func plus(re1: Double, re2: Double, im1: Double, im2: Double) -> (Re: Double, Im: Double) {
+    return (Re: (re1 + re2), Im: (im1 + im2))
 }
 
 
@@ -27,8 +27,8 @@ func plus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im
  
  i = √(-1)
 */
-func minus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
-    return (Re: (Re1 - Re2), Im: (Im1 - Im2))
+func minus(re1: Double, re2: Double, im1: Double, im2: Double) -> (Re: Double, Im: Double) {
+    return (Re: (re1 - re2), Im: (im1 - im2))
 }
 
 
@@ -39,8 +39,8 @@ func minus(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, I
  
  i = √(-1)
 */
-func multiply(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
-    return (Re: (Re1*Re2 - Im1*Im2), Im: (Re1*Im2 + Re2*Im1))
+func multiply(re1: Double, re2: Double, im1: Double, im2: Double) -> (Re: Double, Im: Double) {
+    return (Re: (re1*re2 - im1*im2), Im: (re1*im2 + re2*im1))
 }
 
 
@@ -51,9 +51,9 @@ func multiply(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double
  
  i = √(-1)
 */
-func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, Im: Double) {
-    let re = (Re1*Re2 + Im1*Im2) / (pow(Re2, 2) + pow(Im2, 2))
-    let im = (Re2*Im1 - Re1*Im2) / (pow(Re2, 2) + pow(Im2, 2))
+func divide(re1: Double, re2: Double, im1: Double, im2: Double) -> (Re: Double, Im: Double) {
+    let re = (re1*re2 + im1*im2) / (pow(re2, 2) + pow(im2, 2))
+    let im = (re2*im1 - re1*im2) / (pow(re2, 2) + pow(im2, 2))
     return (Re: re, Im: im)
 }
 
@@ -69,15 +69,15 @@ func divide(Re1: Double, Re2: Double, Im1: Double, Im2: Double) -> (Re: Double, 
  
  𝝋 = arg(z)
  
- - Parameter Im: The imaginary part of the complex number.
- - Parameter Re: The real part of the complex number.
+ - Parameter im: The imaginary part of the complex number.
+ - Parameter re: The real part of the complex number.
 
  - Returns: Module of number in exponential form, Angle of number in exponential form in degrees
  */
-func complexToExpNumber(Im: Double, Re: Double) -> (moduleZ: Double, arc: Double) {
-    let moduleZ = sqrt(pow(Im, 2) + pow(Re, 2))
-    let im = Im == -0 ? 0 : Im
-    let re = Re == -0 ? 0 : Re
+func complexToExpNumber(im: Double, re: Double) -> (moduleZ: Double, arc: Double) {
+    let moduleZ = sqrt(pow(im, 2) + pow(re, 2))
+    let im = im == -0 ? 0 : im
+    let re = re == -0 ? 0 : re
     let arcFi = atan2(im, re).rad()
     return (moduleZ, arcFi)
 }
@@ -101,9 +101,9 @@ Converts an exponential number into a complex number.
 - Returns: Complex number.
 */
 func expToComplexNumber(modulZ: Double, arc:Double) -> (re:Double, im: Double) {
-    let Re = modulZ * cos(arc.degree())
-    let Im = modulZ * sin(arc.degree())
-    return (re: Re, im: Im)
+    let re = modulZ * cos(arc.degree())
+    let im = modulZ * sin(arc.degree())
+    return (re: re, im: im)
 }
 
 

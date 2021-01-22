@@ -18,23 +18,23 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     func recalculate() {
         switch operationBar.curentOperationName {
         case .plus:
-            showPlusRecult()
+            showPlusResult()
             showBaseAnswerView()
         case .minus:
-            showMinusRecult()
+            showMinusResult()
             showBaseAnswerView()
         case .multiplication:
-            showMultiplyRecult()
+            showMultiplyResult()
             showBaseAnswerView()
         case .division:
-            showDivideRecult()
+            showDivideResult()
             showBaseAnswerView()
         case .pow:
-            showPowRecult()
+            showPowResult()
             showBaseAnswerView()
         case .root:
-            showRootRecult()
-            showScrolAnswerView()
+            showRootResult()
+            showScrollAnswerView()
         }
     }
     
@@ -76,7 +76,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
             complex = makeComplexNumber1()
         }
         
-        let exp = complexToExpNumber(Im: complex.im, Re: complex.re)
+        let exp = complexToExpNumber(im: complex.im, re: complex.re)
         
         return (moduleZ: exp.moduleZ, arc: exp.arc)
     }
@@ -107,63 +107,63 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
 
     
     /// Prepare data for calculetion, calculete and show recult of adding two complex numbers. Recult presents in complex and exponential forms.
-    func showPlusRecult() {
+    func showPlusResult() {
         let data = prepareComplexDataForCalc()
-        let result = plus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        let result = plus(re1: data.Re1, re2: data.Re2, im1: data.Im1, im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
-        showResulsWithExp(result: resulsWithExp)
+        let resulsWithExp = complexToExpNumber(im: result.Im, re: result.Re)
+        showResultsWithExp(result: resulsWithExp)
     }
     
     
     /// Prepare data for calculetion, calculete and show recult of subtraction two complex numbers. Recult presents in complex and exponential forms.
-    func showMinusRecult() {
+    func showMinusResult() {
         let data = prepareComplexDataForCalc()
-        let result = minus(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        let result = minus(re1: data.Re1, re2: data.Re2, im1: data.Im1, im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
-        showResulsWithExp(result: resulsWithExp)
+        let resulsWithExp = complexToExpNumber(im: result.Im, re: result.Re)
+        showResultsWithExp(result: resulsWithExp)
     }
     
     
     /// Prepare data for calculetion, calculete and show recult of multiplication two complex numbers. Recult presents in complex and exponential forms.
-    func showMultiplyRecult() {
+    func showMultiplyResult() {
         let data = prepareComplexDataForCalc()
-        let result = multiply(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        let result = multiply(re1: data.Re1, re2: data.Re2, im1: data.Im1, im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
-        showResulsWithExp(result: resulsWithExp)
+        let resulsWithExp = complexToExpNumber(im: result.Im, re: result.Re)
+        showResultsWithExp(result: resulsWithExp)
     }
     
     
     /// Prepare data for calculetion, calculete and show recult of division two complex numbers. Recult presents in complex and exponential forms.
-    func showDivideRecult() {
+    func showDivideResult() {
         let data = prepareComplexDataForCalc()
-        let result = divide(Re1: data.Re1, Re2: data.Re2, Im1: data.Im1, Im2: data.Im2)
+        let result = divide(re1: data.Re1, re2: data.Re2, im1: data.Im1, im2: data.Im2)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: result.Re, Im: result.Im, roundTo: 4)
-        let resulsWithExp = complexToExpNumber(Im: result.Im, Re: result.Re)
-        showResulsWithExp(result: resulsWithExp)
+        let resulsWithExp = complexToExpNumber(im: result.Im, re: result.Re)
+        showResultsWithExp(result: resulsWithExp)
     }
     
     
     /// Prepare data for calculetion, calculete and show recult of pow operation. Recult presents in complex and exponential forms.
-    func showPowRecult() {
+    func showPowResult() {
         let data = prepareExpDataForCalc()
         let result = complexPow(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 0.0)
 
         // Conversion to complex and back is needed for correct display of arc
         let complex = expToComplexNumber(modulZ: result.moduleZ, arc: result.arc)
         answerView.complexAnswerLabel.text = complexNumberToString(Re: complex.re, Im: complex.im, roundTo: 4)
-        showResulsWithExp(result: complexToExpNumber(Im: complex.im, Re: complex.re))
+        showResultsWithExp(result: complexToExpNumber(im: complex.im, re: complex.re))
     }
     
     
     /// Prepare data for calculetion, calculete and show recult of pow operation. Recult presents in complex and exponential forms.
-    func showRootRecult() {
+    func showRootResult() {
         let data = prepareExpDataForCalc()
         let result = complexRoot(modulZ: data.moduleZ, arc: data.arc, n: Double(nView.textField.text ?? "1") ?? 1.0)
         
-        let answerViews = crearePages(result)
+        let answerViews = createPages(result)
         setupSlideScrollView(slides: answerViews)
         answerPageControl.numberOfPages = answerViews.count
         answerPageControl.currentPage = 0
@@ -185,13 +185,13 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     }
     
     
-    func crearePages(_ result: [(re: Double, im: Double)]) -> [AnswerView] {
+    func createPages(_ result: [(re: Double, im: Double)]) -> [AnswerView] {
         
         var resultViews : [AnswerView] = []
         
         for i in 0..<result.count {
             let newView = AnswerView()
-            let expForm = complexToExpNumber(Im: result[i].im, Re: result[i].re)
+            let expForm = complexToExpNumber(im: result[i].im, re: result[i].re)
             let expFormString = expNumberToString(moduleZ: expForm.moduleZ, arcFi: expForm.arc)
             if expFormString == NSLocalizedString("Uncertainty", comment: "It is impossible to calculate the exact value") {
                 newView.expAnswerLabel.text = expFormString
@@ -212,7 +212,7 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
         - Im: The imaginary part of the complex number.
         - Re:The real part of the complex number.
      */
-    func showResulsWithExp(result: (moduleZ: Double, arc: Double)) {
+    func showResultsWithExp(result: (moduleZ: Double, arc: Double)) {
         
         /// An appearance of complex number in exponential form.
         let stringResult = expNumberToString(moduleZ: result.moduleZ, arcFi: result.arc)

@@ -86,6 +86,19 @@ class CalculateViewController: UIViewController {
         tabBarC = tabBar
         tabBarC.operationDelegate = self
         operationBar.delegate = self
+        
+        nView.textField.addTarget(self, action : #selector(nTextFieldDidChange), for : .editingChanged)
+    }
+    
+    @objc func nTextFieldDidChange() {
+        let enteredNumber = Int(nView.textField.text ?? "1") ?? 1
+        if enteredNumber > 100 {
+            showResultButton.isUserInteractionEnabled = false
+            showResultButton.backgroundColor = .gray
+        } else {
+            showResultButton.isUserInteractionEnabled = true
+            showResultButton.backgroundColor = .systemOrange
+        }
     }
     
     private func addObserver() {
@@ -187,6 +200,11 @@ extension CalculateViewController: OperationBarDelegate {
         nView.isHidden = false
         changeFormButton2.isUserInteractionEnabled = false
         changeFormButton2.backgroundColor = .gray
+        
+        let enteredNumber = Int(nView.textField.text ?? "1") ?? 1
+        if enteredNumber > 100 {
+            nView.textField.text = "1"
+        }
         recalculate()
     }
     
@@ -208,6 +226,7 @@ extension CalculateViewController: OperationBarDelegate {
         }
         changeFormButton2.isUserInteractionEnabled = true
         changeFormButton2.backgroundColor = .systemIndigo
+        showResultButton.backgroundColor = .systemOrange
         recalculate()
     }
 }

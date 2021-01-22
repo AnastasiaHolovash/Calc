@@ -76,18 +76,7 @@ class HistoryTableViewCell: UITableViewCell {
         case .calculate(let calculate):
             
             // Operation Sign
-            switch calculate.operation {
-            case .plus:
-                self.operationSignImage.image = UIImage(named: "plus")
-            case .minus:
-                self.operationSignImage.image = UIImage(named: "minus")
-            case .multiplication:
-                self.operationSignImage.image = UIImage(named: "multiply")
-            case .division:
-                self.operationSignImage.image = UIImage(named: "divide")
-            case .pow, .root:
-                self.operationSignImage.image = UIImage()
-            }
+            operationSignImage.image = calculate.operation.image
             
             // First number
             if .exp == calculate.number1.numberType {

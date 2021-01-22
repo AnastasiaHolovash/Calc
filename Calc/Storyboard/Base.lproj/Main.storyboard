@@ -383,6 +383,7 @@
                                             </view>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-M3-hkp">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="282.5"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                             </scrollView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-CZ-WMO">
                                                 <rect key="frame" x="146" y="255" width="122.5" height="27.5"/>
@@ -391,7 +392,7 @@
                                                 </connections>
                                             </pageControl>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstItem="k0p-5o-Y32" firstAttribute="leading" secondItem="eEq-23-nR1" secondAttribute="leading" id="1xK-AW-qxS"/>
                                             <constraint firstAttribute="bottom" secondItem="tDa-CZ-WMO" secondAttribute="bottom" id="HG2-lP-oM6"/>
@@ -644,6 +645,12 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
