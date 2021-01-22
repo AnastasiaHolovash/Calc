@@ -15,12 +15,11 @@ extension CalculateViewController {
     func showResultAnimationSetup() {
         showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
         generalAnswerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-
     }
     
     @objc func keyboardWillChange(notification: Notification) {
         
-        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
+        if notification.name.rawValue == "UIKeyboardWillShowNotification" {
             UIView.animate(withDuration: 1) {
                 self.generalAnswerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }

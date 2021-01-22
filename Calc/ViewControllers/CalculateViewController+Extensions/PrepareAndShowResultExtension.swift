@@ -174,12 +174,12 @@ extension CalculateViewController: ChangeSignBottomsDelegate {
     
     func setupSlideScrollView(slides: [AnswerView]) {
         answerScrollView.subviews.forEach({ $0.removeFromSuperview() })
-        answerScrollView.frame = CGRect(x: 0, y: view.frame.height * 0.5, width: view.frame.width, height: answerView.frame.height)
-        answerScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: answerView.frame.height)
+        answerScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: generalAnswerView.frame.height)
+        answerScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: generalAnswerView.frame.height)
         answerScrollView.isPagingEnabled = true
             
         for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: answerView.frame.height)
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: generalAnswerView.frame.height)
             answerScrollView.addSubview(slides[i])
         }
     }
