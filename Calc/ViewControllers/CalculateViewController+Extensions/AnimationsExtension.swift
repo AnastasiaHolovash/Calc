@@ -54,10 +54,6 @@ extension CalculateViewController {
         answerScrollView.isHidden = true
         answerPageControl.isHidden = true
         answerView.isHidden = false
-        
-//        answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-//        answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-//        answerView.transform = CGAffineTransform(translationX: 0, y: 0)
     }
     
     func showScrollAnswerView() {
@@ -65,10 +61,6 @@ extension CalculateViewController {
         answerScrollView.isHidden = false
         answerPageControl.isHidden = false
         answerView.isHidden = true
-        
-//        answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
-//        answerPageControl.transform = CGAffineTransform(translationX: 0, y: 0)
-//        answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
     }
 
 }
