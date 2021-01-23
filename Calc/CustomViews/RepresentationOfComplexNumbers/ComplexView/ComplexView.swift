@@ -50,7 +50,7 @@ class ComplexView: UIView {
         let xibView = loudViewFromXib()
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(xibView)
+        addSubview(xibView)
         reTextField = reTextFieldView.textField
         imTextField = imTextFieldView.textField
     }

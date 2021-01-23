@@ -37,7 +37,7 @@ class NView: UIView {
         let xibView = loudViewFromXib()
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(xibView)
+        addSubview(xibView)
         textField = nTextFieldView.textField
     }
     

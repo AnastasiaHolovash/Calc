@@ -31,7 +31,7 @@ class InformationViewController: UIViewController {
         NSLocalizedString("Addition/subtraction of complex numbers", comment: ""),
         NSLocalizedString("Multiplication of complex numbers", comment: ""),
         NSLocalizedString("Division of complex numbers", comment: ""),
-        NSLocalizedString("Elevation to the degree", comment: ""),
+        NSLocalizedString("Elevation to the degree n", comment: ""),
         NSLocalizedString("Calculating the root of degree n", comment: "")]
     
     let textForsection1: [String] = [
@@ -78,7 +78,7 @@ extension InformationViewController: UITableViewDelegate, UITableViewDataSource 
         if section == 0 {
             return 3
         } else {
-            return 9
+            return 11
         }
     }
     

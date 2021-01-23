@@ -15,12 +15,11 @@ extension CalculateViewController {
     func showResultAnimationSetup() {
         showResultButton.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
         generalAnswerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-
     }
     
     @objc func keyboardWillChange(notification: Notification) {
         
-        if notification.name.rawValue == "UIKeyboardWillShowNotification"{
+        if notification.name.rawValue == "UIKeyboardWillShowNotification" {
             UIView.animate(withDuration: 1) {
                 self.generalAnswerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
             }
@@ -52,16 +51,24 @@ extension CalculateViewController {
     
     func showBaseAnswerView() {
         
-        answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
-        answerView.transform = CGAffineTransform(translationX: 0, y: 0)
+        answerScrollView.isHidden = true
+        answerPageControl.isHidden = true
+        answerView.isHidden = false
+        
+//        answerScrollView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+//        answerPageControl.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+//        answerView.transform = CGAffineTransform(translationX: 0, y: 0)
     }
     
-    func showScrolAnswerView() {
+    func showScrollAnswerView() {
         
-        answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
-        answerPageControl.transform = CGAffineTransform(translationX: 0, y: 0)
-        answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
+        answerScrollView.isHidden = false
+        answerPageControl.isHidden = false
+        answerView.isHidden = true
+        
+//        answerScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+//        answerPageControl.transform = CGAffineTransform(translationX: 0, y: 0)
+//        answerView.transform = CGAffineTransform(translationX: 0, y: self.view.center.y)
     }
 
 }

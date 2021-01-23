@@ -14,8 +14,6 @@ class ExpView: UIView {
 
     @IBOutlet weak var beforeExpTextFieldView: CustomBorderedTextField!
     @IBOutlet weak var afterExpTextFieldView: CustomBorderedTextField!
-//    @IBOutlet weak var beforeExpSignButton: UIButton!
-//    @IBOutlet weak var afterExpSignButton: UIButton!
     @IBOutlet weak var beforeExpSignButton: ChangeSignButton!
     @IBOutlet weak var afterExpSignButton: ChangeSignButton!
     
@@ -48,16 +46,13 @@ class ExpView: UIView {
         let xibView = loudViewFromXib()
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(xibView)
-        self.beforeExpTextField = beforeExpTextFieldView.textField
-        self.afterExpTextField = afterExpTextFieldView.textField
+        addSubview(xibView)
+        beforeExpTextField = beforeExpTextFieldView.textField
+        afterExpTextField = afterExpTextFieldView.textField
     }
     
     @IBAction func didPressChangeSignButton(_ sender: ChangeSignButton) {
-//        if sender === beforeExpSignButton {
-//            updateButton(button: sender, isPlus: &beforeExpIsPlus)
-//        } else {
-//            updateButton(button: sender, isPlus: &afterExpIsPlus)
+
         if sender === beforeExpSignButton {
             sender.changeSign(isPlus: &beforeExpIsPlus)
         } else {
@@ -72,7 +67,6 @@ class ExpView: UIView {
         } else {
             beforeExpIsPlus = true
         }
-//        updateButton(button: beforeExpSignButton, isPlus: &beforeExpIsPlus)
         beforeExpSignButton.changeSign(isPlus: &beforeExpIsPlus)
     }
     
@@ -82,7 +76,6 @@ class ExpView: UIView {
         } else {
             afterExpIsPlus = true
         }
-//        updateButton(button: afterExpSignButton, isPlus: &afterExpIsPlus)
         afterExpSignButton.changeSign(isPlus: &afterExpIsPlus)
     }
     

@@ -36,7 +36,7 @@ class AnswerView: UIView {
         xibView.frame = self.bounds
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         numberLabel.isHidden = true
-        self.addSubview(xibView)
+        addSubview(xibView)
     }
     
     override func layoutSubviews() {

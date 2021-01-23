@@ -26,7 +26,7 @@ extension ConvertViewController {
     
     
     func showExpResult(re: Double, im: Double) {
-        let exp = complexToExpNumber(Im: im, Re: re)
+        let exp = complexToExpNumber(im: im, re: re)
         transferNumber = ComplexNumber(numberType: .exp, part1: exp.moduleZ, part2: exp.arc)
         let result = expNumberToString(moduleZ: exp.moduleZ, arcFi: exp.arc)
         let enteredNumber = complexNumberToString(Re: re, Im: im)

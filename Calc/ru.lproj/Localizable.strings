@@ -53,7 +53,7 @@
 "Division of complex numbers" = "Деление комплексных чисел";
 
 /* No comment provided by engineer. */
-"Elevation to the degree" = "Возведение в степень";
+"Elevation to the degree n" = "Возведение в степень n";
 
 /* No comment provided by engineer. */
 "Exponential notation of a complex number" = "Показательная запись комплексного числа";

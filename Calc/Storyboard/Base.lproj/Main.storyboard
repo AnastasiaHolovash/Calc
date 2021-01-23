@@ -383,6 +383,7 @@
                                             </view>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-M3-hkp">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="282.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </scrollView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-CZ-WMO">
                                                 <rect key="frame" x="146" y="255" width="122.5" height="27.5"/>
@@ -391,7 +392,7 @@
                                                 </connections>
                                             </pageControl>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="k0p-5o-Y32" firstAttribute="leading" secondItem="eEq-23-nR1" secondAttribute="leading" id="1xK-AW-qxS"/>
                                             <constraint firstAttribute="bottom" secondItem="tDa-CZ-WMO" secondAttribute="bottom" id="HG2-lP-oM6"/>
