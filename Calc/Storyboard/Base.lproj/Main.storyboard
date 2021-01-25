@@ -87,6 +87,7 @@
                                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="TGE-ct-6Sw" firstAttribute="leading" secondItem="tQP-Vi-tNj" secondAttribute="leading" constant="27" id="EcC-Oo-n3O"/>
+                                            <constraint firstItem="mre-DZ-JiM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TGE-ct-6Sw" secondAttribute="trailing" constant="8" symbolic="YES" id="HE2-ne-2Q4"/>
                                             <constraint firstAttribute="trailing" secondItem="mre-DZ-JiM" secondAttribute="trailing" constant="27" id="UoR-54-0A3"/>
                                             <constraint firstItem="mre-DZ-JiM" firstAttribute="width" secondItem="tQP-Vi-tNj" secondAttribute="width" multiplier="0.400966" id="WwA-PE-lRF"/>
                                             <constraint firstItem="TGE-ct-6Sw" firstAttribute="width" secondItem="tQP-Vi-tNj" secondAttribute="width" multiplier="0.400966" id="ouA-gY-kbf"/>
@@ -115,10 +116,15 @@
                                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="PWB-ne-seB" firstAttribute="leading" secondItem="Lg4-gl-geB" secondAttribute="leading" constant="27" id="8Gj-aU-ZWf"/>
-                                            <constraint firstItem="PWB-ne-seB" firstAttribute="centerX" secondItem="Lg4-gl-geB" secondAttribute="centerX" id="TNR-CE-tqZ"/>
+                                            <constraint firstItem="PWB-ne-seB" firstAttribute="centerX" secondItem="Lg4-gl-geB" secondAttribute="centerX" id="Wwf-oo-rRh"/>
                                             <constraint firstAttribute="trailing" secondItem="PWB-ne-seB" secondAttribute="trailing" constant="27" id="lyD-1p-hj0"/>
                                             <constraint firstItem="PWB-ne-seB" firstAttribute="centerY" secondItem="Lg4-gl-geB" secondAttribute="centerY" id="s0C-QF-VKW"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lyD-1p-hj0"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-Pc-oud" customClass="AnswerView" customModule="Calc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="336.5" width="414" height="336.5"/>
