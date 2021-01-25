@@ -14,26 +14,28 @@ class CustomBorderedTextField: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setup()
     }
     
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         setup()
     }
     
     private func setup() {
-        self.layer.borderWidth = 1
-        self.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        self.layer.cornerRadius = self.frame.height / 2.5
-        self.backgroundColor = mainBackgroundColor
+        layer.borderWidth = 1
+        layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        layer.cornerRadius = self.frame.height / 2.5
+        backgroundColor = mainBackgroundColor
         
         textField.backgroundColor = mainBackgroundColor
         textField.borderStyle = .none
-        textField.font = UIFont(name: "Helvetica", size: CGFloat(20))
+        textField.font = UIFont(name: "Helvetica", size: 20)
         textField.adjustsFontSizeToFitWidth = true
-        textField.minimumFontSize = CGFloat(16)
+        textField.minimumFontSize = 16
         textField.clearButtonMode = .always
         textField.keyboardType = .decimalPad
         textField.placeholder = "0.0"
