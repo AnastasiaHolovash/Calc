@@ -30,11 +30,9 @@
 		5D43D76F25A4ECD100349E6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D43D76D25A4ECD100349E6C /* InfoPlist.strings */; };
 		5D496FEE239460BD000C0DF7 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D496FED239460BD000C0DF7 /* CalculateViewController.swift */; };
 		5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B246238ECAB10057D76D /* AppDelegate.swift */; };
-		5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B248238ECAB10057D76D /* SceneDelegate.swift */; };
 		5D69B250238ECAB60057D76D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D69B24F238ECAB60057D76D /* Preview Assets.xcassets */; };
 		5D69B253238ECAB60057D76D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D69B251238ECAB60057D76D /* LaunchScreen.storyboard */; };
 		5D69B25D238EDF090057D76D /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B25C238EDF090057D76D /* ConvertViewController.swift */; };
-		5D69B27F238EFB600057D76D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D69B27E238EFB600057D76D /* ContentView.swift */; };
 		5D6B043E2411949200AA7D3B /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6B043D2411949200AA7D3B /* Asset.xcassets */; };
 		5D6E464424A928B90063CE90 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464324A928B90063CE90 /* AnimationsExtension.swift */; };
 		5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E464524A92FB20063CE90 /* OperationBar.swift */; };
@@ -93,12 +91,10 @@
 		5D496FED239460BD000C0DF7 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		5D69B243238ECAB10057D76D /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D69B246238ECAB10057D76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D69B248238ECAB10057D76D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D69B24F238ECAB60057D76D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D69B252238ECAB60057D76D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D69B254238ECAB60057D76D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D69B25C238EDF090057D76D /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
-		5D69B27E238EFB600057D76D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D6B043D2411949200AA7D3B /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		5D6E464324A928B90063CE90 /* AnimationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		5D6E464524A92FB20063CE90 /* OperationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationBar.swift; sourceTree = "<group>"; };
@@ -204,8 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				5D69B246238ECAB10057D76D /* AppDelegate.swift */,
-				5D69B248238ECAB10057D76D /* SceneDelegate.swift */,
-				5D69B27E238EFB600057D76D /* ContentView.swift */,
 				5D95626924902D5800C03364 /* Storyboard */,
 				5D7779C424A4C8C7007F2EBB /* Controllers */,
 				5D95625C248EE8F000C03364 /* ViewControllers */,
@@ -483,9 +477,7 @@
 				5D6E464D24A944CE0063CE90 /* AnswerView.swift in Sources */,
 				5D69B247238ECAB10057D76D /* AppDelegate.swift in Sources */,
 				5D85989424C39D9F001A1F21 /* ChangeSignButton.swift in Sources */,
-				5D69B249238ECAB10057D76D /* SceneDelegate.swift in Sources */,
 				5D956268248EFB9500C03364 /* UITextField+Extensions.swift in Sources */,
-				5D69B27F238EFB600057D76D /* ContentView.swift in Sources */,
 				5D956275249A2F8300C03364 /* HistoryTableViewCell.swift in Sources */,
 				5D17F2FF24D0E30E009501C7 /* ShowHistoryNumberExtension.swift in Sources */,
 				5D6E464624A92FB20063CE90 /* OperationBar.swift in Sources */,
@@ -703,7 +695,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Holovash.ComplexNumbersCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -726,7 +718,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Holovash.ComplexNumbersCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
